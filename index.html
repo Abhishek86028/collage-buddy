@@ -189,42 +189,69 @@
 
 
 
+        DY MATERIAL 
+
         <!-- STUDY MATERIAL -->
 
-        <section id="study" class="content-section">
+<section id="study" class="content-section">
 
-            <h2>📖 Study Material</h2>
+    <h2>📖 Study Material</h2>
 
-            <div class="resource-grid">
+    <div class="resource-grid">
 
-                <div class="resource-card">
-                    <h3>📑 Syllabus</h3>
-                    <p>Find your college and university syllabus.</p>
-                    <button onclick="showMessage('Syllabus section')">
-                        Explore
-                    </button>
-                </div>
+        <!-- SYLLABUS -->
 
-                <div class="resource-card">
-                    <h3>📝 Important Questions</h3>
-                    <p>Prepare for exams with important questions.</p>
-                    <button onclick="showMessage('Important Questions')">
-                        Explore
-                    </button>
-                </div>
+        <div class="resource-card">
 
-                <div class="resource-card">
-                    <h3>📚 E-Books</h3>
-                    <p>Useful books and learning resources.</p>
-                    <button onclick="showMessage('E-Books section')">
-                        Explore
-                    </button>
-                </div>
+            <h3>📑 Syllabus</h3>
 
-            </div>
+            <p>
+                Find your college and university syllabus.
+            </p>
 
-        </section>
+            <button onclick="openStudyMaterial('syllabus')">
+                Explore
+            </button>
 
+        </div>
+
+
+        <!-- IMPORTANT QUESTIONS -->
+
+        <div class="resource-card">
+
+            <h3>📝 Important Questions</h3>
+
+            <p>
+                Prepare for exams with important questions.
+            </p>
+
+            <button onclick="openStudyMaterial('questions')">
+                Explore
+            </button>
+
+        </div>
+
+
+        <!-- E-BOOKS -->
+
+        <div class="resource-card">
+
+            <h3>📚 E-Books</h3>
+
+            <p>
+                Useful books and learning resources.
+            </p>
+
+            <button onclick="openStudyMaterial('ebooks')">
+                Explore
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
 
         <!-- JOBS -->
 
