@@ -395,12 +395,12 @@ int *ptr = &age;
 
                 <ol>
                     <li>What is an algorithm? Explain its characteristics.</li>
-                    <li>What is a variable?</li>
+                    <li class="qa-item"><div class="question"><strong>Q. What is a variable?</strong></div><div class="answer"><strong>Answer:</strong> A variable is a named place used to store a value in a program.</div></li>
                     <li>Explain different data types in C.</li>
                     <li>Explain arithmetic and logical operators.</li>
                     <li>Explain if-else with an example.</li>
                     <li>What are loops? Explain different types.</li>
-                    <li>What is a function?</li>
+                    <li class="qa-item"><div class="question"><strong>Q. What is a function?</strong></div><div class="answer"><strong>Answer:</strong> A function is a reusable block of code that performs a specific task.</div></li>
                     <li>Explain arrays with an example.</li>
                     <li>What is a string?</li>
                     <li>What is a pointer?</li>
@@ -505,6 +505,26 @@ function openStudyMaterial(type) {
                     margin: 10px 0;
                     line-height: 1.5;
                 }
+
+                .qa-item {
+                    background: #ffffff;
+                    padding: 14px 16px;
+                    margin: 12px 0;
+                    border-radius: 8px;
+                    border: 1px solid #e5e7eb;
+                    list-style-position: inside;
+                }
+
+                .question {
+                    margin-bottom: 8px;
+                }
+
+                .answer {
+                    background: #f5f7fb;
+                    padding: 10px 12px;
+                    border-radius: 6px;
+                    line-height: 1.6;
+                }
                     .pdf-button {
     padding: 12px 20px;
     border: none;
@@ -560,31 +580,31 @@ function openStudyMaterial(type) {
                     <div class="level" data-level="basic">
                         <h3>🟢 Basic</h3>
                         <ol>
-                            <li>What is programming?</li>
-                            <li>What is an algorithm?</li>
-                            <li>What is a variable?</li>
-                            <li>What are data types?</li>
-                            <li>What is a loop?</li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is programming?</strong></div><div class="answer"><strong>Answer:</strong> Programming is the process of writing instructions for a computer to do a task.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is an algorithm?</strong></div><div class="answer"><strong>Answer:</strong> An algorithm is a step-by-step method used to solve a problem.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a variable?</strong></div><div class="answer"><strong>Answer:</strong> A variable is a named place used to store a value in a program.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What are data types?</strong></div><div class="answer"><strong>Answer:</strong> Data types tell us what kind of data a variable can store, such as integer, float, character, or string.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a loop?</strong></div><div class="answer"><strong>Answer:</strong> A loop is used to repeat a block of code again and again.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="intermediate">
                         <h3>🟡 Intermediate</h3>
                         <ol>
-                            <li>Explain if-else statements.</li>
-                            <li>Explain different types of loops.</li>
-                            <li>What is an array?</li>
-                            <li>What is a function?</li>
-                            <li>Explain recursion.</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain if-else statements.</strong></div><div class="answer"><strong>Answer:</strong> An if-else statement checks a condition. If the condition is true, the if block runs; otherwise, the else block runs.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain different types of loops.</strong></div><div class="answer"><strong>Answer:</strong> The common loops are for, while, and do-while. They are used to repeat code in different situations.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is an array?</strong></div><div class="answer"><strong>Answer:</strong> An array stores multiple values of the same type under one name.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a function?</strong></div><div class="answer"><strong>Answer:</strong> A function is a reusable block of code that performs a specific task.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain recursion.</strong></div><div class="answer"><strong>Answer:</strong> Recursion is a method where a function calls itself to solve a smaller part of a problem.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="advanced">
                         <h3>🔴 Advanced</h3>
                         <ol>
-                            <li>Explain pointers and their applications.</li>
-                            <li>Explain dynamic memory allocation.</li>
-                            <li>Explain recursion with an example.</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain pointers and their applications.</strong></div><div class="answer"><strong>Answer:</strong> A pointer is a variable that stores the memory address of another variable. Pointers are used for memory access, arrays, functions, and dynamic memory.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain dynamic memory allocation.</strong></div><div class="answer"><strong>Answer:</strong> Dynamic memory allocation means getting memory during program execution. In C, functions like malloc(), calloc(), realloc(), and free() are used for it.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain recursion with an example.</strong></div><div class="answer"><strong>Answer:</strong> In recursion, a function calls itself until a stopping condition is reached. Example: factorial(5) calls factorial(4), then factorial(3), and so on.</div></li>
                         </ol>
                     </div>
 
@@ -598,30 +618,30 @@ function openStudyMaterial(type) {
                     <div class="level" data-level="basic">
                         <h3>🟢 Basic</h3>
                         <ol>
-                            <li>What is a data structure?</li>
-                            <li>What is an array?</li>
-                            <li>What is a stack?</li>
-                            <li>What is a queue?</li>
-                            <li>What is a linked list?</li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a data structure?</strong></div><div class="answer"><strong>Answer:</strong> A data structure is a way of organizing and storing data so it can be used efficiently.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is an array?</strong></div><div class="answer"><strong>Answer:</strong> An array stores multiple values of the same type under one name.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a stack?</strong></div><div class="answer"><strong>Answer:</strong> A stack is a data structure that follows LIFO: Last In, First Out.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a queue?</strong></div><div class="answer"><strong>Answer:</strong> A queue is a data structure that follows FIFO: First In, First Out.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a linked list?</strong></div><div class="answer"><strong>Answer:</strong> A linked list is a collection of nodes where each node stores data and a link to the next node.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="intermediate">
                         <h3>🟡 Intermediate</h3>
                         <ol>
-                            <li>Explain stack operations.</li>
-                            <li>Explain queue operations.</li>
-                            <li>Explain linked lists.</li>
-                            <li>Explain searching and sorting.</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain stack operations.</strong></div><div class="answer"><strong>Answer:</strong> The main stack operations are push (add an item), pop (remove the top item), and peek (view the top item).</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain queue operations.</strong></div><div class="answer"><strong>Answer:</strong> The main queue operations are enqueue (add an item) and dequeue (remove an item).</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain linked lists.</strong></div><div class="answer"><strong>Answer:</strong> A linked list contains nodes connected by links. It can grow or shrink easily during program execution.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain searching and sorting.</strong></div><div class="answer"><strong>Answer:</strong> Searching finds a required item in data. Sorting arranges data in a particular order, such as ascending or descending.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="advanced">
                         <h3>🔴 Advanced</h3>
                         <ol>
-                            <li>Explain binary search trees.</li>
-                            <li>Explain AVL trees.</li>
-                            <li>Compare BFS and DFS.</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain binary search trees.</strong></div><div class="answer"><strong>Answer:</strong> A binary search tree is a tree where smaller values are placed on the left and larger values on the right.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain AVL trees.</strong></div><div class="answer"><strong>Answer:</strong> An AVL tree is a self-balancing binary search tree. It keeps the height balanced after insertions and deletions.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Compare BFS and DFS.</strong></div><div class="answer"><strong>Answer:</strong> BFS visits nodes level by level, while DFS goes as deep as possible before coming back. BFS usually uses a queue and DFS uses a stack or recursion.</div></li>
                         </ol>
                     </div>
 
@@ -635,30 +655,30 @@ function openStudyMaterial(type) {
                     <div class="level" data-level="basic">
                         <h3>🟢 Basic</h3>
                         <ol>
-                            <li>What is a database?</li>
-                            <li>What is DBMS?</li>
-                            <li>What is a table?</li>
-                            <li>What is a primary key?</li>
-                            <li>What is SQL?</li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a database?</strong></div><div class="answer"><strong>Answer:</strong> A database is an organized collection of data that can be stored, searched, and managed easily.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is DBMS?</strong></div><div class="answer"><strong>Answer:</strong> DBMS stands for Database Management System. It is software used to create, store, update, and manage databases.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a table?</strong></div><div class="answer"><strong>Answer:</strong> A table stores data in rows and columns.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a primary key?</strong></div><div class="answer"><strong>Answer:</strong> A primary key is a column or group of columns that uniquely identifies each row in a table.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is SQL?</strong></div><div class="answer"><strong>Answer:</strong> SQL stands for Structured Query Language. It is used to work with data in relational databases.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="intermediate">
                         <h3>🟡 Intermediate</h3>
                         <ol>
-                            <li>Explain different types of keys.</li>
-                            <li>What is normalization?</li>
-                            <li>Explain SQL commands.</li>
-                            <li>What are ACID properties?</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain different types of keys.</strong></div><div class="answer"><strong>Answer:</strong> Common keys include primary key, foreign key, candidate key, super key, and alternate key. They help identify or connect records.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is normalization?</strong></div><div class="answer"><strong>Answer:</strong> Normalization is the process of organizing database tables to reduce duplicate data and improve data consistency.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain SQL commands.</strong></div><div class="answer"><strong>Answer:</strong> SQL commands are commonly grouped as DDL, DML, DQL, DCL, and TCL. They are used to create, change, read, control, and manage database transactions.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What are ACID properties?</strong></div><div class="answer"><strong>Answer:</strong> ACID means Atomicity, Consistency, Isolation, and Durability. These properties help keep database transactions reliable.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="advanced">
                         <h3>🔴 Advanced</h3>
                         <ol>
-                            <li>Explain normalization up to BCNF.</li>
-                            <li>Explain concurrency control.</li>
-                            <li>Explain query optimization.</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain normalization up to BCNF.</strong></div><div class="answer"><strong>Answer:</strong> Normalization divides data into well-organized tables. 1NF removes repeating groups, 2NF removes partial dependency, 3NF removes transitive dependency, and BCNF requires every determinant to be a candidate key.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain concurrency control.</strong></div><div class="answer"><strong>Answer:</strong> Concurrency control manages multiple database operations at the same time and prevents incorrect or conflicting results.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain query optimization.</strong></div><div class="answer"><strong>Answer:</strong> Query optimization finds an efficient way to execute a database query so it uses less time and resources.</div></li>
                         </ol>
                     </div>
 
@@ -672,29 +692,29 @@ function openStudyMaterial(type) {
                     <div class="level" data-level="basic">
                         <h3>🟢 Basic</h3>
                         <ol>
-                            <li>What is an operating system?</li>
-                            <li>What is a process?</li>
-                            <li>What is a thread?</li>
-                            <li>What is memory management?</li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is an operating system?</strong></div><div class="answer"><strong>Answer:</strong> An operating system is system software that manages computer hardware, software, files, and running programs.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a process?</strong></div><div class="answer"><strong>Answer:</strong> A process is a program that is currently running.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a thread?</strong></div><div class="answer"><strong>Answer:</strong> A thread is a small unit of execution inside a process.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is memory management?</strong></div><div class="answer"><strong>Answer:</strong> Memory management is the process of allocating and freeing computer memory for programs.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="intermediate">
                         <h3>🟡 Intermediate</h3>
                         <ol>
-                            <li>Explain process scheduling.</li>
-                            <li>Explain CPU scheduling algorithms.</li>
-                            <li>What is deadlock?</li>
-                            <li>Explain virtual memory.</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain process scheduling.</strong></div><div class="answer"><strong>Answer:</strong> Process scheduling decides which waiting process should get the CPU and for how long.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain CPU scheduling algorithms.</strong></div><div class="answer"><strong>Answer:</strong> Common CPU scheduling algorithms include FCFS, SJF, Round Robin, and Priority Scheduling. They decide the order in which processes use the CPU.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is deadlock?</strong></div><div class="answer"><strong>Answer:</strong> Deadlock is a situation where two or more processes wait for each other and none can continue.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain virtual memory.</strong></div><div class="answer"><strong>Answer:</strong> Virtual memory uses part of storage as extra memory when RAM is not enough.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="advanced">
                         <h3>🔴 Advanced</h3>
                         <ol>
-                            <li>Explain deadlock detection and prevention.</li>
-                            <li>Explain page replacement algorithms.</li>
-                            <li>Explain process synchronization.</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain deadlock detection and prevention.</strong></div><div class="answer"><strong>Answer:</strong> Deadlock prevention uses rules to stop deadlock conditions. Detection checks whether a deadlock has occurred so it can be handled.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain page replacement algorithms.</strong></div><div class="answer"><strong>Answer:</strong> Page replacement algorithms decide which memory page should be removed when a new page must be loaded. Examples are FIFO, LRU, and Optimal.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain process synchronization.</strong></div><div class="answer"><strong>Answer:</strong> Process synchronization controls access to shared data so multiple processes or threads do not create incorrect results.</div></li>
                         </ol>
                     </div>
 
@@ -708,29 +728,29 @@ function openStudyMaterial(type) {
                     <div class="level" data-level="basic">
                         <h3>🟢 Basic</h3>
                         <ol>
-                            <li>What is a computer network?</li>
-                            <li>What is an IP address?</li>
-                            <li>What is a router?</li>
-                            <li>What is a protocol?</li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a computer network?</strong></div><div class="answer"><strong>Answer:</strong> A computer network is a group of connected devices that share data and resources.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is an IP address?</strong></div><div class="answer"><strong>Answer:</strong> An IP address is a unique address used to identify a device on a network.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a router?</strong></div><div class="answer"><strong>Answer:</strong> A router connects different networks and forwards data to the correct destination.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a protocol?</strong></div><div class="answer"><strong>Answer:</strong> A protocol is a set of rules used by devices to communicate with each other.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="intermediate">
                         <h3>🟡 Intermediate</h3>
                         <ol>
-                            <li>Explain OSI model.</li>
-                            <li>Explain TCP/IP model.</li>
-                            <li>Explain TCP and UDP.</li>
-                            <li>What is DNS?</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain OSI model.</strong></div><div class="answer"><strong>Answer:</strong> The OSI model has 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, and Application.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain TCP/IP model.</strong></div><div class="answer"><strong>Answer:</strong> The TCP/IP model is a networking model used on the Internet. Its main layers are Network Access, Internet, Transport, and Application.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain TCP and UDP.</strong></div><div class="answer"><strong>Answer:</strong> TCP is connection-oriented and provides reliable delivery. UDP is faster and connectionless but does not guarantee delivery.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is DNS?</strong></div><div class="answer"><strong>Answer:</strong> DNS stands for Domain Name System. It changes domain names, such as example.com, into IP addresses.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="advanced">
                         <h3>🔴 Advanced</h3>
                         <ol>
-                            <li>Compare OSI and TCP/IP models.</li>
-                            <li>Explain congestion control.</li>
-                            <li>Explain IPv4 and IPv6.</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Compare OSI and TCP/IP models.</strong></div><div class="answer"><strong>Answer:</strong> OSI is a 7-layer reference model, while TCP/IP is a practical networking model commonly used on the Internet with 4 main layers.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain congestion control.</strong></div><div class="answer"><strong>Answer:</strong> Congestion control reduces network traffic when too much data is moving through the network.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain IPv4 and IPv6.</strong></div><div class="answer"><strong>Answer:</strong> IPv4 uses 32-bit addresses, while IPv6 uses 128-bit addresses. IPv6 provides a much larger address space.</div></li>
                         </ol>
                     </div>
 
@@ -744,29 +764,29 @@ function openStudyMaterial(type) {
                     <div class="level" data-level="basic">
                         <h3>🟢 Basic</h3>
                         <ol>
-                            <li>What is Artificial Intelligence?</li>
-                            <li>What is Machine Learning?</li>
-                            <li>What is a dataset?</li>
-                            <li>What is a model?</li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is Artificial Intelligence?</strong></div><div class="answer"><strong>Answer:</strong> Artificial Intelligence (AI) is the ability of computers to perform tasks that normally need human intelligence.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is Machine Learning?</strong></div><div class="answer"><strong>Answer:</strong> Machine Learning (ML) is a part of AI where computers learn patterns from data and make predictions or decisions.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a dataset?</strong></div><div class="answer"><strong>Answer:</strong> A dataset is a collection of data used for analysis or for training a machine learning model.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a model?</strong></div><div class="answer"><strong>Answer:</strong> A model is a learned mathematical or computer representation that is used to make predictions or decisions.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="intermediate">
                         <h3>🟡 Intermediate</h3>
                         <ol>
-                            <li>Explain supervised learning.</li>
-                            <li>Explain unsupervised learning.</li>
-                            <li>What is classification?</li>
-                            <li>What is regression?</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain supervised learning.</strong></div><div class="answer"><strong>Answer:</strong> Supervised learning trains a model using data that already has correct answers or labels.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain unsupervised learning.</strong></div><div class="answer"><strong>Answer:</strong> Unsupervised learning finds patterns or groups in data without given labels.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is classification?</strong></div><div class="answer"><strong>Answer:</strong> Classification is a machine learning task that puts data into categories, such as spam or not spam.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is regression?</strong></div><div class="answer"><strong>Answer:</strong> Regression predicts a continuous numerical value, such as house price or temperature.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="advanced">
                         <h3>🔴 Advanced</h3>
                         <ol>
-                            <li>Explain neural networks.</li>
-                            <li>Explain overfitting and underfitting.</li>
-                            <li>Explain model evaluation metrics.</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain neural networks.</strong></div><div class="answer"><strong>Answer:</strong> A neural network is a machine learning model made of connected layers of artificial neurons. It learns patterns from data.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain overfitting and underfitting.</strong></div><div class="answer"><strong>Answer:</strong> Overfitting happens when a model learns training data too closely and performs poorly on new data. Underfitting happens when the model is too simple to learn the pattern.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain model evaluation metrics.</strong></div><div class="answer"><strong>Answer:</strong> Evaluation metrics measure how well a model works. Common metrics include accuracy, precision, recall, F1-score, and mean squared error.</div></li>
                         </ol>
                     </div>
 
@@ -780,29 +800,29 @@ function openStudyMaterial(type) {
                     <div class="level" data-level="basic">
                         <h3>🟢 Basic</h3>
                         <ol>
-                            <li>What is cloud computing?</li>
-                            <li>What is cyber security?</li>
-                            <li>What is a server?</li>
-                            <li>What is encryption?</li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is cloud computing?</strong></div><div class="answer"><strong>Answer:</strong> Cloud computing means using computing services such as storage, servers, and software over the Internet.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is cyber security?</strong></div><div class="answer"><strong>Answer:</strong> Cyber security protects computers, networks, applications, and data from unauthorized access and attacks.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a server?</strong></div><div class="answer"><strong>Answer:</strong> A server is a computer or program that provides data or services to other computers called clients.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is encryption?</strong></div><div class="answer"><strong>Answer:</strong> Encryption converts readable data into a protected form so unauthorized people cannot easily read it.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="intermediate">
                         <h3>🟡 Intermediate</h3>
                         <ol>
-                            <li>Explain cloud service models.</li>
-                            <li>Explain public and private cloud.</li>
-                            <li>Explain firewalls.</li>
-                            <li>Explain authentication methods.</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain cloud service models.</strong></div><div class="answer"><strong>Answer:</strong> The main cloud service models are IaaS for infrastructure, PaaS for a development platform, and SaaS for ready-to-use software.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain public and private cloud.</strong></div><div class="answer"><strong>Answer:</strong> A public cloud is shared by many customers through a cloud provider. A private cloud is dedicated to one organization.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain firewalls.</strong></div><div class="answer"><strong>Answer:</strong> A firewall monitors network traffic and blocks unwanted or unauthorized connections based on security rules.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain authentication methods.</strong></div><div class="answer"><strong>Answer:</strong> Authentication checks who a user is. Common methods include passwords, OTPs, biometrics, and security keys.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="advanced">
                         <h3>🔴 Advanced</h3>
                         <ol>
-                            <li>Explain cloud architecture.</li>
-                            <li>Explain virtualization.</li>
-                            <li>Explain secure cloud architecture.</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain cloud architecture.</strong></div><div class="answer"><strong>Answer:</strong> Cloud architecture describes how cloud services, servers, storage, networks, applications, and users work together.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain virtualization.</strong></div><div class="answer"><strong>Answer:</strong> Virtualization creates virtual computers or resources on one physical machine using software.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain secure cloud architecture.</strong></div><div class="answer"><strong>Answer:</strong> Secure cloud architecture uses access control, encryption, monitoring, backups, and network security to protect cloud systems.</div></li>
                         </ol>
                     </div>
 
@@ -816,29 +836,29 @@ function openStudyMaterial(type) {
                     <div class="level" data-level="basic">
                         <h3>🟢 Basic</h3>
                         <ol>
-                            <li>What is a software project?</li>
-                            <li>What is Git?</li>
-                            <li>What is GitHub?</li>
-                            <li>What is an API?</li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is a software project?</strong></div><div class="answer"><strong>Answer:</strong> A software project is a planned effort to create, improve, or maintain a software product.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is Git?</strong></div><div class="answer"><strong>Answer:</strong> Git is a version control system used to track code changes and manage different versions of a project.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is GitHub?</strong></div><div class="answer"><strong>Answer:</strong> GitHub is an online platform for storing Git repositories and working with code and other developers.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is an API?</strong></div><div class="answer"><strong>Answer:</strong> An API is a set of rules that allows different software programs to communicate with each other.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="intermediate">
                         <h3>🟡 Intermediate</h3>
                         <ol>
-                            <li>Explain software development life cycle.</li>
-                            <li>Explain Agile methodology.</li>
-                            <li>What is REST API?</li>
-                            <li>How do you test a software project?</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain software development life cycle.</strong></div><div class="answer"><strong>Answer:</strong> SDLC is a process used to develop software. Common stages are planning, requirements, design, development, testing, deployment, and maintenance.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain Agile methodology.</strong></div><div class="answer"><strong>Answer:</strong> Agile is a flexible software development method where work is done in small parts and improved using regular feedback.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. What is REST API?</strong></div><div class="answer"><strong>Answer:</strong> A REST API is a web API that uses HTTP methods such as GET, POST, PUT, and DELETE to work with resources.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. How do you test a software project?</strong></div><div class="answer"><strong>Answer:</strong> Software is tested by checking requirements, running test cases, finding bugs, fixing them, and testing again. Different types include unit, integration, system, and user testing.</div></li>
                         </ol>
                     </div>
 
                     <div class="level" data-level="advanced">
                         <h3>🔴 Advanced</h3>
                         <ol>
-                            <li>Explain software architecture.</li>
-                            <li>Explain system design basics.</li>
-                            <li>Explain scalability.</li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain software architecture.</strong></div><div class="answer"><strong>Answer:</strong> Software architecture is the high-level structure of a software system, including its components and how they communicate.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain system design basics.</strong></div><div class="answer"><strong>Answer:</strong> System design means planning the components, data, APIs, storage, and communication needed to build a software system.</div></li>
+                            <li class="qa-item"><div class="question"><strong>Q. Explain scalability.</strong></div><div class="answer"><strong>Answer:</strong> Scalability is the ability of a system to handle more users or work by adding or improving resources.</div></li>
                         </ol>
                     </div>
 
