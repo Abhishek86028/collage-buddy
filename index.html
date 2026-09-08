@@ -98,98 +98,68 @@
             </div>
 
         </section>
-    <!-- NOTES -->
+<!-- NOTES -->
 
 <section id="notes" class="content-section">
 
     <h2>📚 College Notes</h2>
 
-    <p>Find notes according to your course and semester.</p>
-<div class="filters">
+    <p>Apna course select karein.</p>
 
-    <select id="courseFilter" onchange="filterNotes()">
-        <option value="all">All Courses</option>
-        <option value="btech-cse">B.Tech CSE</option>
-        <option value="btech-maths">B.Tech Mathematics</option>
-        <option value="bca">BCA</option>
-        <option value="bba">BBA</option>
-    </select>
+    <div class="resource-grid">
 
-    <select id="semesterFilter" onchange="filterNotes()">
-        <option value="all">All Semesters</option>
-        <option value="1">Semester 1</option>
-        <option value="2">Semester 2</option>
-        <option value="3">Semester 3</option>
-        <option value="4">Semester 4</option>
-        <option value="5">Semester 5</option>
-        <option value="6">Semester 6</option>
-        <option value="7">Semester 7</option>
-        <option value="8">Semester 8</option>
-    </select>
+        <!-- B.TECH CSE -->
 
-</div>
-    
-    <div id="notesGrid" class="resource-grid">
+        <div class="resource-card">
+            <h3>💻 B.Tech CSE</h3>
+            <p>Computer Science Engineering</p>
 
-        <div class="resource-card note-card"
-             data-course="btech-cse"
-             data-semester="1">
-
-            <h3>💻 B.Tech CSE — Programming</h3>
-            <p>Semester 1 • Programming fundamentals</p>
-
-            <button onclick="openNote('B.Tech CSE Programming')">
-                📄 Open Notes
+            <button onclick="showSemesters('btech-cse')">
+                View Semesters
             </button>
-
         </div>
 
-        <div class="resource-card note-card"
-             data-course="btech-maths"
-             data-semester="2">
 
-            <h3>🧮 B.Tech CSE — Mathematics</h3>
-            <p>Semester 2 • Engineering Mathematics</p>
+        <!-- BCA -->
 
-            <button onclick="openNote('B.Tech Mathematics')">
-                📄 Open Notes
+        <div class="resource-card">
+            <h3>🖥️ BCA</h3>
+            <p>Bachelor of Computer Applications</p>
+
+            <button onclick="showSemesters('bca')">
+                View Semesters
             </button>
-
         </div>
 
-        <div class="resource-card note-card"
-             data-course="bca"
-             data-semester="1">
 
-            <h3>💻 BCA — Computer Fundamentals</h3>
-            <p>Semester 1 • Computer fundamentals</p>
+        <!-- BBA -->
 
-            <button onclick="openNote('BCA Computer Fundamentals')">
-                📄 Open Notes
+        <div class="resource-card">
+            <h3>📊 BBA</h3>
+            <p>Bachelor of Business Administration</p>
+
+            <button onclick="showSemesters('bba')">
+                View Semesters
             </button>
-
-        </div>
-
-        <div class="resource-card note-card"
-             data-course="bba"
-             data-semester="1">
-
-            <h3>📊 BBA — Business Management</h3>
-            <p>Semester 1 • Management basics</p>
-
-            <button onclick="openNote('BBA Business Management')">
-                📄 Open Notes
-            </button>
-
         </div>
 
     </div>
+
+
+    <!-- SEMESTERS -->
+
+    <div id="semesterArea" style="margin-top:30px;"></div>
+
+
+    <!-- SUBJECTS -->
+
+    <div id="subjectArea" style="margin-top:30px;"></div>
 
 </section>
 
 
 
-        DY MATERIAL 
+        
 
         <!-- STUDY MATERIAL -->
 
