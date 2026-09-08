@@ -105,34 +105,34 @@
     <h2>📚 College Notes</h2>
 
     <p>Find notes according to your course and semester.</p>
+<div class="filters">
 
-    <div class="filters">
+    <select id="courseFilter" onchange="filterNotes()">
+        <option value="all">All Courses</option>
+        <option value="btech-cse">B.Tech CSE</option>
+        <option value="btech-maths">B.Tech Mathematics</option>
+        <option value="bca">BCA</option>
+        <option value="bba">BBA</option>
+    </select>
 
-        <select id="courseFilter" onchange="filterNotes()">
-            <option value="all">All Courses</option>
-            <option value="btech">B.Tech</option>
-            <option value="bca">BCA</option>
-            <option value="bba">BBA</option>
-        </select>
+    <select id="semesterFilter" onchange="filterNotes()">
+        <option value="all">All Semesters</option>
+        <option value="1">Semester 1</option>
+        <option value="2">Semester 2</option>
+        <option value="3">Semester 3</option>
+        <option value="4">Semester 4</option>
+        <option value="5">Semester 5</option>
+        <option value="6">Semester 6</option>
+        <option value="7">Semester 7</option>
+        <option value="8">Semester 8</option>
+    </select>
 
-        <select id="semesterFilter" onchange="filterNotes()">
-            <option value="all">All Semesters</option>
-            <option value="1">Semester 1</option>
-            <option value="2">Semester 2</option>
-            <option value="3">Semester 3</option>
-            <option value="4">Semester 4</option>
-            <option value="5">Semester 5</option>
-            <option value="6">Semester 6</option>
-            <option value="7">Semester 7</option>
-            <option value="8">Semester 8</option>
-        </select>
-
-    </div>
-
+</div>
+    
     <div id="notesGrid" class="resource-grid">
 
         <div class="resource-card note-card"
-             data-course="btech"
+             data-course="btech-cse"
              data-semester="1">
 
             <h3>💻 B.Tech CSE — Programming</h3>
@@ -145,7 +145,7 @@
         </div>
 
         <div class="resource-card note-card"
-             data-course="btech"
+             data-course="btech-maths"
              data-semester="2">
 
             <h3>🧮 B.Tech CSE — Mathematics</h3>

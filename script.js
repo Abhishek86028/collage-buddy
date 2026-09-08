@@ -160,15 +160,418 @@ function filterNotes() {
     });
 
 }function openNote(noteName) {
+
     const notesWindow = window.open("", "_blank");
+
+    let title = noteName;
+    let content = "";
+
+    // =========================
+    // B.Tech CSE
+    // =========================
+
+    if (noteName === "B.Tech CSE Programming") {
+
+        title = "B.Tech CSE - Programming Fundamentals";
+
+        content = `
+            <h2>💻 B.Tech CSE - Programming Fundamentals</h2>
+
+            <h2>1. Introduction to Programming</h2>
+            <p>
+                Programming is the process of writing instructions that
+                tell a computer what to do.
+            </p>
+
+            <div class="important">
+                <b>Exam Point:</b>
+                A program is a set of instructions written to solve a
+                particular problem.
+            </div>
+
+            <h2>2. Algorithm</h2>
+            <p>
+                An algorithm is a step-by-step procedure used to solve
+                a particular problem.
+            </p>
+
+            <h3>Characteristics of Algorithm</h3>
+            <ul>
+                <li>It should have clear steps.</li>
+                <li>It should have a definite beginning and end.</li>
+                <li>Each step should be understandable.</li>
+                <li>It should produce a result.</li>
+            </ul>
+
+            <h2>3. Variables</h2>
+            <p>
+                A variable is a named memory location used to store data.
+            </p>
+
+            <pre>
+int age = 20;
+float marks = 85.5;
+char grade = 'A';
+            </pre>
+
+            <h2>4. Data Types</h2>
+            <ul>
+                <li><b>int</b> - Integer values</li>
+                <li><b>float</b> - Decimal values</li>
+                <li><b>char</b> - Single character</li>
+                <li><b>double</b> - Large decimal values</li>
+            </ul>
+
+            <h2>5. Operators</h2>
+            <ul>
+                <li>Arithmetic: +, -, *, /, %</li>
+                <li>Relational: &lt;, &gt;, ==, !=</li>
+                <li>Logical: &amp;&amp;, ||, !</li>
+                <li>Assignment: =, +=, -=, *=</li>
+            </ul>
+
+            <h2>6. If-Else Statement</h2>
+
+            <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    int age = 20;
+
+    if (age &gt;= 18) {
+        printf("Eligible to vote");
+    } else {
+        printf("Not eligible to vote");
+    }
+
+    return 0;
+}
+            </pre>
+
+            <h2>7. Loops</h2>
+
+            <p>
+                Loops are used to execute a block of code repeatedly.
+            </p>
+
+            <ul>
+                <li>for loop</li>
+                <li>while loop</li>
+                <li>do-while loop</li>
+            </ul>
+
+            <pre>
+for(int i = 1; i &lt;= 5; i++) {
+    printf("%d\\n", i);
+}
+            </pre>
+
+            <h2>8. Functions</h2>
+
+            <p>
+                A function is a reusable block of code that performs
+                a specific task.
+            </p>
+
+            <pre>
+int add(int a, int b) {
+    return a + b;
+}
+            </pre>
+
+            <h2>9. Arrays</h2>
+
+            <p>
+                An array stores multiple values of the same data type.
+            </p>
+
+            <pre>
+int marks[5] = {80, 75, 90, 85, 70};
+            </pre>
+
+            <h2>10. Strings</h2>
+
+            <p>
+                A string is a collection of characters.
+            </p>
+
+            <pre>
+char name[] = "CollegeBuddy";
+            </pre>
+
+            <h2>11. Pointers</h2>
+
+            <p>
+                A pointer is a variable that stores the memory address
+                of another variable.
+            </p>
+
+            <pre>
+int age = 20;
+int *ptr = &age;
+            </pre>
+
+            <h2>📌 Important Exam Questions</h2>
+
+            <ol>
+                <li>What is programming?</li>
+                <li>What is an algorithm?</li>
+                <li>Explain variables and data types.</li>
+                <li>Explain different operators.</li>
+                <li>Explain if-else statement.</li>
+                <li>What are loops?</li>
+                <li>What is a function?</li>
+                <li>Explain arrays.</li>
+                <li>What is a string?</li>
+                <li>What is a pointer?</li>
+            </ol>
+        `;
+    }
+
+
+    // =========================
+    // B.Tech Mathematics
+    // =========================
+
+    else if (noteName === "B.Tech Mathematics") {
+
+        title = "B.Tech Mathematics - Engineering Mathematics";
+
+        content = `
+            <h2>🧮 B.Tech Mathematics - Engineering Mathematics</h2>
+
+            <h2>1. Differential Calculus</h2>
+
+            <p>
+                Differential calculus deals with the rate of change
+                of a function.
+            </p>
+
+            <div class="important">
+                <b>Important Formula:</b><br>
+                d/dx (xⁿ) = n xⁿ⁻¹
+            </div>
+
+            <h2>2. Integration</h2>
+
+            <p>
+                Integration is the reverse process of differentiation.
+            </p>
+
+            <div class="important">
+                <b>Important Formula:</b><br>
+                ∫ xⁿ dx = xⁿ⁺¹ / (n+1) + C
+            </div>
+
+            <h2>3. Matrices</h2>
+
+            <p>
+                A matrix is a rectangular arrangement of numbers
+                in rows and columns.
+            </p>
+
+            <pre>
+A = [ 1  2 ]
+    [ 3  4 ]
+            </pre>
+
+            <h2>4. Determinants</h2>
+
+            <p>
+                For a 2 × 2 matrix:
+            </p>
+
+            <pre>
+| a  b |
+| c  d |
+
+Determinant = ad - bc
+            </pre>
+
+            <h2>5. Differential Equations</h2>
+
+            <p>
+                A differential equation contains one or more derivatives
+                of an unknown function.
+            </p>
+
+            <h2>📌 Important Exam Questions</h2>
+
+            <ol>
+                <li>Define differentiation.</li>
+                <li>Explain basic differentiation formulas.</li>
+                <li>Define integration.</li>
+                <li>Explain matrices.</li>
+                <li>Find the determinant of a 2 × 2 matrix.</li>
+                <li>What is a differential equation?</li>
+            </ol>
+        `;
+    }
+
+
+    // =========================
+    // BCA
+    // =========================
+
+    else if (noteName === "BCA Computer Fundamentals") {
+
+        title = "BCA - Computer Fundamentals";
+
+        content = `
+            <h2>💻 BCA - Computer Fundamentals</h2>
+
+            <h2>1. Computer</h2>
+
+            <p>
+                A computer is an electronic device that accepts data,
+                processes it and produces useful information.
+            </p>
+
+            <h2>2. Characteristics of Computer</h2>
+
+            <ul>
+                <li>High speed</li>
+                <li>Accuracy</li>
+                <li>Storage capacity</li>
+                <li>Automation</li>
+                <li>Reliability</li>
+            </ul>
+
+            <h2>3. Hardware</h2>
+
+            <p>
+                Hardware refers to the physical parts of a computer.
+            </p>
+
+            <ul>
+                <li>Keyboard</li>
+                <li>Mouse</li>
+                <li>Monitor</li>
+                <li>CPU</li>
+                <li>Printer</li>
+            </ul>
+
+            <h2>4. Software</h2>
+
+            <p>
+                Software is a collection of programs and instructions
+                used to operate a computer.
+            </p>
+
+            <h3>Types of Software</h3>
+
+            <ul>
+                <li>System Software</li>
+                <li>Application Software</li>
+            </ul>
+
+            <h2>5. Operating System</h2>
+
+            <p>
+                An operating system is system software that manages
+                computer hardware and software resources.
+            </p>
+
+            <h2>📌 Important Exam Questions</h2>
+
+            <ol>
+                <li>What is a computer?</li>
+                <li>Explain characteristics of computers.</li>
+                <li>What is hardware?</li>
+                <li>What is software?</li>
+                <li>Explain types of software.</li>
+                <li>What is an operating system?</li>
+            </ol>
+        `;
+    }
+
+
+    // =========================
+    // BBA
+    // =========================
+
+    else if (noteName === "BBA Business Management") {
+
+        title = "BBA - Business Management";
+
+        content = `
+            <h2>📊 BBA - Business Management</h2>
+
+            <h2>1. Introduction to Management</h2>
+
+            <p>
+                Management is the process of planning, organizing,
+                directing and controlling resources to achieve goals.
+            </p>
+
+            <h2>2. Functions of Management</h2>
+
+            <ul>
+                <li>Planning</li>
+                <li>Organizing</li>
+                <li>Staffing</li>
+                <li>Directing</li>
+                <li>Controlling</li>
+            </ul>
+
+            <h2>3. Planning</h2>
+
+            <p>
+                Planning means deciding in advance what has to be done,
+                how it has to be done and when it has to be done.
+            </p>
+
+            <h2>4. Organizing</h2>
+
+            <p>
+                Organizing involves arranging people and resources
+                to achieve organizational objectives.
+            </p>
+
+            <h2>5. Leadership</h2>
+
+            <p>
+                Leadership is the ability to influence and guide people
+                toward achieving a common goal.
+            </p>
+
+            <h2>6. Motivation</h2>
+
+            <p>
+                Motivation is the process of encouraging employees
+                to perform better and achieve organizational goals.
+            </p>
+
+            <h2>📌 Important Exam Questions</h2>
+
+            <ol>
+                <li>What is management?</li>
+                <li>Explain functions of management.</li>
+                <li>What is planning?</li>
+                <li>What is organizing?</li>
+                <li>Define leadership.</li>
+                <li>What is motivation?</li>
+            </ol>
+        `;
+    }
+
+
+    // =========================
+    // Page Design
+    // =========================
 
     notesWindow.document.write(`
         <!DOCTYPE html>
+
         <html>
+
         <head>
-            <title>${noteName} - CollegeBuddy Notes</title>
+
+            <title>${title} - CollegeBuddy</title>
 
             <style>
+
                 body {
                     font-family: Arial, sans-serif;
                     line-height: 1.7;
@@ -180,8 +583,13 @@ function filterNotes() {
                 header {
                     background: #4169e1;
                     color: white;
-                    padding: 25px;
+                    padding: 30px;
                     text-align: center;
+                }
+
+                header h1 {
+                    margin: 0;
+                    font-size: 30px;
                 }
 
                 .container {
@@ -190,10 +598,7 @@ function filterNotes() {
                     background: white;
                     padding: 35px;
                     border-radius: 12px;
-                }
-
-                h1 {
-                    margin: 0;
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
                 }
 
                 h2 {
@@ -205,10 +610,8 @@ function filterNotes() {
                     margin-top: 25px;
                 }
 
-                code {
-                    background: #f0f2f5;
-                    padding: 3px 6px;
-                    border-radius: 4px;
+                li {
+                    margin: 10px 0;
                 }
 
                 pre {
@@ -224,202 +627,45 @@ function filterNotes() {
                     padding: 15px;
                     border-left: 5px solid #4169e1;
                     margin: 20px 0;
+                    border-radius: 5px;
                 }
+
+                .back {
+                    display: inline-block;
+                    padding: 10px 18px;
+                    background: #4169e1;
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 8px;
+                    margin-bottom: 20px;
+                }
+
             </style>
+
         </head>
 
         <body>
 
             <header>
+
                 <h1>📚 CollegeBuddy</h1>
-                <p>${noteName}</p>
+
+                <p>${title}</p>
+
             </header>
 
             <div class="container">
 
-                <h2>1. Introduction to Programming</h2>
+                <a href="javascript:window.close()" class="back">
+                    ← Close Notes
+                </a>
 
-                <p>
-                    Programming is the process of writing instructions that
-                    tell a computer what to do. These instructions are written
-                    using programming languages such as C, C++, Java and Python.
-                </p>
-
-                <div class="important">
-                    <b>Important:</b>
-                    A program is a set of instructions written to solve a
-                    particular problem.
-                </div>
-
-                <h2>2. Algorithm</h2>
-
-                <p>
-                    An algorithm is a step-by-step procedure used to solve
-                    a problem.
-                </p>
-
-                <h3>Characteristics of an Algorithm</h3>
-
-                <ul>
-                    <li>It should have clear steps.</li>
-                    <li>It should have a definite beginning and end.</li>
-                    <li>Each step should be understandable.</li>
-                    <li>It should produce a result.</li>
-                </ul>
-
-                <h2>3. Variables</h2>
-
-                <p>
-                    A variable is a named memory location used to store data.
-                </p>
-
-                <pre>
-int age = 20;
-float marks = 85.5;
-char grade = 'A';
-                </pre>
-
-                <h2>4. Data Types</h2>
-
-                <p>Common C programming data types are:</p>
-
-                <ul>
-                    <li><b>int</b> – stores integer values</li>
-                    <li><b>float</b> – stores decimal values</li>
-                    <li><b>char</b> – stores a single character</li>
-                    <li><b>double</b> – stores large decimal values</li>
-                </ul>
-
-                <h2>5. Operators</h2>
-
-                <p>Operators are symbols used to perform operations.</p>
-
-                <ul>
-                    <li>Arithmetic: +, -, *, /, %</li>
-                    <li>Relational: &lt;, &gt;, ==, !=</li>
-                    <li>Logical: &amp;&amp;, ||, !</li>
-                    <li>Assignment: =, +=, -=, *=</li>
-                </ul>
-
-                <h2>6. If-Else Statement</h2>
-
-                <p>
-                    The if-else statement is used when we want to execute
-                    different code depending on a condition.
-                </p>
-
-                <pre>
-#include &lt;stdio.h&gt;
-
-int main() {
-    int age = 20;
-
-    if (age &gt;= 18) {
-        printf("Eligible to vote");
-    } else {
-        printf("Not eligible to vote");
-    }
-
-    return 0;
-}
-                </pre>
-
-                <h2>7. Loops</h2>
-
-                <p>
-                    Loops are used to execute a block of code repeatedly.
-                </p>
-
-                <h3>Types of Loops</h3>
-
-                <ul>
-                    <li>for loop</li>
-                    <li>while loop</li>
-                    <li>do-while loop</li>
-                </ul>
-
-                <pre>
-for(int i = 1; i &lt;= 5; i++) {
-    printf("%d\\n", i);
-}
-                </pre>
-
-                <h2>8. Functions</h2>
-
-                <p>
-                    A function is a block of code designed to perform
-                    a specific task.
-                </p>
-
-                <pre>
-int add(int a, int b) {
-    return a + b;
-}
-                </pre>
-
-                <h2>9. Arrays</h2>
-
-                <p>
-                    An array stores multiple values of the same data type
-                    in a single variable.
-                </p>
-
-                <pre>
-int marks[5] = {80, 75, 90, 85, 70};
-                </pre>
-
-                <h2>10. Strings</h2>
-
-                <p>
-                    A string is a collection of characters terminated by
-                    a null character.
-                </p>
-
-                <pre>
-char name[] = "CollegeBuddy";
-                </pre>
-
-                <h2>11. Pointers</h2>
-
-                <p>
-                    A pointer is a variable that stores the memory address
-                    of another variable.
-                </p>
-
-                <pre>
-int age = 20;
-int *ptr = &age;
-                </pre>
-
-                <h2>12. Important Exam Questions</h2>
-
-                <ol>
-                    <li>What is an algorithm? Explain its characteristics.</li>
-                    <li class="qa-item"><div class="question"><strong>Q. What is a variable?</strong></div><div class="answer"><strong>Answer:</strong> A variable is a named place used to store a value in a program.</div></li>
-                    <li>Explain different data types in C.</li>
-                    <li>Explain arithmetic and logical operators.</li>
-                    <li>Explain if-else with an example.</li>
-                    <li>What are loops? Explain different types.</li>
-                    <li class="qa-item"><div class="question"><strong>Q. What is a function?</strong></div><div class="answer"><strong>Answer:</strong> A function is a reusable block of code that performs a specific task.</div></li>
-                    <li>Explain arrays with an example.</li>
-                    <li>What is a string?</li>
-                    <li>What is a pointer?</li>
-                </ol>
-
-                <h2>📌 Quick Revision</h2>
-
-                <div class="important">
-                    Programming = Instructions + Logic + Problem Solving<br><br>
-                    Variable = Data Storage<br><br>
-                    Loop = Repeated Execution<br><br>
-                    Function = Reusable Block of Code<br><br>
-                    Array = Collection of Same Type Data<br><br>
-                    Pointer = Stores Memory Address
-                </div>
+                ${content}
 
             </div>
 
         </body>
+
         </html>
     `);
 
