@@ -1892,8 +1892,1640 @@ else if (noteName === "Information Security") {
             <li>What is malware?</li>
         </ol>
     `;
-}
+}// ===============================
+// Semester 6 - Artificial Intelligence
+// ===============================
 
+else if (noteName === "Artificial Intelligence - Semester 6") {
+
+    title = "Artificial Intelligence - Semester 6";
+
+    content = `
+        <h2>🤖 Artificial Intelligence</h2>
+
+        <h2>1. Introduction to Artificial Intelligence</h2>
+
+        <p>
+            Artificial Intelligence (AI) is a branch of computer science
+            that develops systems capable of performing tasks that normally
+            require human intelligence.
+        </p>
+
+        <h2>2. Intelligent Agents</h2>
+
+        <p>
+            An intelligent agent is a system that perceives its environment
+            through sensors and takes actions using actuators to achieve
+            a particular goal.
+        </p>
+
+        <ul>
+            <li>Simple Reflex Agent</li>
+            <li>Model-Based Agent</li>
+            <li>Goal-Based Agent</li>
+            <li>Utility-Based Agent</li>
+            <li>Learning Agent</li>
+        </ul>
+
+        <h2>3. Problem Solving in AI</h2>
+
+        <p>
+            AI uses search techniques to find solutions to problems.
+            The problem is represented using states, actions and goals.
+        </p>
+
+        <h2>4. Search Algorithms</h2>
+
+        <ul>
+            <li>Breadth First Search (BFS)</li>
+            <li>Depth First Search (DFS)</li>
+            <li>Uniform Cost Search</li>
+            <li>Greedy Best First Search</li>
+            <li>A* Search</li>
+        </ul>
+
+        <div class="important">
+            <b>A* Search:</b><br>
+            f(n) = g(n) + h(n)<br><br>
+            g(n) = Cost from starting node<br>
+            h(n) = Estimated cost to goal
+        </div>
+
+        <h2>5. Knowledge Representation</h2>
+
+        <p>
+            Knowledge representation is the process of representing
+            information in a form that an AI system can understand
+            and use for reasoning.
+        </p>
+
+        <ul>
+            <li>Logic</li>
+            <li>Semantic Networks</li>
+            <li>Frames</li>
+            <li>Production Rules</li>
+        </ul>
+
+        <h2>6. Machine Learning</h2>
+
+        <p>
+            Machine Learning is a subfield of AI in which computers
+            learn patterns from data and use those patterns to make
+            predictions or decisions.
+        </p>
+
+        <ul>
+            <li>Supervised Learning</li>
+            <li>Unsupervised Learning</li>
+            <li>Reinforcement Learning</li>
+        </ul>
+
+        <h2>7. Applications of AI</h2>
+
+        <ul>
+            <li>Chatbots</li>
+            <li>Voice Assistants</li>
+            <li>Recommendation Systems</li>
+            <li>Computer Vision</li>
+            <li>Natural Language Processing</li>
+            <li>Robotics</li>
+            <li>Medical Diagnosis</li>
+        </ul>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is Artificial Intelligence?</li>
+            <li>What is an intelligent agent?</li>
+            <li>Explain different types of intelligent agents.</li>
+            <li>What is problem solving in AI?</li>
+            <li>Explain BFS and DFS.</li>
+            <li>What is A* search algorithm?</li>
+            <li>Explain knowledge representation.</li>
+            <li>What is Machine Learning?</li>
+            <li>Explain supervised and unsupervised learning.</li>
+            <li>Explain applications of Artificial Intelligence.</li>
+        </ol>
+    `;
+}// ===============================
+// Semester 6 - Internet of Things
+// ===============================
+
+else if (noteName === "Internet of Things") {
+
+    title = "Internet of Things";
+
+    content = `
+        <h2>🌐 Internet of Things (IoT)</h2>
+
+        <h2>1. Introduction to IoT</h2>
+
+        <p>
+            Internet of Things (IoT) is a technology in which
+            physical devices are connected to the internet
+            so that they can collect, exchange and process data.
+        </p>
+
+        <h2>2. Components of IoT</h2>
+
+        <ul>
+            <li>Sensors</li>
+            <li>Actuators</li>
+            <li>Processing Unit</li>
+            <li>Communication Network</li>
+            <li>Cloud Platform</li>
+            <li>User Application</li>
+        </ul>
+
+        <h2>3. Sensors</h2>
+
+        <p>
+            Sensors collect information from the physical environment.
+            Examples include temperature, humidity, motion and light sensors.
+        </p>
+
+        <h2>4. Actuators</h2>
+
+        <p>
+            Actuators perform actions based on commands received
+            from the IoT system.
+        </p>
+
+        <h2>5. IoT Architecture</h2>
+
+        <ol>
+            <li>Perception Layer</li>
+            <li>Network Layer</li>
+            <li>Processing Layer</li>
+            <li>Application Layer</li>
+        </ol>
+
+        <h2>6. IoT Communication Technologies</h2>
+
+        <ul>
+            <li>Wi-Fi</li>
+            <li>Bluetooth</li>
+            <li>Zigbee</li>
+            <li>RFID</li>
+            <li>LoRaWAN</li>
+            <li>Cellular Networks</li>
+        </ul>
+
+        <h2>7. Applications of IoT</h2>
+
+        <ul>
+            <li>Smart Home</li>
+            <li>Smart Agriculture</li>
+            <li>Smart City</li>
+            <li>Healthcare</li>
+            <li>Industrial IoT</li>
+            <li>Smart Transportation</li>
+        </ul>
+
+        <h2>8. IoT Security</h2>
+
+        <p>
+            IoT security protects connected devices, networks and
+            data from unauthorized access and cyber attacks.
+        </p>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is Internet of Things?</li>
+            <li>Explain the components of IoT.</li>
+            <li>What is a sensor?</li>
+            <li>What is an actuator?</li>
+            <li>Explain IoT architecture.</li>
+            <li>Explain different IoT communication technologies.</li>
+            <li>What are the applications of IoT?</li>
+            <li>Explain IoT security.</li>
+        </ol>
+    `;
+}// ===============================
+// Semester 6 - Big Data
+// ===============================
+
+else if (noteName === "Big Data") {
+
+    title = "Big Data";
+
+    content = `
+        <h2>📊 Big Data</h2>
+
+        <h2>1. Introduction to Big Data</h2>
+
+        <p>
+            Big Data refers to extremely large and complex datasets
+            that cannot be efficiently processed using traditional
+            data processing techniques.
+        </p>
+
+        <h2>2. Characteristics of Big Data</h2>
+
+        <div class="important">
+            <b>5 V's of Big Data:</b><br><br>
+            Volume – Amount of data<br>
+            Velocity – Speed of data generation<br>
+            Variety – Different types of data<br>
+            Veracity – Accuracy and reliability of data<br>
+            Value – Useful information obtained from data
+        </div>
+
+        <h2>3. Types of Big Data</h2>
+
+        <ul>
+            <li>Structured Data</li>
+            <li>Semi-Structured Data</li>
+            <li>Unstructured Data</li>
+        </ul>
+
+        <h2>4. Hadoop</h2>
+
+        <p>
+            Apache Hadoop is a framework used for distributed storage
+            and processing of large datasets across clusters of computers.
+        </p>
+
+        <h2>5. HDFS</h2>
+
+        <p>
+            Hadoop Distributed File System (HDFS) is used to store
+            large amounts of data across multiple machines.
+        </p>
+
+        <h2>6. MapReduce</h2>
+
+        <p>
+            MapReduce is a programming model used to process large
+            datasets in parallel across distributed systems.
+        </p>
+
+        <div class="important">
+            <b>Map Phase:</b><br>
+            Processes input data and produces intermediate key-value pairs.
+            <br><br>
+
+            <b>Reduce Phase:</b><br>
+            Combines and processes the intermediate results.
+        </div>
+
+        <h2>7. Applications of Big Data</h2>
+
+        <ul>
+            <li>Banking</li>
+            <li>Healthcare</li>
+            <li>E-Commerce</li>
+            <li>Social Media</li>
+            <li>Education</li>
+            <li>Business Analytics</li>
+        </ul>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is Big Data?</li>
+            <li>Explain the 5 V's of Big Data.</li>
+            <li>Explain structured and unstructured data.</li>
+            <li>What is Hadoop?</li>
+            <li>What is HDFS?</li>
+            <li>What is MapReduce?</li>
+            <li>Explain Map and Reduce phases.</li>
+            <li>Explain applications of Big Data.</li>
+        </ol>
+    `;
+}// ===============================
+// Semester 6 - Mobile Application Development
+// ===============================
+
+else if (noteName === "Mobile Application Development") {
+
+    title = "Mobile Application Development";
+
+    content = `
+        <h2>📱 Mobile Application Development</h2>
+
+        <h2>1. Introduction</h2>
+
+        <p>
+            Mobile Application Development is the process of
+            designing, developing, testing and deploying applications
+            for mobile devices such as smartphones and tablets.
+        </p>
+
+        <h2>2. Mobile Operating Systems</h2>
+
+        <ul>
+            <li>Android</li>
+            <li>iOS</li>
+        </ul>
+
+        <h2>3. Types of Mobile Applications</h2>
+
+        <ul>
+            <li>Native Applications</li>
+            <li>Web Applications</li>
+            <li>Hybrid Applications</li>
+        </ul>
+
+        <h2>4. Android Application Components</h2>
+
+        <ul>
+            <li>Activity</li>
+            <li>Service</li>
+            <li>Broadcast Receiver</li>
+            <li>Content Provider</li>
+        </ul>
+
+        <h2>5. User Interface</h2>
+
+        <p>
+            User Interface (UI) contains the visual elements through
+            which users interact with a mobile application.
+        </p>
+
+        <ul>
+            <li>Buttons</li>
+            <li>Text Fields</li>
+            <li>Images</li>
+            <li>Menus</li>
+            <li>Lists</li>
+        </ul>
+
+        <h2>6. Mobile App Development Process</h2>
+
+        <ol>
+            <li>Requirement Analysis</li>
+            <li>UI/UX Design</li>
+            <li>Development</li>
+            <li>Testing</li>
+            <li>Deployment</li>
+            <li>Maintenance</li>
+        </ol>
+
+        <h2>7. Mobile Application Testing</h2>
+
+        <p>
+            Testing ensures that a mobile application works correctly
+            on different devices, screen sizes and operating systems.
+        </p>
+
+        <h2>8. Mobile App Security</h2>
+
+        <p>
+            Mobile application security protects user data,
+            authentication information and application resources.
+        </p>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is Mobile Application Development?</li>
+            <li>Explain different types of mobile applications.</li>
+            <li>What are Android application components?</li>
+            <li>What is an Activity?</li>
+            <li>What is a Service?</li>
+            <li>Explain the mobile app development process.</li>
+            <li>What is mobile application testing?</li>
+            <li>Explain mobile application security.</li>
+        </ol>
+    `;
+}// ===============================
+// Semester 6 - Distributed Systems
+// ===============================
+
+else if (noteName === "Distributed Systems") {
+
+    title = "Distributed Systems";
+
+    content = `
+        <h2>🖥️ Distributed Systems</h2>
+
+        <h2>1. Introduction</h2>
+
+        <p>
+            A distributed system is a collection of independent
+            computers that work together and appear to users
+            as a single system.
+        </p>
+
+        <h2>2. Characteristics of Distributed Systems</h2>
+
+        <ul>
+            <li>Resource Sharing</li>
+            <li>Concurrency</li>
+            <li>Scalability</li>
+            <li>Fault Tolerance</li>
+            <li>Transparency</li>
+        </ul>
+
+        <h2>3. Advantages of Distributed Systems</h2>
+
+        <ul>
+            <li>Better resource utilization</li>
+            <li>Improved reliability</li>
+            <li>Easy scalability</li>
+            <li>High performance</li>
+        </ul>
+
+        <h2>4. Communication</h2>
+
+        <p>
+            Distributed systems use communication networks to
+            exchange messages between different computers.
+        </p>
+
+        <h2>5. Client-Server Model</h2>
+
+        <p>
+            In the client-server model, clients request services
+            and servers provide those services.
+        </p>
+
+        <h2>6. Distributed Database</h2>
+
+        <p>
+            A distributed database stores data across multiple
+            locations connected through a network.
+        </p>
+
+        <h2>7. Fault Tolerance</h2>
+
+        <p>
+            Fault tolerance is the ability of a system to continue
+            operating even when some components fail.
+        </p>
+
+        <h2>8. Applications of Distributed Systems</h2>
+
+        <ul>
+            <li>Cloud Computing</li>
+            <li>Online Banking</li>
+            <li>E-Commerce</li>
+            <li>Distributed Databases</li>
+            <li>Content Delivery Networks</li>
+            <li>Large-scale Web Applications</li>
+        </ul>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is a distributed system?</li>
+            <li>Explain the characteristics of distributed systems.</li>
+            <li>What are the advantages of distributed systems?</li>
+            <li>Explain communication in distributed systems.</li>
+            <li>What is the client-server model?</li>
+            <li>What is a distributed database?</li>
+            <li>What is fault tolerance?</li>
+            <li>Explain applications of distributed systems.</li>
+        </ol>
+    `;
+}// ===============================
+// Semester 7 - Deep Learning
+// ===============================
+
+else if (noteName === "Deep Learning") {
+
+    title = "Deep Learning";
+
+    content = `
+        <h2>🧠 Deep Learning</h2>
+
+        <h2>1. Introduction to Deep Learning</h2>
+
+        <p>
+            Deep Learning is a branch of Machine Learning that uses
+            artificial neural networks with multiple layers to learn
+            complex patterns from large amounts of data.
+        </p>
+
+        <h2>2. Artificial Neural Network</h2>
+
+        <p>
+            An Artificial Neural Network (ANN) is a computational model
+            inspired by the structure of the human brain.
+        </p>
+
+        <ul>
+            <li>Input Layer</li>
+            <li>Hidden Layer</li>
+            <li>Output Layer</li>
+        </ul>
+
+        <h2>3. Neurons</h2>
+
+        <p>
+            A neuron receives input values, applies weights and bias,
+            and produces an output using an activation function.
+        </p>
+
+        <div class="important">
+            <b>Basic Neuron:</b><br><br>
+            Output = Activation Function (Σ(weight × input) + bias)
+        </div>
+
+        <h2>4. Activation Functions</h2>
+
+        <ul>
+            <li>Sigmoid</li>
+            <li>ReLU</li>
+            <li>Tanh</li>
+            <li>Softmax</li>
+        </ul>
+
+        <h2>5. Deep Neural Networks</h2>
+
+        <p>
+            A Deep Neural Network (DNN) contains multiple hidden layers
+            between the input and output layers.
+        </p>
+
+        <h2>6. Convolutional Neural Network</h2>
+
+        <p>
+            Convolutional Neural Networks (CNNs) are mainly used for
+            image processing and computer vision tasks.
+        </p>
+
+        <ul>
+            <li>Convolution Layer</li>
+            <li>Pooling Layer</li>
+            <li>Fully Connected Layer</li>
+        </ul>
+
+        <h2>7. Recurrent Neural Network</h2>
+
+        <p>
+            Recurrent Neural Networks (RNNs) are designed to process
+            sequential data such as text, speech and time-series data.
+        </p>
+
+        <h2>8. Applications of Deep Learning</h2>
+
+        <ul>
+            <li>Image Recognition</li>
+            <li>Speech Recognition</li>
+            <li>Natural Language Processing</li>
+            <li>Self-Driving Vehicles</li>
+            <li>Medical Image Analysis</li>
+            <li>Recommendation Systems</li>
+        </ul>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is Deep Learning?</li>
+            <li>Explain Artificial Neural Networks.</li>
+            <li>What is a neuron?</li>
+            <li>Explain different activation functions.</li>
+            <li>What is a Deep Neural Network?</li>
+            <li>Explain Convolutional Neural Networks.</li>
+            <li>What is an RNN?</li>
+            <li>Explain applications of Deep Learning.</li>
+        </ol>
+    `;
+}// ===============================
+// Semester 7 - Cyber Security
+// ===============================
+
+else if (noteName === "Cyber Security") {
+
+    title = "Cyber Security";
+
+    content = `
+        <h2>🔐 Cyber Security</h2>
+
+        <h2>1. Introduction to Cyber Security</h2>
+
+        <p>
+            Cyber Security is the practice of protecting computers,
+            networks, applications and data from unauthorized access,
+            attacks and damage.
+        </p>
+
+        <h2>2. Goals of Cyber Security</h2>
+
+        <div class="important">
+            <b>CIA Triad:</b><br><br>
+            Confidentiality – Protecting information from unauthorized access.<br>
+            Integrity – Maintaining accuracy and correctness of data.<br>
+            Availability – Ensuring systems and data are available when required.
+        </div>
+
+        <h2>3. Types of Cyber Attacks</h2>
+
+        <ul>
+            <li>Phishing</li>
+            <li>Malware</li>
+            <li>Ransomware</li>
+            <li>Denial of Service (DoS)</li>
+            <li>Man-in-the-Middle Attack</li>
+            <li>Password Attacks</li>
+            <li>SQL Injection</li>
+        </ul>
+
+        <h2>4. Malware</h2>
+
+        <p>
+            Malware is malicious software designed to damage systems,
+            steal information or gain unauthorized access.
+        </p>
+
+        <ul>
+            <li>Virus</li>
+            <li>Worm</li>
+            <li>Trojan Horse</li>
+            <li>Spyware</li>
+            <li>Ransomware</li>
+        </ul>
+
+        <h2>5. Cryptography</h2>
+
+        <p>
+            Cryptography is the technique of securing information by
+            converting readable data into a protected form.
+        </p>
+
+        <ul>
+            <li>Symmetric Key Cryptography</li>
+            <li>Asymmetric Key Cryptography</li>
+            <li>Hashing</li>
+        </ul>
+
+        <h2>6. Authentication</h2>
+
+        <p>
+            Authentication is the process of verifying the identity
+            of a user or system.
+        </p>
+
+        <ul>
+            <li>Password Authentication</li>
+            <li>Biometric Authentication</li>
+            <li>Two-Factor Authentication</li>
+            <li>Multi-Factor Authentication</li>
+        </ul>
+
+        <h2>7. Network Security</h2>
+
+        <p>
+            Network security protects computer networks from
+            unauthorized access, misuse and cyber attacks.
+        </p>
+
+        <ul>
+            <li>Firewall</li>
+            <li>VPN</li>
+            <li>Intrusion Detection System</li>
+            <li>Intrusion Prevention System</li>
+        </ul>
+
+        <h2>8. Cyber Security Best Practices</h2>
+
+        <ul>
+            <li>Use strong passwords</li>
+            <li>Enable two-factor authentication</li>
+            <li>Keep software updated</li>
+            <li>Use trusted networks</li>
+            <li>Take regular backups</li>
+            <li>Avoid suspicious links and attachments</li>
+        </ul>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is Cyber Security?</li>
+            <li>Explain the CIA Triad.</li>
+            <li>What are different types of cyber attacks?</li>
+            <li>What is malware?</li>
+            <li>Explain different types of malware.</li>
+            <li>What is cryptography?</li>
+            <li>Explain symmetric and asymmetric cryptography.</li>
+            <li>What is authentication?</li>
+            <li>What is a firewall?</li>
+            <li>Explain Cyber Security best practices.</li>
+        </ol>
+    `;
+}// ===============================
+// Semester 7 - Data Mining
+// ===============================
+
+else if (noteName === "Data Mining") {
+
+    title = "Data Mining";
+
+    content = `
+        <h2>⛏️ Data Mining</h2>
+
+        <h2>1. Introduction to Data Mining</h2>
+
+        <p>
+            Data Mining is the process of discovering useful patterns,
+            relationships and knowledge from large amounts of data.
+        </p>
+
+        <h2>2. Data Mining Process</h2>
+
+        <ol>
+            <li>Data Collection</li>
+            <li>Data Cleaning</li>
+            <li>Data Integration</li>
+            <li>Data Selection</li>
+            <li>Data Transformation</li>
+            <li>Data Mining</li>
+            <li>Pattern Evaluation</li>
+            <li>Knowledge Presentation</li>
+        </ol>
+
+        <h2>3. Data Preprocessing</h2>
+
+        <p>
+            Data preprocessing prepares raw data for analysis by
+            removing errors, handling missing values and transforming
+            data into a suitable format.
+        </p>
+
+        <ul>
+            <li>Data Cleaning</li>
+            <li>Data Integration</li>
+            <li>Data Transformation</li>
+            <li>Data Reduction</li>
+        </ul>
+
+        <h2>4. Classification</h2>
+
+        <p>
+            Classification is a supervised learning technique used
+            to assign data into predefined classes or categories.
+        </p>
+
+        <ul>
+            <li>Decision Tree</li>
+            <li>Naive Bayes</li>
+            <li>K-Nearest Neighbors</li>
+        </ul>
+
+        <h2>5. Clustering</h2>
+
+        <p>
+            Clustering is an unsupervised learning technique that
+            groups similar data objects together.
+        </p>
+
+        <div class="important">
+            <b>K-Means Clustering:</b><br><br>
+            K-Means divides data into K groups based on similarity
+            and distance from cluster centers.
+        </div>
+
+        <h2>6. Association Rule Mining</h2>
+
+        <p>
+            Association rule mining discovers relationships between
+            items in large datasets.
+        </p>
+
+        <div class="important">
+            <b>Support:</b> Measures how frequently an itemset occurs.<br><br>
+            <b>Confidence:</b> Measures how often a rule is correct.
+        </div>
+
+        <h2>7. Applications of Data Mining</h2>
+
+        <ul>
+            <li>Market Analysis</li>
+            <li>Fraud Detection</li>
+            <li>Customer Analysis</li>
+            <li>Healthcare</li>
+            <li>Banking</li>
+            <li>E-Commerce</li>
+            <li>Recommendation Systems</li>
+        </ul>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is Data Mining?</li>
+            <li>Explain the Data Mining process.</li>
+            <li>What is Data Preprocessing?</li>
+            <li>Explain Data Cleaning and Data Transformation.</li>
+            <li>What is Classification?</li>
+            <li>Explain Decision Tree classification.</li>
+            <li>What is Clustering?</li>
+            <li>Explain K-Means Clustering.</li>
+            <li>What is Association Rule Mining?</li>
+            <li>Explain Support and Confidence.</li>
+            <li>Explain applications of Data Mining.</li>
+        </ol>
+    `;
+}// ===============================
+// Semester 7 - Blockchain Technology
+// ===============================
+
+else if (noteName === "Blockchain Technology") {
+
+    title = "Blockchain Technology";
+
+    content = `
+        <h2>⛓️ Blockchain Technology</h2>
+
+        <h2>1. Introduction to Blockchain</h2>
+
+        <p>
+            Blockchain is a distributed digital ledger technology
+            that records transactions in a secure, transparent and
+            tamper-resistant manner.
+        </p>
+
+        <h2>2. Features of Blockchain</h2>
+
+        <ul>
+            <li>Decentralization</li>
+            <li>Transparency</li>
+            <li>Security</li>
+            <li>Immutability</li>
+            <li>Distributed Ledger</li>
+        </ul>
+
+        <h2>3. Blockchain Structure</h2>
+
+        <p>
+            A blockchain consists of a sequence of blocks.
+            Each block contains transaction data, a timestamp,
+            its own hash and the hash of the previous block.
+        </p>
+
+        <div class="important">
+            <b>Block contains:</b><br><br>
+            Transaction Data<br>
+            Timestamp<br>
+            Previous Block Hash<br>
+            Current Block Hash
+        </div>
+
+        <h2>4. Hashing</h2>
+
+        <p>
+            Hashing converts input data into a fixed-length value.
+            A small change in the input produces a different hash.
+        </p>
+
+        <h2>5. Consensus Mechanisms</h2>
+
+        <p>
+            Consensus mechanisms allow participants in a distributed
+            network to agree on the valid state of the blockchain.
+        </p>
+
+        <ul>
+            <li>Proof of Work (PoW)</li>
+            <li>Proof of Stake (PoS)</li>
+            <li>Delegated Proof of Stake (DPoS)</li>
+        </ul>
+
+        <h2>6. Smart Contracts</h2>
+
+        <p>
+            Smart contracts are programs stored on a blockchain
+            that automatically execute predefined rules when
+            specified conditions are satisfied.
+        </p>
+
+        <h2>7. Cryptocurrency</h2>
+
+        <p>
+            Blockchain technology can be used to support digital
+            currencies and record transactions without relying
+            on a single central authority.
+        </p>
+
+        <h2>8. Applications of Blockchain</h2>
+
+        <ul>
+            <li>Digital Payments</li>
+            <li>Banking</li>
+            <li>Supply Chain Management</li>
+            <li>Healthcare</li>
+            <li>Digital Identity</li>
+            <li>Smart Contracts</li>
+            <li>Voting Systems</li>
+        </ul>
+
+        <h2>9. Advantages of Blockchain</h2>
+
+        <ul>
+            <li>Improved transparency</li>
+            <li>Data security</li>
+            <li>Reduced dependence on intermediaries</li>
+            <li>Better traceability</li>
+            <li>Tamper-resistant records</li>
+        </ul>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is Blockchain Technology?</li>
+            <li>Explain the features of blockchain.</li>
+            <li>Explain the structure of a blockchain block.</li>
+            <li>What is hashing?</li>
+            <li>What is a consensus mechanism?</li>
+            <li>Explain Proof of Work and Proof of Stake.</li>
+            <li>What are smart contracts?</li>
+            <li>Explain the applications of blockchain.</li>
+            <li>What are the advantages of blockchain technology?</li>
+        </ol>
+    `;
+}// ===============================
+// Semester 7 - Project Work
+// ===============================
+
+else if (noteName === "Project Work") {
+
+    title = "Project Work";
+
+    content = `
+        <h2>🎓 Project Work</h2>
+
+        <h2>1. Introduction</h2>
+
+        <p>
+            Project Work is an important part of B.Tech CSE in which
+            students apply their theoretical and practical knowledge
+            to develop a software, hardware or research-based project.
+        </p>
+
+        <h2>2. Project Selection</h2>
+
+        <p>
+            A good project should solve a real-world problem and
+            should be achievable within the available time and resources.
+        </p>
+
+        <ul>
+            <li>Identify a real-world problem</li>
+            <li>Study existing solutions</li>
+            <li>Define project objectives</li>
+            <li>Select suitable technologies</li>
+            <li>Prepare a project plan</li>
+        </ul>
+
+        <h2>3. Project Development Life Cycle</h2>
+
+        <ol>
+            <li>Problem Identification</li>
+            <li>Requirement Analysis</li>
+            <li>System Design</li>
+            <li>Implementation</li>
+            <li>Testing</li>
+            <li>Deployment</li>
+            <li>Maintenance</li>
+        </ol>
+
+        <h2>4. Requirement Analysis</h2>
+
+        <p>
+            Requirement analysis identifies what the system should do
+            and what resources are required to develop it.
+        </p>
+
+        <ul>
+            <li>Functional Requirements</li>
+            <li>Non-Functional Requirements</li>
+            <li>Hardware Requirements</li>
+            <li>Software Requirements</li>
+        </ul>
+
+        <h2>5. System Design</h2>
+
+        <p>
+            System design describes the architecture, modules,
+            database, user interface and overall working of the project.
+        </p>
+
+        <h2>6. Implementation</h2>
+
+        <p>
+            Implementation is the stage where the planned system
+            is converted into a working application using suitable
+            programming languages and technologies.
+        </p>
+
+        <h2>7. Testing</h2>
+
+        <p>
+            Testing is performed to identify errors and verify that
+            the project works according to its requirements.
+        </p>
+
+        <ul>
+            <li>Unit Testing</li>
+            <li>Integration Testing</li>
+            <li>System Testing</li>
+            <li>User Acceptance Testing</li>
+        </ul>
+
+        <h2>8. Project Documentation</h2>
+
+        <p>
+            Project documentation explains the complete project,
+            including its objectives, methodology, design,
+            implementation, testing and results.
+        </p>
+
+        <ul>
+            <li>Introduction</li>
+            <li>Problem Statement</li>
+            <li>Objectives</li>
+            <li>Literature Survey</li>
+            <li>Methodology</li>
+            <li>System Design</li>
+            <li>Implementation</li>
+            <li>Testing</li>
+            <li>Results</li>
+            <li>Conclusion</li>
+            <li>Future Scope</li>
+            <li>References</li>
+        </ul>
+
+        <h2>9. Project Presentation</h2>
+
+        <p>
+            Students should be able to explain the problem,
+            objectives, technologies, implementation, results
+            and future scope of their project during the presentation.
+        </p>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is Project Work?</li>
+            <li>How do you select a good project topic?</li>
+            <li>Explain the project development life cycle.</li>
+            <li>What is requirement analysis?</li>
+            <li>What are functional and non-functional requirements?</li>
+            <li>Explain system design.</li>
+            <li>What is project implementation?</li>
+            <li>Explain different types of software testing.</li>
+            <li>What is project documentation?</li>
+            <li>What points should be covered in a project presentation?</li>
+        </ol>
+    `;
+}// ===============================
+// Semester 8 - Major Project
+// ===============================
+
+else if (noteName === "Major Project") {
+
+    title = "Major Project";
+
+    content = `
+        <h2>🎓 Major Project</h2>
+
+        <h2>1. Introduction</h2>
+
+        <p>
+            A Major Project is a comprehensive project in which
+            students apply their programming, database, software
+            engineering and problem-solving skills to develop
+            a practical solution for a real-world problem.
+        </p>
+
+        <h2>2. Project Objectives</h2>
+
+        <ul>
+            <li>Solve a real-world problem</li>
+            <li>Apply theoretical knowledge</li>
+            <li>Develop practical programming skills</li>
+            <li>Learn software development practices</li>
+            <li>Improve problem-solving skills</li>
+        </ul>
+
+        <h2>3. Project Selection</h2>
+
+        <p>
+            A good project should have a clear problem statement,
+            defined objectives and a practical implementation plan.
+        </p>
+
+        <h2>4. Requirement Analysis</h2>
+
+        <ul>
+            <li>Functional Requirements</li>
+            <li>Non-Functional Requirements</li>
+            <li>Hardware Requirements</li>
+            <li>Software Requirements</li>
+        </ul>
+
+        <h2>5. System Design</h2>
+
+        <p>
+            System design describes the architecture, modules,
+            database structure, user interface and workflow
+            of the proposed system.
+        </p>
+
+        <h2>6. Development</h2>
+
+        <p>
+            During development, the project is implemented using
+            suitable programming languages, frameworks, databases
+            and development tools.
+        </p>
+
+        <h2>7. Testing</h2>
+
+        <ul>
+            <li>Unit Testing</li>
+            <li>Integration Testing</li>
+            <li>System Testing</li>
+            <li>Acceptance Testing</li>
+        </ul>
+
+        <h2>8. Project Documentation</h2>
+
+        <ol>
+            <li>Introduction</li>
+            <li>Problem Statement</li>
+            <li>Objectives</li>
+            <li>Literature Survey</li>
+            <li>Requirements</li>
+            <li>System Design</li>
+            <li>Implementation</li>
+            <li>Testing</li>
+            <li>Results</li>
+            <li>Conclusion</li>
+            <li>Future Scope</li>
+            <li>References</li>
+        </ol>
+
+        <h2>9. Project Presentation</h2>
+
+        <p>
+            The final presentation should explain the problem,
+            objectives, technologies used, system design,
+            implementation, results and future scope.
+        </p>
+
+        <h2>10. Future Scope</h2>
+
+        <p>
+            Future scope describes the improvements and additional
+            features that can be added to the project later.
+        </p>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is a Major Project?</li>
+            <li>How do you select a project topic?</li>
+            <li>What is a problem statement?</li>
+            <li>Explain project objectives.</li>
+            <li>What is requirement analysis?</li>
+            <li>Explain system design.</li>
+            <li>Explain different types of software testing.</li>
+            <li>What should be included in project documentation?</li>
+            <li>How should a project presentation be prepared?</li>
+            <li>What is the future scope of a project?</li>
+        </ol>
+    `;
+}// ===============================
+// Semester 8 - Project Seminar
+// ===============================
+
+else if (noteName === "Project Seminar") {
+
+    title = "Project Seminar";
+
+    content = `
+        <h2>🎤 Project Seminar</h2>
+
+        <h2>1. Introduction</h2>
+
+        <p>
+            A Project Seminar is a formal presentation in which
+            students explain their project idea, objectives,
+            methodology, implementation, results and future scope
+            to teachers, evaluators or other students.
+        </p>
+
+        <h2>2. Objectives of a Project Seminar</h2>
+
+        <ul>
+            <li>Present the project clearly</li>
+            <li>Explain the problem being solved</li>
+            <li>Describe the proposed solution</li>
+            <li>Explain technologies used</li>
+            <li>Present project results</li>
+            <li>Answer questions from evaluators</li>
+        </ul>
+
+        <h2>3. Seminar Preparation</h2>
+
+        <ol>
+            <li>Understand the project completely</li>
+            <li>Prepare the presentation</li>
+            <li>Organize important points</li>
+            <li>Practice the presentation</li>
+            <li>Prepare for questions</li>
+        </ol>
+
+        <h2>4. Presentation Structure</h2>
+
+        <ol>
+            <li>Title</li>
+            <li>Introduction</li>
+            <li>Problem Statement</li>
+            <li>Objectives</li>
+            <li>Literature Survey</li>
+            <li>Proposed Methodology</li>
+            <li>System Design</li>
+            <li>Technologies Used</li>
+            <li>Implementation</li>
+            <li>Results</li>
+            <li>Conclusion</li>
+            <li>Future Scope</li>
+            <li>References</li>
+        </ol>
+
+        <h2>5. Presentation Skills</h2>
+
+        <ul>
+            <li>Speak clearly and confidently</li>
+            <li>Maintain eye contact</li>
+            <li>Use simple language</li>
+            <li>Explain diagrams properly</li>
+            <li>Manage presentation time</li>
+            <li>Answer questions politely</li>
+        </ul>
+
+        <h2>6. Visual Aids</h2>
+
+        <p>
+            Visual aids such as diagrams, flowcharts, tables,
+            screenshots and graphs can make a technical seminar
+            easier to understand.
+        </p>
+
+        <h2>7. Question and Answer Session</h2>
+
+        <p>
+            After the presentation, evaluators may ask questions
+            about the project. Students should understand the
+            project's requirements, design, implementation and results.
+        </p>
+
+        <div class="important">
+            <b>Tip:</b><br>
+            Presentation ko sirf read mat karo. Project ko samajhkar
+            explain karo aur important questions ki practice karo.
+        </div>
+
+        <h2>8. Common Mistakes</h2>
+
+        <ul>
+            <li>Reading every slide word-for-word</li>
+            <li>Using too much text</li>
+            <li>Not explaining diagrams</li>
+            <li>Poor time management</li>
+            <li>Not preparing for questions</li>
+        </ul>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is a Project Seminar?</li>
+            <li>What are the objectives of a Project Seminar?</li>
+            <li>How should a project seminar be prepared?</li>
+            <li>Explain the structure of a project presentation.</li>
+            <li>What presentation skills are important?</li>
+            <li>What are visual aids?</li>
+            <li>How should a student handle the question-answer session?</li>
+            <li>What are common mistakes during a seminar?</li>
+            <li>How can a technical presentation be made effective?</li>
+        </ol>
+    `;
+}// ===============================
+// Semester 8 - Technical Training
+// ===============================
+
+else if (noteName === "Technical Training") {
+
+    title = "Technical Training";
+
+    content = `
+        <h2>💻 Technical Training</h2>
+
+        <h2>1. Introduction</h2>
+
+        <p>
+            Technical Training helps students develop practical
+            technical skills required for software development,
+            IT industries and professional work environments.
+        </p>
+
+        <h2>2. Objectives of Technical Training</h2>
+
+        <ul>
+            <li>Develop practical technical skills</li>
+            <li>Understand industry requirements</li>
+            <li>Improve programming skills</li>
+            <li>Learn development tools</li>
+            <li>Gain practical project experience</li>
+            <li>Improve problem-solving ability</li>
+        </ul>
+
+        <h2>3. Programming Skills</h2>
+
+        <ul>
+            <li>C Programming</li>
+            <li>C++</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>JavaScript</li>
+        </ul>
+
+        <h2>4. Web Development</h2>
+
+        <p>
+            Web development involves creating websites and web
+            applications using frontend, backend and database technologies.
+        </p>
+
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Backend Development</li>
+            <li>Database Management</li>
+        </ul>
+
+        <h2>5. Database Skills</h2>
+
+        <ul>
+            <li>SQL</li>
+            <li>Database Design</li>
+            <li>Tables and Relationships</li>
+            <li>Queries</li>
+            <li>Database Security</li>
+        </ul>
+
+        <h2>6. Software Development Tools</h2>
+
+        <ul>
+            <li>Visual Studio Code</li>
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>Command Line</li>
+            <li>Debugging Tools</li>
+        </ul>
+
+        <h2>7. Version Control</h2>
+
+        <p>
+            Version control systems help developers track changes
+            in source code and collaborate with other developers.
+        </p>
+
+        <div class="important">
+            <b>Git:</b> A distributed version control system used
+            to manage source code and track project changes.
+        </div>
+
+        <h2>8. Industry Skills</h2>
+
+        <ul>
+            <li>Problem Solving</li>
+            <li>Communication</li>
+            <li>Teamwork</li>
+            <li>Time Management</li>
+            <li>Technical Documentation</li>
+            <li>Presentation Skills</li>
+        </ul>
+
+        <h2>9. Training Report</h2>
+
+        <p>
+            A technical training report should describe the training
+            organization, objectives, technologies learned, practical
+            work performed, projects completed and overall learning.
+        </p>
+
+        <h2>10. Benefits of Technical Training</h2>
+
+        <ul>
+            <li>Improves employability</li>
+            <li>Provides practical experience</li>
+            <li>Builds confidence</li>
+            <li>Develops industry-ready skills</li>
+            <li>Helps in career preparation</li>
+        </ul>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is Technical Training?</li>
+            <li>What are the objectives of technical training?</li>
+            <li>Why are programming skills important?</li>
+            <li>Explain the basics of web development.</li>
+            <li>What database skills should a CSE student learn?</li>
+            <li>What is Git?</li>
+            <li>What is version control?</li>
+            <li>Explain important industry skills.</li>
+            <li>How should a technical training report be prepared?</li>
+            <li>What are the benefits of technical training?</li>
+        </ol>
+    `;
+}// ===============================
+// Semester 8 - Professional Elective
+// ===============================
+
+else if (noteName === "Professional Elective") {
+
+    title = "Professional Elective";
+
+    content = `
+        <h2>📚 Professional Elective</h2>
+
+        <h2>1. Introduction</h2>
+
+        <p>
+            A Professional Elective is a subject selected by students
+            according to their interests and career goals. It allows
+            students to study a specialized area of Computer Science
+            in greater depth.
+        </p>
+
+        <h2>2. Purpose of Professional Electives</h2>
+
+        <ul>
+            <li>Develop specialized technical knowledge</li>
+            <li>Explore a specific career area</li>
+            <li>Improve practical skills</li>
+            <li>Prepare for industry requirements</li>
+            <li>Support higher studies and research</li>
+        </ul>
+
+        <h2>3. Common Professional Elective Areas</h2>
+
+        <ul>
+            <li>Artificial Intelligence</li>
+            <li>Machine Learning</li>
+            <li>Cloud Computing</li>
+            <li>Cyber Security</li>
+            <li>Data Science</li>
+            <li>Internet of Things</li>
+            <li>Blockchain</li>
+            <li>Computer Vision</li>
+        </ul>
+
+        <h2>4. Elective Selection</h2>
+
+        <p>
+            Students should select an elective based on their interests,
+            existing skills, career plans and future opportunities.
+        </p>
+
+        <h2>5. Learning Process</h2>
+
+        <ol>
+            <li>Understand the subject fundamentals</li>
+            <li>Study theoretical concepts</li>
+            <li>Practice technical problems</li>
+            <li>Work on practical assignments</li>
+            <li>Develop a small project</li>
+            <li>Prepare for examinations</li>
+        </ol>
+
+        <h2>6. Career Benefits</h2>
+
+        <ul>
+            <li>Helps build specialization</li>
+            <li>Improves technical profile</li>
+            <li>Supports internship preparation</li>
+            <li>Helps in placement preparation</li>
+            <li>Provides a foundation for advanced learning</li>
+        </ul>
+
+        <h2>7. Important Points</h2>
+
+        <div class="important">
+            <b>Choose an elective according to:</b><br><br>
+            Interest + Career Goal + Skills + Future Scope
+        </div>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is a Professional Elective?</li>
+            <li>What is the purpose of professional electives?</li>
+            <li>Explain different areas of professional electives.</li>
+            <li>How should a student select an elective?</li>
+            <li>What is the learning process for an elective subject?</li>
+            <li>What are the career benefits of professional electives?</li>
+            <li>How do electives help in placement preparation?</li>
+        </ol>
+    `;
+}// ===============================
+// Semester 8 - Open Elective
+// ===============================
+
+else if (noteName === "Open Elective") {
+
+    title = "Open Elective";
+
+    content = `
+        <h2>📚 Open Elective</h2>
+
+        <h2>1. Introduction</h2>
+
+        <p>
+            An Open Elective is a subject that allows students to study
+            a topic outside their core specialization. It provides an
+            opportunity to gain knowledge in different technical,
+            management or interdisciplinary areas.
+        </p>
+
+        <h2>2. Purpose of Open Electives</h2>
+
+        <ul>
+            <li>Provide interdisciplinary knowledge</li>
+            <li>Explore subjects outside the core branch</li>
+            <li>Develop additional skills</li>
+            <li>Improve career opportunities</li>
+            <li>Understand different areas of technology and management</li>
+        </ul>
+
+        <h2>3. Common Open Elective Areas</h2>
+
+        <ul>
+            <li>Entrepreneurship</li>
+            <li>Business Management</li>
+            <li>Digital Marketing</li>
+            <li>Data Science</li>
+            <li>Artificial Intelligence</li>
+            <li>Environmental Studies</li>
+            <li>Finance and Economics</li>
+            <li>Communication Skills</li>
+        </ul>
+
+        <h2>4. Selection of Open Elective</h2>
+
+        <p>
+            Students can select an open elective according to their
+            interests, career goals and availability of subjects
+            offered by the institution.
+        </p>
+
+        <h2>5. Learning Process</h2>
+
+        <ol>
+            <li>Understand the basic concepts</li>
+            <li>Study the theoretical topics</li>
+            <li>Practice important questions</li>
+            <li>Complete assignments and practical work</li>
+            <li>Prepare notes for examination</li>
+            <li>Apply the knowledge in real-world situations</li>
+        </ol>
+
+        <h2>6. Benefits of Open Electives</h2>
+
+        <ul>
+            <li>Broadens knowledge</li>
+            <li>Develops additional skills</li>
+            <li>Improves problem-solving ability</li>
+            <li>Supports career development</li>
+            <li>Helps understand interdisciplinary concepts</li>
+        </ul>
+
+        <h2>7. Career Benefits</h2>
+
+        <p>
+            Open electives can help students develop knowledge beyond
+            their core subject and may provide additional opportunities
+            for internships, placements, entrepreneurship and higher
+            studies.
+        </p>
+
+        <h2>8. Important Points</h2>
+
+        <div class="important">
+            <b>Choose an Open Elective according to:</b><br><br>
+            Interest + Career Goal + Skill Development + Future Scope
+        </div>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is an Open Elective?</li>
+            <li>What is the purpose of an Open Elective?</li>
+            <li>Explain the benefits of Open Electives.</li>
+            <li>What are some common areas of Open Electives?</li>
+            <li>How should a student select an Open Elective?</li>
+            <li>How do Open Electives help in career development?</li>
+            <li>Explain the importance of interdisciplinary learning.</li>
+        </ol>
+    `;
+}
     // ===============================
     // Page Design
     // ===============================
@@ -2136,9 +3768,7 @@ function openStudyMaterial(type) {
                             B.Tech CSE
                         </option>
 
-                        <option value="btech-maths">
-                            B.Tech Mathematics
-                        </option>
+                        
 
                         <option value="bca">
                             BCA
@@ -2194,189 +3824,630 @@ function openStudyMaterial(type) {
 
                 <!-- B.TECH CSE -->
 
-                <div class="semester"
-                     data-course="btech-cse"
-                     data-semester="1">
+<div class="semester"
+     data-course="btech-cse"
+     data-semester="1">
 
-                    <h2>💻 B.Tech CSE — Semester 1</h2>
+    <h2>💻 B.Tech CSE — Semester 1</h2>
 
-                    <h3>Programming Fundamentals</h3>
+    <h3>📐 Engineering Mathematics-I</h3>
 
 
-                    <div class="level"
-                         data-level="basic">
+    <!-- ========================= -->
+    <!-- BASIC -->
+    <!-- ========================= -->
 
-                        <h3>🟢 Basic</h3>
+    <div class="level"
+         data-level="basic">
 
-                        <div class="qa-item">
+        <h3>🟢 Basic</h3>
 
-                            <strong>Q. What is programming?</strong>
 
-                            <div class="answer">
+        <div class="qa-item">
 
-                                <strong>Answer:</strong>
-                                Programming is the process of writing instructions
-                                that tell a computer what to do.
+            <strong>Q1. What is a matrix?</strong>
 
-                            </div>
+            <div class="answer">
 
-                        </div>
+                <strong>Answer:</strong><br>
 
+                A matrix is a rectangular arrangement of numbers,
+                symbols or expressions in rows and columns.
+                Matrices are commonly represented by capital letters
+                such as A, B or C.
 
-                        <div class="qa-item">
+            </div>
 
-                            <strong>Q. What is an algorithm?</strong>
+        </div>
 
-                            <div class="answer">
 
-                                <strong>Answer:</strong>
-                                An algorithm is a step-by-step procedure
-                                used to solve a problem.
+        <div class="qa-item">
 
-                            </div>
+            <strong>Q2. What is a determinant?</strong>
 
-                        </div>
+            <div class="answer">
 
-                    </div>
+                <strong>Answer:</strong><br>
 
+                A determinant is a scalar value associated with a
+                square matrix. It is useful for solving systems of
+                linear equations and finding whether a matrix is
+                singular or non-singular.
 
-                    <div class="level"
-                         data-level="intermediate">
+            </div>
 
-                        <h3>🟡 Intermediate</h3>
+        </div>
 
-                        <div class="qa-item">
 
-                            <strong>
-                                Q. Explain if-else statements.
-                            </strong>
+        <div class="qa-item">
 
-                            <div class="answer">
+            <strong>Q3. What is a differential equation?</strong>
 
-                                <strong>Answer:</strong>
-                                An if-else statement executes different
-                                blocks of code depending on a condition.
+            <div class="answer">
 
-                            </div>
+                <strong>Answer:</strong><br>
 
-                        </div>
+                A differential equation is an equation that contains
+                one or more derivatives of an unknown function.
+                It is used to describe relationships involving
+                changing quantities.
 
-                    </div>
+            </div>
 
+        </div>
 
-                    <div class="level"
-                         data-level="advanced">
 
-                        <h3>🔴 Advanced</h3>
+        <div class="qa-item">
 
-                        <div class="qa-item">
+            <strong>Q4. What is differentiation?</strong>
 
-                            <strong>
-                                Q. Explain pointers in C.
-                            </strong>
+            <div class="answer">
 
-                            <div class="answer">
+                <strong>Answer:</strong><br>
 
-                                <strong>Answer:</strong>
-                                A pointer is a variable that stores
-                                the memory address of another variable.
+                Differentiation is the process of finding the rate
+                of change of a function with respect to its variable.
+                The derivative of f(x) is commonly written as f'(x).
 
-                            </div>
+            </div>
 
-                        </div>
+        </div>
 
-                    </div>
 
-                </div>
+        <div class="qa-item">
 
+            <strong>Q5. What is integration?</strong>
 
-                <!-- B.TECH MATHEMATICS -->
+            <div class="answer">
 
-                <div class="semester"
-                     data-course="btech-maths"
-                     data-semester="1">
+                <strong>Answer:</strong><br>
 
-                    <h2>🧮 B.Tech Mathematics — Semester 1</h2>
+                Integration is the process of finding the integral
+                of a function. It is commonly used to find areas,
+                accumulated quantities and antiderivatives.
 
-                    <h3>Engineering Mathematics I</h3>
+            </div>
 
+        </div>
 
-                    <div class="level"
-                         data-level="basic">
 
-                        <h3>🟢 Basic</h3>
+        <div class="qa-item">
 
-                        <div class="qa-item">
+            <strong>Q6. What is a limit?</strong>
 
-                            <strong>
-                                Q. What is a matrix?
-                            </strong>
+            <div class="answer">
 
-                            <div class="answer">
+                <strong>Answer:</strong><br>
 
-                                <strong>Answer:</strong>
-                                A matrix is a rectangular arrangement
-                                of numbers in rows and columns.
+                A limit describes the value that a function approaches
+                as its independent variable approaches a particular value.
 
-                            </div>
+            </div>
 
-                        </div>
+        </div>
 
-                    </div>
 
+        <div class="qa-item">
 
-                    <div class="level"
-                         data-level="intermediate">
+            <strong>Q7. What is a vector?</strong>
 
-                        <h3>🟡 Intermediate</h3>
+            <div class="answer">
 
-                        <div class="qa-item">
+                <strong>Answer:</strong><br>
 
-                            <strong>
-                                Q. Explain determinants.
-                            </strong>
+                A vector is a quantity that has both magnitude and
+                direction. Vectors are represented using components
+                such as i, j and k.
 
-                            <div class="answer">
+            </div>
 
-                                <strong>Answer:</strong>
-                                A determinant is a scalar value calculated
-                                from a square matrix.
+        </div>
 
-                            </div>
 
-                        </div>
+        <div class="qa-item">
 
-                    </div>
+            <strong>Q8. What is a partial derivative?</strong>
 
+            <div class="answer">
 
-                    <div class="level"
-                         data-level="advanced">
+                <strong>Answer:</strong><br>
 
-                        <h3>🔴 Advanced</h3>
+                A partial derivative is the derivative of a function
+                of several variables with respect to one variable,
+                while keeping the other variables constant.
 
-                        <div class="qa-item">
+            </div>
 
-                            <strong>
-                                Q. Explain eigenvalues and eigenvectors.
-                            </strong>
+        </div>
 
-                            <div class="answer">
+    </div>
 
-                                <strong>Answer:</strong>
-                                Eigenvalues and eigenvectors are important
-                                concepts used in matrix transformations
-                                and linear algebra.
 
-                            </div>
+    <!-- ========================= -->
+    <!-- INTERMEDIATE -->
+    <!-- ========================= -->
 
-                        </div>
+    <div class="level"
+         data-level="intermediate">
 
-                    </div>
+        <h3>🟡 Intermediate</h3>
 
-                </div>
 
+        <div class="qa-item">
 
-                <!-- BCA -->
+            <strong>Q1. Explain the types of matrices.</strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                Common types of matrices include row matrix,
+                column matrix, square matrix, diagonal matrix,
+                identity matrix, zero matrix and symmetric matrix.
+                Each type is classified according to the arrangement
+                of its elements.
+
+            </div>
+
+        </div>
+
+
+        <div class="qa-item">
+
+            <strong>Q2. Explain the properties of determinants.</strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                Important properties of determinants include:
+
+                <ul>
+                    <li>Interchanging two rows changes the sign of the determinant.</li>
+                    <li>If two rows are identical, the determinant is zero.</li>
+                    <li>Multiplying a row by a constant multiplies the determinant by that constant.</li>
+                    <li>The determinant of an identity matrix is 1.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="qa-item">
+
+            <strong>Q3. Explain the chain rule of differentiation.</strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                The chain rule is used to differentiate a composite
+                function. If y = f(g(x)), then:
+
+                <br><br>
+
+                <strong>dy/dx = f'(g(x)) × g'(x)</strong>
+
+                <br><br>
+
+                It is useful when one function is dependent on another
+                function.
+
+            </div>
+
+        </div>
+
+
+        <div class="qa-item">
+
+            <strong>Q4. Explain the product rule of differentiation.</strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                If y is the product of two functions u and v, then:
+
+                <br><br>
+
+                <strong>d(uv)/dx = u(dv/dx) + v(du/dx)</strong>
+
+                <br><br>
+
+                This rule is used when two differentiable functions
+                are multiplied together.
+
+            </div>
+
+        </div>
+
+
+        <div class="qa-item">
+
+            <strong>Q5. Explain the fundamental theorem of calculus.</strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                The fundamental theorem of calculus establishes the
+                relationship between differentiation and integration.
+                It states that integration and differentiation are
+                inverse processes under suitable continuity conditions.
+
+            </div>
+
+        </div>
+
+
+        <div class="qa-item">
+
+            <strong>Q6. What are eigenvalues and eigenvectors?</strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                For a square matrix A, a non-zero vector X is an
+                eigenvector if:
+
+                <br><br>
+
+                <strong>AX = λX</strong>
+
+                <br><br>
+
+                where λ is called the eigenvalue corresponding to X.
+                Eigenvalues and eigenvectors are important in linear
+                algebra and many engineering applications.
+
+            </div>
+
+        </div>
+
+
+        <div class="qa-item">
+
+            <strong>Q7. Explain the gradient of a scalar function.</strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                The gradient of a scalar function gives the direction
+                of maximum rate of increase of the function.
+
+                <br><br>
+
+                For a function φ(x,y,z):
+
+                <br><br>
+
+                <strong>∇φ =
+                (∂φ/∂x)i +
+                (∂φ/∂y)j +
+                (∂φ/∂z)k</strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="qa-item">
+
+            <strong>Q8. Explain the order and degree of a differential equation.</strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                The order of a differential equation is the order
+                of the highest derivative present in the equation.
+
+                <br><br>
+
+                The degree is the power of the highest order derivative
+                when the equation is expressed as a polynomial in
+                derivatives.
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- ADVANCED -->
+    <!-- ========================= -->
+
+    <div class="level"
+         data-level="advanced">
+
+        <h3>🔴 Advanced</h3>
+
+
+        <div class="qa-item">
+
+            <strong>
+                Q1. Explain how a system of linear equations can be
+                solved using the Gauss elimination method.
+            </strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                Gauss elimination converts a system of linear equations
+                into an upper triangular form using elementary row
+                operations.
+
+                <br><br>
+
+                The general steps are:
+
+                <ol>
+                    <li>Write the equations in augmented matrix form.</li>
+                    <li>Use elementary row operations to eliminate variables.</li>
+                    <li>Convert the matrix into upper triangular form.</li>
+                    <li>Use back substitution to find the unknown variables.</li>
+                </ol>
+
+                This method is widely used for solving simultaneous
+                linear equations.
+
+            </div>
+
+        </div>
+
+
+        <div class="qa-item">
+
+            <strong>
+                Q2. Explain the method of finding eigenvalues of a matrix.
+            </strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                Eigenvalues of a square matrix A are obtained from the
+                characteristic equation:
+
+                <br><br>
+
+                <strong>|A - λI| = 0</strong>
+
+                <br><br>
+
+                where I is the identity matrix and λ represents the
+                eigenvalue.
+
+                <br><br>
+
+                Solving the characteristic equation gives the eigenvalues
+                of the matrix.
+
+            </div>
+
+        </div>
+
+
+        <div class="qa-item">
+
+            <strong>
+                Q3. Explain Taylor's theorem and its importance.
+            </strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                Taylor's theorem represents a sufficiently differentiable
+                function as a polynomial expansion around a point.
+
+                <br><br>
+
+                The expansion is:
+
+                <br><br>
+
+                <strong>
+                f(x) = f(a) + (x-a)f'(a)
+                + ((x-a)²/2!)f''(a) + ...
+                </strong>
+
+                <br><br>
+
+                It is useful for approximation, numerical calculations
+                and analysis of functions.
+
+            </div>
+
+        </div>
+
+
+        <div class="qa-item">
+
+            <strong>
+                Q4. Explain partial differential equations and their applications.
+            </strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                A partial differential equation contains partial
+                derivatives of an unknown function with respect to
+                multiple independent variables.
+
+                <br><br>
+
+                PDEs are used in engineering and science to model
+                heat transfer, fluid flow, wave propagation,
+                electromagnetic fields and other physical systems.
+
+            </div>
+
+        </div>
+
+
+        <div class="qa-item">
+
+            <strong>
+                Q5. Explain the divergence and curl of a vector field.
+            </strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                The divergence of a vector field measures the net
+                outward flow from a point.
+
+                <br><br>
+
+                For vector field F:
+
+                <br><br>
+
+                <strong>div F = ∇ · F</strong>
+
+                <br><br>
+
+                Curl measures the rotational tendency of a vector field:
+
+                <br><br>
+
+                <strong>curl F = ∇ × F</strong>
+
+                <br><br>
+
+                Both concepts are important in vector calculus and
+                engineering applications.
+
+            </div>
+
+        </div>
+
+
+        <div class="qa-item">
+
+            <strong>
+                Q6. Explain the solution of a first-order differential equation.
+            </strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                A first-order differential equation contains the first
+                derivative of the unknown function.
+
+                <br><br>
+
+                Depending on its form, it may be solved using methods
+                such as separation of variables, integrating factor,
+                homogeneous equations or exact differential equations.
+
+                <br><br>
+
+                The final solution generally contains an arbitrary
+                constant.
+
+            </div>
+
+        </div>
+
+
+        <div class="qa-item">
+
+            <strong>
+                Q7. Explain multiple integration and its applications.
+            </strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                Multiple integration involves integrating a function
+                with respect to two or more variables.
+
+                <br><br>
+
+                Double and triple integrals are used to calculate
+                quantities such as area, volume, mass and other
+                physical quantities over a region.
+
+            </div>
+
+        </div>
+
+
+        <div class="qa-item">
+
+            <strong>
+                Q8. Explain the importance of Engineering Mathematics
+                in Computer Science.
+            </strong>
+
+            <div class="answer">
+
+                <strong>Answer:</strong><br>
+
+                Engineering Mathematics provides the mathematical
+                foundation required in Computer Science.
+
+                <br><br>
+
+                Concepts such as matrices, calculus, differential
+                equations, probability and vectors are useful in:
+
+                <ul>
+                    <li>Machine Learning</li>
+                    <li>Artificial Intelligence</li>
+                    <li>Computer Graphics</li>
+                    <li>Data Science</li>
+                    <li>Computer Vision</li>
+                    <li>Algorithm analysis</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- BCA -->
+
+
+
 
                 <div class="semester"
                      data-course="bca"
@@ -2646,7 +4717,9 @@ function openStudyMaterial(type) {
 
     questionsWindow.document.close();
 
-}// ===============================
+}
+
+// ===============================
 // Course Semester System
 // ===============================
 
@@ -2655,13 +4728,26 @@ function showSemesters(course) {
     const semesterArea = document.getElementById("semesterArea");
     const subjectArea = document.getElementById("subjectArea");
 
+    // Purane subjects clear karo
     subjectArea.innerHTML = "";
 
+    // Course Names
     const courseNames = {
         "btech-cse": "💻 B.Tech CSE",
+       
         "bca": "🖥️ BCA",
         "bba": "📊 BBA"
     };
+
+    // Agar course valid nahi hai
+    if (!courseNames[course]) {
+        semesterArea.innerHTML = `
+            <div class="resource-card">
+                <h3>Course Not Found</h3>
+            </div>
+        `;
+        return;
+    }
 
     let html = `
         <h2>${courseNames[course]} — Select Semester</h2>
@@ -2669,10 +4755,12 @@ function showSemesters(course) {
         <div class="resource-grid">
     `;
 
+    // 8 Semesters
     for (let i = 1; i <= 8; i++) {
 
         html += `
             <div class="resource-card">
+
                 <h3>Semester ${i}</h3>
 
                 <p>
@@ -2682,18 +4770,24 @@ function showSemesters(course) {
                 <button onclick="showSubjects('${course}', ${i})">
                     View Subjects
                 </button>
+
             </div>
         `;
     }
 
-    html += `</div>`;
+    html += `
+        </div>
+    `;
 
     semesterArea.innerHTML = html;
 
     semesterArea.scrollIntoView({
         behavior: "smooth"
     });
-}// ===============================
+}
+
+
+// ===============================
 // Show Subjects
 // ===============================
 
@@ -2701,7 +4795,15 @@ function showSubjects(course, semester) {
 
     const subjectArea = document.getElementById("subjectArea");
 
+    // ===============================
+    // SUBJECT LIST
+    // ===============================
+
     const subjects = {
+
+        // ===========================
+        // B.TECH CSE
+        // ===========================
 
         "btech-cse": {
 
@@ -2771,6 +4873,11 @@ function showSubjects(course, semester) {
 
         },
 
+
+        // ===========================
+        // BCA
+        // ===========================
+
         "bca": {
 
             1: [
@@ -2787,9 +4894,46 @@ function showSubjects(course, semester) {
                 "Object Oriented Programming",
                 "Computer Organization",
                 "Mathematics-II"
+            ],
+
+            3: [
+                "Operating System",
+                "Computer Networks",
+                "Web Development",
+                "Python Programming",
+                "Software Engineering"
+            ],
+
+            4: [
+                "Java Programming",
+                "Advanced Database Management",
+                "Computer Graphics",
+                "Data Communication",
+                "System Analysis and Design"
+            ],
+
+            5: [
+                "Artificial Intelligence",
+                "Machine Learning",
+                "Cloud Computing",
+                "Cyber Security",
+                "Data Analytics"
+            ],
+
+            6: [
+                "Big Data",
+                "Mobile Application Development",
+                "Internet of Things",
+                "Project Work",
+                "Professional Elective"
             ]
 
         },
+
+
+        // ===========================
+        // BBA
+        // ===========================
 
         "bba": {
 
@@ -2807,11 +4951,51 @@ function showSubjects(course, semester) {
                 "Business Statistics",
                 "Organizational Behaviour",
                 "Business Environment"
+            ],
+
+            3: [
+                "Financial Management",
+                "Production Management",
+                "Business Law",
+                "Research Methodology",
+                "Management Information System"
+            ],
+
+            4: [
+                "Consumer Behaviour",
+                "Operations Management",
+                "Entrepreneurship",
+                "Cost Accounting",
+                "Business Research"
+            ],
+
+            5: [
+                "Strategic Management",
+                "International Business",
+                "Project Management",
+                "Investment Management",
+                "Business Analytics"
+            ],
+
+            6: [
+                "Business Ethics",
+                "Digital Marketing",
+                "Corporate Governance",
+                "Entrepreneurship Development",
+                "Final Project"
             ]
 
-        }
+        },
+
+
+        
 
     };
+
+
+    // ===============================
+    // CHECK COURSE + SEMESTER
+    // ===============================
 
     const courseSubjects = subjects[course];
 
@@ -2819,21 +5003,34 @@ function showSubjects(course, semester) {
 
         subjectArea.innerHTML = `
             <div class="resource-card">
+
                 <h3>📚 Subjects Coming Soon</h3>
+
                 <p>
                     Is semester ke subjects abhi add nahi kiye gaye hain.
                 </p>
+
             </div>
         `;
 
+        subjectArea.scrollIntoView({
+            behavior: "smooth"
+        });
+
         return;
     }
+
+
+    // ===============================
+    // SUBJECT HTML
+    // ===============================
 
     let html = `
         <h2>📚 Semester ${semester} — Subjects</h2>
 
         <div class="resource-grid">
     `;
+
 
     courseSubjects[semester].forEach(function(subject) {
 
@@ -2846,7 +5043,7 @@ function showSubjects(course, semester) {
                     ${course.toUpperCase()} • Semester ${semester}
                 </p>
 
-                <button onclick="openNote('${subject}')">
+                <button onclick="openNote('${subject.replace(/'/g, "\\'")}')">
                     Open Notes
                 </button>
 
@@ -2855,13 +5052,20 @@ function showSubjects(course, semester) {
 
     });
 
+
     html += `
         </div>
-    `;
+    
+ `;
+
+    // ===============================
+    // SHOW SUBJECTS
+    // ===============================
 
     subjectArea.innerHTML = html;
 
     subjectArea.scrollIntoView({
         behavior: "smooth"
     });
+
 }
