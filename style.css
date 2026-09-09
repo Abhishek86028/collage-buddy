@@ -305,4 +305,19 @@ footer p {
         margin-left: auto;
         margin-right: auto;
     }
+}.pdf-download-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.pdf-download-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
 }

@@ -6584,1079 +6584,624 @@ function openStudyMaterial(type) {
 
     const questionsWindow = window.open("", "_blank");
 
+    if (!questionsWindow) {
+        alert("Please allow popup for this website.");
+        return;
+    }
+
     questionsWindow.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>CollegeBuddy - Important Questions</title>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+header {
+    background: #4169e1;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.filters {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+select {
+    padding: 12px 18px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.course {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.subject {
+    background: #eef3ff;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+.level {
+    background: white;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 8px;
+}
+
+.qa-item {
+    background: #fafafa;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.answer {
+    background: #f5f7fb;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 6px;
+    line-height: 1.6;
+}
+
+.pdf-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #4169e1;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>📝 CollegeBuddy</h1>
+<p>Important Questions</p>
+<p>Course • Semester • Subject</p>
 
-            <title>CollegeBuddy - Important Questions</title>
+</header>
 
-            <style>
+<div class="container">
 
-                body {
-                    font-family: Arial, sans-serif;
-                    margin: 0;
-                    background: #f5f7fb;
-                    color: #172033;
-                }
+<button onclick="window.print()" class="pdf-button">
+📥 Download / Print Questions
+</button>
 
-                header {
-                    background: #4169e1;
-                    color: white;
-                    padding: 30px;
-                    text-align: center;
-                }
+<div class="filters">
 
-                .container {
-                    max-width: 1000px;
-                    margin: 30px auto;
-                    padding: 20px;
-                }
+<select id="courseSelect" onchange="filterQuestions()">
 
-                .filters {
-                    background: white;
-                    padding: 20px;
-                    border-radius: 12px;
-                    margin-bottom: 25px;
-                    text-align: center;
-                }
+<option value="all">All Courses</option>
+<option value="btech-cse">B.Tech CSE</option>
+<option value="bca">BCA</option>
+<option value="bba">BBA</option>
 
-                select {
-                    padding: 12px 18px;
-                    margin: 5px;
-                    border: 1px solid #ccc;
-                    border-radius: 8px;
-                    font-size: 15px;
-                }
+</select>
 
-                .semester {
-                    background: white;
-                    padding: 25px;
-                    margin-bottom: 25px;
-                    border-radius: 12px;
-                    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-                }
+<select id="semesterSelect" onchange="filterQuestions()">
 
-                .level {
-                    background: #eef3ff;
-                    padding: 15px;
-                    margin-top: 15px;
-                    border-radius: 8px;
-                }
+<option value="all">All Semesters</option>
+<option value="1">Semester 1</option>
+<option value="2">Semester 2</option>
+<option value="3">Semester 3</option>
+<option value="4">Semester 4</option>
+<option value="5">Semester 5</option>
+<option value="6">Semester 6</option>
+<option value="7">Semester 7</option>
+<option value="8">Semester 8</option>
 
-                .qa-item {
-                    background: white;
-                    padding: 14px;
-                    margin: 12px 0;
-                    border-radius: 8px;
-                    border: 1px solid #e5e7eb;
-                }
+</select>
 
-                .answer {
-                    background: #f5f7fb;
-                    padding: 10px;
-                    margin-top: 8px;
-                    border-radius: 6px;
-                    line-height: 1.6;
-                }
+<select id="levelSelect" onchange="filterQuestions()">
 
-                .pdf-button {
-                    padding: 12px 20px;
-                    border: none;
-                    border-radius: 8px;
-                    background: #4169e1;
-                    color: white;
-                    font-size: 15px;
-                    cursor: pointer;
-                    margin-bottom: 20px;
-                }
+<option value="all">All Levels</option>
+<option value="basic">🟢 Basic</option>
+<option value="intermediate">🟡 Intermediate</option>
+<option value="advanced">🔴 Advanced</option>
 
-            </style>
-
-        </head>
-
-        <body>
-
-            <header>
-
-                <h1>📝 CollegeBuddy</h1>
-
-                <p>Important Questions</p>
-
-                <p>Course • Semester • Subject</p>
-
-            </header>
-
-
-            <div class="container">
-
-                <button onclick="downloadPDF()" class="pdf-button">
-                    📥 Download PDF
-                </button>
-
-
-                <div class="filters">
-
-                    <select id="courseSelect" onchange="filterQuestions()">
-
-                        <option value="all">
-                            All Courses
-                        </option>
-
-                        <option value="btech-cse">
-                            B.Tech CSE
-                        </option>
-
-                        
-
-                        <option value="bca">
-                            BCA
-                        </option>
-
-                        <option value="bba">
-                            BBA
-                        </option>
-
-                    </select>
-
-
-                    <select id="semesterSelect" onchange="filterQuestions()">
-
-                        <option value="all">
-                            All Semesters
-                        </option>
-
-                        <option value="1">Semester 1</option>
-                        <option value="2">Semester 2</option>
-                        <option value="3">Semester 3</option>
-                        <option value="4">Semester 4</option>
-                        <option value="5">Semester 5</option>
-                        <option value="6">Semester 6</option>
-                        <option value="7">Semester 7</option>
-                        <option value="8">Semester 8</option>
-
-                    </select>
-
-
-                    <select id="levelSelect" onchange="filterQuestions()">
-
-                        <option value="all">
-                            All Levels
-                        </option>
-
-                        <option value="basic">
-                            🟢 Basic
-                        </option>
-
-                        <option value="intermediate">
-                            🟡 Intermediate
-                        </option>
-
-                        <option value="advanced">
-                            🔴 Advanced
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- B.TECH CSE -->
-
-<div class="semester"
-     data-course="btech-cse"
-     data-semester="1">
-
-    <h2>💻 B.Tech CSE — Semester 1</h2>
-
-    <h3>📐 Engineering Mathematics-I</h3>
-
-
-    <!-- ========================= -->
-    <!-- BASIC -->
-    <!-- ========================= -->
-
-    <div class="level"
-         data-level="basic">
-
-        <h3>🟢 Basic</h3>
-
-
-        <div class="qa-item">
-
-            <strong>Q1. What is a matrix?</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                A matrix is a rectangular arrangement of numbers,
-                symbols or expressions in rows and columns.
-                Matrices are commonly represented by capital letters
-                such as A, B or C.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>Q2. What is a determinant?</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                A determinant is a scalar value associated with a
-                square matrix. It is useful for solving systems of
-                linear equations and finding whether a matrix is
-                singular or non-singular.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>Q3. What is a differential equation?</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                A differential equation is an equation that contains
-                one or more derivatives of an unknown function.
-                It is used to describe relationships involving
-                changing quantities.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>Q4. What is differentiation?</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                Differentiation is the process of finding the rate
-                of change of a function with respect to its variable.
-                The derivative of f(x) is commonly written as f'(x).
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>Q5. What is integration?</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                Integration is the process of finding the integral
-                of a function. It is commonly used to find areas,
-                accumulated quantities and antiderivatives.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>Q6. What is a limit?</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                A limit describes the value that a function approaches
-                as its independent variable approaches a particular value.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>Q7. What is a vector?</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                A vector is a quantity that has both magnitude and
-                direction. Vectors are represented using components
-                such as i, j and k.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>Q8. What is a partial derivative?</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                A partial derivative is the derivative of a function
-                of several variables with respect to one variable,
-                while keeping the other variables constant.
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- ========================= -->
-    <!-- INTERMEDIATE -->
-    <!-- ========================= -->
-
-    <div class="level"
-         data-level="intermediate">
-
-        <h3>🟡 Intermediate</h3>
-
-
-        <div class="qa-item">
-
-            <strong>Q1. Explain the types of matrices.</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                Common types of matrices include row matrix,
-                column matrix, square matrix, diagonal matrix,
-                identity matrix, zero matrix and symmetric matrix.
-                Each type is classified according to the arrangement
-                of its elements.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>Q2. Explain the properties of determinants.</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                Important properties of determinants include:
-
-                <ul>
-                    <li>Interchanging two rows changes the sign of the determinant.</li>
-                    <li>If two rows are identical, the determinant is zero.</li>
-                    <li>Multiplying a row by a constant multiplies the determinant by that constant.</li>
-                    <li>The determinant of an identity matrix is 1.</li>
-                </ul>
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>Q3. Explain the chain rule of differentiation.</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                The chain rule is used to differentiate a composite
-                function. If y = f(g(x)), then:
-
-                <br><br>
-
-                <strong>dy/dx = f'(g(x)) × g'(x)</strong>
-
-                <br><br>
-
-                It is useful when one function is dependent on another
-                function.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>Q4. Explain the product rule of differentiation.</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                If y is the product of two functions u and v, then:
-
-                <br><br>
-
-                <strong>d(uv)/dx = u(dv/dx) + v(du/dx)</strong>
-
-                <br><br>
-
-                This rule is used when two differentiable functions
-                are multiplied together.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>Q5. Explain the fundamental theorem of calculus.</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                The fundamental theorem of calculus establishes the
-                relationship between differentiation and integration.
-                It states that integration and differentiation are
-                inverse processes under suitable continuity conditions.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>Q6. What are eigenvalues and eigenvectors?</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                For a square matrix A, a non-zero vector X is an
-                eigenvector if:
-
-                <br><br>
-
-                <strong>AX = λX</strong>
-
-                <br><br>
-
-                where λ is called the eigenvalue corresponding to X.
-                Eigenvalues and eigenvectors are important in linear
-                algebra and many engineering applications.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>Q7. Explain the gradient of a scalar function.</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                The gradient of a scalar function gives the direction
-                of maximum rate of increase of the function.
-
-                <br><br>
-
-                For a function φ(x,y,z):
-
-                <br><br>
-
-                <strong>∇φ =
-                (∂φ/∂x)i +
-                (∂φ/∂y)j +
-                (∂φ/∂z)k</strong>
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>Q8. Explain the order and degree of a differential equation.</strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                The order of a differential equation is the order
-                of the highest derivative present in the equation.
-
-                <br><br>
-
-                The degree is the power of the highest order derivative
-                when the equation is expressed as a polynomial in
-                derivatives.
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- ========================= -->
-    <!-- ADVANCED -->
-    <!-- ========================= -->
-
-    <div class="level"
-         data-level="advanced">
-
-        <h3>🔴 Advanced</h3>
-
-
-        <div class="qa-item">
-
-            <strong>
-                Q1. Explain how a system of linear equations can be
-                solved using the Gauss elimination method.
-            </strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                Gauss elimination converts a system of linear equations
-                into an upper triangular form using elementary row
-                operations.
-
-                <br><br>
-
-                The general steps are:
-
-                <ol>
-                    <li>Write the equations in augmented matrix form.</li>
-                    <li>Use elementary row operations to eliminate variables.</li>
-                    <li>Convert the matrix into upper triangular form.</li>
-                    <li>Use back substitution to find the unknown variables.</li>
-                </ol>
-
-                This method is widely used for solving simultaneous
-                linear equations.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>
-                Q2. Explain the method of finding eigenvalues of a matrix.
-            </strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                Eigenvalues of a square matrix A are obtained from the
-                characteristic equation:
-
-                <br><br>
-
-                <strong>|A - λI| = 0</strong>
-
-                <br><br>
-
-                where I is the identity matrix and λ represents the
-                eigenvalue.
-
-                <br><br>
-
-                Solving the characteristic equation gives the eigenvalues
-                of the matrix.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>
-                Q3. Explain Taylor's theorem and its importance.
-            </strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                Taylor's theorem represents a sufficiently differentiable
-                function as a polynomial expansion around a point.
-
-                <br><br>
-
-                The expansion is:
-
-                <br><br>
-
-                <strong>
-                f(x) = f(a) + (x-a)f'(a)
-                + ((x-a)²/2!)f''(a) + ...
-                </strong>
-
-                <br><br>
-
-                It is useful for approximation, numerical calculations
-                and analysis of functions.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>
-                Q4. Explain partial differential equations and their applications.
-            </strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                A partial differential equation contains partial
-                derivatives of an unknown function with respect to
-                multiple independent variables.
-
-                <br><br>
-
-                PDEs are used in engineering and science to model
-                heat transfer, fluid flow, wave propagation,
-                electromagnetic fields and other physical systems.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>
-                Q5. Explain the divergence and curl of a vector field.
-            </strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                The divergence of a vector field measures the net
-                outward flow from a point.
-
-                <br><br>
-
-                For vector field F:
-
-                <br><br>
-
-                <strong>div F = ∇ · F</strong>
-
-                <br><br>
-
-                Curl measures the rotational tendency of a vector field:
-
-                <br><br>
-
-                <strong>curl F = ∇ × F</strong>
-
-                <br><br>
-
-                Both concepts are important in vector calculus and
-                engineering applications.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>
-                Q6. Explain the solution of a first-order differential equation.
-            </strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                A first-order differential equation contains the first
-                derivative of the unknown function.
-
-                <br><br>
-
-                Depending on its form, it may be solved using methods
-                such as separation of variables, integrating factor,
-                homogeneous equations or exact differential equations.
-
-                <br><br>
-
-                The final solution generally contains an arbitrary
-                constant.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>
-                Q7. Explain multiple integration and its applications.
-            </strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                Multiple integration involves integrating a function
-                with respect to two or more variables.
-
-                <br><br>
-
-                Double and triple integrals are used to calculate
-                quantities such as area, volume, mass and other
-                physical quantities over a region.
-
-            </div>
-
-        </div>
-
-
-        <div class="qa-item">
-
-            <strong>
-                Q8. Explain the importance of Engineering Mathematics
-                in Computer Science.
-            </strong>
-
-            <div class="answer">
-
-                <strong>Answer:</strong><br>
-
-                Engineering Mathematics provides the mathematical
-                foundation required in Computer Science.
-
-                <br><br>
-
-                Concepts such as matrices, calculus, differential
-                equations, probability and vectors are useful in:
-
-                <ul>
-                    <li>Machine Learning</li>
-                    <li>Artificial Intelligence</li>
-                    <li>Computer Graphics</li>
-                    <li>Data Science</li>
-                    <li>Computer Vision</li>
-                    <li>Algorithm analysis</li>
-                </ul>
-
-            </div>
-
-        </div>
-
-    </div>
+</select>
 
 </div>
 
+<div id="questionsContainer"></div>
+
+</div>
+
+<script>
+
+const subjects = {
+
+    "btech-cse": {
+
+        1: [
+            "Engineering Mathematics-I",
+            "Programming for Problem Solving",
+            "Engineering Physics",
+            "Engineering Chemistry",
+            "Basic Electrical Engineering"
+        ],
+
+        2: [
+            "Engineering Mathematics-II",
+            "Data Structures",
+            "Digital Logic Design",
+            "Object Oriented Programming",
+            "Computer Organization"
+        ],
+
+        3: [
+            "Discrete Mathematics",
+            "Database Management System",
+            "Operating System",
+            "Computer Networks",
+            "Software Engineering"
+        ],
+
+        4: [
+            "Design and Analysis of Algorithms",
+            "Web Technology",
+            "Theory of Computation",
+            "Microprocessor",
+            "Artificial Intelligence"
+        ],
+
+        5: [
+            "Compiler Design",
+            "Machine Learning",
+            "Computer Graphics",
+            "Cloud Computing",
+            "Information Security"
+        ],
+
+        6: [
+            "Artificial Intelligence",
+            "Internet of Things",
+            "Big Data",
+            "Mobile Application Development",
+            "Distributed Systems"
+        ],
+
+        7: [
+            "Deep Learning",
+            "Cyber Security",
+            "Data Mining",
+            "Blockchain Technology",
+            "Project Work"
+        ],
+
+        8: [
+            "Major Project",
+            "Project Seminar",
+            "Technical Training",
+            "Professional Elective",
+            "Open Elective"
+        ]
+
+    },
+
+    "bca": {
+
+        1: [
+            "Computer Fundamentals",
+            "Programming in C",
+            "Mathematics",
+            "Digital Electronics",
+            "Communication Skills"
+        ],
+
+        2: [
+            "Data Structures",
+            "Database Management System",
+            "Object Oriented Programming",
+            "Computer Organization",
+            "Mathematics-II"
+        ],
+
+        3: [
+            "Operating System",
+            "Computer Networks",
+            "Web Development",
+            "Python Programming",
+            "Software Engineering"
+        ],
+
+        4: [
+            "Java Programming",
+            "Advanced Database Management",
+            "Computer Graphics",
+            "Data Communication",
+            "System Analysis and Design"
+        ],
+
+        5: [
+            "Artificial Intelligence",
+            "Machine Learning",
+            "Cloud Computing",
+            "Cyber Security",
+            "Data Analytics"
+        ],
+
+        6: [
+            "Big Data",
+            "Mobile Application Development",
+            "Internet of Things",
+            "Project Work",
+            "Professional Elective"
+        ]
+
+    },
+
+    "bba": {
+
+        1: [
+            "Principles of Management",
+            "Business Economics",
+            "Financial Accounting",
+            "Business Communication",
+            "Business Mathematics"
+        ],
+
+        2: [
+            "Marketing Management",
+            "Human Resource Management",
+            "Business Statistics",
+            "Organizational Behaviour",
+            "Business Environment"
+        ],
 
+        3: [
+            "Financial Management",
+            "Production Management",
+            "Business Law",
+            "Research Methodology",
+            "Management Information System"
+        ],
 
+        4: [
+            "Consumer Behaviour",
+            "Operations Management",
+            "Entrepreneurship",
+            "Cost Accounting",
+            "Business Research"
+        ],
 
-<!-- BCA -->
+        5: [
+            "Strategic Management",
+            "International Business",
+            "Project Management",
+            "Investment Management",
+            "Business Analytics"
+        ],
+
+        6: [
+            "Business Ethics",
+            "Digital Marketing",
+            "Corporate Governance",
+            "Entrepreneurship Development",
+            "Final Project"
+        ]
+
+    }
+
+};
+
+
+function getQuestions(subject) {
+
+    return {
+
+        basic: [
+            "What is " + subject + "?",
+            "Define " + subject + ".",
+            "What are the basic concepts of " + subject + "?"
+        ],
 
+        intermediate: [
+            "Explain the important concepts of " + subject + ".",
+            "Explain the applications of " + subject + ".",
+            "What are the advantages and limitations of " + subject + "?"
+        ],
+
+        advanced: [
+            "Explain " + subject + " in detail with suitable examples.",
+            "Discuss the important problems and solutions related to " + subject + ".",
+            "Explain the practical applications of " + subject + "."
+        ]
+
+    };
+
+}
+
+
+function showQuestions() {
+
+    const container =
+        document.getElementById("questionsContainer");
+
+    container.innerHTML = "";
+
+    Object.keys(subjects).forEach(function(course) {
+
+        Object.keys(subjects[course]).forEach(function(semester) {
+
+            subjects[course][semester].forEach(function(subject) {
+
+                const questions = getQuestions(subject);
+
+                const html = document.createElement("div");
+
+                html.className = "course";
 
+                html.dataset.course = course;
+
+                html.dataset.semester = semester;
+
+                html.innerHTML =
+                    "<h2>" +
+                        course.toUpperCase() +
+                        " — Semester " +
+                        semester +
+                    "</h2>" +
+
+                    '<div class="subject">' +
+
+                        "<h2>📚 " + subject + "</h2>" +
+
+                        '<div class="level" data-level="basic">' +
+
+                            "<h3>🟢 Basic</h3>" +
+
+                            '<div class="qa-item">' +
+                                "<strong>Q1. " +
+                                questions.basic[0] +
+                                "</strong>" +
+
+                                '<div class="answer">' +
+                                    "<strong>Answer:</strong><br>" +
+                                    "Write the basic definition, meaning and " +
+                                    "fundamental concepts related to this topic." +
+                                "</div>" +
+                            "</div>" +
+
+                            '<div class="qa-item">' +
+                                "<strong>Q2. " +
+                                questions.basic[1] +
+                                "</strong>" +
+
+                                '<div class="answer">' +
+                                    "<strong>Answer:</strong><br>" +
+                                    "Explain the topic using simple definitions " +
+                                    "and suitable examples." +
+                                "</div>" +
+                            "</div>" +
+
+                            '<div class="qa-item">' +
+                                "<strong>Q3. " +
+                                questions.basic[2] +
+                                "</strong>" +
 
+                                '<div class="answer">' +
+                                    "<strong>Answer:</strong><br>" +
+                                    "Describe the important basic concepts and terminology." +
+                                "</div>" +
+                            "</div>" +
 
-                <div class="semester"
-                     data-course="bca"
-                     data-semester="1">
+                        "</div>" +
 
-                    <h2>💻 BCA — Semester 1</h2>
+                        '<div class="level" data-level="intermediate">' +
 
-                    <h3>Computer Fundamentals</h3>
+                            "<h3>🟡 Intermediate</h3>" +
 
+                            '<div class="qa-item">' +
+                                "<strong>Q1. " +
+                                questions.intermediate[0] +
+                                "</strong>" +
 
-                    <div class="level"
-                         data-level="basic">
+                                '<div class="answer">' +
+                                    "<strong>Answer:</strong><br>" +
+                                    "Explain the major concepts with suitable examples and details." +
+                                "</div>" +
+                            "</div>" +
 
-                        <h3>🟢 Basic</h3>
+                            '<div class="qa-item">' +
+                                "<strong>Q2. " +
+                                questions.intermediate[1] +
+                                "</strong>" +
 
-                        <div class="qa-item">
+                                '<div class="answer">' +
+                                    "<strong>Answer:</strong><br>" +
+                                    "Discuss practical uses and important applications of the subject." +
+                                "</div>" +
+                            "</div>" +
 
-                            <strong>
-                                Q. What is a computer?
-                            </strong>
+                            '<div class="qa-item">' +
+                                "<strong>Q3. " +
+                                questions.intermediate[2] +
+                                "</strong>" +
 
-                            <div class="answer">
+                                '<div class="answer">' +
+                                    "<strong>Answer:</strong><br>" +
+                                    "Explain the advantages, limitations and important points." +
+                                "</div>" +
+                            "</div>" +
 
-                                <strong>Answer:</strong>
-                                A computer is an electronic device
-                                that processes data and produces information.
+                        "</div>" +
 
-                            </div>
+                        '<div class="level" data-level="advanced">' +
 
-                        </div>
+                            "<h3>🔴 Advanced</h3>" +
 
-                    </div>
+                            '<div class="qa-item">' +
+                                "<strong>Q1. " +
+                                questions.advanced[0] +
+                                "</strong>" +
 
+                                '<div class="answer">' +
+                                    "<strong>Answer:</strong><br>" +
+                                    "Give a detailed explanation with examples, diagrams " +
+                                    "or applications wherever appropriate." +
+                                "</div>" +
+                            "</div>" +
 
-                    <div class="level"
-                         data-level="intermediate">
+                            '<div class="qa-item">' +
+                                "<strong>Q2. " +
+                                questions.advanced[1] +
+                                "</strong>" +
 
-                        <h3>🟡 Intermediate</h3>
+                                '<div class="answer">' +
+                                    "<strong>Answer:</strong><br>" +
+                                    "Discuss the topic critically and explain suitable solutions." +
+                                "</div>" +
+                            "</div>" +
 
-                        <div class="qa-item">
+                            '<div class="qa-item">' +
+                                "<strong>Q3. " +
+                                questions.advanced[2] +
+                                "</strong>" +
 
-                            <strong>
-                                Q. Explain hardware and software.
-                            </strong>
+                                '<div class="answer">' +
+                                    "<strong>Answer:</strong><br>" +
+                                    "Explain real-world and practical applications in detail." +
+                                "</div>" +
+                            "</div>" +
 
-                            <div class="answer">
+                        "</div>" +
 
-                                <strong>Answer:</strong>
-                                Hardware refers to physical computer parts,
-                                while software consists of programs and instructions.
+                    "</div>";
 
-                            </div>
+                container.appendChild(html);
 
-                        </div>
+            });
 
-                    </div>
+        });
 
+    });
 
-                    <div class="level"
-                         data-level="advanced">
+}
 
-                        <h3>🔴 Advanced</h3>
 
-                        <div class="qa-item">
+function filterQuestions() {
 
-                            <strong>
-                                Q. Explain the functions of an operating system.
-                            </strong>
+    const course =
+        document.getElementById("courseSelect").value;
 
-                            <div class="answer">
+    const semester =
+        document.getElementById("semesterSelect").value;
 
-                                <strong>Answer:</strong>
-                                An operating system manages memory,
-                                processes, files, devices and system resources.
+    const level =
+        document.getElementById("levelSelect").value;
 
-                            </div>
+    const cards =
+        document.querySelectorAll(".course");
 
-                        </div>
+    cards.forEach(function(card) {
 
-                    </div>
+        const courseMatch =
+            course === "all" ||
+            card.dataset.course === course;
 
-                </div>
+        const semesterMatch =
+            semester === "all" ||
+            card.dataset.semester === semester;
 
+        const levels =
+            card.querySelectorAll(".level");
 
-                <!-- BBA -->
+        let visibleLevel = false;
 
-                <div class="semester"
-                     data-course="bba"
-                     data-semester="1">
+        levels.forEach(function(levelItem) {
 
-                    <h2>📊 BBA — Semester 1</h2>
+            const levelMatch =
+                level === "all" ||
+                levelItem.dataset.level === level;
 
-                    <h3>Principles of Management</h3>
+            if (levelMatch) {
 
+                levelItem.style.display = "block";
 
-                    <div class="level"
-                         data-level="basic">
+                visibleLevel = true;
 
-                        <h3>🟢 Basic</h3>
+            } else {
 
-                        <div class="qa-item">
+                levelItem.style.display = "none";
 
-                            <strong>
-                                Q. What is management?
-                            </strong>
+            }
 
-                            <div class="answer">
+        });
 
-                                <strong>Answer:</strong>
-                                Management is the process of planning,
-                                organizing, directing and controlling resources
-                                to achieve organizational goals.
+        if (
+            courseMatch &&
+            semesterMatch &&
+            visibleLevel
+        ) {
 
-                            </div>
+            card.style.display = "block";
 
-                        </div>
+        } else {
 
-                    </div>
+            card.style.display = "none";
 
+        }
 
-                    <div class="level"
-                         data-level="intermediate">
+    });
 
-                        <h3>🟡 Intermediate</h3>
+}
 
-                        <div class="qa-item">
 
-                            <strong>
-                                Q. Explain the functions of management.
-                            </strong>
+showQuestions();
 
-                            <div class="answer">
+</script>
 
-                                <strong>Answer:</strong>
-                                The main functions are planning,
-                                organizing, staffing, directing and controlling.
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="level"
-                         data-level="advanced">
-
-                        <h3>🔴 Advanced</h3>
-
-                        <div class="qa-item">
-
-                            <strong>
-                                Q. Explain different leadership styles.
-                            </strong>
-
-                            <div class="answer">
-
-                                <strong>Answer:</strong>
-                                Common leadership styles include
-                                autocratic, democratic and laissez-faire leadership.
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-            <script>
-
-                function filterQuestions() {
-
-                    const course =
-                        document.getElementById("courseSelect").value;
-
-                    const semester =
-                        document.getElementById("semesterSelect").value;
-
-                    const level =
-                        document.getElementById("levelSelect").value;
-
-
-                    const cards =
-                        document.querySelectorAll(".semester");
-
-
-                    cards.forEach(function(card) {
-
-                        const cardCourse =
-                            card.dataset.course;
-
-                        const cardSemester =
-                            card.dataset.semester;
-
-
-                        const courseMatch =
-                            course === "all" ||
-                            cardCourse === course;
-
-                        const semesterMatch =
-                            semester === "all" ||
-                            cardSemester === semester;
-
-
-                        const levels =
-                            card.querySelectorAll(".level");
-
-
-                        let visibleLevel = false;
-
-
-                        levels.forEach(function(levelItem) {
-
-                            const levelMatch =
-                                level === "all" ||
-                                levelItem.dataset.level === level;
-
-
-                            if (levelMatch) {
-
-                                levelItem.style.display = "block";
-
-                                visibleLevel = true;
-
-                            } else {
-
-                                levelItem.style.display = "none";
-
-                            }
-
-                        });
-
-
-                        if (courseMatch &&
-                            semesterMatch &&
-                            visibleLevel) {
-
-                            card.style.display = "block";
-
-                        } else {
-
-                            card.style.display = "none";
-
-                        }
-
-                    });
-
-                }
-
-
-                function downloadPDF() {
-
-                    window.print();
-
-                }
-
-            </script>
-
-        </body>
-        </html>
+</body>
+</html>
     `);
 
     questionsWindow.document.close();
-
 }
+
+
+ 
+
+
+  
+
+
 
 // ===============================
 // Course Semester System
@@ -7979,25 +7524,37 @@ function showSubjects(course, semester) {
     `;
 
 
-    courseSubjects[semester].forEach(function(subject) {
+   courseSubjects[semester].forEach(function(subject) {
 
-        html += `
-            <div class="resource-card">
+    const pdfName = subject
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
 
-                <h3>📖 ${subject}</h3>
+    const pdfPath = `notes/${course}/semester-${semester}/${pdfName}.pdf`;
 
-                <p>
-                    ${course.toUpperCase()} • Semester ${semester}
-                </p>
+    html += `
+        <div class="resource-card">
 
-                <button onclick="openNote('${subject.replace(/'/g, "\\'")}')">
-                    Open Notes
-                </button>
+            <h3>📖 ${subject}</h3>
 
-            </div>
-        `;
+            <p>
+                ${course.toUpperCase()} • Semester ${semester}
+            </p>
 
-    });
+            <button onclick="openNote('${subject.replace(/'/g, "\\'")}')">
+                Open Notes
+            </button>
+
+            <a href="${pdfPath}" download class="pdf-download-btn">
+                📥 Download PDF
+            </a>
+
+        </div>
+    `;
+
+});
+
 
 
     html += `
