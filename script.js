@@ -169,58 +169,151 @@ function filterNotes() {
     // ===============================
     // Engineering Mathematics-I
     // ===============================
+if (noteName === "Engineering Mathematics-I") {
 
-    if (noteName === "Engineering Mathematics-I") {
+    title = "Engineering Mathematics-I";
 
-        title = "Engineering Mathematics-I";
+    content = `
+        <h2>🧮 Engineering Mathematics-I</h2>
 
-        content = `
-            <h2>🧮 Engineering Mathematics-I</h2>
+        <h2>📘 Unit 1: Differential Calculus</h2>
 
-            <h2>1. Differential Calculus</h2>
+        <p>
+            Differential Calculus deals with the rate of change of
+            a function. It is one of the basic concepts of engineering mathematics.
+        </p>
 
-            <p>
-                Differential calculus deals with the rate of change
-                of a function.
-            </p>
+        <h3>Important Topics</h3>
+        <ul>
+            <li>Functions and Limits</li>
+            <li>Continuity of Functions</li>
+            <li>Differentiation</li>
+            <li>Higher Order Derivatives</li>
+            <li>Partial Differentiation</li>
+        </ul>
 
-            <div class="important">
-                <b>Important Formula:</b><br>
-                d/dx (xⁿ) = n xⁿ⁻¹
-            </div>
+        <div class="important">
+            <b>Important Formulas:</b><br><br>
+            d/dx (xⁿ) = n xⁿ⁻¹<br>
+            d/dx (sin x) = cos x<br>
+            d/dx (cos x) = -sin x<br>
+            d/dx (eˣ) = eˣ<br>
+            d/dx (log x) = 1/x
+        </div>
 
-            <h2>2. Basic Differentiation</h2>
+        <h2>📘 Unit 2: Integral Calculus</h2>
 
-            <ul>
-                <li>d/dx (x) = 1</li>
-                <li>d/dx (x²) = 2x</li>
-                <li>d/dx (x³) = 3x²</li>
-                <li>d/dx (sin x) = cos x</li>
-                <li>d/dx (cos x) = -sin x</li>
-            </ul>
+        <p>
+            Integration is the reverse process of differentiation.
+            It is used to find areas, volumes and solutions of many
+            engineering problems.
+        </p>
 
-            <h2>3. Integration</h2>
+        <h3>Important Topics</h3>
+        <ul>
+            <li>Indefinite Integration</li>
+            <li>Definite Integration</li>
+            <li>Integration by Parts</li>
+            <li>Integration by Substitution</li>
+            <li>Applications of Integration</li>
+        </ul>
 
-            <p>
-                Integration is the reverse process of differentiation.
-            </p>
+        <div class="important">
+            <b>Important Formulas:</b><br><br>
+            ∫ xⁿ dx = xⁿ⁺¹/(n+1) + C<br>
+            ∫ 1/x dx = log|x| + C<br>
+            ∫ eˣ dx = eˣ + C<br>
+            ∫ sin x dx = -cos x + C<br>
+            ∫ cos x dx = sin x + C
+        </div>
 
-            <div class="important">
-                <b>Formula:</b><br>
-                ∫ xⁿ dx = xⁿ⁺¹/(n+1) + C
-            </div>
+        <h2>📘 Unit 3: Differential Equations</h2>
 
-            <h2>📌 Important Questions</h2>
+        <p>
+            A differential equation is an equation involving an
+            unknown function and its derivatives.
+        </p>
 
-            <ol>
-                <li>What is differentiation?</li>
-                <li>Explain basic differentiation formulas.</li>
-                <li>What is integration?</li>
-                <li>Explain the fundamental rules of differentiation.</li>
-                <li>Solve basic integration problems.</li>
-            </ol>
-        `;
-    }
+        <h3>Important Topics</h3>
+        <ul>
+            <li>Order and Degree</li>
+            <li>First Order Differential Equations</li>
+            <li>Variable Separable Method</li>
+            <li>Linear Differential Equations</li>
+            <li>Applications of Differential Equations</li>
+        </ul>
+
+        <div class="important">
+            <b>Basic Form:</b><br><br>
+            dy/dx = f(x,y)
+        </div>
+
+        <h2>📘 Unit 4: Matrices and Linear Algebra</h2>
+
+        <p>
+            Matrices are rectangular arrangements of numbers.
+            They are widely used in engineering, computer science
+            and numerical calculations.
+        </p>
+
+        <h3>Important Topics</h3>
+        <ul>
+            <li>Types of Matrices</li>
+            <li>Matrix Operations</li>
+            <li>Determinants</li>
+            <li>Rank of Matrix</li>
+            <li>Eigenvalues and Eigenvectors</li>
+        </ul>
+
+        <div class="important">
+            <b>Important Concepts:</b><br><br>
+            Matrix Addition<br>
+            Matrix Multiplication<br>
+            Determinant<br>
+            Inverse of Matrix<br>
+            Eigenvalues
+        </div>
+
+        <h2>📘 Unit 5: Vector Calculus</h2>
+
+        <p>
+            Vector Calculus deals with differentiation and integration
+            of vector quantities and is useful in engineering applications.
+        </p>
+
+        <h3>Important Topics</h3>
+        <ul>
+            <li>Scalar and Vector Fields</li>
+            <li>Gradient</li>
+            <li>Divergence</li>
+            <li>Curl</li>
+            <li>Directional Derivative</li>
+        </ul>
+
+        <div class="important">
+            <b>Important Concepts:</b><br><br>
+            Gradient → ∇φ<br>
+            Divergence → ∇ · A<br>
+            Curl → ∇ × A
+        </div>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>Define differentiation and explain its basic rules.</li>
+            <li>Explain important integration formulas.</li>
+            <li>What is a differential equation?</li>
+            <li>Explain order and degree of a differential equation.</li>
+            <li>What are matrices and determinants?</li>
+            <li>Explain eigenvalues and eigenvectors.</li>
+            <li>What is gradient?</li>
+            <li>Explain divergence and curl.</li>
+            <li>Solve basic differential equation problems.</li>
+            <li>Solve problems based on matrices and eigenvalues.</li>
+        </ol>
+    `;
+}
+    
 
     // ===============================
     // Programming
@@ -228,256 +321,3293 @@ function filterNotes() {
 
     else if (noteName === "Programming for Problem Solving") {
 
-        title = "Programming for Problem Solving";
+    title = "Programming for Problem Solving";
 
-        content = `
-            <h2>💻 Programming for Problem Solving</h2>
+    content = `
+        <h2>💻 Programming for Problem Solving</h2>
 
-            <h2>1. What is Programming?</h2>
+        <h2>📘 Unit 1: Introduction to Programming & Algorithms</h2>
 
-            <p>
-                Programming is the process of writing instructions
-                that tell a computer how to perform a task.
-            </p>
+        <p>
+            Programming is the process of writing instructions that
+            tell a computer how to perform a specific task.
+        </p>
 
-            <h2>2. Algorithm</h2>
+        <h3>Important Topics</h3>
+        <ul>
+            <li>Problem Solving Approach</li>
+            <li>Algorithms</li>
+            <li>Flowcharts</li>
+            <li>Pseudocode</li>
+            <li>Programming Languages</li>
+        </ul>
 
-            <p>
-                An algorithm is a step-by-step procedure used to
-                solve a particular problem.
-            </p>
+        <div class="important">
+            <b>Important:</b><br>
+            Algorithm = Step-by-step procedure to solve a problem.
+        </div>
 
-            <h2>3. Variables</h2>
+        <h2>📘 Unit 2: C Programming Basics</h2>
 
-            <p>
-                A variable is a named memory location used to store data.
-            </p>
+        <p>
+            C is a general-purpose programming language widely used
+            for system and application programming.
+        </p>
 
-            <pre>
+        <h3>Important Topics</h3>
+        <ul>
+            <li>Structure of C Program</li>
+            <li>Variables and Constants</li>
+            <li>Data Types</li>
+            <li>Operators</li>
+            <li>Input and Output</li>
+        </ul>
+
+        <pre>
 int age = 20;
 float marks = 85.5;
 char grade = 'A';
-            </pre>
 
-            <h2>4. Data Types</h2>
+printf("Hello World");
+scanf("%d", &age);
+        </pre>
 
-            <ul>
-                <li>int</li>
-                <li>float</li>
-                <li>char</li>
-                <li>double</li>
-            </ul>
+        <h2>📘 Unit 3: Control Statements</h2>
 
-            <h2>5. If-Else</h2>
+        <p>
+            Control statements are used to control the flow of
+            execution of a program.
+        </p>
 
-            <pre>
+        <h3>Important Topics</h3>
+        <ul>
+            <li>if Statement</li>
+            <li>if-else Statement</li>
+            <li>Nested if</li>
+            <li>switch Statement</li>
+            <li>for Loop</li>
+            <li>while Loop</li>
+            <li>do-while Loop</li>
+        </ul>
+
+        <pre>
 if(age >= 18) {
     printf("Eligible");
 } else {
     printf("Not Eligible");
 }
-            </pre>
+        </pre>
 
-            <h2>6. Loops</h2>
+        <h2>📘 Unit 4: Arrays, Strings & Functions</h2>
 
-            <p>
-                Loops are used to execute a block of code repeatedly.
-            </p>
+        <h3>Arrays</h3>
+        <p>
+            An array is a collection of elements of the same data type
+            stored in contiguous memory locations.
+        </p>
 
-            <ul>
-                <li>for loop</li>
-                <li>while loop</li>
-                <li>do-while loop</li>
-            </ul>
+        <pre>
+int marks[5] = {80, 75, 90, 85, 70};
+        </pre>
 
-            <h2>7. Functions</h2>
+        <h3>Strings</h3>
+        <p>
+            A string is a sequence of characters terminated by
+            a null character.
+        </p>
 
-            <p>
-                A function is a reusable block of code designed
-                to perform a specific task.
-            </p>
+        <pre>
+char name[20] = "CollegeBuddy";
+        </pre>
 
-            <h2>📌 Important Questions</h2>
+        <h3>Functions</h3>
+        <p>
+            A function is a reusable block of code designed to perform
+            a particular task.
+        </p>
 
-            <ol>
-                <li>What is programming?</li>
-                <li>What is an algorithm?</li>
-                <li>What are variables?</li>
-                <li>Explain data types.</li>
-                <li>Explain if-else statements.</li>
-                <li>What are loops?</li>
-                <li>What is a function?</li>
-            </ol>
-        `;
-    }
+        <h2>📘 Unit 5: Pointers, Structures & File Handling</h2>
+
+        <h3>Pointers</h3>
+        <p>
+            A pointer is a variable that stores the memory address
+            of another variable.
+        </p>
+
+        <pre>
+int age = 20;
+int *ptr = &age;
+        </pre>
+
+        <h3>Structures</h3>
+        <p>
+            A structure allows different types of data to be grouped
+            together under one name.
+        </p>
+
+        <pre>
+struct Student {
+    int roll;
+    char name[20];
+};
+        </pre>
+
+        <h3>File Handling</h3>
+        <ul>
+            <li>Opening a file</li>
+            <li>Reading a file</li>
+            <li>Writing to a file</li>
+            <li>Closing a file</li>
+        </ul>
+
+        <h2>📌 Important Questions</h2>
+
+        <ol>
+            <li>What is an algorithm? Explain its characteristics.</li>
+            <li>What is a flowchart?</li>
+            <li>Explain variables and data types in C.</li>
+            <li>Explain different operators in C.</li>
+            <li>Explain if-else and switch statements.</li>
+            <li>Explain for, while and do-while loops.</li>
+            <li>What is an array? Give an example.</li>
+            <li>What is a string in C?</li>
+            <li>What is a function? Explain its types.</li>
+            <li>What is a pointer?</li>
+            <li>Explain structures in C.</li>
+            <li>What is file handling?</li>
+        </ol>
+    `;
+}
+    else if (noteName === "Computer Fundamentals") {
+
+    notesWindow.document.write(`
+        <h1>🖥️ Computer Fundamentals</h1>
+
+        <h2>Unit 1: Introduction to Computer</h2>
+        <p>
+            A computer is an electronic device that accepts data as input,
+            processes it according to instructions, stores it and produces
+            meaningful information as output.
+        </p>
+
+        <h3>Characteristics of Computer</h3>
+        <ul>
+            <li>High Speed</li>
+            <li>Accuracy</li>
+            <li>Large Storage Capacity</li>
+            <li>Diligence</li>
+            <li>Automation</li>
+            <li>Versatility</li>
+        </ul>
+
+        <h2>Unit 2: Computer Hardware</h2>
+        <p>
+            Hardware refers to the physical components of a computer system.
+        </p>
+
+        <ul>
+            <li>CPU</li>
+            <li>Monitor</li>
+            <li>Keyboard</li>
+            <li>Mouse</li>
+            <li>Printer</li>
+            <li>Hard Disk</li>
+            <li>RAM</li>
+            <li>ROM</li>
+        </ul>
+
+        <h2>Unit 3: Computer Software</h2>
+        <p>
+            Software is a collection of programs that tells a computer
+            how to perform specific tasks.
+        </p>
+
+        <h3>Types of Software</h3>
+        <ul>
+            <li>System Software</li>
+            <li>Application Software</li>
+            <li>Utility Software</li>
+        </ul>
+
+        <h2>Unit 4: Operating System</h2>
+        <p>
+            An Operating System is system software that manages computer
+            hardware and provides services to application programs.
+        </p>
+
+        <h3>Examples</h3>
+        <ul>
+            <li>Windows</li>
+            <li>Linux</li>
+            <li>macOS</li>
+            <li>Android</li>
+        </ul>
+
+        <h2>Unit 5: Input and Output Devices</h2>
+        <p>
+            Input devices are used to enter data into a computer,
+            while output devices display or produce processed information.
+        </p>
+
+        <ul>
+            <li>Input: Keyboard, Mouse, Scanner, Microphone</li>
+            <li>Output: Monitor, Printer, Speaker, Projector</li>
+        </ul>
+
+        <h2>Unit 6: Memory</h2>
+        <ul>
+            <li>Primary Memory – RAM and ROM</li>
+            <li>Secondary Memory – HDD, SSD, Pen Drive</li>
+            <li>RAM is temporary memory.</li>
+            <li>ROM is non-volatile memory.</li>
+        </ul>
+
+        <h2>Important Questions</h2>
+        <ol>
+            <li>What is a computer?</li>
+            <li>Explain the characteristics of a computer.</li>
+            <li>What is hardware?</li>
+            <li>What is software? Explain its types.</li>
+            <li>What is an Operating System?</li>
+            <li>Explain primary and secondary memory.</li>
+            <li>Differentiate between RAM and ROM.</li>
+            <li>Explain input and output devices.</li>
+        </ol>
+    `);
+}
+else if (noteName === "Programming in C") {
+
+    notesWindow.document.write(`
+        <h1>💻 Programming in C</h1>
+
+        <h2>Unit 1: Introduction to C</h2>
+        <p>
+            C is a general-purpose, procedural programming language.
+            It is widely used for system programming and application development.
+        </p>
+
+        <h3>Features of C</h3>
+        <ul>
+            <li>Simple and efficient</li>
+            <li>Structured programming language</li>
+            <li>Portable</li>
+            <li>Fast execution</li>
+            <li>Supports functions</li>
+        </ul>
+
+        <h2>Unit 2: Variables and Data Types</h2>
+        <p>
+            A variable is a named memory location used to store data.
+        </p>
+
+        <ul>
+            <li>int – Integer values</li>
+            <li>float – Decimal values</li>
+            <li>char – Character values</li>
+            <li>double – Large decimal values</li>
+        </ul>
+
+        <h2>Unit 3: Operators</h2>
+        <ul>
+            <li>Arithmetic: +, -, *, /, %</li>
+            <li>Relational: &lt;, &gt;, &lt;=, &gt;=, ==, !=</li>
+            <li>Logical: &amp;&amp;, ||, !</li>
+            <li>Assignment: =, +=, -=, *=, /=</li>
+        </ul>
+
+        <h2>Unit 4: Conditional Statements</h2>
+        <p>
+            Conditional statements are used to make decisions in a program.
+        </p>
+
+        <ul>
+            <li>if statement</li>
+            <li>if-else statement</li>
+            <li>else-if ladder</li>
+            <li>switch statement</li>
+        </ul>
+
+        <h2>Unit 5: Loops</h2>
+        <p>
+            Loops are used to execute a block of statements repeatedly.
+        </p>
+
+        <ul>
+            <li>for loop</li>
+            <li>while loop</li>
+            <li>do-while loop</li>
+        </ul>
+
+        <h2>Unit 6: Functions</h2>
+        <p>
+            A function is a block of code designed to perform a specific task.
+        </p>
+
+        <h2>Unit 7: Arrays and Strings</h2>
+        <p>
+            An array stores multiple values of the same data type.
+            A string is a sequence of characters.
+        </p>
+
+        <h2>Unit 8: Pointers</h2>
+        <p>
+            A pointer is a variable that stores the memory address of another variable.
+        </p>
+
+        <h2>Important Questions</h2>
+        <ol>
+            <li>What is C programming?</li>
+            <li>Explain the features of C.</li>
+            <li>Explain different data types in C.</li>
+            <li>What are operators? Explain their types.</li>
+            <li>Explain if-else and switch statements.</li>
+            <li>Explain for, while and do-while loops.</li>
+            <li>What is a function?</li>
+            <li>What is an array?</li>
+            <li>What is a string?</li>
+            <li>What is a pointer?</li>
+        </ol>
+    `);
+}
+else if (noteName === "Mathematics") {
+
+    notesWindow.document.write(`
+        <h1>📐 Mathematics</h1>
+
+        <h2>Unit 1: Sets</h2>
+        <p>
+            A set is a well-defined collection of distinct objects.
+        </p>
+
+        <ul>
+            <li>Types of Sets</li>
+            <li>Subset and Proper Subset</li>
+            <li>Union of Sets</li>
+            <li>Intersection of Sets</li>
+            <li>Difference of Sets</li>
+        </ul>
+
+        <h2>Unit 2: Relations and Functions</h2>
+        <p>
+            A relation describes a relationship between elements of two sets.
+            A function is a special type of relation in which every input
+            has exactly one output.
+        </p>
+
+        <h2>Unit 3: Matrices</h2>
+        <ul>
+            <li>Types of Matrices</li>
+            <li>Addition and Subtraction</li>
+            <li>Matrix Multiplication</li>
+            <li>Transpose of Matrix</li>
+            <li>Determinant</li>
+            <li>Inverse of Matrix</li>
+        </ul>
+
+        <h2>Unit 4: Differential Calculus</h2>
+        <p>
+            Differentiation is used to find the rate of change of a function.
+        </p>
+
+        <ul>
+            <li>Limits</li>
+            <li>Continuity</li>
+            <li>Derivatives</li>
+            <li>Rules of Differentiation</li>
+            <li>Applications of Derivatives</li>
+        </ul>
+
+        <h2>Unit 5: Integral Calculus</h2>
+        <p>
+            Integration is the reverse process of differentiation and is
+            used to find areas and accumulated quantities.
+        </p>
+
+        <ul>
+            <li>Indefinite Integration</li>
+            <li>Definite Integration</li>
+            <li>Methods of Integration</li>
+            <li>Applications of Integration</li>
+        </ul>
+
+        <h2>Unit 6: Probability</h2>
+        <p>
+            Probability is the mathematical measure of the likelihood
+            that an event will occur.
+        </p>
+
+        <h2>Important Questions</h2>
+        <ol>
+            <li>What is a set? Explain different types of sets.</li>
+            <li>Explain union and intersection of sets.</li>
+            <li>What is a relation and function?</li>
+            <li>Explain different types of matrices.</li>
+            <li>Find the determinant of a matrix.</li>
+            <li>What is differentiation?</li>
+            <li>Explain the rules of differentiation.</li>
+            <li>What is integration?</li>
+            <li>Explain definite and indefinite integration.</li>
+            <li>What is probability?</li>
+        </ol>
+    `);
+}
+else if (noteName === "Digital Electronics") {
+
+    notesWindow.document.write(`
+        <h1>🔌 Digital Electronics</h1>
+
+        <h2>Unit 1: Number Systems</h2>
+        <p>
+            A number system is a method of representing numbers using
+            specific symbols and rules.
+        </p>
+
+        <ul>
+            <li>Decimal Number System</li>
+            <li>Binary Number System</li>
+            <li>Octal Number System</li>
+            <li>Hexadecimal Number System</li>
+            <li>Number System Conversion</li>
+        </ul>
+
+        <h2>Unit 2: Logic Gates</h2>
+        <p>
+            Logic gates are electronic circuits that perform logical
+            operations on one or more inputs.
+        </p>
+
+        <ul>
+            <li>AND Gate</li>
+            <li>OR Gate</li>
+            <li>NOT Gate</li>
+            <li>NAND Gate</li>
+            <li>NOR Gate</li>
+            <li>XOR Gate</li>
+            <li>XNOR Gate</li>
+        </ul>
+
+        <h2>Unit 3: Boolean Algebra</h2>
+        <p>
+            Boolean algebra is a mathematical system used to analyze
+            and simplify digital logic circuits.
+        </p>
+
+        <ul>
+            <li>Boolean Variables</li>
+            <li>Boolean Expressions</li>
+            <li>Basic Boolean Laws</li>
+            <li>De Morgan's Theorems</li>
+        </ul>
+
+        <h2>Unit 4: Combinational Circuits</h2>
+        <ul>
+            <li>Half Adder</li>
+            <li>Full Adder</li>
+            <li>Half Subtractor</li>
+            <li>Full Subtractor</li>
+            <li>Multiplexer</li>
+            <li>Demultiplexer</li>
+            <li>Encoder</li>
+            <li>Decoder</li>
+        </ul>
+
+        <h2>Unit 5: Sequential Circuits</h2>
+        <ul>
+            <li>Flip-Flop</li>
+            <li>SR Flip-Flop</li>
+            <li>JK Flip-Flop</li>
+            <li>D Flip-Flop</li>
+            <li>T Flip-Flop</li>
+            <li>Registers</li>
+            <li>Counters</li>
+        </ul>
+
+        <h2>Unit 6: Semiconductor Devices</h2>
+        <ul>
+            <li>Diode</li>
+            <li>LED</li>
+            <li>Transistor</li>
+            <li>Basic Electronic Circuits</li>
+        </ul>
+
+        <h2>Important Questions</h2>
+        <ol>
+            <li>Explain different number systems.</li>
+            <li>Convert binary numbers into decimal numbers.</li>
+            <li>Explain all basic logic gates with truth tables.</li>
+            <li>What is Boolean algebra?</li>
+            <li>Explain De Morgan's theorems.</li>
+            <li>Explain Half Adder and Full Adder.</li>
+            <li>What is a multiplexer?</li>
+            <li>What is a flip-flop?</li>
+            <li>Explain different types of flip-flops.</li>
+            <li>Differentiate between combinational and sequential circuits.</li>
+        </ol>
+    `);
+}
+
+
+else if (noteName === "Communication Skills") {
+
+    notesWindow.document.write(`
+        <h1>🗣️ Communication Skills</h1>
+
+        <h2>Unit 1: Introduction to Communication</h2>
+        <p>
+            Communication is the process of exchanging information,
+            ideas, thoughts and feelings between two or more people.
+        </p>
+
+        <h3>Elements of Communication</h3>
+        <ul>
+            <li>Sender</li>
+            <li>Message</li>
+            <li>Encoding</li>
+            <li>Communication Channel</li>
+            <li>Receiver</li>
+            <li>Decoding</li>
+            <li>Feedback</li>
+        </ul>
+
+        <h2>Unit 2: Types of Communication</h2>
+        <ul>
+            <li>Verbal Communication</li>
+            <li>Non-Verbal Communication</li>
+            <li>Written Communication</li>
+            <li>Visual Communication</li>
+        </ul>
+
+        <h2>Unit 3: Barriers to Communication</h2>
+        <p>
+            Barriers are factors that prevent effective communication.
+        </p>
+
+        <ul>
+            <li>Language Barrier</li>
+            <li>Physical Barrier</li>
+            <li>Psychological Barrier</li>
+            <li>Cultural Barrier</li>
+            <li>Semantic Barrier</li>
+            <li>Technical Barrier</li>
+        </ul>
+
+        <h2>Unit 4: Listening Skills</h2>
+        <p>
+            Listening is the active process of receiving, understanding
+            and interpreting spoken information.
+        </p>
+
+        <ul>
+            <li>Active Listening</li>
+            <li>Focused Listening</li>
+            <li>Critical Listening</li>
+            <li>Empathetic Listening</li>
+        </ul>
+
+        <h2>Unit 5: Speaking Skills</h2>
+        <ul>
+            <li>Public Speaking</li>
+            <li>Presentation Skills</li>
+            <li>Group Discussion</li>
+            <li>Interview Skills</li>
+            <li>Pronunciation</li>
+            <li>Body Language</li>
+        </ul>
+
+        <h2>Unit 6: Written Communication</h2>
+        <ul>
+            <li>Formal Letter</li>
+            <li>Informal Letter</li>
+            <li>Email Writing</li>
+            <li>Notice Writing</li>
+            <li>Report Writing</li>
+            <li>Resume Writing</li>
+        </ul>
+
+        <h2>Unit 7: Presentation Skills</h2>
+        <p>
+            An effective presentation should have a clear introduction,
+            organized content and a strong conclusion.
+        </p>
+
+        <h2>Important Questions</h2>
+        <ol>
+            <li>What is communication?</li>
+            <li>Explain the elements of communication.</li>
+            <li>Explain different types of communication.</li>
+            <li>What are barriers to communication?</li>
+            <li>Explain active listening.</li>
+            <li>What are speaking skills?</li>
+            <li>Explain the importance of body language.</li>
+            <li>What is group discussion?</li>
+            <li>Explain the format of a formal email.</li>
+            <li>What are presentation skills?</li>
+        </ol>
+    `);
+}else if (noteName === "Data Structures") {
+
+    notesWindow.document.write(`
+        <h1>🌳 Data Structures</h1>
+
+        <h2>Unit 1: Introduction</h2>
+        <p>
+            Data Structure is a way of organizing and storing data so that
+            it can be accessed and processed efficiently.
+        </p>
+
+        <h3>Types of Data Structures</h3>
+        <ul>
+            <li>Linear Data Structure</li>
+            <li>Non-Linear Data Structure</li>
+            <li>Static Data Structure</li>
+            <li>Dynamic Data Structure</li>
+        </ul>
+
+        <h2>Unit 2: Arrays</h2>
+        <p>
+            An array is a collection of elements of the same data type
+            stored in contiguous memory locations.
+        </p>
+
+        <ul>
+            <li>One-dimensional Array</li>
+            <li>Two-dimensional Array</li>
+            <li>Array Traversal</li>
+            <li>Insertion and Deletion</li>
+            <li>Searching and Sorting</li>
+        </ul>
+
+        <h2>Unit 3: Linked List</h2>
+        <p>
+            A linked list is a dynamic data structure consisting of nodes.
+            Each node contains data and a link to another node.
+        </p>
+
+        <ul>
+            <li>Singly Linked List</li>
+            <li>Doubly Linked List</li>
+            <li>Circular Linked List</li>
+            <li>Insertion and Deletion</li>
+        </ul>
+
+        <h2>Unit 4: Stack</h2>
+        <p>
+            Stack follows the LIFO (Last In First Out) principle.
+        </p>
+
+        <ul>
+            <li>Push Operation</li>
+            <li>Pop Operation</li>
+            <li>Peek Operation</li>
+            <li>Applications of Stack</li>
+        </ul>
+
+        <h2>Unit 5: Queue</h2>
+        <p>
+            Queue follows the FIFO (First In First Out) principle.
+        </p>
+
+        <ul>
+            <li>Enqueue</li>
+            <li>Dequeue</li>
+            <li>Circular Queue</li>
+            <li>Priority Queue</li>
+            <li>Applications of Queue</li>
+        </ul>
+
+        <h2>Unit 6: Trees</h2>
+        <ul>
+            <li>Binary Tree</li>
+            <li>Binary Search Tree</li>
+            <li>Tree Traversal</li>
+            <li>Preorder</li>
+            <li>Inorder</li>
+            <li>Postorder</li>
+        </ul>
+
+        <h2>Unit 7: Graphs</h2>
+        <ul>
+            <li>Graph Terminology</li>
+            <li>Directed Graph</li>
+            <li>Undirected Graph</li>
+            <li>Breadth First Search</li>
+            <li>Depth First Search</li>
+        </ul>
+
+        <h2>Unit 8: Searching and Sorting</h2>
+        <ul>
+            <li>Linear Search</li>
+            <li>Binary Search</li>
+            <li>Bubble Sort</li>
+            <li>Selection Sort</li>
+            <li>Insertion Sort</li>
+            <li>Merge Sort</li>
+            <li>Quick Sort</li>
+        </ul>
+
+        <h2>Important Questions</h2>
+        <ol>
+            <li>What is a data structure?</li>
+            <li>Explain different types of data structures.</li>
+            <li>Explain arrays and their operations.</li>
+            <li>What is a linked list?</li>
+            <li>Explain stack and its operations.</li>
+            <li>Explain queue and its types.</li>
+            <li>What is a binary tree?</li>
+            <li>Explain tree traversal techniques.</li>
+            <li>What is BFS and DFS?</li>
+            <li>Explain different sorting techniques.</li>
+        </ol>
+    `);
+}
+
+
+else if (noteName === "Database Management System") {
+
+    notesWindow.document.write(`
+        <h1>🗄️ Database Management System</h1>
+
+        <h2>Unit 1: Introduction to DBMS</h2>
+        <p>
+            DBMS is software used to create, store, manage and retrieve
+            data from a database.
+        </p>
+
+        <ul>
+            <li>Database</li>
+            <li>DBMS</li>
+            <li>RDBMS</li>
+            <li>Database Administrator</li>
+        </ul>
+
+        <h2>Unit 2: Database Models</h2>
+        <ul>
+            <li>Hierarchical Model</li>
+            <li>Network Model</li>
+            <li>Relational Model</li>
+            <li>Object-Oriented Model</li>
+        </ul>
+
+        <h2>Unit 3: ER Model</h2>
+        <p>
+            Entity Relationship Model represents entities, attributes
+            and relationships in a database.
+        </p>
+
+        <ul>
+            <li>Entity</li>
+            <li>Attribute</li>
+            <li>Relationship</li>
+            <li>Primary Key</li>
+            <li>Foreign Key</li>
+        </ul>
+
+        <h2>Unit 4: SQL</h2>
+        <p>
+            SQL stands for Structured Query Language and is used to
+            communicate with relational databases.
+        </p>
+
+        <ul>
+            <li>SELECT</li>
+            <li>INSERT</li>
+            <li>UPDATE</li>
+            <li>DELETE</li>
+            <li>CREATE</li>
+            <li>ALTER</li>
+            <li>DROP</li>
+        </ul>
+
+        <h2>Unit 5: Normalization</h2>
+        <p>
+            Normalization is the process of organizing data to reduce
+            redundancy and improve data integrity.
+        </p>
+
+        <ul>
+            <li>First Normal Form</li>
+            <li>Second Normal Form</li>
+            <li>Third Normal Form</li>
+            <li>BCNF</li>
+        </ul>
+
+        <h2>Unit 6: Transactions</h2>
+        <ul>
+            <li>Transaction</li>
+            <li>ACID Properties</li>
+            <li>Commit</li>
+            <li>Rollback</li>
+            <li>Concurrency Control</li>
+        </ul>
+
+        <h2>Important Questions</h2>
+        <ol>
+            <li>What is DBMS?</li>
+            <li>Explain DBMS and RDBMS.</li>
+            <li>Explain different database models.</li>
+            <li>What is an ER model?</li>
+            <li>What is a primary key?</li>
+            <li>What is SQL?</li>
+            <li>Explain SQL commands.</li>
+            <li>What is normalization?</li>
+            <li>Explain 1NF, 2NF and 3NF.</li>
+            <li>Explain ACID properties.</li>
+        </ol>
+    `);
+}
+
+
+else if (noteName === "Object Oriented Programming") {
+
+    notesWindow.document.write(`
+        <h1>☕ Object Oriented Programming</h1>
+
+        <h2>Unit 1: Introduction to OOP</h2>
+        <p>
+            Object Oriented Programming is a programming approach based
+            on objects and classes.
+        </p>
+
+        <h3>Main Concepts</h3>
+        <ul>
+            <li>Class</li>
+            <li>Object</li>
+            <li>Encapsulation</li>
+            <li>Inheritance</li>
+            <li>Polymorphism</li>
+            <li>Abstraction</li>
+        </ul>
+
+        <h2>Unit 2: Classes and Objects</h2>
+        <p>
+            A class is a blueprint for creating objects. An object is an
+            instance of a class.
+        </p>
+
+        <h2>Unit 3: Encapsulation</h2>
+        <p>
+            Encapsulation combines data and methods into a single unit
+            and helps protect data from unauthorized access.
+        </p>
+
+        <h2>Unit 4: Inheritance</h2>
+        <ul>
+            <li>Single Inheritance</li>
+            <li>Multilevel Inheritance</li>
+            <li>Hierarchical Inheritance</li>
+            <li>Multiple Inheritance</li>
+        </ul>
+
+        <h2>Unit 5: Polymorphism</h2>
+        <p>
+            Polymorphism means one interface can have multiple forms.
+        </p>
+
+        <ul>
+            <li>Compile-time Polymorphism</li>
+            <li>Run-time Polymorphism</li>
+            <li>Method Overloading</li>
+            <li>Method Overriding</li>
+        </ul>
+
+        <h2>Unit 6: Abstraction</h2>
+        <p>
+            Abstraction hides unnecessary implementation details and
+            shows only the important features.
+        </p>
+
+        <h2>Unit 7: Exception Handling</h2>
+        <ul>
+            <li>Try</li>
+            <li>Catch</li>
+            <li>Finally</li>
+            <li>Throw</li>
+            <li>Throws</li>
+        </ul>
+
+        <h2>Important Questions</h2>
+        <ol>
+            <li>What is Object Oriented Programming?</li>
+            <li>Explain class and object.</li>
+            <li>Explain the four main principles of OOP.</li>
+            <li>What is encapsulation?</li>
+            <li>Explain inheritance and its types.</li>
+            <li>What is polymorphism?</li>
+            <li>Differentiate overloading and overriding.</li>
+            <li>What is abstraction?</li>
+            <li>Explain exception handling.</li>
+        </ol>
+    `);
+}
+
+
+else if (noteName === "Computer Organization") {
+
+    notesWindow.document.write(`
+        <h1>🖥️ Computer Organization</h1>
+
+        <h2>Unit 1: Computer Organization</h2>
+        <p>
+            Computer Organization deals with the internal structure and
+            operation of computer systems.
+        </p>
+
+        <h2>Unit 2: CPU</h2>
+        <ul>
+            <li>Arithmetic Logic Unit (ALU)</li>
+            <li>Control Unit</li>
+            <li>Registers</li>
+            <li>Program Counter</li>
+            <li>Instruction Register</li>
+        </ul>
+
+        <h2>Unit 3: Memory</h2>
+        <ul>
+            <li>Primary Memory</li>
+            <li>Secondary Memory</li>
+            <li>RAM</li>
+            <li>ROM</li>
+            <li>Cache Memory</li>
+            <li>Virtual Memory</li>
+        </ul>
+
+        <h2>Unit 4: Input and Output</h2>
+        <p>
+            I/O devices allow the computer to communicate with users
+            and external devices.
+        </p>
+
+        <ul>
+            <li>Keyboard</li>
+            <li>Mouse</li>
+            <li>Monitor</li>
+            <li>Printer</li>
+            <li>Scanner</li>
+        </ul>
+
+        <h2>Unit 5: Instruction Cycle</h2>
+        <ul>
+            <li>Fetch</li>
+            <li>Decode</li>
+            <li>Execute</li>
+            <li>Store</li>
+        </ul>
+
+        <h2>Unit 6: Data Representation</h2>
+        <ul>
+            <li>Binary</li>
+            <li>Decimal</li>
+            <li>Octal</li>
+            <li>Hexadecimal</li>
+            <li>Character Representation</li>
+        </ul>
+
+        <h2>Important Questions</h2>
+        <ol>
+            <li>What is computer organization?</li>
+            <li>Explain the basic components of CPU.</li>
+            <li>What is ALU?</li>
+            <li>Explain different types of registers.</li>
+            <li>Explain primary and secondary memory.</li>
+            <li>What is cache memory?</li>
+            <li>Explain the instruction cycle.</li>
+            <li>Explain different number systems.</li>
+        </ol>
+    `);
+}
+
+
+else if (noteName === "Mathematics-II") {
+
+    notesWindow.document.write(`
+        <h1>📐 Mathematics-II</h1>
+
+        <h2>Unit 1: Differential Equations</h2>
+        <p>
+            A differential equation is an equation involving derivatives
+            of an unknown function.
+        </p>
+
+        <ul>
+            <li>First Order Differential Equations</li>
+            <li>Variable Separable Equations</li>
+            <li>Linear Differential Equations</li>
+        </ul>
+
+        <h2>Unit 2: Partial Differentiation</h2>
+        <p>
+            Partial differentiation is used when a function depends on
+            more than one independent variable.
+        </p>
+
+        <h2>Unit 3: Multiple Integration</h2>
+        <ul>
+            <li>Double Integration</li>
+            <li>Triple Integration</li>
+            <li>Change of Order of Integration</li>
+            <li>Applications</li>
+        </ul>
+
+        <h2>Unit 4: Vector Algebra</h2>
+        <ul>
+            <li>Vectors</li>
+            <li>Dot Product</li>
+            <li>Cross Product</li>
+            <li>Scalar Triple Product</li>
+        </ul>
+
+        <h2>Unit 5: Probability</h2>
+        <ul>
+            <li>Random Experiments</li>
+            <li>Events</li>
+            <li>Conditional Probability</li>
+            <li>Bayes' Theorem</li>
+        </ul>
+
+        <h2>Unit 6: Statistics</h2>
+        <ul>
+            <li>Mean</li>
+            <li>Median</li>
+            <li>Mode</li>
+            <li>Variance</li>
+            <li>Standard Deviation</li>
+        </ul>
+
+        <h2>Important Questions</h2>
+        <ol>
+            <li>What is a differential equation?</li>
+            <li>Solve first-order differential equations.</li>
+            <li>Explain partial differentiation.</li>
+            <li>Explain double integration.</li>
+            <li>What is a vector?</li>
+            <li>Explain dot and cross products.</li>
+            <li>What is conditional probability?</li>
+            <li>Explain Bayes' theorem.</li>
+            <li>Calculate mean, median and mode.</li>
+            <li>What is standard deviation?</li>
+        </ol>
+    `);
+}
+else if (noteName === "Operating System") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Operating System Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+
+        <h1>💻 Operating System — BCA Semester 3</h1>
+
+        <h2>Unit 1: Introduction to Operating System</h2>
+        <ul>
+            <li>What is an Operating System?</li>
+            <li>Functions of Operating System</li>
+            <li>Types of Operating Systems</li>
+            <li>Batch Operating System</li>
+            <li>Time Sharing Operating System</li>
+            <li>Real Time Operating System</li>
+            <li>Distributed Operating System</li>
+            <li>Multiprogramming and Multitasking</li>
+        </ul>
+
+        <h2>Unit 2: Process Management</h2>
+        <ul>
+            <li>What is a Process?</li>
+            <li>Process States</li>
+            <li>Process Control Block (PCB)</li>
+            <li>Process Scheduling</li>
+            <li>FCFS Scheduling</li>
+            <li>SJF Scheduling</li>
+            <li>Round Robin Scheduling</li>
+            <li>Priority Scheduling</li>
+        </ul>
+
+        <h2>Unit 3: Memory Management</h2>
+        <ul>
+            <li>Memory Management</li>
+            <li>Contiguous Memory Allocation</li>
+            <li>Paging</li>
+            <li>Segmentation</li>
+            <li>Virtual Memory</li>
+            <li>Page Replacement</li>
+        </ul>
+
+        <h2>Unit 4: File Management</h2>
+        <ul>
+            <li>File System</li>
+            <li>File Attributes</li>
+            <li>File Operations</li>
+            <li>Directory Structure</li>
+            <li>File Allocation Methods</li>
+        </ul>
+
+        <h2>Unit 5: Deadlock</h2>
+        <ul>
+            <li>What is Deadlock?</li>
+            <li>Necessary Conditions of Deadlock</li>
+            <li>Deadlock Prevention</li>
+            <li>Deadlock Avoidance</li>
+            <li>Banker's Algorithm</li>
+            <li>Deadlock Detection</li>
+        </ul>
+
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Computer Networks") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Computer Networks Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+
+        <h1>🌐 Computer Networks — BCA Semester 3</h1>
+
+        <h2>Unit 1: Introduction</h2>
+        <ul>
+            <li>What is Computer Network?</li>
+            <li>Advantages of Computer Networks</li>
+            <li>Types of Networks: LAN, MAN, WAN</li>
+            <li>Network Topologies</li>
+            <li>Client-Server Model</li>
+            <li>Peer-to-Peer Network</li>
+        </ul>
+
+        <h2>Unit 2: OSI and TCP/IP Models</h2>
+        <ul>
+            <li>OSI Reference Model</li>
+            <li>Seven Layers of OSI Model</li>
+            <li>Functions of Each Layer</li>
+            <li>TCP/IP Model</li>
+            <li>Difference between OSI and TCP/IP</li>
+        </ul>
+
+        <h2>Unit 3: Data Communication</h2>
+        <ul>
+            <li>Transmission Media</li>
+            <li>Guided and Unguided Media</li>
+            <li>Twisted Pair Cable</li>
+            <li>Coaxial Cable</li>
+            <li>Optical Fiber</li>
+            <li>Wireless Communication</li>
+        </ul>
+
+        <h2>Unit 4: Network Protocols</h2>
+        <ul>
+            <li>IP Address</li>
+            <li>IPv4 and IPv6</li>
+            <li>TCP</li>
+            <li>UDP</li>
+            <li>HTTP and HTTPS</li>
+            <li>FTP</li>
+            <li>DNS</li>
+            <li>DHCP</li>
+        </ul>
+
+        <h2>Unit 5: Network Security</h2>
+        <ul>
+            <li>Introduction to Network Security</li>
+            <li>Authentication</li>
+            <li>Encryption</li>
+            <li>Firewall</li>
+            <li>Virus and Malware</li>
+            <li>Common Network Attacks</li>
+        </ul>
+
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Web Development") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Web Development Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+
+        <h1>🌐 Web Development — BCA Semester 3</h1>
+
+        <h2>Unit 1: HTML</h2>
+        <ul>
+            <li>Introduction to HTML</li>
+            <li>HTML Document Structure</li>
+            <li>HTML Tags and Elements</li>
+            <li>Headings and Paragraphs</li>
+            <li>Links and Images</li>
+            <li>Lists</li>
+            <li>Tables</li>
+            <li>Forms</li>
+        </ul>
+
+        <h2>Unit 2: CSS</h2>
+        <ul>
+            <li>Introduction to CSS</li>
+            <li>Inline, Internal and External CSS</li>
+            <li>Selectors</li>
+            <li>Colors and Fonts</li>
+            <li>Box Model</li>
+            <li>Margin and Padding</li>
+            <li>Flexbox</li>
+            <li>Responsive Web Design</li>
+        </ul>
+
+        <h2>Unit 3: JavaScript</h2>
+        <ul>
+            <li>Introduction to JavaScript</li>
+            <li>Variables and Data Types</li>
+            <li>Operators</li>
+            <li>Conditional Statements</li>
+            <li>Loops</li>
+            <li>Functions</li>
+            <li>Arrays</li>
+            <li>Objects</li>
+        </ul>
+
+        <h2>Unit 4: DOM and Events</h2>
+        <ul>
+            <li>Document Object Model</li>
+            <li>DOM Manipulation</li>
+            <li>JavaScript Events</li>
+            <li>Event Handling</li>
+            <li>Form Validation</li>
+        </ul>
+
+        <h2>Unit 5: Web Technologies</h2>
+        <ul>
+            <li>Client-Side and Server-Side Scripting</li>
+            <li>Web Servers</li>
+            <li>HTTP and HTTPS</li>
+            <li>Cookies and Sessions</li>
+            <li>Introduction to APIs</li>
+        </ul>
+
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Python Programming") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Python Programming Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+
+        <h1>🐍 Python Programming — BCA Semester 3</h1>
+
+        <h2>Unit 1: Python Basics</h2>
+        <ul>
+            <li>Introduction to Python</li>
+            <li>Features of Python</li>
+            <li>Python Syntax</li>
+            <li>Variables</li>
+            <li>Data Types</li>
+            <li>Input and Output</li>
+            <li>Operators</li>
+        </ul>
+
+        <h2>Unit 2: Control Statements</h2>
+        <ul>
+            <li>if Statement</li>
+            <li>if-else Statement</li>
+            <li>Nested if</li>
+            <li>for Loop</li>
+            <li>while Loop</li>
+            <li>break and continue</li>
+            <li>pass Statement</li>
+        </ul>
+
+        <h2>Unit 3: Data Structures</h2>
+        <ul>
+            <li>Lists</li>
+            <li>Tuples</li>
+            <li>Sets</li>
+            <li>Dictionaries</li>
+            <li>String Operations</li>
+            <li>List Methods</li>
+            <li>Dictionary Methods</li>
+        </ul>
+
+        <h2>Unit 4: Functions and Modules</h2>
+        <ul>
+            <li>Defining Functions</li>
+            <li>Function Arguments</li>
+            <li>Return Statement</li>
+            <li>Lambda Functions</li>
+            <li>Modules</li>
+            <li>Packages</li>
+        </ul>
+
+        <h2>Unit 5: Exception and File Handling</h2>
+        <ul>
+            <li>Exception Handling</li>
+            <li>try-except</li>
+            <li>finally</li>
+            <li>File Handling</li>
+            <li>Reading and Writing Files</li>
+            <li>Introduction to Object Oriented Programming in Python</li>
+        </ul>
+
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Software Engineering") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Software Engineering Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+
+        <h1>⚙️ Software Engineering — BCA Semester 3</h1>
+
+        <h2>Unit 1: Introduction</h2>
+        <ul>
+            <li>What is Software Engineering?</li>
+            <li>Characteristics of Software</li>
+            <li>Software Crisis</li>
+            <li>Software Development Process</li>
+            <li>Software Engineering Principles</li>
+        </ul>
+
+        <h2>Unit 2: SDLC Models</h2>
+        <ul>
+            <li>Software Development Life Cycle</li>
+            <li>Waterfall Model</li>
+            <li>Prototype Model</li>
+            <li>Spiral Model</li>
+            <li>Incremental Model</li>
+            <li>Agile Model</li>
+        </ul>
+
+        <h2>Unit 3: Requirements Engineering</h2>
+        <ul>
+            <li>Software Requirements</li>
+            <li>Functional Requirements</li>
+            <li>Non-Functional Requirements</li>
+            <li>Requirement Gathering</li>
+            <li>Requirement Analysis</li>
+            <li>Software Requirement Specification (SRS)</li>
+        </ul>
+
+        <h2>Unit 4: Software Design and Testing</h2>
+        <ul>
+            <li>Software Design</li>
+            <li>Modular Design</li>
+            <li>Coupling and Cohesion</li>
+            <li>Software Testing</li>
+            <li>Unit Testing</li>
+            <li>Integration Testing</li>
+            <li>System Testing</li>
+            <li>Acceptance Testing</li>
+        </ul>
+
+        <h2>Unit 5: Software Maintenance and Quality</h2>
+        <ul>
+            <li>Software Maintenance</li>
+            <li>Types of Maintenance</li>
+            <li>Software Quality</li>
+            <li>Software Quality Assurance</li>
+            <li>Software Reliability</li>
+            <li>Software Project Management</li>
+        </ul>
+
+        </body>
+        </html>
+    `);
+}
+else if (noteName === "Java Programming") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Java Programming Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>☕ Java Programming — BCA Semester 4</h1>
+
+        <h2>Unit 1: Java Basics</h2>
+        <ul>
+            <li>Introduction to Java</li>
+            <li>Features of Java</li>
+            <li>JDK, JRE and JVM</li>
+            <li>Java Program Structure</li>
+            <li>Variables and Data Types</li>
+            <li>Operators and Expressions</li>
+        </ul>
+
+        <h2>Unit 2: Control Statements and Arrays</h2>
+        <ul>
+            <li>if, if-else and switch</li>
+            <li>for, while and do-while loops</li>
+            <li>break and continue</li>
+            <li>Arrays</li>
+            <li>String and String Methods</li>
+        </ul>
+
+        <h2>Unit 3: Object Oriented Programming</h2>
+        <ul>
+            <li>Class and Object</li>
+            <li>Constructor</li>
+            <li>Inheritance</li>
+            <li>Polymorphism</li>
+            <li>Method Overloading</li>
+            <li>Method Overriding</li>
+            <li>Encapsulation</li>
+            <li>Abstraction</li>
+        </ul>
+
+        <h2>Unit 4: Exception and Package</h2>
+        <ul>
+            <li>Exception Handling</li>
+            <li>try, catch and finally</li>
+            <li>throw and throws</li>
+            <li>Packages</li>
+            <li>Interfaces</li>
+        </ul>
+
+        <h2>Unit 5: Advanced Java</h2>
+        <ul>
+            <li>Multithreading</li>
+            <li>File Handling</li>
+            <li>Collections Framework</li>
+            <li>JDBC Introduction</li>
+            <li>Database Connectivity</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Advanced Database Management") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Advanced Database Management Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>🗄️ Advanced Database Management — BCA Semester 4</h1>
+
+        <h2>Unit 1: Database Concepts</h2>
+        <ul>
+            <li>Database Architecture</li>
+            <li>Database Models</li>
+            <li>Relational Database</li>
+            <li>Keys and Constraints</li>
+            <li>ER Model</li>
+        </ul>
+
+        <h2>Unit 2: Advanced SQL</h2>
+        <ul>
+            <li>SQL Commands</li>
+            <li>Joins</li>
+            <li>Subqueries</li>
+            <li>Views</li>
+            <li>Stored Procedures</li>
+            <li>Triggers</li>
+        </ul>
+
+        <h2>Unit 3: Normalization</h2>
+        <ul>
+            <li>Functional Dependency</li>
+            <li>1NF</li>
+            <li>2NF</li>
+            <li>3NF</li>
+            <li>BCNF</li>
+        </ul>
+
+        <h2>Unit 4: Transactions</h2>
+        <ul>
+            <li>Transaction Management</li>
+            <li>ACID Properties</li>
+            <li>Concurrency Control</li>
+            <li>Serializability</li>
+            <li>Deadlock</li>
+        </ul>
+
+        <h2>Unit 5: Modern Databases</h2>
+        <ul>
+            <li>Distributed Database</li>
+            <li>NoSQL Database</li>
+            <li>MongoDB Introduction</li>
+            <li>Database Security</li>
+            <li>Database Backup and Recovery</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Computer Graphics") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Computer Graphics Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>🎨 Computer Graphics — BCA Semester 4</h1>
+
+        <h2>Unit 1: Introduction</h2>
+        <ul>
+            <li>What is Computer Graphics?</li>
+            <li>Applications of Computer Graphics</li>
+            <li>Graphics Display Devices</li>
+            <li>Raster Scan Display</li>
+            <li>Random Scan Display</li>
+        </ul>
+
+        <h2>Unit 2: Drawing Algorithms</h2>
+        <ul>
+            <li>DDA Line Drawing Algorithm</li>
+            <li>Bresenham Line Algorithm</li>
+            <li>Circle Drawing Algorithm</li>
+            <li>Ellipse Drawing</li>
+        </ul>
+
+        <h2>Unit 3: 2D Transformations</h2>
+        <ul>
+            <li>Translation</li>
+            <li>Rotation</li>
+            <li>Scaling</li>
+            <li>Reflection</li>
+            <li>Shearing</li>
+        </ul>
+
+        <h2>Unit 4: Clipping</h2>
+        <ul>
+            <li>Window and Viewport</li>
+            <li>Line Clipping</li>
+            <li>Cohen-Sutherland Algorithm</li>
+            <li>Polygon Clipping</li>
+        </ul>
+
+        <h2>Unit 5: 3D Graphics</h2>
+        <ul>
+            <li>3D Coordinates</li>
+            <li>3D Transformations</li>
+            <li>Projection</li>
+            <li>Parallel Projection</li>
+            <li>Perspective Projection</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Data Communication") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Data Communication Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>📡 Data Communication — BCA Semester 4</h1>
+
+        <h2>Unit 1: Basics</h2>
+        <ul>
+            <li>Data Communication</li>
+            <li>Components of Communication</li>
+            <li>Communication Modes</li>
+            <li>Simplex, Half Duplex and Full Duplex</li>
+        </ul>
+
+        <h2>Unit 2: Transmission Media</h2>
+        <ul>
+            <li>Twisted Pair</li>
+            <li>Coaxial Cable</li>
+            <li>Optical Fiber</li>
+            <li>Radio Waves</li>
+            <li>Microwave</li>
+            <li>Satellite Communication</li>
+        </ul>
+
+        <h2>Unit 3: Transmission Techniques</h2>
+        <ul>
+            <li>Analog and Digital Signals</li>
+            <li>Modulation</li>
+            <li>Amplitude Modulation</li>
+            <li>Frequency Modulation</li>
+            <li>Phase Modulation</li>
+        </ul>
+
+        <h2>Unit 4: Multiplexing</h2>
+        <ul>
+            <li>FDM</li>
+            <li>TDM</li>
+            <li>WDM</li>
+            <li>Switching Techniques</li>
+            <li>Circuit Switching</li>
+            <li>Packet Switching</li>
+        </ul>
+
+        <h2>Unit 5: Error and Flow Control</h2>
+        <ul>
+            <li>Error Detection</li>
+            <li>Parity Check</li>
+            <li>Checksum</li>
+            <li>CRC</li>
+            <li>Flow Control</li>
+            <li>ARQ</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "System Analysis and Design") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>System Analysis and Design Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>📋 System Analysis and Design — BCA Semester 4</h1>
+
+        <h2>Unit 1: System Concepts</h2>
+        <ul>
+            <li>What is a System?</li>
+            <li>System Characteristics</li>
+            <li>Types of Systems</li>
+            <li>Information System</li>
+            <li>System Development</li>
+        </ul>
+
+        <h2>Unit 2: System Analysis</h2>
+        <ul>
+            <li>System Analysis</li>
+            <li>Requirement Gathering</li>
+            <li>Feasibility Study</li>
+            <li>Technical Feasibility</li>
+            <li>Economic Feasibility</li>
+        </ul>
+
+        <h2>Unit 3: System Design</h2>
+        <ul>
+            <li>System Design</li>
+            <li>Input Design</li>
+            <li>Output Design</li>
+            <li>Database Design</li>
+            <li>User Interface Design</li>
+        </ul>
+
+        <h2>Unit 4: System Modeling</h2>
+        <ul>
+            <li>Data Flow Diagram</li>
+            <li>Context Diagram</li>
+            <li>Entity Relationship Diagram</li>
+            <li>Decision Tables</li>
+            <li>Decision Trees</li>
+        </ul>
+
+        <h2>Unit 5: Implementation</h2>
+        <ul>
+            <li>System Implementation</li>
+            <li>System Testing</li>
+            <li>System Conversion</li>
+            <li>Maintenance</li>
+            <li>System Security</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+else if (noteName === "Artificial Intelligence") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Artificial Intelligence Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>🤖 Artificial Intelligence — BCA Semester 5</h1>
+
+        <h2>Unit 1: Introduction to AI</h2>
+        <ul>
+            <li>What is Artificial Intelligence?</li>
+            <li>History of AI</li>
+            <li>Applications of AI</li>
+            <li>AI and Human Intelligence</li>
+            <li>Types of AI</li>
+        </ul>
+
+        <h2>Unit 2: Problem Solving</h2>
+        <ul>
+            <li>Problem Formulation</li>
+            <li>State Space Search</li>
+            <li>Breadth First Search</li>
+            <li>Depth First Search</li>
+            <li>Heuristic Search</li>
+            <li>A* Algorithm</li>
+        </ul>
+
+        <h2>Unit 3: Knowledge Representation</h2>
+        <ul>
+            <li>Knowledge Representation</li>
+            <li>Logic</li>
+            <li>Propositional Logic</li>
+            <li>Predicate Logic</li>
+            <li>Semantic Networks</li>
+        </ul>
+
+        <h2>Unit 4: Machine Learning Basics</h2>
+        <ul>
+            <li>Introduction to Machine Learning</li>
+            <li>Supervised Learning</li>
+            <li>Unsupervised Learning</li>
+            <li>Classification</li>
+            <li>Clustering</li>
+        </ul>
+
+        <h2>Unit 5: AI Applications</h2>
+        <ul>
+            <li>Expert Systems</li>
+            <li>Natural Language Processing</li>
+            <li>Robotics</li>
+            <li>Computer Vision</li>
+            <li>AI Ethics</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Machine Learning") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Machine Learning Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>🧠 Machine Learning — BCA Semester 5</h1>
+
+        <h2>Unit 1: Introduction</h2>
+        <ul>
+            <li>What is Machine Learning?</li>
+            <li>Types of Machine Learning</li>
+            <li>Training and Testing Data</li>
+            <li>Features and Labels</li>
+        </ul>
+
+        <h2>Unit 2: Supervised Learning</h2>
+        <ul>
+            <li>Linear Regression</li>
+            <li>Logistic Regression</li>
+            <li>Decision Tree</li>
+            <li>K-Nearest Neighbors</li>
+        </ul>
+
+        <h2>Unit 3: Unsupervised Learning</h2>
+        <ul>
+            <li>Clustering</li>
+            <li>K-Means Clustering</li>
+            <li>Hierarchical Clustering</li>
+            <li>Dimensionality Reduction</li>
+        </ul>
+
+        <h2>Unit 4: Model Evaluation</h2>
+        <ul>
+            <li>Accuracy</li>
+            <li>Precision</li>
+            <li>Recall</li>
+            <li>F1 Score</li>
+            <li>Confusion Matrix</li>
+        </ul>
+
+        <h2>Unit 5: ML Applications</h2>
+        <ul>
+            <li>Recommendation Systems</li>
+            <li>Image Classification</li>
+            <li>Spam Detection</li>
+            <li>Fraud Detection</li>
+            <li>ML in Business</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Cloud Computing") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Cloud Computing Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>☁️ Cloud Computing — BCA Semester 5</h1>
+
+        <h2>Unit 1: Introduction</h2>
+        <ul>
+            <li>What is Cloud Computing?</li>
+            <li>Characteristics of Cloud Computing</li>
+            <li>Advantages and Disadvantages</li>
+            <li>Cloud Architecture</li>
+        </ul>
+
+        <h2>Unit 2: Cloud Service Models</h2>
+        <ul>
+            <li>IaaS</li>
+            <li>PaaS</li>
+            <li>SaaS</li>
+            <li>Public Cloud</li>
+            <li>Private Cloud</li>
+            <li>Hybrid Cloud</li>
+        </ul>
+
+        <h2>Unit 3: Virtualization</h2>
+        <ul>
+            <li>Virtualization</li>
+            <li>Virtual Machines</li>
+            <li>Hypervisors</li>
+            <li>Server Virtualization</li>
+            <li>Storage Virtualization</li>
+        </ul>
+
+        <h2>Unit 4: Cloud Security</h2>
+        <ul>
+            <li>Cloud Security</li>
+            <li>Data Privacy</li>
+            <li>Authentication</li>
+            <li>Access Control</li>
+            <li>Data Encryption</li>
+        </ul>
+
+        <h2>Unit 5: Cloud Applications</h2>
+        <ul>
+            <li>Cloud Storage</li>
+            <li>Cloud Databases</li>
+            <li>Cloud Networking</li>
+            <li>Serverless Computing</li>
+            <li>Cloud-based Applications</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Cyber Security") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Cyber Security Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>🔐 Cyber Security — BCA Semester 5</h1>
+
+        <h2>Unit 1: Introduction</h2>
+        <ul>
+            <li>What is Cyber Security?</li>
+            <li>Cyber Threats</li>
+            <li>Information Security</li>
+            <li>CIA Triad</li>
+        </ul>
+
+        <h2>Unit 2: Cyber Attacks</h2>
+        <ul>
+            <li>Malware</li>
+            <li>Virus</li>
+            <li>Worm</li>
+            <li>Trojan Horse</li>
+            <li>Phishing</li>
+            <li>Denial of Service</li>
+        </ul>
+
+        <h2>Unit 3: Cryptography</h2>
+        <ul>
+            <li>Cryptography</li>
+            <li>Symmetric Encryption</li>
+            <li>Asymmetric Encryption</li>
+            <li>Hashing</li>
+            <li>Digital Signature</li>
+        </ul>
+
+        <h2>Unit 4: Network Security</h2>
+        <ul>
+            <li>Firewall</li>
+            <li>VPN</li>
+            <li>Intrusion Detection System</li>
+            <li>Secure Network Communication</li>
+        </ul>
+
+        <h2>Unit 5: Security Management</h2>
+        <ul>
+            <li>Password Security</li>
+            <li>Authentication</li>
+            <li>Access Control</li>
+            <li>Security Policies</li>
+            <li>Cyber Laws</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Data Analytics") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Data Analytics Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>📊 Data Analytics — BCA Semester 5</h1>
+
+        <h2>Unit 1: Introduction</h2>
+        <ul>
+            <li>What is Data Analytics?</li>
+            <li>Types of Data</li>
+            <li>Data Analytics Process</li>
+            <li>Applications of Data Analytics</li>
+        </ul>
+
+        <h2>Unit 2: Data Collection</h2>
+        <ul>
+            <li>Data Sources</li>
+            <li>Structured and Unstructured Data</li>
+            <li>Data Collection Methods</li>
+            <li>Data Integration</li>
+        </ul>
+
+        <h2>Unit 3: Data Cleaning</h2>
+        <ul>
+            <li>Data Cleaning</li>
+            <li>Missing Values</li>
+            <li>Duplicate Data</li>
+            <li>Data Transformation</li>
+        </ul>
+
+        <h2>Unit 4: Data Visualization</h2>
+        <ul>
+            <li>Charts and Graphs</li>
+            <li>Bar Chart</li>
+            <li>Pie Chart</li>
+            <li>Line Graph</li>
+            <li>Dashboards</li>
+        </ul>
+
+        <h2>Unit 5: Analytics Tools</h2>
+        <ul>
+            <li>Excel for Data Analysis</li>
+            <li>Python for Data Analytics</li>
+            <li>Pandas</li>
+            <li>NumPy</li>
+            <li>Introduction to Data Visualization Libraries</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+else if (noteName === "Big Data") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Big Data Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>📦 Big Data — BCA Semester 6</h1>
+
+        <h2>Unit 1: Introduction</h2>
+        <ul>
+            <li>What is Big Data?</li>
+            <li>Characteristics of Big Data</li>
+            <li>5 Vs of Big Data</li>
+            <li>Big Data Applications</li>
+        </ul>
+
+        <h2>Unit 2: Hadoop</h2>
+        <ul>
+            <li>Introduction to Hadoop</li>
+            <li>Hadoop Architecture</li>
+            <li>HDFS</li>
+            <li>MapReduce</li>
+            <li>YARN</li>
+        </ul>
+
+        <h2>Unit 3: Big Data Processing</h2>
+        <ul>
+            <li>Data Processing</li>
+            <li>Batch Processing</li>
+            <li>Real-Time Processing</li>
+            <li>Distributed Processing</li>
+        </ul>
+
+        <h2>Unit 4: NoSQL</h2>
+        <ul>
+            <li>NoSQL Databases</li>
+            <li>Key-Value Databases</li>
+            <li>Document Databases</li>
+            <li>MongoDB</li>
+        </ul>
+
+        <h2>Unit 5: Applications</h2>
+        <ul>
+            <li>Big Data in Business</li>
+            <li>Big Data in Healthcare</li>
+            <li>Big Data in Education</li>
+            <li>Big Data Security</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Mobile Application Development") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Mobile Application Development Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>📱 Mobile Application Development — BCA Semester 6</h1>
+
+        <h2>Unit 1: Mobile Computing</h2>
+        <ul>
+            <li>Introduction to Mobile Applications</li>
+            <li>Mobile Operating Systems</li>
+            <li>Mobile Application Architecture</li>
+        </ul>
+
+        <h2>Unit 2: Android Basics</h2>
+        <ul>
+            <li>Introduction to Android</li>
+            <li>Android Studio</li>
+            <li>Activities</li>
+            <li>Layouts</li>
+            <li>Views and Widgets</li>
+        </ul>
+
+        <h2>Unit 3: Android Components</h2>
+        <ul>
+            <li>Activities</li>
+            <li>Services</li>
+            <li>Broadcast Receivers</li>
+            <li>Content Providers</li>
+            <li>Intents</li>
+        </ul>
+
+        <h2>Unit 4: Data Storage</h2>
+        <ul>
+            <li>Shared Preferences</li>
+            <li>SQLite Database</li>
+            <li>File Storage</li>
+            <li>Cloud Database Basics</li>
+        </ul>
+
+        <h2>Unit 5: App Deployment</h2>
+        <ul>
+            <li>Testing Mobile Applications</li>
+            <li>Debugging</li>
+            <li>App Security</li>
+            <li>Application Deployment</li>
+            <li>Publishing Applications</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Internet of Things") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Internet of Things Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>🌐 Internet of Things — BCA Semester 6</h1>
+
+        <h2>Unit 1: Introduction to IoT</h2>
+        <ul>
+            <li>What is IoT?</li>
+            <li>Characteristics of IoT</li>
+            <li>IoT Architecture</li>
+            <li>Applications of IoT</li>
+        </ul>
+
+        <h2>Unit 2: IoT Components</h2>
+        <ul>
+            <li>Sensors</li>
+            <li>Actuators</li>
+            <li>Microcontrollers</li>
+            <li>Embedded Systems</li>
+        </ul>
+
+        <h2>Unit 3: IoT Communication</h2>
+        <ul>
+            <li>Wi-Fi</li>
+            <li>Bluetooth</li>
+            <li>ZigBee</li>
+            <li>RFID</li>
+            <li>MQTT</li>
+        </ul>
+
+        <h2>Unit 4: IoT Platforms</h2>
+        <ul>
+            <li>Cloud and IoT</li>
+            <li>IoT Gateways</li>
+            <li>Edge Computing</li>
+            <li>Data Processing</li>
+        </ul>
+
+        <h2>Unit 5: IoT Security</h2>
+        <ul>
+            <li>IoT Security Challenges</li>
+            <li>Device Authentication</li>
+            <li>Data Encryption</li>
+            <li>Privacy</li>
+            <li>Secure IoT Architecture</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Project Work") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Project Work Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>📚 Project Work — BCA Semester 6</h1>
+
+        <h2>Unit 1: Project Planning</h2>
+        <ul>
+            <li>Project Selection</li>
+            <li>Problem Definition</li>
+            <li>Objectives</li>
+            <li>Project Scope</li>
+        </ul>
+
+        <h2>Unit 2: Requirement Analysis</h2>
+        <ul>
+            <li>Requirement Gathering</li>
+            <li>Functional Requirements</li>
+            <li>Non-Functional Requirements</li>
+            <li>Feasibility Study</li>
+        </ul>
+
+        <h2>Unit 3: System Design</h2>
+        <ul>
+            <li>System Architecture</li>
+            <li>Database Design</li>
+            <li>User Interface Design</li>
+            <li>Data Flow Diagram</li>
+        </ul>
+
+        <h2>Unit 4: Development and Testing</h2>
+        <ul>
+            <li>Implementation</li>
+            <li>Programming</li>
+            <li>Testing</li>
+            <li>Debugging</li>
+            <li>Deployment</li>
+        </ul>
+
+        <h2>Unit 5: Documentation</h2>
+        <ul>
+            <li>Project Report</li>
+            <li>Project Presentation</li>
+            <li>Testing Report</li>
+            <li>Future Scope</li>
+            <li>Conclusion</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Professional Elective") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Professional Elective Notes</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>🎓 Professional Elective — BCA Semester 6</h1>
+
+        <h2>Unit 1: Career-Oriented Technologies</h2>
+        <ul>
+            <li>Introduction to Professional Electives</li>
+            <li>Emerging Technologies</li>
+            <li>Industry Skills</li>
+        </ul>
+
+        <h2>Unit 2: Web and Software Technologies</h2>
+        <ul>
+            <li>Advanced Web Development</li>
+            <li>Software Development</li>
+            <li>Application Development</li>
+        </ul>
+
+        <h2>Unit 3: Data Technologies</h2>
+        <ul>
+            <li>Data Analytics</li>
+            <li>Artificial Intelligence</li>
+            <li>Machine Learning</li>
+        </ul>
+
+        <h2>Unit 4: Security and Cloud</h2>
+        <ul>
+            <li>Cyber Security</li>
+            <li>Cloud Computing</li>
+            <li>Network Security</li>
+        </ul>
+
+        <h2>Unit 5: Professional Skills</h2>
+        <ul>
+            <li>Resume Development</li>
+            <li>Interview Preparation</li>
+            <li>Communication Skills</li>
+            <li>Team Work</li>
+            <li>Problem Solving</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+else if (noteName === "Principles of Management") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Principles of Management</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>📚 Principles of Management — BBA Semester 1</h1>
+
+        <h2>Unit 1: Introduction to Management</h2>
+        <ul>
+            <li>Meaning and Definition of Management</li>
+            <li>Nature and Importance of Management</li>
+            <li>Functions of Management</li>
+            <li>Levels of Management</li>
+            <li>Management as Art, Science and Profession</li>
+        </ul>
+
+        <h2>Unit 2: Planning</h2>
+        <ul>
+            <li>Meaning and Importance of Planning</li>
+            <li>Types of Plans</li>
+            <li>Planning Process</li>
+            <li>Objectives and Policies</li>
+            <li>Decision Making</li>
+        </ul>
+
+        <h2>Unit 3: Organizing</h2>
+        <ul>
+            <li>Meaning of Organization</li>
+            <li>Principles of Organization</li>
+            <li>Departmentation</li>
+            <li>Delegation of Authority</li>
+            <li>Centralization and Decentralization</li>
+        </ul>
+
+        <h2>Unit 4: Directing</h2>
+        <ul>
+            <li>Leadership</li>
+            <li>Motivation</li>
+            <li>Communication</li>
+            <li>Supervision</li>
+        </ul>
+
+        <h2>Unit 5: Controlling</h2>
+        <ul>
+            <li>Meaning of Controlling</li>
+            <li>Steps in Controlling</li>
+            <li>Types of Control</li>
+            <li>Budgetary Control</li>
+            <li>Management by Objectives</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Business Economics") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Business Economics</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>💰 Business Economics — BBA Semester 1</h1>
+
+        <h2>Unit 1: Introduction</h2>
+        <ul>
+            <li>Meaning of Economics</li>
+            <li>Nature and Scope of Business Economics</li>
+            <li>Microeconomics and Macroeconomics</li>
+            <li>Basic Economic Problems</li>
+        </ul>
+
+        <h2>Unit 2: Demand</h2>
+        <ul>
+            <li>Meaning of Demand</li>
+            <li>Law of Demand</li>
+            <li>Determinants of Demand</li>
+            <li>Elasticity of Demand</li>
+            <li>Demand Forecasting</li>
+        </ul>
+
+        <h2>Unit 3: Production</h2>
+        <ul>
+            <li>Production Function</li>
+            <li>Factors of Production</li>
+            <li>Law of Variable Proportions</li>
+            <li>Returns to Scale</li>
+        </ul>
+
+        <h2>Unit 4: Cost and Revenue</h2>
+        <ul>
+            <li>Fixed and Variable Cost</li>
+            <li>Total, Average and Marginal Cost</li>
+            <li>Revenue Concepts</li>
+            <li>Break-Even Analysis</li>
+        </ul>
+
+        <h2>Unit 5: Market Structure</h2>
+        <ul>
+            <li>Perfect Competition</li>
+            <li>Monopoly</li>
+            <li>Monopolistic Competition</li>
+            <li>Oligopoly</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Financial Accounting") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Financial Accounting</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>📒 Financial Accounting — BBA Semester 1</h1>
+
+        <h2>Unit 1: Accounting Basics</h2>
+        <ul>
+            <li>Meaning of Accounting</li>
+            <li>Objectives of Accounting</li>
+            <li>Accounting Principles</li>
+            <li>Accounting Concepts</li>
+        </ul>
+
+        <h2>Unit 2: Journal and Ledger</h2>
+        <ul>
+            <li>Journal Entries</li>
+            <li>Ledger</li>
+            <li>Trial Balance</li>
+            <li>Rules of Debit and Credit</li>
+        </ul>
+
+        <h2>Unit 3: Final Accounts</h2>
+        <ul>
+            <li>Trading Account</li>
+            <li>Profit and Loss Account</li>
+            <li>Balance Sheet</li>
+            <li>Adjustments</li>
+        </ul>
+
+        <h2>Unit 4: Depreciation</h2>
+        <ul>
+            <li>Meaning of Depreciation</li>
+            <li>Straight Line Method</li>
+            <li>Written Down Value Method</li>
+        </ul>
+
+        <h2>Unit 5: Cash and Bank</h2>
+        <ul>
+            <li>Cash Book</li>
+            <li>Bank Reconciliation Statement</li>
+            <li>Petty Cash Book</li>
+            <li>Errors and Rectification</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Business Communication") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Business Communication</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>💬 Business Communication — BBA Semester 1</h1>
+
+        <h2>Unit 1: Communication Basics</h2>
+        <ul>
+            <li>Meaning of Communication</li>
+            <li>Communication Process</li>
+            <li>Types of Communication</li>
+            <li>Importance of Communication</li>
+        </ul>
+
+        <h2>Unit 2: Business Writing</h2>
+        <ul>
+            <li>Business Letters</li>
+            <li>Emails</li>
+            <li>Reports</li>
+            <li>Notices and Memos</li>
+        </ul>
+
+        <h2>Unit 3: Oral Communication</h2>
+        <ul>
+            <li>Presentation Skills</li>
+            <li>Group Discussion</li>
+            <li>Public Speaking</li>
+            <li>Interview Skills</li>
+        </ul>
+
+        <h2>Unit 4: Barriers</h2>
+        <ul>
+            <li>Physical Barriers</li>
+            <li>Language Barriers</li>
+            <li>Psychological Barriers</li>
+            <li>Ways to Overcome Barriers</li>
+        </ul>
+
+        <h2>Unit 5: Professional Skills</h2>
+        <ul>
+            <li>Listening Skills</li>
+            <li>Body Language</li>
+            <li>Business Etiquette</li>
+            <li>Professional Communication</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+
+
+else if (noteName === "Business Mathematics") {
+    notesWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Business Mathematics</title>
+            <style>
+                body { font-family: Arial; padding: 25px; line-height: 1.7; }
+                h1 { color: #222; }
+                h2 { color: #444; margin-top: 25px; }
+                li { margin-bottom: 8px; }
+            </style>
+        </head>
+        <body>
+        <h1>🔢 Business Mathematics — BBA Semester 1</h1>
+
+        <h2>Unit 1: Basic Mathematics</h2>
+        <ul>
+            <li>Percentages</li>
+            <li>Ratio and Proportion</li>
+            <li>Profit and Loss</li>
+            <li>Simple and Compound Interest</li>
+        </ul>
+
+        <h2>Unit 2: Algebra</h2>
+        <ul>
+            <li>Linear Equations</li>
+            <li>Quadratic Equations</li>
+            <li>Sequences and Series</li>
+        </ul>
+
+        <h2>Unit 3: Matrices</h2>
+        <ul>
+            <li>Types of Matrices</li>
+            <li>Matrix Operations</li>
+            <li>Determinants</li>
+            <li>Inverse of Matrix</li>
+        </ul>
+
+        <h2>Unit 4: Calculus</h2>
+        <ul>
+            <li>Limits</li>
+            <li>Differentiation</li>
+            <li>Applications of Differentiation</li>
+            <li>Integration</li>
+        </ul>
+
+        <h2>Unit 5: Business Applications</h2>
+        <ul>
+            <li>Cost Function</li>
+            <li>Revenue Function</li>
+            <li>Profit Function</li>
+            <li>Break-Even Point</li>
+        </ul>
+        </body>
+        </html>
+    `);
+}
+else if (noteName === "Marketing Management") {
+    notesWindow.document.write(`
+        <h1>📢 Marketing Management — BBA Semester 2</h1>
+        <h2>Unit 1: Introduction</h2>
+        <ul><li>Meaning and Importance of Marketing</li><li>Marketing Concepts</li><li>Marketing Environment</li></ul>
+        <h2>Unit 2: Consumer and Market</h2>
+        <ul><li>Consumer Behaviour</li><li>Market Segmentation</li><li>Targeting</li><li>Positioning</li></ul>
+        <h2>Unit 3: Marketing Mix</h2>
+        <ul><li>Product</li><li>Price</li><li>Place</li><li>Promotion</li></ul>
+        <h2>Unit 4: Product Management</h2>
+        <ul><li>Product Life Cycle</li><li>Branding</li><li>Packaging</li><li>Labelling</li></ul>
+        <h2>Unit 5: Promotion</h2>
+        <ul><li>Advertising</li><li>Sales Promotion</li><li>Personal Selling</li><li>Digital Marketing</li></ul>
+    `);
+}
+
+else if (noteName === "Human Resource Management") {
+    notesWindow.document.write(`
+        <h1>👥 Human Resource Management — BBA Semester 2</h1>
+        <h2>Unit 1: HRM Basics</h2>
+        <ul><li>Meaning and Scope of HRM</li><li>Functions of HRM</li><li>Importance of Human Resources</li></ul>
+        <h2>Unit 2: Recruitment</h2>
+        <ul><li>Recruitment</li><li>Selection</li><li>Interview</li><li>Placement</li></ul>
+        <h2>Unit 3: Training</h2>
+        <ul><li>Training Methods</li><li>Development</li><li>Performance Appraisal</li></ul>
+        <h2>Unit 4: Compensation</h2>
+        <ul><li>Wages</li><li>Salary</li><li>Incentives</li><li>Employee Benefits</li></ul>
+        <h2>Unit 5: Employee Relations</h2>
+        <ul><li>Industrial Relations</li><li>Grievance Handling</li><li>Employee Motivation</li></ul>
+    `);
+}
+
+else if (noteName === "Business Statistics") {
+    notesWindow.document.write(`
+        <h1>📊 Business Statistics — BBA Semester 2</h1>
+        <h2>Unit 1: Introduction</h2>
+        <ul><li>Meaning of Statistics</li><li>Importance in Business</li><li>Data Collection</li></ul>
+        <h2>Unit 2: Central Tendency</h2>
+        <ul><li>Mean</li><li>Median</li><li>Mode</li></ul>
+        <h2>Unit 3: Dispersion</h2>
+        <ul><li>Range</li><li>Mean Deviation</li><li>Standard Deviation</li><li>Variance</li></ul>
+        <h2>Unit 4: Correlation</h2>
+        <ul><li>Correlation</li><li>Types of Correlation</li><li>Correlation Coefficient</li></ul>
+        <h2>Unit 5: Regression</h2>
+        <ul><li>Regression Analysis</li><li>Regression Lines</li><li>Business Applications</li></ul>
+    `);
+}
+
+else if (noteName === "Organizational Behaviour") {
+    notesWindow.document.write(`
+        <h1>🏢 Organizational Behaviour — BBA Semester 2</h1>
+        <h2>Unit 1: Introduction</h2>
+        <ul><li>Meaning of Organizational Behaviour</li><li>Importance</li><li>Models of OB</li></ul>
+        <h2>Unit 2: Individual Behaviour</h2>
+        <ul><li>Personality</li><li>Perception</li><li>Learning</li><li>Attitude</li></ul>
+        <h2>Unit 3: Motivation</h2>
+        <ul><li>Meaning of Motivation</li><li>Maslow Theory</li><li>Herzberg Theory</li></ul>
+        <h2>Unit 4: Group Behaviour</h2>
+        <ul><li>Groups</li><li>Teamwork</li><li>Leadership</li><li>Conflict</li></ul>
+        <h2>Unit 5: Organizational Culture</h2>
+        <ul><li>Organizational Culture</li><li>Change Management</li><li>Stress Management</li></ul>
+    `);
+}
+
+else if (noteName === "Business Environment") {
+    notesWindow.document.write(`
+        <h1>🌍 Business Environment — BBA Semester 2</h1>
+        <h2>Unit 1: Introduction</h2>
+        <ul><li>Meaning of Business Environment</li><li>Importance</li><li>Internal and External Environment</li></ul>
+        <h2>Unit 2: Economic Environment</h2>
+        <ul><li>Economic Systems</li><li>Fiscal Policy</li><li>Monetary Policy</li></ul>
+        <h2>Unit 3: Political Environment</h2>
+        <ul><li>Government Policies</li><li>Political Stability</li><li>Business and Government</li></ul>
+        <h2>Unit 4: Social Environment</h2>
+        <ul><li>Culture</li><li>Demographics</li><li>Social Trends</li></ul>
+        <h2>Unit 5: Global Environment</h2>
+        <ul><li>Globalization</li><li>International Trade</li><li>Multinational Companies</li></ul>
+    `);
+}
+else if (noteName === "Financial Management") {
+    notesWindow.document.write(`
+        <h1>💰 Financial Management — BBA Semester 3</h1>
+        <h2>Unit 1</h2><ul><li>Meaning and Objectives of Financial Management</li><li>Financial Decisions</li></ul>
+        <h2>Unit 2</h2><ul><li>Time Value of Money</li><li>Risk and Return</li></ul>
+        <h2>Unit 3</h2><ul><li>Capital Budgeting</li><li>NPV</li><li>IRR</li></ul>
+        <h2>Unit 4</h2><ul><li>Cost of Capital</li><li>Capital Structure</li></ul>
+        <h2>Unit 5</h2><ul><li>Working Capital Management</li><li>Dividend Decisions</li></ul>
+    `);
+}
+
+else if (noteName === "Production Management") {
+    notesWindow.document.write(`
+        <h1>🏭 Production Management — BBA Semester 3</h1>
+        <h2>Unit 1</h2><ul><li>Production Management</li><li>Production Systems</li></ul>
+        <h2>Unit 2</h2><ul><li>Plant Location</li><li>Plant Layout</li></ul>
+        <h2>Unit 3</h2><ul><li>Production Planning</li><li>Scheduling</li></ul>
+        <h2>Unit 4</h2><ul><li>Quality Management</li><li>Total Quality Management</li></ul>
+        <h2>Unit 5</h2><ul><li>Inventory Management</li><li>Maintenance Management</li></ul>
+    `);
+}
+
+else if (noteName === "Business Law") {
+    notesWindow.document.write(`
+        <h1>⚖️ Business Law — BBA Semester 3</h1>
+        <h2>Unit 1</h2><ul><li>Introduction to Business Law</li><li>Contract</li><li>Essential Elements of Contract</li></ul>
+        <h2>Unit 2</h2><ul><li>Offer and Acceptance</li><li>Consideration</li><li>Capacity of Parties</li></ul>
+        <h2>Unit 3</h2><ul><li>Free Consent</li><li>Legality of Object</li><li>Void Agreements</li></ul>
+        <h2>Unit 4</h2><ul><li>Sale of Goods</li><li>Conditions and Warranties</li></ul>
+        <h2>Unit 5</h2><ul><li>Consumer Protection</li><li>Business Ethics and Law</li></ul>
+    `);
+}
+
+else if (noteName === "Research Methodology") {
+    notesWindow.document.write(`
+        <h1>🔎 Research Methodology — BBA Semester 3</h1>
+        <h2>Unit 1</h2><ul><li>Meaning of Research</li><li>Types of Research</li><li>Research Process</li></ul>
+        <h2>Unit 2</h2><ul><li>Research Problem</li><li>Objectives</li><li>Hypothesis</li></ul>
+        <h2>Unit 3</h2><ul><li>Research Design</li><li>Sampling</li><li>Sampling Methods</li></ul>
+        <h2>Unit 4</h2><ul><li>Data Collection</li><li>Questionnaire</li><li>Interview</li></ul>
+        <h2>Unit 5</h2><ul><li>Data Analysis</li><li>Report Writing</li><li>Research Ethics</li></ul>
+    `);
+}
+
+else if (noteName === "Management Information System") {
+    notesWindow.document.write(`
+        <h1>💻 Management Information System — BBA Semester 3</h1>
+        <h2>Unit 1</h2><ul><li>Meaning of MIS</li><li>Information Systems</li></ul>
+        <h2>Unit 2</h2><ul><li>Components of MIS</li><li>Hardware and Software</li></ul>
+        <h2>Unit 3</h2><ul><li>Database Systems</li><li>Data Processing</li></ul>
+        <h2>Unit 4</h2><ul><li>Decision Support Systems</li><li>Executive Information Systems</li></ul>
+        <h2>Unit 5</h2><ul><li>MIS Security</li><li>Business Applications</li></ul>
+    `);
+}
+else if (noteName === "Consumer Behaviour") {
+    notesWindow.document.write(`
+        <h1>🛒 Consumer Behaviour — BBA Semester 4</h1>
+        <h2>Unit 1</h2><ul><li>Meaning of Consumer Behaviour</li><li>Importance</li></ul>
+        <h2>Unit 2</h2><ul><li>Consumer Motivation</li><li>Perception</li><li>Learning</li></ul>
+        <h2>Unit 3</h2><ul><li>Consumer Decision Process</li><li>Buying Behaviour</li></ul>
+        <h2>Unit 4</h2><ul><li>Social and Cultural Factors</li><li>Family Influence</li></ul>
+        <h2>Unit 5</h2><ul><li>Brand Loyalty</li><li>Post Purchase Behaviour</li></ul>
+    `);
+}
+
+else if (noteName === "Operations Management") {
+    notesWindow.document.write(`
+        <h1>⚙️ Operations Management — BBA Semester 4</h1>
+        <h2>Unit 1</h2><ul><li>Introduction to Operations Management</li><li>Operations Strategy</li></ul>
+        <h2>Unit 2</h2><ul><li>Process Design</li><li>Capacity Planning</li></ul>
+        <h2>Unit 3</h2><ul><li>Supply Chain Management</li><li>Logistics</li></ul>
+        <h2>Unit 4</h2><ul><li>Quality Management</li><li>Six Sigma</li></ul>
+        <h2>Unit 5</h2><ul><li>Inventory Control</li><li>Operations Improvement</li></ul>
+    `);
+}
+
+else if (noteName === "Entrepreneurship") {
+    notesWindow.document.write(`
+        <h1>🚀 Entrepreneurship — BBA Semester 4</h1>
+        <h2>Unit 1</h2><ul><li>Meaning of Entrepreneurship</li><li>Entrepreneur</li><li>Importance</li></ul>
+        <h2>Unit 2</h2><ul><li>Entrepreneurial Skills</li><li>Creativity</li><li>Innovation</li></ul>
+        <h2>Unit 3</h2><ul><li>Business Idea</li><li>Business Plan</li><li>Feasibility</li></ul>
+        <h2>Unit 4</h2><ul><li>Sources of Finance</li><li>Startup Funding</li></ul>
+        <h2>Unit 5</h2><ul><li>Startup Management</li><li>Business Growth</li><li>Entrepreneurial Challenges</li></ul>
+    `);
+}
+
+else if (noteName === "Cost Accounting") {
+    notesWindow.document.write(`
+        <h1>🧾 Cost Accounting — BBA Semester 4</h1>
+        <h2>Unit 1</h2><ul><li>Meaning of Cost Accounting</li><li>Objectives</li><li>Cost Concepts</li></ul>
+        <h2>Unit 2</h2><ul><li>Material Cost</li><li>Labour Cost</li><li>Overheads</li></ul>
+        <h2>Unit 3</h2><ul><li>Job Costing</li><li>Process Costing</li></ul>
+        <h2>Unit 4</h2><ul><li>Marginal Costing</li><li>Break-Even Analysis</li></ul>
+        <h2>Unit 5</h2><ul><li>Budgetary Control</li><li>Standard Costing</li></ul>
+    `);
+}
+
+else if (noteName === "Business Research") {
+    notesWindow.document.write(`
+        <h1>📑 Business Research — BBA Semester 4</h1>
+        <h2>Unit 1</h2><ul><li>Business Research</li><li>Research Process</li></ul>
+        <h2>Unit 2</h2><ul><li>Research Design</li><li>Sampling Design</li></ul>
+        <h2>Unit 3</h2><ul><li>Primary Data</li><li>Secondary Data</li></ul>
+        <h2>Unit 4</h2><ul><li>Data Analysis</li><li>Statistical Tools</li></ul>
+        <h2>Unit 5</h2><ul><li>Research Report</li><li>Business Recommendations</li></ul>
+    `);
+}
+else if (noteName === "Strategic Management") {
+    notesWindow.document.write(`
+        <h1>🎯 Strategic Management — BBA Semester 5</h1>
+        <h2>Unit 1</h2><ul><li>Strategic Management</li><li>Strategy and Policy</li></ul>
+        <h2>Unit 2</h2><ul><li>Environmental Analysis</li><li>SWOT Analysis</li></ul>
+        <h2>Unit 3</h2><ul><li>Strategy Formulation</li><li>Business Strategies</li></ul>
+        <h2>Unit 4</h2><ul><li>Strategy Implementation</li><li>Organizational Structure</li></ul>
+        <h2>Unit 5</h2><ul><li>Strategy Evaluation</li><li>Strategic Control</li></ul>
+    `);
+}
+
+else if (noteName === "International Business") {
+    notesWindow.document.write(`
+        <h1>🌎 International Business — BBA Semester 5</h1>
+        <h2>Unit 1</h2><ul><li>Meaning of International Business</li><li>Importance</li></ul>
+        <h2>Unit 2</h2><ul><li>Globalization</li><li>International Trade</li></ul>
+        <h2>Unit 3</h2><ul><li>Export and Import</li><li>Trade Procedures</li></ul>
+        <h2>Unit 4</h2><ul><li>Foreign Exchange</li><li>Exchange Rate</li></ul>
+        <h2>Unit 5</h2><ul><li>Multinational Corporations</li><li>Global Business Strategies</li></ul>
+    `);
+}
+
+else if (noteName === "Project Management") {
+    notesWindow.document.write(`
+        <h1>📋 Project Management — BBA Semester 5</h1>
+        <h2>Unit 1</h2><ul><li>Project Management</li><li>Project Life Cycle</li></ul>
+        <h2>Unit 2</h2><ul><li>Project Planning</li><li>Scope Management</li></ul>
+        <h2>Unit 3</h2><ul><li>Time Management</li><li>Scheduling</li></ul>
+        <h2>Unit 4</h2><ul><li>Cost Management</li><li>Risk Management</li></ul>
+        <h2>Unit 5</h2><ul><li>Project Monitoring</li><li>Project Closure</li></ul>
+    `);
+}
+
+else if (noteName === "Investment Management") {
+    notesWindow.document.write(`
+        <h1>📈 Investment Management — BBA Semester 5</h1>
+        <h2>Unit 1</h2><ul><li>Investment Meaning</li><li>Investment Objectives</li></ul>
+        <h2>Unit 2</h2><ul><li>Risk and Return</li><li>Types of Risk</li></ul>
+        <h2>Unit 3</h2><ul><li>Shares</li><li>Bonds</li><li>Mutual Funds</li></ul>
+        <h2>Unit 4</h2><ul><li>Portfolio Management</li><li>Diversification</li></ul>
+        <h2>Unit 5</h2><ul><li>Investment Analysis</li><li>Portfolio Evaluation</li></ul>
+    `);
+}
+
+else if (noteName === "Business Analytics") {
+    notesWindow.document.write(`
+        <h1>📊 Business Analytics — BBA Semester 5</h1>
+        <h2>Unit 1</h2><ul><li>Business Analytics</li><li>Types of Analytics</li></ul>
+        <h2>Unit 2</h2><ul><li>Descriptive Analytics</li><li>Diagnostic Analytics</li></ul>
+        <h2>Unit 3</h2><ul><li>Predictive Analytics</li><li>Forecasting</li></ul>
+        <h2>Unit 4</h2><ul><li>Data Visualization</li><li>Dashboards</li></ul>
+        <h2>Unit 5</h2><ul><li>Prescriptive Analytics</li><li>Business Applications</li></ul>
+    `);
+}
+else if (noteName === "Business Ethics") {
+    notesWindow.document.write(`
+        <h1>⚖️ Business Ethics — BBA Semester 6</h1>
+        <h2>Unit 1</h2><ul><li>Meaning of Business Ethics</li><li>Importance</li></ul>
+        <h2>Unit 2</h2><ul><li>Ethical Decision Making</li><li>Values</li></ul>
+        <h2>Unit 3</h2><ul><li>Corporate Social Responsibility</li><li>Business and Society</li></ul>
+        <h2>Unit 4</h2><ul><li>Workplace Ethics</li><li>Professional Ethics</li></ul>
+        <h2>Unit 5</h2><ul><li>Ethical Leadership</li><li>Corporate Responsibility</li></ul>
+    `);
+}
+
+else if (noteName === "Digital Marketing") {
+    notesWindow.document.write(`
+        <h1>📱 Digital Marketing — BBA Semester 6</h1>
+        <h2>Unit 1</h2><ul><li>Digital Marketing Introduction</li><li>Traditional vs Digital Marketing</li></ul>
+        <h2>Unit 2</h2><ul><li>Search Engine Optimization</li><li>Search Engine Marketing</li></ul>
+        <h2>Unit 3</h2><ul><li>Social Media Marketing</li><li>Content Marketing</li></ul>
+        <h2>Unit 4</h2><ul><li>Email Marketing</li><li>Affiliate Marketing</li></ul>
+        <h2>Unit 5</h2><ul><li>Web Analytics</li><li>Digital Marketing Strategy</li></ul>
+    `);
+}
+
+else if (noteName === "Corporate Governance") {
+    notesWindow.document.write(`
+        <h1>🏢 Corporate Governance — BBA Semester 6</h1>
+        <h2>Unit 1</h2><ul><li>Meaning of Corporate Governance</li><li>Importance</li></ul>
+        <h2>Unit 2</h2><ul><li>Board of Directors</li><li>Roles and Responsibilities</li></ul>
+        <h2>Unit 3</h2><ul><li>Corporate Transparency</li><li>Accountability</li></ul>
+        <h2>Unit 4</h2><ul><li>Corporate Social Responsibility</li><li>Stakeholder Management</li></ul>
+        <h2>Unit 5</h2><ul><li>Corporate Governance Practices</li><li>Governance Challenges</li></ul>
+    `);
+}
+
+else if (noteName === "Entrepreneurship Development") {
+    notesWindow.document.write(`
+        <h1>🚀 Entrepreneurship Development — BBA Semester 6</h1>
+        <h2>Unit 1</h2><ul><li>Entrepreneurship Development</li><li>Entrepreneurial Process</li></ul>
+        <h2>Unit 2</h2><ul><li>Business Idea Generation</li><li>Innovation</li></ul>
+        <h2>Unit 3</h2><ul><li>Business Plan</li><li>Project Report</li></ul>
+        <h2>Unit 4</h2><ul><li>Startup Finance</li><li>Government Support</li></ul>
+        <h2>Unit 5</h2><ul><li>Business Growth</li><li>Challenges of Entrepreneurs</li></ul>
+    `);
+}
+
+else if (noteName === "Final Project") {
+    notesWindow.document.write(`
+        <h1>🎓 Final Project — BBA Semester 6</h1>
+        <h2>Unit 1: Project Selection</h2>
+        <ul><li>Topic Selection</li><li>Problem Identification</li><li>Project Objectives</li></ul>
+
+        <h2>Unit 2: Research</h2>
+        <ul><li>Literature Review</li><li>Data Collection</li><li>Research Method</li></ul>
+
+        <h2>Unit 3: Analysis</h2>
+        <ul><li>Data Analysis</li><li>Findings</li><li>Interpretation</li></ul>
+
+        <h2>Unit 4: Report</h2>
+        <ul><li>Project Report Structure</li><li>Conclusion</li><li>Recommendations</li></ul>
+
+        <h2>Unit 5: Presentation</h2>
+        <ul><li>Project Presentation</li><li>Viva Preparation</li><li>Future Scope</li></ul>
+    `);
+}
 
     // ===============================
     // Engineering Physics
     // ===============================
 
-    else if (noteName === "Engineering Physics") {
+   else if (noteName === "Engineering Physics") {
 
-        title = "Engineering Physics";
+    title = "Engineering Physics";
 
-        content = `
-            <h2>🔬 Engineering Physics</h2>
+    content = `
+        <h2>🔬 Engineering Physics</h2>
 
-            <h2>1. Introduction</h2>
+        <h2>📘 Unit 1: Quantum Mechanics</h2>
+        <p>
+            Quantum mechanics describes the behaviour of matter and
+            energy at microscopic scales.
+        </p>
 
-            <p>
-                Engineering physics applies the principles of physics
-                to engineering problems and technologies.
-            </p>
+        <ul>
+            <li>Wave-Particle Duality</li>
+            <li>de Broglie Hypothesis</li>
+            <li>Heisenberg Uncertainty Principle</li>
+            <li>Schrödinger Wave Equation</li>
+            <li>Particle in a Box</li>
+        </ul>
 
-            <h2>2. Waves</h2>
+        <div class="important">
+            <b>Important Formula:</b><br>
+            λ = h / p
+        </div>
 
-            <p>
-                A wave is a disturbance that transfers energy from
-                one place to another.
-            </p>
+        <h2>📘 Unit 2: Wave Optics</h2>
+        <ul>
+            <li>Interference of Light</li>
+            <li>Young's Double Slit Experiment</li>
+            <li>Diffraction</li>
+            <li>Polarization</li>
+            <li>Coherence</li>
+        </ul>
 
-            <h2>3. Properties of Waves</h2>
+        <div class="important">
+            <b>Important:</b><br>
+            Interference is the redistribution of light intensity
+            due to superposition of coherent waves.
+        </div>
 
-            <ul>
-                <li>Wavelength</li>
-                <li>Frequency</li>
-                <li>Amplitude</li>
-                <li>Velocity</li>
-            </ul>
+        <h2>📘 Unit 3: Lasers and Fiber Optics</h2>
+        <ul>
+            <li>Principle of Laser</li>
+            <li>Spontaneous and Stimulated Emission</li>
+            <li>Population Inversion</li>
+            <li>Types of Lasers</li>
+            <li>Optical Fiber</li>
+            <li>Applications of Fiber Optics</li>
+        </ul>
 
-            <div class="important">
-                <b>Formula:</b><br>
-                v = fλ
-            </div>
+        <div class="important">
+            <b>Laser:</b><br>
+            Light Amplification by Stimulated Emission of Radiation.
+        </div>
 
-            <h2>4. Optics</h2>
+        <h2>📘 Unit 4: Semiconductor Physics</h2>
+        <ul>
+            <li>Energy Bands</li>
+            <li>Intrinsic Semiconductor</li>
+            <li>Extrinsic Semiconductor</li>
+            <li>p-type and n-type Semiconductors</li>
+            <li>PN Junction</li>
+            <li>Semiconductor Applications</li>
+        </ul>
 
-            <p>
-                Optics is the branch of physics that deals with
-                the behaviour of light.
-            </p>
+        <h2>📘 Unit 5: Electromagnetic Theory</h2>
+        <ul>
+            <li>Electric Field</li>
+            <li>Magnetic Field</li>
+            <li>Maxwell's Equations</li>
+            <li>Electromagnetic Waves</li>
+            <li>Properties of EM Waves</li>
+            <li>Applications of Electromagnetic Waves</li>
+        </ul>
 
-            <h2>📌 Important Questions</h2>
-
-            <ol>
-                <li>What is a wave?</li>
-                <li>Define wavelength and frequency.</li>
-                <li>Explain amplitude.</li>
-                <li>What is optics?</li>
-                <li>Explain the wave velocity formula.</li>
-            </ol>
-        `;
-    }
-
+        <h2>📌 Important Questions</h2>
+        <ol>
+            <li>Explain wave-particle duality.</li>
+            <li>State Heisenberg's uncertainty principle.</li>
+            <li>Explain Young's double slit experiment.</li>
+            <li>What is diffraction?</li>
+            <li>Explain the principle of laser.</li>
+            <li>What is population inversion?</li>
+            <li>Explain optical fiber and its applications.</li>
+            <li>Differentiate intrinsic and extrinsic semiconductors.</li>
+            <li>Explain PN junction.</li>
+            <li>What are electromagnetic waves?</li>
+        </ol>
+    `;
+}
     // ===============================
     // Engineering Chemistry
     // ===============================
 
     else if (noteName === "Engineering Chemistry") {
 
-        title = "Engineering Chemistry";
+    title = "Engineering Chemistry";
 
-        content = `
-            <h2>🧪 Engineering Chemistry</h2>
+    content = `
+        <h2>🧪 Engineering Chemistry</h2>
 
-            <h2>1. Introduction</h2>
+        <h2>📘 Unit 1: Water Technology</h2>
+        <ul>
+            <li>Sources of Water</li>
+            <li>Hardness of Water</li>
+            <li>Temporary and Permanent Hardness</li>
+            <li>Water Softening</li>
+            <li>Ion Exchange Process</li>
+            <li>Reverse Osmosis</li>
+        </ul>
 
-            <p>
-                Engineering chemistry deals with chemical principles
-                and their applications in engineering.
-            </p>
+        <h2>📘 Unit 2: Fuels and Combustion</h2>
+        <ul>
+            <li>Classification of Fuels</li>
+            <li>Solid Fuels</li>
+            <li>Liquid Fuels</li>
+            <li>Gaseous Fuels</li>
+            <li>Calorific Value</li>
+            <li>Combustion</li>
+        </ul>
 
-            <h2>2. Water Chemistry</h2>
+        <div class="important">
+            <b>Important:</b><br>
+            Calorific value is the amount of heat released by
+            complete combustion of a unit quantity of fuel.
+        </div>
 
-            <p>
-                Water chemistry studies the composition, properties
-                and treatment of water.
-            </p>
+        <h2>📘 Unit 3: Electrochemistry</h2>
+        <ul>
+            <li>Electrolytes</li>
+            <li>Electrochemical Cells</li>
+            <li>Galvanic Cell</li>
+            <li>Electrolysis</li>
+            <li>Nernst Equation</li>
+            <li>Applications of Electrochemistry</li>
+        </ul>
 
-            <h2>3. Hardness of Water</h2>
+        <h2>📘 Unit 4: Polymers</h2>
+        <ul>
+            <li>Introduction to Polymers</li>
+            <li>Classification of Polymers</li>
+            <li>Addition Polymerization</li>
+            <li>Condensation Polymerization</li>
+            <li>Thermoplastics</li>
+            <li>Thermosetting Polymers</li>
+        </ul>
 
-            <p>
-                Hardness of water is mainly caused by calcium and
-                magnesium salts.
-            </p>
+        <h2>📘 Unit 5: Corrosion and Nanochemistry</h2>
+        <ul>
+            <li>Types of Corrosion</li>
+            <li>Electrochemical Corrosion</li>
+            <li>Methods of Corrosion Prevention</li>
+            <li>Nanomaterials</li>
+            <li>Properties of Nanomaterials</li>
+            <li>Applications of Nanotechnology</li>
+        </ul>
 
-            <h2>4. Types of Hardness</h2>
-
-            <ul>
-                <li>Temporary hardness</li>
-                <li>Permanent hardness</li>
-            </ul>
-
-            <h2>📌 Important Questions</h2>
-
-            <ol>
-                <li>What is engineering chemistry?</li>
-                <li>What is hardness of water?</li>
-                <li>Explain temporary hardness.</li>
-                <li>Explain permanent hardness.</li>
-                <li>How can hard water be treated?</li>
-            </ol>
-        `;
-    }
-
+        <h2>📌 Important Questions</h2>
+        <ol>
+            <li>What is hardness of water?</li>
+            <li>Explain water softening methods.</li>
+            <li>What is reverse osmosis?</li>
+            <li>Explain calorific value of a fuel.</li>
+            <li>What is electrochemistry?</li>
+            <li>Explain the Nernst equation.</li>
+            <li>What are polymers?</li>
+            <li>Differentiate thermoplastics and thermosetting polymers.</li>
+            <li>What is corrosion?</li>
+            <li>Explain methods of corrosion prevention.</li>
+            <li>What are nanomaterials?</li>
+        </ol>
+    `;
+}
     // ===============================
     // Basic Electrical Engineering
     // ===============================
 
-    else if (noteName === "Basic Electrical Engineering") {
+   else if (noteName === "Basic Electrical Engineering") {
 
-        title = "Basic Electrical Engineering";
+    title = "Basic Electrical Engineering";
 
-        content = `
-            <h2>⚡ Basic Electrical Engineering</h2>
+    content = `
+        <h2>⚡ Basic Electrical Engineering</h2>
 
-            <h2>1. Electric Current</h2>
+        <h2>📘 Unit 1: DC Circuits</h2>
+        <ul>
+            <li>Electric Current</li>
+            <li>Voltage</li>
+            <li>Resistance</li>
+            <li>Ohm's Law</li>
+            <li>Kirchhoff's Laws</li>
+            <li>Series and Parallel Circuits</li>
+        </ul>
 
-            <p>
-                Electric current is the flow of electric charge
-                through a conductor.
-            </p>
+        <div class="important">
+            <b>Ohm's Law:</b><br>
+            V = IR
+        </div>
 
-            <div class="important">
-                <b>Formula:</b><br>
-                I = Q/t
-            </div>
+        <h2>📘 Unit 2: AC Circuits</h2>
+        <ul>
+            <li>Alternating Current</li>
+            <li>AC Voltage</li>
+            <li>RMS Value</li>
+            <li>Average Value</li>
+            <li>Power Factor</li>
+            <li>Single Phase AC Circuits</li>
+        </ul>
 
-            <h2>2. Voltage</h2>
+        <div class="important">
+            <b>Important:</b><br>
+            Power Factor = cos φ
+        </div>
 
-            <p>
-                Voltage is the potential difference between two points.
-            </p>
+        <h2>📘 Unit 3: Magnetic Circuits and Transformers</h2>
+        <ul>
+            <li>Magnetic Field</li>
+            <li>Magnetic Flux</li>
+            <li>MMF</li>
+            <li>Reluctance</li>
+            <li>Transformer Principle</li>
+            <li>Transformer Losses</li>
+        </ul>
 
-            <h2>3. Resistance</h2>
+        <div class="important">
+            <b>Transformer:</b><br>
+            A transformer transfers electrical energy from one
+            circuit to another through electromagnetic induction.
+        </div>
 
-            <p>
-                Resistance opposes the flow of electric current.
-            </p>
+        <h2>📘 Unit 4: Electrical Machines</h2>
+        <ul>
+            <li>DC Generator</li>
+            <li>DC Motor</li>
+            <li>Induction Motor</li>
+            <li>Synchronous Motor</li>
+            <li>Working Principles</li>
+            <li>Applications of Electrical Machines</li>
+        </ul>
 
-            <div class="important">
-                <b>Ohm's Law:</b><br>
-                V = IR
-            </div>
+        <h2>📘 Unit 5: Electrical Measurements and Safety</h2>
+        <ul>
+            <li>Electrical Measuring Instruments</li>
+            <li>Ammeter</li>
+            <li>Voltmeter</li>
+            <li>Wattmeter</li>
+            <li>Energy Meter</li>
+            <li>Electrical Safety</li>
+            <li>Earthing</li>
+        </ul>
 
-            <h2>4. Electrical Power</h2>
-
-            <div class="important">
-                <b>Formula:</b><br>
-                P = VI
-            </div>
-
-            <h2>📌 Important Questions</h2>
-
-            <ol>
-                <li>What is electric current?</li>
-                <li>What is voltage?</li>
-                <li>What is resistance?</li>
-                <li>State Ohm's Law.</li>
-                <li>What is electrical power?</li>
-            </ol>
-        `;
-    }// ===============================
+        <h2>📌 Important Questions</h2>
+        <ol>
+            <li>State and explain Ohm's Law.</li>
+            <li>Explain Kirchhoff's Current and Voltage Laws.</li>
+            <li>What is alternating current?</li>
+            <li>Explain RMS and average values.</li>
+            <li>What is power factor?</li>
+            <li>Explain the working principle of a transformer.</li>
+            <li>What are transformer losses?</li>
+            <li>Explain the working of a DC motor.</li>
+            <li>What is an induction motor?</li>
+            <li>Explain electrical earthing and safety.</li>
+        </ol>
+    `;
+}
+    // ===============================
 // Engineering Mathematics-II
 // ===============================
 
@@ -835,76 +3965,106 @@ else if (noteName === "Engineering Mathematics-II") {
 // Semester 3 - Discrete Mathematics
 // ===============================
 
+// ===============================
+// Discrete Mathematics
+// ===============================
+
 else if (noteName === "Discrete Mathematics") {
 
     title = "Discrete Mathematics";
 
     content = `
-        <h2>🧮 Discrete Mathematics</h2>
+        <h2>📘 Discrete Mathematics</h2>
 
-        <h2>1. Sets</h2>
-
-        <p>
-            A set is a well-defined collection of distinct objects.
-        </p>
-
-        <div class="important">
-            <b>Example:</b><br>
-            A = {1, 2, 3, 4}
-        </div>
-
-        <h2>2. Relations</h2>
-
-        <p>
-            A relation describes a connection between elements
-            of two sets.
-        </p>
-
-        <h2>3. Functions</h2>
-
-        <p>
-            A function maps each element of one set to exactly
-            one element of another set.
-        </p>
-
-        <h2>4. Graph Theory</h2>
-
-        <p>
-            A graph consists of vertices and edges and is used
-            to represent relationships between objects.
-        </p>
-
+        <h2>📘 Unit 1: Set Theory and Relations</h2>
         <ul>
-            <li>Vertex</li>
-            <li>Edge</li>
-            <li>Path</li>
-            <li>Cycle</li>
+            <li>Sets and Subsets</li>
+            <li>Set Operations</li>
+            <li>Venn Diagrams</li>
+            <li>Relations and Properties of Relations</li>
+            <li>Equivalence Relations</li>
+            <li>Partial Order Relations</li>
         </ul>
 
-        <h2>5. Logic</h2>
+        <div class="important">
+            <b>Important:</b><br>
+            A relation R on a set A is an equivalence relation if it is
+            reflexive, symmetric and transitive.
+        </div>
 
-        <p>
-            Mathematical logic deals with propositions and
-            logical reasoning.
-        </p>
+        <h2>📘 Unit 2: Functions and Mathematical Logic</h2>
+        <ul>
+            <li>Functions and Types of Functions</li>
+            <li>One-to-One and Onto Functions</li>
+            <li>Composition of Functions</li>
+            <li>Propositions</li>
+            <li>Logical Connectives</li>
+            <li>Truth Tables</li>
+            <li>Predicate Logic</li>
+        </ul>
+
+        <h2>📘 Unit 3: Combinatorics</h2>
+        <ul>
+            <li>Permutations</li>
+            <li>Combinations</li>
+            <li>Binomial Theorem</li>
+            <li>Pigeonhole Principle</li>
+            <li>Inclusion-Exclusion Principle</li>
+            <li>Recurrence Relations</li>
+        </ul>
+
+        <div class="important">
+            <b>Important Formula:</b><br>
+            nPr = n! / (n-r)!<br>
+            nCr = n! / [r!(n-r)!]
+        </div>
+
+        <h2>📘 Unit 4: Graph Theory</h2>
+        <ul>
+            <li>Graphs and Graph Terminology</li>
+            <li>Types of Graphs</li>
+            <li>Degree of a Vertex</li>
+            <li>Paths and Cycles</li>
+            <li>Euler and Hamiltonian Graphs</li>
+            <li>Graph Connectivity</li>
+            <li>Graph Coloring</li>
+        </ul>
+
+        <h2>📘 Unit 5: Trees and Boolean Algebra</h2>
+        <ul>
+            <li>Trees and Properties of Trees</li>
+            <li>Rooted Trees</li>
+            <li>Binary Trees</li>
+            <li>Spanning Trees</li>
+            <li>Boolean Algebra</li>
+            <li>Boolean Functions</li>
+            <li>Logic Gates</li>
+        </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is a set?</li>
-            <li>Explain different types of sets.</li>
-            <li>What is a relation?</li>
-            <li>What is a function?</li>
-            <li>What is graph theory?</li>
-            <li>Explain vertices and edges.</li>
-            <li>What is mathematical logic?</li>
+            <li>Explain different types of sets with examples.</li>
+            <li>What is an equivalence relation?</li>
+            <li>Explain one-to-one and onto functions.</li>
+            <li>Construct a truth table for a given proposition.</li>
+            <li>Explain the pigeonhole principle.</li>
+            <li>Differentiate between permutation and combination.</li>
+            <li>Explain Euler and Hamiltonian graphs.</li>
+            <li>What is graph coloring?</li>
+            <li>Explain spanning trees.</li>
+            <li>What is Boolean algebra?</li>
         </ol>
     `;
 }
 
 
+
 // ===============================
 // Semester 3 - Database Management System
+// ===============================
+
+// ===============================
+// Database Management System
 // ===============================
 
 else if (noteName === "Database Management System") {
@@ -914,74 +4074,94 @@ else if (noteName === "Database Management System") {
     content = `
         <h2>🗄️ Database Management System</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            A Database Management System (DBMS) is software used
-            to create, store, manage and retrieve data efficiently.
-        </p>
-
-        <h2>2. Database</h2>
-
-        <p>
-            A database is an organized collection of related data.
-        </p>
-
-        <h2>3. Types of DBMS</h2>
-
+        <h2>📘 Unit 1: Introduction to DBMS</h2>
         <ul>
-            <li>Hierarchical DBMS</li>
-            <li>Network DBMS</li>
-            <li>Relational DBMS</li>
-            <li>Object-Oriented DBMS</li>
+            <li>Database and DBMS</li>
+            <li>Characteristics of DBMS</li>
+            <li>Advantages of DBMS</li>
+            <li>Database Architecture</li>
+            <li>Data Models</li>
+            <li>Schema and Instance</li>
+            <li>Database Administrators</li>
         </ul>
 
-        <h2>4. SQL</h2>
+        <div class="important">
+            <b>Important:</b><br>
+            DBMS is software used to create, store, manage and retrieve
+            data from databases efficiently.
+        </div>
 
-        <p>
-            SQL stands for Structured Query Language.
-            It is used to interact with relational databases.
-        </p>
+        <h2>📘 Unit 2: Relational Model and SQL</h2>
+        <ul>
+            <li>Relational Model</li>
+            <li>Relations, Tuples and Attributes</li>
+            <li>Keys and Constraints</li>
+            <li>Primary Key and Foreign Key</li>
+            <li>SQL Basics</li>
+            <li>DDL, DML and DCL Commands</li>
+            <li>Joins and Subqueries</li>
+        </ul>
 
-        <pre>
-SELECT * FROM students;
+        <h2>📘 Unit 3: ER Model and Database Design</h2>
+        <ul>
+            <li>Entity Relationship Model</li>
+            <li>Entities and Attributes</li>
+            <li>Relationships</li>
+            <li>ER Diagrams</li>
+            <li>Generalization and Specialization</li>
+            <li>Database Design</li>
+        </ul>
 
-SELECT name, marks
-FROM students
-WHERE marks > 60;
-        </pre>
+        <h2>📘 Unit 4: Normalization and Transactions</h2>
+        <ul>
+            <li>Functional Dependencies</li>
+            <li>Normalization</li>
+            <li>First Normal Form</li>
+            <li>Second Normal Form</li>
+            <li>Third Normal Form</li>
+            <li>BCNF</li>
+            <li>Database Transactions</li>
+        </ul>
 
-        <h2>5. Primary Key</h2>
+        <div class="important">
+            <b>Important:</b><br>
+            Normalization is used to reduce data redundancy and
+            improve database consistency.
+        </div>
 
-        <p>
-            A primary key uniquely identifies each record
-            in a database table.
-        </p>
-
-        <h2>6. Normalization</h2>
-
-        <p>
-            Normalization is the process of organizing data
-            to reduce redundancy and improve data integrity.
-        </p>
+        <h2>📘 Unit 5: Concurrency Control and Recovery</h2>
+        <ul>
+            <li>Transaction Properties</li>
+            <li>ACID Properties</li>
+            <li>Concurrency Control</li>
+            <li>Lock-Based Protocols</li>
+            <li>Deadlock in Databases</li>
+            <li>Database Recovery</li>
+            <li>Backup and Recovery Techniques</li>
+        </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is DBMS?</li>
-            <li>What is a database?</li>
-            <li>Explain different types of DBMS.</li>
-            <li>What is SQL?</li>
-            <li>What is a primary key?</li>
-            <li>What is normalization?</li>
-            <li>Explain different normal forms.</li>
+            <li>What is DBMS? Explain its advantages.</li>
+            <li>Explain different database models.</li>
+            <li>What are primary key and foreign key?</li>
+            <li>Explain SQL and its different commands.</li>
+            <li>What is an ER diagram?</li>
+            <li>Explain normalization.</li>
+            <li>Differentiate 1NF, 2NF and 3NF.</li>
+            <li>What are ACID properties?</li>
+            <li>Explain concurrency control.</li>
+            <li>What is database recovery?</li>
         </ol>
     `;
 }
 
-
 // ===============================
 // Semester 3 - Operating System
+// ===============================
+
+// ===============================
+// Operating System
 // ===============================
 
 else if (noteName === "Operating System") {
@@ -989,63 +4169,94 @@ else if (noteName === "Operating System") {
     title = "Operating System";
 
     content = `
-        <h2>🖥️ Operating System</h2>
+        <h2>💻 Operating System</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            An Operating System (OS) is system software that
-            manages computer hardware and software resources.
-        </p>
-
-        <h2>2. Functions of Operating System</h2>
-
+        <h2>📘 Unit 1: Introduction to Operating System</h2>
         <ul>
-            <li>Process Management</li>
-            <li>Memory Management</li>
-            <li>File Management</li>
-            <li>Device Management</li>
-            <li>Security</li>
+            <li>Operating System Concepts</li>
+            <li>Functions of Operating System</li>
+            <li>Types of Operating Systems</li>
+            <li>Operating System Services</li>
+            <li>System Calls</li>
+            <li>System Programs</li>
         </ul>
 
-        <h2>3. Process</h2>
-
-        <p>
-            A process is a program that is currently in execution.
-        </p>
-
-        <h2>4. Memory Management</h2>
-
-        <p>
-            Memory management controls the allocation and
-            deallocation of memory to processes.
-        </p>
-
-        <h2>5. Deadlock</h2>
-
-        <p>
-            Deadlock occurs when processes wait indefinitely
-            for resources held by each other.
-        </p>
-
         <div class="important">
-            <b>Common Deadlock Conditions:</b><br>
-            Mutual Exclusion<br>
-            Hold and Wait<br>
-            No Preemption<br>
-            Circular Wait
+            <b>Important:</b><br>
+            An operating system acts as an interface between the
+            user and computer hardware.
         </div>
 
-        <h2>📌 Important Questions</h2>
+        <h2>📘 Unit 2: Process Management</h2>
+        <ul>
+            <li>Process Concepts</li>
+            <li>Process States</li>
+            <li>Process Control Block</li>
+            <li>Process Scheduling</li>
+            <li>CPU Scheduling Algorithms</li>
+            <li>Context Switching</li>
+            <li>Threads</li>
+        </ul>
 
+        <div class="important">
+            <b>Important:</b><br>
+            Common CPU scheduling algorithms include FCFS, SJF,
+            Priority Scheduling and Round Robin.
+        </div>
+
+        <h2>📘 Unit 3: Process Synchronization and Deadlocks</h2>
+        <ul>
+            <li>Process Synchronization</li>
+            <li>Critical Section Problem</li>
+            <li>Semaphores</li>
+            <li>Mutex</li>
+            <li>Classical Synchronization Problems</li>
+            <li>Deadlock</li>
+            <li>Deadlock Prevention and Avoidance</li>
+            <li>Banker's Algorithm</li>
+        </ul>
+
+        <h2>📘 Unit 4: Memory Management</h2>
+        <ul>
+            <li>Memory Management Concepts</li>
+            <li>Contiguous Memory Allocation</li>
+            <li>Paging</li>
+            <li>Segmentation</li>
+            <li>Virtual Memory</li>
+            <li>Page Replacement Algorithms</li>
+            <li>Demand Paging</li>
+        </ul>
+
+        <div class="important">
+            <b>Important:</b><br>
+            Common page replacement algorithms are FIFO, LRU and
+            Optimal Page Replacement.
+        </div>
+
+        <h2>📘 Unit 5: File Systems and Disk Management</h2>
+        <ul>
+            <li>File System Concepts</li>
+            <li>File Attributes and Operations</li>
+            <li>File Allocation Methods</li>
+            <li>Directory Structure</li>
+            <li>Disk Scheduling</li>
+            <li>Disk Management</li>
+            <li>File Protection</li>
+        </ul>
+
+        <h2>📌 Important Questions</h2>
         <ol>
-            <li>What is an Operating System?</li>
-            <li>Explain functions of an OS.</li>
-            <li>What is a process?</li>
-            <li>Explain process management.</li>
-            <li>What is memory management?</li>
-            <li>What is deadlock?</li>
-            <li>Explain the four conditions of deadlock.</li>
+            <li>What is an operating system? Explain its functions.</li>
+            <li>Explain different types of operating systems.</li>
+            <li>What is a process? Explain process states.</li>
+            <li>Explain FCFS, SJF and Round Robin scheduling.</li>
+            <li>What is process synchronization?</li>
+            <li>Explain the critical section problem.</li>
+            <li>What is deadlock? Explain its necessary conditions.</li>
+            <li>Explain Banker's algorithm.</li>
+            <li>What is paging and segmentation?</li>
+            <li>Explain FIFO and LRU page replacement algorithms.</li>
+            <li>What are disk scheduling algorithms?</li>
         </ol>
     `;
 }
@@ -1055,6 +4266,10 @@ else if (noteName === "Operating System") {
 // Semester 3 - Computer Networks
 // ===============================
 
+// ===============================
+// Computer Networks
+// ===============================
+
 else if (noteName === "Computer Networks") {
 
     title = "Computer Networks";
@@ -1062,64 +4277,85 @@ else if (noteName === "Computer Networks") {
     content = `
         <h2>🌐 Computer Networks</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            A computer network is a group of interconnected
-            computers that communicate and share resources.
-        </p>
-
-        <h2>2. Types of Networks</h2>
-
+        <h2>📘 Unit 1: Introduction to Computer Networks</h2>
         <ul>
-            <li>LAN – Local Area Network</li>
-            <li>MAN – Metropolitan Area Network</li>
-            <li>WAN – Wide Area Network</li>
+            <li>Computer Network Concepts</li>
+            <li>Types of Networks</li>
+            <li>Network Topologies</li>
+            <li>Network Devices</li>
+            <li>OSI Reference Model</li>
+            <li>TCP/IP Model</li>
         </ul>
 
-        <h2>3. Network Topologies</h2>
+        <div class="important">
+            <b>Important:</b><br>
+            The OSI model consists of seven layers:
+            Physical, Data Link, Network, Transport, Session,
+            Presentation and Application.
+        </div>
 
+        <h2>📘 Unit 2: Data Link Layer</h2>
         <ul>
-            <li>Bus</li>
-            <li>Star</li>
-            <li>Ring</li>
-            <li>Mesh</li>
-            <li>Tree</li>
+            <li>Data Link Layer Functions</li>
+            <li>Framing</li>
+            <li>Error Detection</li>
+            <li>Error Correction</li>
+            <li>Flow Control</li>
+            <li>MAC Protocols</li>
+            <li>Ethernet</li>
         </ul>
 
-        <h2>4. OSI Model</h2>
+        <h2>📘 Unit 3: Network Layer</h2>
+        <ul>
+            <li>Network Layer Functions</li>
+            <li>IP Addressing</li>
+            <li>IPv4 and IPv6</li>
+            <li>Subnetting</li>
+            <li>Routing</li>
+            <li>Routing Algorithms</li>
+            <li>ARP and ICMP</li>
+        </ul>
 
-        <p>
-            The OSI model has seven layers used to understand
-            network communication.
-        </p>
+        <div class="important">
+            <b>Important:</b><br>
+            IPv4 uses 32-bit addresses, while IPv6 uses 128-bit addresses.
+        </div>
 
-        <ol>
-            <li>Physical Layer</li>
-            <li>Data Link Layer</li>
-            <li>Network Layer</li>
-            <li>Transport Layer</li>
-            <li>Session Layer</li>
-            <li>Presentation Layer</li>
-            <li>Application Layer</li>
-        </ol>
+        <h2>📘 Unit 4: Transport Layer</h2>
+        <ul>
+            <li>Transport Layer Services</li>
+            <li>TCP</li>
+            <li>UDP</li>
+            <li>Port Numbers</li>
+            <li>Flow Control</li>
+            <li>Congestion Control</li>
+            <li>TCP Connection Management</li>
+        </ul>
 
-        <h2>5. IP Address</h2>
-
-        <p>
-            An IP address identifies a device on a network.
-        </p>
+        <h2>📘 Unit 5: Application Layer and Network Security</h2>
+        <ul>
+            <li>Application Layer Protocols</li>
+            <li>HTTP and HTTPS</li>
+            <li>FTP</li>
+            <li>SMTP and Email</li>
+            <li>DNS</li>
+            <li>Network Security Basics</li>
+            <li>Encryption and Authentication</li>
+        </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
             <li>What is a computer network?</li>
-            <li>Explain LAN, MAN and WAN.</li>
-            <li>What is network topology?</li>
-            <li>Explain different network topologies.</li>
-            <li>What is the OSI model?</li>
-            <li>Explain the seven layers of OSI model.</li>
-            <li>What is an IP address?</li>
+            <li>Explain different types of network topologies.</li>
+            <li>Explain all seven layers of the OSI model.</li>
+            <li>Differentiate OSI and TCP/IP models.</li>
+            <li>What is error detection and correction?</li>
+            <li>Explain IPv4 and IPv6.</li>
+            <li>What is subnetting?</li>
+            <li>Differentiate TCP and UDP.</li>
+            <li>Explain TCP congestion control.</li>
+            <li>What is DNS and how does it work?</li>
+            <li>Explain basic network security techniques.</li>
         </ol>
     `;
 }
@@ -1129,6 +4365,10 @@ else if (noteName === "Computer Networks") {
 // Semester 3 - Software Engineering
 // ===============================
 
+// ===============================
+// Software Engineering
+// ===============================
+
 else if (noteName === "Software Engineering") {
 
     title = "Software Engineering";
@@ -1136,67 +4376,95 @@ else if (noteName === "Software Engineering") {
     content = `
         <h2>⚙️ Software Engineering</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            Software Engineering is the systematic approach
-            to designing, developing, testing and maintaining
-            software.
-        </p>
-
-        <h2>2. Software Development Life Cycle</h2>
-
-        <p>
-            SDLC is a structured process used for developing
-            software systems.
-        </p>
-
-        <ol>
-            <li>Requirement Analysis</li>
-            <li>System Design</li>
-            <li>Implementation</li>
-            <li>Testing</li>
-            <li>Deployment</li>
-            <li>Maintenance</li>
-        </ol>
-
-        <h2>3. Software Models</h2>
-
+        <h2>📘 Unit 1: Introduction to Software Engineering</h2>
         <ul>
-            <li>Waterfall Model</li>
-            <li>Spiral Model</li>
-            <li>Agile Model</li>
-            <li>Prototype Model</li>
+            <li>Software and Software Engineering</li>
+            <li>Characteristics of Software</li>
+            <li>Software Crisis</li>
+            <li>Software Engineering Principles</li>
+            <li>Software Process</li>
+            <li>Software Development Life Cycle</li>
         </ul>
 
-        <h2>4. Software Testing</h2>
+        <div class="important">
+            <b>Important:</b><br>
+            Software Engineering is a systematic approach to the
+            development, operation and maintenance of software.
+        </div>
 
-        <p>
-            Software testing is the process of finding errors
-            and verifying that software works as expected.
-        </p>
-
+        <h2>📘 Unit 2: Software Process Models</h2>
         <ul>
-            <li>Unit Testing</li>
-            <li>Integration Testing</li>
-            <li>System Testing</li>
-            <li>Acceptance Testing</li>
+            <li>Waterfall Model</li>
+            <li>Prototype Model</li>
+            <li>Spiral Model</li>
+            <li>Incremental Model</li>
+            <li>Agile Model</li>
+            <li>Scrum</li>
+        </ul>
+
+        <h2>📘 Unit 3: Requirements Engineering</h2>
+        <ul>
+            <li>Software Requirements</li>
+            <li>Functional Requirements</li>
+            <li>Non-Functional Requirements</li>
+            <li>Requirements Engineering Process</li>
+            <li>Requirements Elicitation</li>
+            <li>Requirements Analysis</li>
+            <li>Software Requirements Specification</li>
+        </ul>
+
+        <div class="important">
+            <b>Important:</b><br>
+            SRS stands for Software Requirements Specification.
+            It describes the functional and non-functional requirements
+            of a software system.
+        </div>
+
+        <h2>📘 Unit 4: Software Design and Testing</h2>
+        <ul>
+            <li>Software Design Concepts</li>
+            <li>Modularity</li>
+            <li>Cohesion and Coupling</li>
+            <li>Architectural Design</li>
+            <li>Software Testing</li>
+            <li>Black Box Testing</li>
+            <li>White Box Testing</li>
+        </ul>
+
+        <h2>📘 Unit 5: Software Quality and Project Management</h2>
+        <ul>
+            <li>Software Quality</li>
+            <li>Software Quality Assurance</li>
+            <li>Software Metrics</li>
+            <li>Software Maintenance</li>
+            <li>Project Planning</li>
+            <li>Risk Management</li>
+            <li>Cost Estimation</li>
         </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
             <li>What is Software Engineering?</li>
-            <li>What is SDLC?</li>
-            <li>Explain different phases of SDLC.</li>
-            <li>Explain Waterfall Model.</li>
-            <li>What is Agile Model?</li>
-            <li>What is software testing?</li>
-            <li>Explain different types of testing.</li>
+            <li>Explain the Software Development Life Cycle.</li>
+            <li>Explain the Waterfall model with advantages and disadvantages.</li>
+            <li>What is the Spiral model?</li>
+            <li>Explain Agile software development.</li>
+            <li>What is requirements engineering?</li>
+            <li>What is SRS? Explain its characteristics.</li>
+            <li>Differentiate cohesion and coupling.</li>
+            <li>Explain black box and white box testing.</li>
+            <li>What is software quality assurance?</li>
+            <li>Explain software risk management.</li>
         </ol>
     `;
-}// ===============================
-// Semester 4 - Design and Analysis of Algorithms
+}
+
+// ============================================================
+// SEMESTER 4
+// ============================================================
+
+// ===============================
+// Design and Analysis of Algorithms
 // ===============================
 
 else if (noteName === "Design and Analysis of Algorithms") {
@@ -1204,73 +4472,84 @@ else if (noteName === "Design and Analysis of Algorithms") {
     title = "Design and Analysis of Algorithms";
 
     content = `
-        <h2>🧠 Design and Analysis of Algorithms</h2>
+        <h2>📘 Design and Analysis of Algorithms</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            An algorithm is a step-by-step procedure used to solve
-            a particular problem efficiently.
-        </p>
-
-        <h2>2. Characteristics of an Algorithm</h2>
-
+        <h2>📘 Unit 1: Introduction and Algorithm Analysis</h2>
         <ul>
-            <li>Input</li>
-            <li>Output</li>
-            <li>Definiteness</li>
-            <li>Finiteness</li>
-            <li>Effectiveness</li>
+            <li>Algorithms and Characteristics</li>
+            <li>Algorithm Design Techniques</li>
+            <li>Time Complexity</li>
+            <li>Space Complexity</li>
+            <li>Asymptotic Notations</li>
+            <li>Big O, Omega and Theta Notations</li>
         </ul>
-
-        <h2>3. Time Complexity</h2>
-
-        <p>
-            Time complexity describes the amount of time an algorithm
-            takes as the input size increases.
-        </p>
 
         <div class="important">
-            <b>Common Complexities:</b><br>
-            O(1) — Constant<br>
-            O(log n) — Logarithmic<br>
-            O(n) — Linear<br>
-            O(n²) — Quadratic
+            <b>Important:</b><br>
+            Big O describes the upper bound of an algorithm's growth rate.
         </div>
 
-        <h2>4. Searching Algorithms</h2>
-
+        <h2>📘 Unit 2: Divide and Conquer</h2>
         <ul>
-            <li>Linear Search</li>
+            <li>Divide and Conquer Technique</li>
             <li>Binary Search</li>
-        </ul>
-
-        <h2>5. Sorting Algorithms</h2>
-
-        <ul>
-            <li>Bubble Sort</li>
-            <li>Selection Sort</li>
-            <li>Insertion Sort</li>
             <li>Merge Sort</li>
             <li>Quick Sort</li>
+            <li>Maximum and Minimum Problem</li>
+            <li>Recurrence Relations</li>
+        </ul>
+
+        <h2>📘 Unit 3: Greedy Algorithms</h2>
+        <ul>
+            <li>Greedy Method</li>
+            <li>Activity Selection Problem</li>
+            <li>Fractional Knapsack</li>
+            <li>Job Sequencing</li>
+            <li>Minimum Spanning Tree</li>
+            <li>Prim's Algorithm</li>
+            <li>Kruskal's Algorithm</li>
+        </ul>
+
+        <h2>📘 Unit 4: Dynamic Programming</h2>
+        <ul>
+            <li>Dynamic Programming Concept</li>
+            <li>Optimal Substructure</li>
+            <li>0/1 Knapsack Problem</li>
+            <li>Matrix Chain Multiplication</li>
+            <li>Longest Common Subsequence</li>
+            <li>Floyd-Warshall Algorithm</li>
+        </ul>
+
+        <h2>📘 Unit 5: Graph Algorithms and Backtracking</h2>
+        <ul>
+            <li>Graph Traversal</li>
+            <li>Breadth First Search</li>
+            <li>Depth First Search</li>
+            <li>Shortest Path Algorithms</li>
+            <li>Dijkstra's Algorithm</li>
+            <li>Backtracking</li>
+            <li>N-Queens Problem</li>
         </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is an algorithm?</li>
-            <li>Explain characteristics of an algorithm.</li>
-            <li>What is time complexity?</li>
-            <li>Explain Big-O notation.</li>
-            <li>Explain linear and binary search.</li>
-            <li>Explain different sorting algorithms.</li>
+            <li>What is an algorithm? Explain its characteristics.</li>
+            <li>Explain Big O, Omega and Theta notations.</li>
+            <li>Explain merge sort with complexity.</li>
+            <li>Explain quick sort.</li>
+            <li>What is the greedy method?</li>
+            <li>Explain Prim's and Kruskal's algorithms.</li>
+            <li>Explain dynamic programming.</li>
+            <li>Solve the 0/1 knapsack problem.</li>
+            <li>Explain BFS and DFS.</li>
+            <li>Explain Dijkstra's algorithm.</li>
         </ol>
     `;
 }
 
 
 // ===============================
-// Semester 4 - Web Technology
+// Web Technology
 // ===============================
 
 else if (noteName === "Web Technology") {
@@ -1280,68 +4559,78 @@ else if (noteName === "Web Technology") {
     content = `
         <h2>🌐 Web Technology</h2>
 
-        <h2>1. Introduction</h2>
+        <h2>📘 Unit 1: Internet and HTML</h2>
+        <ul>
+            <li>Internet and World Wide Web</li>
+            <li>Web Browsers and Web Servers</li>
+            <li>HTML Basics</li>
+            <li>HTML Tags and Elements</li>
+            <li>Forms and Tables</li>
+            <li>HTML5</li>
+        </ul>
 
-        <p>
-            Web technology includes the tools and technologies used
-            to create and develop websites and web applications.
-        </p>
+        <h2>📘 Unit 2: CSS</h2>
+        <ul>
+            <li>Introduction to CSS</li>
+            <li>Selectors</li>
+            <li>Colors and Fonts</li>
+            <li>Box Model</li>
+            <li>Positioning</li>
+            <li>Flexbox</li>
+            <li>Responsive Web Design</li>
+        </ul>
 
-        <h2>2. HTML</h2>
+        <h2>📘 Unit 3: JavaScript</h2>
+        <ul>
+            <li>JavaScript Basics</li>
+            <li>Variables and Data Types</li>
+            <li>Operators</li>
+            <li>Functions</li>
+            <li>Arrays and Objects</li>
+            <li>Events</li>
+            <li>DOM Manipulation</li>
+        </ul>
 
-        <p>
-            HTML stands for HyperText Markup Language.
-            It is used to structure web pages.
-        </p>
+        <h2>📘 Unit 4: Server-Side Programming</h2>
+        <ul>
+            <li>Client-Server Architecture</li>
+            <li>Server-Side Scripting</li>
+            <li>PHP Basics</li>
+            <li>Forms and Form Processing</li>
+            <li>Sessions and Cookies</li>
+            <li>Database Connectivity</li>
+        </ul>
 
-        <pre>
-<h1>Hello World</h1>
-<p>Welcome to CollegeBuddy</p>
-        </pre>
-
-        <h2>3. CSS</h2>
-
-        <p>
-            CSS stands for Cascading Style Sheets.
-            It is used to design and style web pages.
-        </p>
-
-        <h2>4. JavaScript</h2>
-
-        <p>
-            JavaScript is a programming language used to add
-            interactivity and dynamic behaviour to websites.
-        </p>
-
-        <pre>
-function hello() {
-    alert("Hello CollegeBuddy");
-}
-        </pre>
-
-        <h2>5. Web Browser</h2>
-
-        <p>
-            A web browser is software used to access and display
-            websites on the internet.
-        </p>
+        <h2>📘 Unit 5: Web Services and Security</h2>
+        <ul>
+            <li>Web Services</li>
+            <li>REST API</li>
+            <li>JSON and XML</li>
+            <li>Authentication</li>
+            <li>Web Security</li>
+            <li>HTTPS</li>
+            <li>Common Web Attacks</li>
+        </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is Web Technology?</li>
-            <li>What is HTML?</li>
-            <li>What is CSS?</li>
+            <li>What is HTML? Explain HTML5 features.</li>
+            <li>Explain different HTML form elements.</li>
+            <li>What is CSS? Explain the CSS box model.</li>
+            <li>Explain Flexbox.</li>
             <li>What is JavaScript?</li>
-            <li>Explain the difference between HTML and CSS.</li>
-            <li>What is a web browser?</li>
+            <li>Explain DOM manipulation.</li>
+            <li>What is client-server architecture?</li>
+            <li>Explain sessions and cookies.</li>
+            <li>What is REST API?</li>
+            <li>Explain common web security attacks.</li>
         </ol>
     `;
 }
 
 
 // ===============================
-// Semester 4 - Theory of Computation
+// Theory of Computation
 // ===============================
 
 else if (noteName === "Theory of Computation") {
@@ -1349,61 +4638,76 @@ else if (noteName === "Theory of Computation") {
     title = "Theory of Computation";
 
     content = `
-        <h2>🤖 Theory of Computation</h2>
+        <h2>📘 Theory of Computation</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            Theory of Computation studies mathematical models
-            of computation and the problems that can be solved
-            by computers.
-        </p>
-
-        <h2>2. Automata</h2>
-
-        <p>
-            Automata are abstract mathematical machines used
-            to recognize patterns and languages.
-        </p>
-
-        <h2>3. Finite Automata</h2>
-
+        <h2>📘 Unit 1: Formal Languages and Finite Automata</h2>
         <ul>
-            <li>DFA — Deterministic Finite Automaton</li>
-            <li>NFA — Non-Deterministic Finite Automaton</li>
+            <li>Alphabet and Strings</li>
+            <li>Formal Languages</li>
+            <li>Finite Automata</li>
+            <li>DFA</li>
+            <li>NFA</li>
+            <li>Regular Languages</li>
         </ul>
 
-        <h2>4. Regular Languages</h2>
+        <h2>📘 Unit 2: Regular Expressions</h2>
+        <ul>
+            <li>Regular Expressions</li>
+            <li>Regular Grammars</li>
+            <li>Conversion Between FA and RE</li>
+            <li>Pumping Lemma</li>
+            <li>Closure Properties</li>
+            <li>Minimization of Finite Automata</li>
+        </ul>
 
-        <p>
-            Regular languages can be recognized by finite automata
-            and described using regular expressions.
-        </p>
+        <h2>📘 Unit 3: Context Free Grammar</h2>
+        <ul>
+            <li>Context Free Grammar</li>
+            <li>Derivations</li>
+            <li>Parse Trees</li>
+            <li>Ambiguous Grammar</li>
+            <li>Chomsky Normal Form</li>
+            <li>Greibach Normal Form</li>
+        </ul>
 
-        <h2>5. Context Free Grammar</h2>
+        <h2>📘 Unit 4: Pushdown Automata</h2>
+        <ul>
+            <li>Pushdown Automata</li>
+            <li>PDA and CFG</li>
+            <li>Acceptance by Final State</li>
+            <li>Acceptance by Empty Stack</li>
+            <li>Deterministic PDA</li>
+        </ul>
 
-        <p>
-            A context-free grammar is used to describe
-            context-free languages.
-        </p>
+        <h2>📘 Unit 5: Turing Machine</h2>
+        <ul>
+            <li>Turing Machine</li>
+            <li>TM Construction</li>
+            <li>Variants of Turing Machine</li>
+            <li>Recursive Languages</li>
+            <li>Recursively Enumerable Languages</li>
+            <li>Decidability</li>
+        </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is Theory of Computation?</li>
-            <li>What is an automaton?</li>
-            <li>What is DFA?</li>
-            <li>What is NFA?</li>
-            <li>Explain regular languages.</li>
-            <li>What is a regular expression?</li>
-            <li>What is context-free grammar?</li>
+            <li>Define DFA and NFA.</li>
+            <li>Differentiate DFA and NFA.</li>
+            <li>Explain regular expressions.</li>
+            <li>What is the pumping lemma?</li>
+            <li>Explain context free grammar.</li>
+            <li>What is an ambiguous grammar?</li>
+            <li>Explain pushdown automata.</li>
+            <li>Explain Turing machine.</li>
+            <li>What is decidability?</li>
+            <li>Explain recursive and recursively enumerable languages.</li>
         </ol>
     `;
 }
 
 
 // ===============================
-// Semester 4 - Microprocessor
+// Microprocessor
 // ===============================
 
 else if (noteName === "Microprocessor") {
@@ -1411,70 +4715,77 @@ else if (noteName === "Microprocessor") {
     title = "Microprocessor";
 
     content = `
-        <h2>⚙️ Microprocessor</h2>
+        <h2>🔧 Microprocessor</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            A microprocessor is a programmable electronic device
-            that performs arithmetic, logical and control operations.
-        </p>
-
-        <h2>2. Basic Components</h2>
-
+        <h2>📘 Unit 1: Introduction to Microprocessors</h2>
         <ul>
+            <li>Microprocessor Architecture</li>
+            <li>8085 Microprocessor</li>
+            <li>Registers</li>
             <li>ALU</li>
             <li>Control Unit</li>
-            <li>Registers</li>
-            <li>Bus System</li>
+            <li>8085 Pin Diagram</li>
         </ul>
 
-        <h2>3. Registers</h2>
-
-        <p>
-            Registers are small, high-speed storage locations
-            inside the processor.
-        </p>
-
+        <h2>📘 Unit 2: 8085 Instruction Set</h2>
         <ul>
-            <li>Accumulator</li>
-            <li>Program Counter</li>
-            <li>Stack Pointer</li>
-            <li>Instruction Register</li>
+            <li>Instruction Format</li>
+            <li>Data Transfer Instructions</li>
+            <li>Arithmetic Instructions</li>
+            <li>Logical Instructions</li>
+            <li>Branching Instructions</li>
+            <li>Stack Instructions</li>
         </ul>
 
-        <h2>4. Instruction</h2>
-
-        <p>
-            An instruction is a command that tells the processor
-            to perform a particular operation.
-        </p>
-
-        <h2>5. Microprocessor Applications</h2>
-
+        <h2>📘 Unit 3: 8086 Architecture</h2>
         <ul>
-            <li>Computers</li>
-            <li>Embedded Systems</li>
-            <li>Industrial Control</li>
-            <li>Consumer Electronics</li>
+            <li>8086 Architecture</li>
+            <li>Register Organization</li>
+            <li>Memory Segmentation</li>
+            <li>Addressing Modes</li>
+            <li>Instruction Queue</li>
+            <li>Minimum and Maximum Mode</li>
+        </ul>
+
+        <h2>📘 Unit 4: Interfacing</h2>
+        <ul>
+            <li>Memory Interfacing</li>
+            <li>I/O Interfacing</li>
+            <li>8255 Programmable Peripheral Interface</li>
+            <li>8253 Timer</li>
+            <li>8259 Interrupt Controller</li>
+            <li>ADC and DAC Interfacing</li>
+        </ul>
+
+        <h2>📘 Unit 5: Interrupts and Applications</h2>
+        <ul>
+            <li>Interrupts</li>
+            <li>Hardware and Software Interrupts</li>
+            <li>Interrupt Handling</li>
+            <li>Serial Communication</li>
+            <li>Microprocessor Applications</li>
+            <li>Embedded Applications</li>
         </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is a microprocessor?</li>
-            <li>Explain the basic components of a processor.</li>
-            <li>What are registers?</li>
-            <li>Explain accumulator and program counter.</li>
-            <li>What is an instruction?</li>
-            <li>Explain applications of microprocessors.</li>
+            <li>Explain the architecture of 8085.</li>
+            <li>Explain 8085 registers.</li>
+            <li>Explain different addressing modes.</li>
+            <li>Explain the instruction set of 8085.</li>
+            <li>Explain 8086 architecture.</li>
+            <li>What is memory segmentation?</li>
+            <li>Explain 8255 PPI.</li>
+            <li>What are interrupts?</li>
+            <li>Explain hardware and software interrupts.</li>
+            <li>Explain microprocessor applications.</li>
         </ol>
     `;
 }
 
 
 // ===============================
-// Semester 4 - Artificial Intelligence
+// Artificial Intelligence
 // ===============================
 
 else if (noteName === "Artificial Intelligence") {
@@ -1484,61 +4795,80 @@ else if (noteName === "Artificial Intelligence") {
     content = `
         <h2>🤖 Artificial Intelligence</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            Artificial Intelligence (AI) is a branch of computer
-            science that focuses on creating systems capable of
-            performing tasks that normally require human intelligence.
-        </p>
-
-        <h2>2. Applications of AI</h2>
-
+        <h2>📘 Unit 1: Introduction to AI</h2>
         <ul>
-            <li>Chatbots</li>
-            <li>Voice Assistants</li>
-            <li>Recommendation Systems</li>
-            <li>Self-driving Technology</li>
-            <li>Medical Diagnosis Systems</li>
+            <li>Artificial Intelligence</li>
+            <li>History of AI</li>
+            <li>Applications of AI</li>
+            <li>Intelligent Agents</li>
+            <li>Types of Agents</li>
+            <li>Problem Formulation</li>
         </ul>
 
-        <h2>3. Machine Learning</h2>
-
-        <p>
-            Machine Learning is a branch of AI in which computers
-            learn patterns from data and improve their performance.
-        </p>
-
-        <h2>4. Types of Machine Learning</h2>
-
+        <h2>📘 Unit 2: Search Techniques</h2>
         <ul>
+            <li>Uninformed Search</li>
+            <li>Breadth First Search</li>
+            <li>Depth First Search</li>
+            <li>Uniform Cost Search</li>
+            <li>Heuristic Search</li>
+            <li>A* Algorithm</li>
+        </ul>
+
+        <h2>📘 Unit 3: Knowledge Representation</h2>
+        <ul>
+            <li>Knowledge Representation</li>
+            <li>Propositional Logic</li>
+            <li>Predicate Logic</li>
+            <li>Semantic Networks</li>
+            <li>Frames</li>
+            <li>Inference</li>
+        </ul>
+
+        <h2>📘 Unit 4: Machine Learning and Reasoning</h2>
+        <ul>
+            <li>Introduction to Machine Learning</li>
             <li>Supervised Learning</li>
             <li>Unsupervised Learning</li>
-            <li>Reinforcement Learning</li>
+            <li>Decision Trees</li>
+            <li>Classification</li>
+            <li>Reasoning Under Uncertainty</li>
         </ul>
 
-        <h2>5. Knowledge Representation</h2>
-
-        <p>
-            Knowledge representation is the process of storing
-            information in a form that an AI system can use
-            for reasoning and decision making.
-        </p>
+        <h2>📘 Unit 5: Expert Systems and Applications</h2>
+        <ul>
+            <li>Expert Systems</li>
+            <li>Knowledge Base</li>
+            <li>Inference Engine</li>
+            <li>Natural Language Processing</li>
+            <li>Computer Vision</li>
+            <li>Robotics</li>
+            <li>AI Applications</li>
+        </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
             <li>What is Artificial Intelligence?</li>
-            <li>Explain applications of AI.</li>
-            <li>What is Machine Learning?</li>
-            <li>Explain supervised learning.</li>
-            <li>Explain unsupervised learning.</li>
-            <li>What is reinforcement learning?</li>
+            <li>Explain intelligent agents.</li>
+            <li>Explain BFS and DFS.</li>
+            <li>What is heuristic search?</li>
+            <li>Explain A* algorithm.</li>
             <li>What is knowledge representation?</li>
+            <li>Explain propositional and predicate logic.</li>
+            <li>What is machine learning?</li>
+            <li>Explain expert systems.</li>
+            <li>Explain applications of AI.</li>
         </ol>
     `;
-}// ===============================
-// Semester 5 - Compiler Design
+}
+
+
+// ============================================================
+// SEMESTER 5
+// ============================================================
+
+// ===============================
+// Compiler Design
 // ===============================
 
 else if (noteName === "Compiler Design") {
@@ -1548,62 +4878,75 @@ else if (noteName === "Compiler Design") {
     content = `
         <h2>🖥️ Compiler Design</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            A compiler is a system software that translates
-            source code written in a programming language into
-            machine code or another target language.
-        </p>
-
-        <h2>2. Phases of Compiler</h2>
-
-        <ol>
+        <h2>📘 Unit 1: Introduction to Compiler</h2>
+        <ul>
+            <li>Compiler and Interpreter</li>
+            <li>Phases of Compiler</li>
             <li>Lexical Analysis</li>
             <li>Syntax Analysis</li>
             <li>Semantic Analysis</li>
-            <li>Intermediate Code Generation</li>
+            <li>Symbol Table</li>
+        </ul>
+
+        <h2>📘 Unit 2: Lexical Analysis</h2>
+        <ul>
+            <li>Tokens and Lexemes</li>
+            <li>Regular Expressions</li>
+            <li>Finite Automata</li>
+            <li>Lexical Analyzer</li>
+            <li>Lexical Errors</li>
+            <li>LEX</li>
+        </ul>
+
+        <h2>📘 Unit 3: Syntax Analysis</h2>
+        <ul>
+            <li>Context Free Grammar</li>
+            <li>Top Down Parsing</li>
+            <li>Bottom Up Parsing</li>
+            <li>LL Parser</li>
+            <li>LR Parser</li>
+            <li>Shift Reduce Parsing</li>
+        </ul>
+
+        <h2>📘 Unit 4: Semantic Analysis and Intermediate Code</h2>
+        <ul>
+            <li>Semantic Analysis</li>
+            <li>Type Checking</li>
+            <li>Syntax Directed Translation</li>
+            <li>Intermediate Code</li>
+            <li>Three Address Code</li>
+            <li>Quadruples and Triples</li>
+        </ul>
+
+        <h2>📘 Unit 5: Code Optimization and Generation</h2>
+        <ul>
             <li>Code Optimization</li>
+            <li>Local and Global Optimization</li>
+            <li>Basic Blocks</li>
+            <li>Control Flow Graph</li>
             <li>Code Generation</li>
-        </ol>
-
-        <h2>3. Lexical Analysis</h2>
-
-        <p>
-            Lexical analysis converts the source program into
-            tokens such as keywords, identifiers and operators.
-        </p>
-
-        <h2>4. Syntax Analysis</h2>
-
-        <p>
-            Syntax analysis checks whether the tokens follow
-            the grammar rules of the programming language.
-        </p>
-
-        <h2>5. Code Optimization</h2>
-
-        <p>
-            Code optimization improves the efficiency of generated
-            code by reducing execution time or memory usage.
-        </p>
+            <li>Register Allocation</li>
+        </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is a compiler?</li>
-            <li>Explain the phases of a compiler.</li>
+            <li>Explain different phases of a compiler.</li>
             <li>What is lexical analysis?</li>
-            <li>What is syntax analysis?</li>
-            <li>What is semantic analysis?</li>
-            <li>What is code optimization?</li>
+            <li>Explain tokens and lexemes.</li>
+            <li>Explain top-down and bottom-up parsing.</li>
+            <li>What is an LR parser?</li>
+            <li>Explain semantic analysis.</li>
+            <li>What is three address code?</li>
+            <li>Explain code optimization.</li>
+            <li>What are basic blocks?</li>
+            <li>Explain code generation.</li>
         </ol>
     `;
 }
 
 
 // ===============================
-// Semester 5 - Machine Learning
+// Machine Learning
 // ===============================
 
 else if (noteName === "Machine Learning") {
@@ -1613,71 +4956,80 @@ else if (noteName === "Machine Learning") {
     content = `
         <h2>🤖 Machine Learning</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            Machine Learning is a branch of Artificial Intelligence
-            that allows computers to learn patterns from data and
-            make predictions or decisions.
-        </p>
-
-        <h2>2. Types of Machine Learning</h2>
-
+        <h2>📘 Unit 1: Introduction to Machine Learning</h2>
         <ul>
+            <li>Machine Learning Concepts</li>
+            <li>Types of Machine Learning</li>
             <li>Supervised Learning</li>
             <li>Unsupervised Learning</li>
             <li>Reinforcement Learning</li>
+            <li>Training and Testing Data</li>
         </ul>
 
-        <h2>3. Supervised Learning</h2>
+        <h2>📘 Unit 2: Regression and Classification</h2>
+        <ul>
+            <li>Linear Regression</li>
+            <li>Multiple Regression</li>
+            <li>Logistic Regression</li>
+            <li>Classification</li>
+            <li>K-Nearest Neighbors</li>
+            <li>Naive Bayes</li>
+        </ul>
 
-        <p>
-            In supervised learning, the model learns from labelled
-            training data.
-        </p>
+        <h2>📘 Unit 3: Decision Trees and Ensemble Learning</h2>
+        <ul>
+            <li>Decision Trees</li>
+            <li>Entropy</li>
+            <li>Information Gain</li>
+            <li>Random Forest</li>
+            <li>Bagging</li>
+            <li>Boosting</li>
+        </ul>
+
+        <h2>📘 Unit 4: Clustering and Dimensionality Reduction</h2>
+        <ul>
+            <li>Clustering</li>
+            <li>K-Means Clustering</li>
+            <li>Hierarchical Clustering</li>
+            <li>Principal Component Analysis</li>
+            <li>Dimensionality Reduction</li>
+            <li>Feature Selection</li>
+        </ul>
+
+        <h2>📘 Unit 5: Model Evaluation and Applications</h2>
+        <ul>
+            <li>Model Evaluation</li>
+            <li>Confusion Matrix</li>
+            <li>Accuracy, Precision and Recall</li>
+            <li>Cross Validation</li>
+            <li>Overfitting and Underfitting</li>
+            <li>ML Applications</li>
+        </ul>
 
         <div class="important">
-            <b>Examples:</b><br>
-            Classification<br>
-            Regression
+            <b>Important:</b><br>
+            Accuracy = Correct Predictions / Total Predictions
         </div>
-
-        <h2>4. Unsupervised Learning</h2>
-
-        <p>
-            Unsupervised learning finds patterns or structures
-            in data without labelled output.
-        </p>
-
-        <div class="important">
-            <b>Example:</b><br>
-            Clustering
-        </div>
-
-        <h2>5. Training and Testing</h2>
-
-        <p>
-            Training data is used to learn the model, while
-            testing data is used to evaluate its performance.
-        </p>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
             <li>What is Machine Learning?</li>
-            <li>Explain different types of Machine Learning.</li>
-            <li>What is supervised learning?</li>
-            <li>What is unsupervised learning?</li>
-            <li>What is reinforcement learning?</li>
-            <li>What is training data?</li>
-            <li>What is testing data?</li>
+            <li>Explain supervised and unsupervised learning.</li>
+            <li>Explain linear regression.</li>
+            <li>What is logistic regression?</li>
+            <li>Explain KNN algorithm.</li>
+            <li>Explain decision trees and information gain.</li>
+            <li>What is K-Means clustering?</li>
+            <li>Explain PCA.</li>
+            <li>What is overfitting?</li>
+            <li>Explain confusion matrix and evaluation metrics.</li>
         </ol>
     `;
 }
 
 
 // ===============================
-// Semester 5 - Computer Graphics
+// Computer Graphics
 // ===============================
 
 else if (noteName === "Computer Graphics") {
@@ -1687,72 +5039,74 @@ else if (noteName === "Computer Graphics") {
     content = `
         <h2>🎨 Computer Graphics</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            Computer Graphics is the field of computer science
-            concerned with creating, manipulating and displaying
-            images using computers.
-        </p>
-
-        <h2>2. Applications</h2>
-
+        <h2>📘 Unit 1: Introduction to Computer Graphics</h2>
         <ul>
-            <li>Games</li>
-            <li>Animation</li>
-            <li>CAD</li>
-            <li>Movies</li>
-            <li>Virtual Reality</li>
-            <li>Data Visualization</li>
+            <li>Computer Graphics Concepts</li>
+            <li>Applications of Computer Graphics</li>
+            <li>Display Devices</li>
+            <li>Raster Scan Display</li>
+            <li>Random Scan Display</li>
+            <li>Graphics Software</li>
         </ul>
 
-        <h2>3. Computer Graphics Primitives</h2>
-
-        <ul>
-            <li>Point</li>
-            <li>Line</li>
-            <li>Circle</li>
-            <li>Polygon</li>
-        </ul>
-
-        <h2>4. Transformations</h2>
-
-        <p>
-            Geometric transformations are used to change the
-            position, size or orientation of objects.
-        </p>
-
+        <h2>📘 Unit 2: 2D Transformations</h2>
         <ul>
             <li>Translation</li>
             <li>Rotation</li>
             <li>Scaling</li>
             <li>Reflection</li>
+            <li>Shearing</li>
+            <li>Homogeneous Coordinates</li>
         </ul>
 
-        <h2>5. Clipping</h2>
+        <h2>📘 Unit 3: Clipping and Viewing</h2>
+        <ul>
+            <li>Window and Viewport</li>
+            <li>Line Clipping</li>
+            <li>Cohen-Sutherland Algorithm</li>
+            <li>Polygon Clipping</li>
+            <li>Viewing Transformation</li>
+        </ul>
 
-        <p>
-            Clipping is the process of removing portions of
-            objects that lie outside the viewing area.
-        </p>
+        <h2>📘 Unit 4: 3D Graphics</h2>
+        <ul>
+            <li>3D Coordinates</li>
+            <li>3D Transformations</li>
+            <li>Translation and Rotation</li>
+            <li>Scaling</li>
+            <li>Projection</li>
+            <li>Parallel and Perspective Projection</li>
+        </ul>
+
+        <h2>📘 Unit 5: Curves, Surfaces and Animation</h2>
+        <ul>
+            <li>Bezier Curves</li>
+            <li>B-Spline Curves</li>
+            <li>Surface Representation</li>
+            <li>Rendering</li>
+            <li>Animation</li>
+            <li>Computer Graphics Applications</li>
+        </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is Computer Graphics?</li>
-            <li>Explain applications of computer graphics.</li>
-            <li>What are graphics primitives?</li>
-            <li>What is translation?</li>
-            <li>What is rotation?</li>
-            <li>What is scaling?</li>
-            <li>What is clipping?</li>
+            <li>Explain raster scan and random scan displays.</li>
+            <li>Explain 2D transformations.</li>
+            <li>What are homogeneous coordinates?</li>
+            <li>Explain Cohen-Sutherland line clipping.</li>
+            <li>Explain polygon clipping.</li>
+            <li>Explain 3D transformations.</li>
+            <li>Differentiate parallel and perspective projection.</li>
+            <li>Explain Bezier curves.</li>
+            <li>What is B-Spline?</li>
+            <li>Explain computer graphics applications.</li>
         </ol>
     `;
 }
 
 
 // ===============================
-// Semester 5 - Cloud Computing
+// Cloud Computing
 // ===============================
 
 else if (noteName === "Cloud Computing") {
@@ -1762,67 +5116,74 @@ else if (noteName === "Cloud Computing") {
     content = `
         <h2>☁️ Cloud Computing</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            Cloud Computing provides computing resources such as
-            servers, storage and applications over the internet.
-        </p>
-
-        <h2>2. Cloud Service Models</h2>
-
+        <h2>📘 Unit 1: Introduction to Cloud Computing</h2>
         <ul>
-            <li>IaaS – Infrastructure as a Service</li>
-            <li>PaaS – Platform as a Service</li>
-            <li>SaaS – Software as a Service</li>
+            <li>Cloud Computing Concepts</li>
+            <li>Characteristics of Cloud</li>
+            <li>Cloud Architecture</li>
+            <li>Benefits of Cloud Computing</li>
+            <li>Cloud Deployment Models</li>
+            <li>Public, Private and Hybrid Cloud</li>
         </ul>
 
-        <h2>3. IaaS</h2>
-
-        <p>
-            Infrastructure as a Service provides virtualized
-            computing infrastructure such as servers and storage.
-        </p>
-
-        <h2>4. PaaS</h2>
-
-        <p>
-            Platform as a Service provides a platform and tools
-            for developing and deploying applications.
-        </p>
-
-        <h2>5. SaaS</h2>
-
-        <p>
-            Software as a Service provides software applications
-            to users through the internet.
-        </p>
-
-        <h2>6. Cloud Deployment Models</h2>
-
+        <h2>📘 Unit 2: Cloud Service Models</h2>
         <ul>
-            <li>Public Cloud</li>
-            <li>Private Cloud</li>
-            <li>Hybrid Cloud</li>
-            <li>Community Cloud</li>
+            <li>Infrastructure as a Service</li>
+            <li>Platform as a Service</li>
+            <li>Software as a Service</li>
+            <li>Everything as a Service</li>
+            <li>Cloud Service Providers</li>
+        </ul>
+
+        <h2>📘 Unit 3: Virtualization</h2>
+        <ul>
+            <li>Virtualization Concepts</li>
+            <li>Virtual Machines</li>
+            <li>Hypervisors</li>
+            <li>Server Virtualization</li>
+            <li>Storage Virtualization</li>
+            <li>Network Virtualization</li>
+        </ul>
+
+        <h2>📘 Unit 4: Cloud Storage and Security</h2>
+        <ul>
+            <li>Cloud Storage</li>
+            <li>Distributed Storage</li>
+            <li>Data Management</li>
+            <li>Cloud Security</li>
+            <li>Authentication</li>
+            <li>Data Privacy</li>
+        </ul>
+
+        <h2>📘 Unit 5: Cloud Applications</h2>
+        <ul>
+            <li>Cloud Applications</li>
+            <li>Cloud Databases</li>
+            <li>Big Data and Cloud</li>
+            <li>Serverless Computing</li>
+            <li>Containerization</li>
+            <li>Cloud Migration</li>
         </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is Cloud Computing?</li>
-            <li>Explain IaaS, PaaS and SaaS.</li>
-            <li>What is a public cloud?</li>
-            <li>What is a private cloud?</li>
-            <li>What is a hybrid cloud?</li>
+            <li>What is cloud computing?</li>
             <li>Explain cloud deployment models.</li>
+            <li>Differentiate IaaS, PaaS and SaaS.</li>
+            <li>What is virtualization?</li>
+            <li>Explain hypervisors.</li>
+            <li>Explain cloud storage.</li>
+            <li>What are major cloud security issues?</li>
+            <li>What is serverless computing?</li>
+            <li>Explain containerization.</li>
+            <li>What is cloud migration?</li>
         </ol>
     `;
 }
 
 
 // ===============================
-// Semester 5 - Information Security
+// Information Security
 // ===============================
 
 else if (noteName === "Information Security") {
@@ -1832,183 +5193,155 @@ else if (noteName === "Information Security") {
     content = `
         <h2>🔐 Information Security</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            Information Security protects information and computer
-            systems from unauthorized access, modification,
-            disclosure and destruction.
-        </p>
-
-        <h2>2. CIA Triad</h2>
-
-        <div class="important">
-            <b>CIA Triad:</b><br>
-            Confidentiality<br>
-            Integrity<br>
-            Availability
-        </div>
-
-        <h2>3. Confidentiality</h2>
-
-        <p>
-            Confidentiality ensures that information is accessible
-            only to authorized users.
-        </p>
-
-        <h2>4. Integrity</h2>
-
-        <p>
-            Integrity ensures that information remains accurate
-            and is not modified without authorization.
-        </p>
-
-        <h2>5. Availability</h2>
-
-        <p>
-            Availability ensures that authorized users can access
-            information and services when required.
-        </p>
-
-        <h2>6. Common Security Threats</h2>
-
+        <h2>📘 Unit 1: Introduction to Information Security</h2>
         <ul>
+            <li>Information Security</li>
+            <li>Security Goals</li>
+            <li>Confidentiality</li>
+            <li>Integrity</li>
+            <li>Availability</li>
+            <li>Security Threats</li>
+        </ul>
+
+        <h2>📘 Unit 2: Cryptography</h2>
+        <ul>
+            <li>Cryptography Concepts</li>
+            <li>Symmetric Encryption</li>
+            <li>Asymmetric Encryption</li>
+            <li>DES</li>
+            <li>AES</li>
+            <li>RSA</li>
+        </ul>
+
+        <h2>📘 Unit 3: Authentication and Digital Signatures</h2>
+        <ul>
+            <li>Authentication</li>
+            <li>Password Authentication</li>
+            <li>Hash Functions</li>
+            <li>Digital Signatures</li>
+            <li>Digital Certificates</li>
+            <li>Public Key Infrastructure</li>
+        </ul>
+
+        <h2>📘 Unit 4: Network Security</h2>
+        <ul>
+            <li>Network Attacks</li>
+            <li>Firewalls</li>
+            <li>Intrusion Detection</li>
+            <li>VPN</li>
+            <li>Secure Communication</li>
+            <li>SSL and TLS</li>
+        </ul>
+
+        <h2>📘 Unit 5: Cyber Security and Security Management</h2>
+        <ul>
+            <li>Cyber Attacks</li>
             <li>Malware</li>
             <li>Phishing</li>
-            <li>Password Attacks</li>
-            <li>Unauthorized Access</li>
-            <li>Social Engineering</li>
+            <li>Security Policies</li>
+            <li>Risk Management</li>
+            <li>Security Auditing</li>
         </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is Information Security?</li>
-            <li>What is the CIA Triad?</li>
-            <li>Explain confidentiality.</li>
-            <li>Explain integrity.</li>
-            <li>Explain availability.</li>
+            <li>What is information security?</li>
+            <li>Explain CIA triad.</li>
+            <li>Differentiate symmetric and asymmetric encryption.</li>
+            <li>Explain AES and RSA.</li>
+            <li>What is a hash function?</li>
+            <li>Explain digital signatures.</li>
+            <li>What is a firewall?</li>
+            <li>Explain SSL and TLS.</li>
             <li>What is phishing?</li>
-            <li>What is malware?</li>
+            <li>Explain information security risk management.</li>
         </ol>
     `;
-}// ===============================
-// Semester 6 - Artificial Intelligence
+}
+
+
+// ============================================================
+// SEMESTER 6
+// ============================================================
+
+// ===============================
+// Artificial Intelligence
 // ===============================
 
-else if (noteName === "Artificial Intelligence - Semester 6") {
+else if (noteName === "Artificial Intelligence") {
 
-    title = "Artificial Intelligence - Semester 6";
+    title = "Artificial Intelligence";
 
     content = `
         <h2>🤖 Artificial Intelligence</h2>
 
-        <h2>1. Introduction to Artificial Intelligence</h2>
-
-        <p>
-            Artificial Intelligence (AI) is a branch of computer science
-            that develops systems capable of performing tasks that normally
-            require human intelligence.
-        </p>
-
-        <h2>2. Intelligent Agents</h2>
-
-        <p>
-            An intelligent agent is a system that perceives its environment
-            through sensors and takes actions using actuators to achieve
-            a particular goal.
-        </p>
-
+        <h2>📘 Unit 1: AI Fundamentals</h2>
         <ul>
-            <li>Simple Reflex Agent</li>
-            <li>Model-Based Agent</li>
-            <li>Goal-Based Agent</li>
-            <li>Utility-Based Agent</li>
-            <li>Learning Agent</li>
+            <li>Introduction to AI</li>
+            <li>History of AI</li>
+            <li>AI Problems</li>
+            <li>Intelligent Agents</li>
+            <li>Rational Agents</li>
         </ul>
 
-        <h2>3. Problem Solving in AI</h2>
-
-        <p>
-            AI uses search techniques to find solutions to problems.
-            The problem is represented using states, actions and goals.
-        </p>
-
-        <h2>4. Search Algorithms</h2>
-
+        <h2>📘 Unit 2: Search and Problem Solving</h2>
         <ul>
-            <li>Breadth First Search (BFS)</li>
-            <li>Depth First Search (DFS)</li>
+            <li>Problem Formulation</li>
+            <li>BFS</li>
+            <li>DFS</li>
             <li>Uniform Cost Search</li>
-            <li>Greedy Best First Search</li>
+            <li>Greedy Search</li>
             <li>A* Search</li>
         </ul>
 
-        <div class="important">
-            <b>A* Search:</b><br>
-            f(n) = g(n) + h(n)<br><br>
-            g(n) = Cost from starting node<br>
-            h(n) = Estimated cost to goal
-        </div>
-
-        <h2>5. Knowledge Representation</h2>
-
-        <p>
-            Knowledge representation is the process of representing
-            information in a form that an AI system can understand
-            and use for reasoning.
-        </p>
-
+        <h2>📘 Unit 3: Knowledge Representation</h2>
         <ul>
-            <li>Logic</li>
+            <li>Knowledge Representation</li>
+            <li>Propositional Logic</li>
+            <li>Predicate Logic</li>
+            <li>Inference</li>
             <li>Semantic Networks</li>
             <li>Frames</li>
-            <li>Production Rules</li>
         </ul>
 
-        <h2>6. Machine Learning</h2>
-
-        <p>
-            Machine Learning is a subfield of AI in which computers
-            learn patterns from data and use those patterns to make
-            predictions or decisions.
-        </p>
-
+        <h2>📘 Unit 4: Reasoning and Learning</h2>
         <ul>
-            <li>Supervised Learning</li>
-            <li>Unsupervised Learning</li>
-            <li>Reinforcement Learning</li>
+            <li>Reasoning Under Uncertainty</li>
+            <li>Bayesian Reasoning</li>
+            <li>Machine Learning</li>
+            <li>Decision Trees</li>
+            <li>Classification</li>
         </ul>
 
-        <h2>7. Applications of AI</h2>
-
+        <h2>📘 Unit 5: AI Applications</h2>
         <ul>
-            <li>Chatbots</li>
-            <li>Voice Assistants</li>
-            <li>Recommendation Systems</li>
-            <li>Computer Vision</li>
+            <li>Expert Systems</li>
             <li>Natural Language Processing</li>
+            <li>Computer Vision</li>
             <li>Robotics</li>
-            <li>Medical Diagnosis</li>
+            <li>Speech Recognition</li>
+            <li>AI Applications</li>
         </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
             <li>What is Artificial Intelligence?</li>
-            <li>What is an intelligent agent?</li>
-            <li>Explain different types of intelligent agents.</li>
-            <li>What is problem solving in AI?</li>
-            <li>Explain BFS and DFS.</li>
-            <li>What is A* search algorithm?</li>
-            <li>Explain knowledge representation.</li>
-            <li>What is Machine Learning?</li>
-            <li>Explain supervised and unsupervised learning.</li>
-            <li>Explain applications of Artificial Intelligence.</li>
+            <li>Explain intelligent agents.</li>
+            <li>Explain BFS, DFS and A* search.</li>
+            <li>What is knowledge representation?</li>
+            <li>Explain predicate logic.</li>
+            <li>What is Bayesian reasoning?</li>
+            <li>Explain decision tree learning.</li>
+            <li>What are expert systems?</li>
+            <li>Explain NLP.</li>
+            <li>Explain AI applications.</li>
         </ol>
     `;
-}// ===============================
-// Semester 6 - Internet of Things
+}
+
+
+// ===============================
+// Internet of Things
 // ===============================
 
 else if (noteName === "Internet of Things") {
@@ -2016,94 +5349,77 @@ else if (noteName === "Internet of Things") {
     title = "Internet of Things";
 
     content = `
-        <h2>🌐 Internet of Things (IoT)</h2>
+        <h2>📡 Internet of Things</h2>
 
-        <h2>1. Introduction to IoT</h2>
+        <h2>📘 Unit 1: Introduction to IoT</h2>
+        <ul>
+            <li>Internet of Things</li>
+            <li>Characteristics of IoT</li>
+            <li>IoT Architecture</li>
+            <li>IoT Components</li>
+            <li>IoT Applications</li>
+        </ul>
 
-        <p>
-            Internet of Things (IoT) is a technology in which
-            physical devices are connected to the internet
-            so that they can collect, exchange and process data.
-        </p>
-
-        <h2>2. Components of IoT</h2>
-
+        <h2>📘 Unit 2: Sensors and Actuators</h2>
         <ul>
             <li>Sensors</li>
+            <li>Types of Sensors</li>
             <li>Actuators</li>
-            <li>Processing Unit</li>
-            <li>Communication Network</li>
-            <li>Cloud Platform</li>
-            <li>User Application</li>
+            <li>Temperature Sensors</li>
+            <li>Motion Sensors</li>
+            <li>Data Acquisition</li>
         </ul>
 
-        <h2>3. Sensors</h2>
-
-        <p>
-            Sensors collect information from the physical environment.
-            Examples include temperature, humidity, motion and light sensors.
-        </p>
-
-        <h2>4. Actuators</h2>
-
-        <p>
-            Actuators perform actions based on commands received
-            from the IoT system.
-        </p>
-
-        <h2>5. IoT Architecture</h2>
-
-        <ol>
-            <li>Perception Layer</li>
-            <li>Network Layer</li>
-            <li>Processing Layer</li>
-            <li>Application Layer</li>
-        </ol>
-
-        <h2>6. IoT Communication Technologies</h2>
-
+        <h2>📘 Unit 3: IoT Communication</h2>
         <ul>
+            <li>IoT Communication Models</li>
             <li>Wi-Fi</li>
             <li>Bluetooth</li>
-            <li>Zigbee</li>
+            <li>ZigBee</li>
             <li>RFID</li>
-            <li>LoRaWAN</li>
-            <li>Cellular Networks</li>
+            <li>MQTT</li>
+            <li>CoAP</li>
         </ul>
 
-        <h2>7. Applications of IoT</h2>
-
+        <h2>📘 Unit 4: IoT Data and Cloud</h2>
         <ul>
-            <li>Smart Home</li>
-            <li>Smart Agriculture</li>
-            <li>Smart City</li>
-            <li>Healthcare</li>
-            <li>Industrial IoT</li>
-            <li>Smart Transportation</li>
+            <li>IoT Data Processing</li>
+            <li>Cloud Computing</li>
+            <li>Edge Computing</li>
+            <li>IoT Databases</li>
+            <li>Data Analytics</li>
         </ul>
 
-        <h2>8. IoT Security</h2>
-
-        <p>
-            IoT security protects connected devices, networks and
-            data from unauthorized access and cyber attacks.
-        </p>
+        <h2>📘 Unit 5: IoT Security and Applications</h2>
+        <ul>
+            <li>IoT Security</li>
+            <li>Authentication</li>
+            <li>Encryption</li>
+            <li>Smart Home</li>
+            <li>Smart City</li>
+            <li>Healthcare IoT</li>
+            <li>Industrial IoT</li>
+        </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is Internet of Things?</li>
-            <li>Explain the components of IoT.</li>
-            <li>What is a sensor?</li>
-            <li>What is an actuator?</li>
+            <li>What is IoT?</li>
             <li>Explain IoT architecture.</li>
-            <li>Explain different IoT communication technologies.</li>
-            <li>What are the applications of IoT?</li>
-            <li>Explain IoT security.</li>
+            <li>What are sensors and actuators?</li>
+            <li>Explain IoT communication protocols.</li>
+            <li>What is MQTT?</li>
+            <li>Explain edge computing.</li>
+            <li>What are IoT security challenges?</li>
+            <li>Explain smart home applications.</li>
+            <li>What is Industrial IoT?</li>
+            <li>Explain IoT applications in healthcare.</li>
         </ol>
     `;
-}// ===============================
-// Semester 6 - Big Data
+}
+
+
+// ===============================
+// Big Data
 // ===============================
 
 else if (noteName === "Big Data") {
@@ -2113,89 +5429,73 @@ else if (noteName === "Big Data") {
     content = `
         <h2>📊 Big Data</h2>
 
-        <h2>1. Introduction to Big Data</h2>
-
-        <p>
-            Big Data refers to extremely large and complex datasets
-            that cannot be efficiently processed using traditional
-            data processing techniques.
-        </p>
-
-        <h2>2. Characteristics of Big Data</h2>
-
-        <div class="important">
-            <b>5 V's of Big Data:</b><br><br>
-            Volume – Amount of data<br>
-            Velocity – Speed of data generation<br>
-            Variety – Different types of data<br>
-            Veracity – Accuracy and reliability of data<br>
-            Value – Useful information obtained from data
-        </div>
-
-        <h2>3. Types of Big Data</h2>
-
+        <h2>📘 Unit 1: Introduction to Big Data</h2>
         <ul>
-            <li>Structured Data</li>
-            <li>Semi-Structured Data</li>
-            <li>Unstructured Data</li>
+            <li>Big Data Concepts</li>
+            <li>Characteristics of Big Data</li>
+            <li>5 Vs of Big Data</li>
+            <li>Big Data Sources</li>
+            <li>Big Data Applications</li>
         </ul>
 
-        <h2>4. Hadoop</h2>
-
-        <p>
-            Apache Hadoop is a framework used for distributed storage
-            and processing of large datasets across clusters of computers.
-        </p>
-
-        <h2>5. HDFS</h2>
-
-        <p>
-            Hadoop Distributed File System (HDFS) is used to store
-            large amounts of data across multiple machines.
-        </p>
-
-        <h2>6. MapReduce</h2>
-
-        <p>
-            MapReduce is a programming model used to process large
-            datasets in parallel across distributed systems.
-        </p>
-
-        <div class="important">
-            <b>Map Phase:</b><br>
-            Processes input data and produces intermediate key-value pairs.
-            <br><br>
-
-            <b>Reduce Phase:</b><br>
-            Combines and processes the intermediate results.
-        </div>
-
-        <h2>7. Applications of Big Data</h2>
-
+        <h2>📘 Unit 2: Hadoop</h2>
         <ul>
-            <li>Banking</li>
-            <li>Healthcare</li>
-            <li>E-Commerce</li>
-            <li>Social Media</li>
-            <li>Education</li>
-            <li>Business Analytics</li>
+            <li>Hadoop Introduction</li>
+            <li>Hadoop Architecture</li>
+            <li>HDFS</li>
+            <li>NameNode and DataNode</li>
+            <li>MapReduce</li>
+        </ul>
+
+        <h2>📘 Unit 3: MapReduce and Hadoop Ecosystem</h2>
+        <ul>
+            <li>MapReduce Programming</li>
+            <li>Mapper</li>
+            <li>Reducer</li>
+            <li>YARN</li>
+            <li>Hive</li>
+            <li>Pig</li>
+        </ul>
+
+        <h2>📘 Unit 4: NoSQL and Data Processing</h2>
+        <ul>
+            <li>NoSQL Databases</li>
+            <li>MongoDB</li>
+            <li>Key-Value Databases</li>
+            <li>Document Databases</li>
+            <li>Data Processing</li>
+            <li>Data Analytics</li>
+        </ul>
+
+        <h2>📘 Unit 5: Big Data Analytics</h2>
+        <ul>
+            <li>Big Data Analytics</li>
+            <li>Data Mining</li>
+            <li>Predictive Analytics</li>
+            <li>Real-Time Analytics</li>
+            <li>Big Data Security</li>
+            <li>Industry Applications</li>
         </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
             <li>What is Big Data?</li>
-            <li>Explain the 5 V's of Big Data.</li>
-            <li>Explain structured and unstructured data.</li>
-            <li>What is Hadoop?</li>
+            <li>Explain the 5 Vs of Big Data.</li>
+            <li>Explain Hadoop architecture.</li>
             <li>What is HDFS?</li>
-            <li>What is MapReduce?</li>
-            <li>Explain Map and Reduce phases.</li>
-            <li>Explain applications of Big Data.</li>
+            <li>Explain MapReduce.</li>
+            <li>What are Mapper and Reducer?</li>
+            <li>Explain Hive and Pig.</li>
+            <li>What are NoSQL databases?</li>
+            <li>Explain MongoDB.</li>
+            <li>Explain Big Data Analytics.</li>
         </ol>
     `;
-}// ===============================
-// Semester 6 - Mobile Application Development
+}
+
+
+// ===============================
+// Mobile Application Development
 // ===============================
 
 else if (noteName === "Mobile Application Development") {
@@ -2205,93 +5505,74 @@ else if (noteName === "Mobile Application Development") {
     content = `
         <h2>📱 Mobile Application Development</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            Mobile Application Development is the process of
-            designing, developing, testing and deploying applications
-            for mobile devices such as smartphones and tablets.
-        </p>
-
-        <h2>2. Mobile Operating Systems</h2>
-
+        <h2>📘 Unit 1: Mobile Computing</h2>
         <ul>
-            <li>Android</li>
-            <li>iOS</li>
+            <li>Mobile Computing</li>
+            <li>Mobile Application Architecture</li>
+            <li>Mobile Operating Systems</li>
+            <li>Android Overview</li>
+            <li>iOS Overview</li>
         </ul>
 
-        <h2>3. Types of Mobile Applications</h2>
-
+        <h2>📘 Unit 2: Android Fundamentals</h2>
         <ul>
-            <li>Native Applications</li>
-            <li>Web Applications</li>
-            <li>Hybrid Applications</li>
+            <li>Android Architecture</li>
+            <li>Android Studio</li>
+            <li>Activities</li>
+            <li>Services</li>
+            <li>Broadcast Receivers</li>
+            <li>Content Providers</li>
         </ul>
 
-        <h2>4. Android Application Components</h2>
-
+        <h2>📘 Unit 3: Android UI and Events</h2>
         <ul>
-            <li>Activity</li>
-            <li>Service</li>
-            <li>Broadcast Receiver</li>
-            <li>Content Provider</li>
-        </ul>
-
-        <h2>5. User Interface</h2>
-
-        <p>
-            User Interface (UI) contains the visual elements through
-            which users interact with a mobile application.
-        </p>
-
-        <ul>
-            <li>Buttons</li>
-            <li>Text Fields</li>
-            <li>Images</li>
+            <li>Layouts</li>
+            <li>Views and Widgets</li>
+            <li>Buttons and Text Views</li>
             <li>Menus</li>
-            <li>Lists</li>
+            <li>Event Handling</li>
+            <li>Fragments</li>
         </ul>
 
-        <h2>6. Mobile App Development Process</h2>
+        <h2>📘 Unit 4: Data Storage and Networking</h2>
+        <ul>
+            <li>SQLite Database</li>
+            <li>Shared Preferences</li>
+            <li>File Storage</li>
+            <li>Networking</li>
+            <li>REST APIs</li>
+            <li>JSON</li>
+        </ul>
 
-        <ol>
-            <li>Requirement Analysis</li>
-            <li>UI/UX Design</li>
-            <li>Development</li>
-            <li>Testing</li>
-            <li>Deployment</li>
-            <li>Maintenance</li>
-        </ol>
-
-        <h2>7. Mobile Application Testing</h2>
-
-        <p>
-            Testing ensures that a mobile application works correctly
-            on different devices, screen sizes and operating systems.
-        </p>
-
-        <h2>8. Mobile App Security</h2>
-
-        <p>
-            Mobile application security protects user data,
-            authentication information and application resources.
-        </p>
+        <h2>📘 Unit 5: Advanced Mobile Development</h2>
+        <ul>
+            <li>Notifications</li>
+            <li>Location Services</li>
+            <li>Maps</li>
+            <li>Camera and Sensors</li>
+            <li>Mobile Security</li>
+            <li>App Deployment</li>
+        </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is Mobile Application Development?</li>
-            <li>Explain different types of mobile applications.</li>
-            <li>What are Android application components?</li>
+            <li>What is mobile computing?</li>
+            <li>Explain Android architecture.</li>
             <li>What is an Activity?</li>
-            <li>What is a Service?</li>
-            <li>Explain the mobile app development process.</li>
-            <li>What is mobile application testing?</li>
-            <li>Explain mobile application security.</li>
+            <li>Explain Android components.</li>
+            <li>What are layouts and widgets?</li>
+            <li>Explain SQLite database.</li>
+            <li>How are REST APIs used in mobile apps?</li>
+            <li>Explain location services.</li>
+            <li>What are mobile security issues?</li>
+            <li>Explain mobile application deployment.</li>
         </ol>
     `;
-}// ===============================
-// Semester 6 - Distributed Systems
+}
+
+
+// ===============================
+// Distributed Systems
 // ===============================
 
 else if (noteName === "Distributed Systems") {
@@ -2299,89 +5580,77 @@ else if (noteName === "Distributed Systems") {
     title = "Distributed Systems";
 
     content = `
-        <h2>🖥️ Distributed Systems</h2>
+        <h2>🖧 Distributed Systems</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            A distributed system is a collection of independent
-            computers that work together and appear to users
-            as a single system.
-        </p>
-
-        <h2>2. Characteristics of Distributed Systems</h2>
-
+        <h2>📘 Unit 1: Introduction to Distributed Systems</h2>
         <ul>
-            <li>Resource Sharing</li>
-            <li>Concurrency</li>
-            <li>Scalability</li>
-            <li>Fault Tolerance</li>
-            <li>Transparency</li>
+            <li>Distributed System Concepts</li>
+            <li>Characteristics</li>
+            <li>Advantages and Disadvantages</li>
+            <li>Distributed System Architecture</li>
+            <li>Client-Server Systems</li>
         </ul>
 
-        <h2>3. Advantages of Distributed Systems</h2>
-
+        <h2>📘 Unit 2: Communication</h2>
         <ul>
-            <li>Better resource utilization</li>
-            <li>Improved reliability</li>
-            <li>Easy scalability</li>
-            <li>High performance</li>
+            <li>Inter-Process Communication</li>
+            <li>Message Passing</li>
+            <li>Remote Procedure Call</li>
+            <li>Remote Method Invocation</li>
+            <li>Distributed Objects</li>
         </ul>
 
-        <h2>4. Communication</h2>
-
-        <p>
-            Distributed systems use communication networks to
-            exchange messages between different computers.
-        </p>
-
-        <h2>5. Client-Server Model</h2>
-
-        <p>
-            In the client-server model, clients request services
-            and servers provide those services.
-        </p>
-
-        <h2>6. Distributed Database</h2>
-
-        <p>
-            A distributed database stores data across multiple
-            locations connected through a network.
-        </p>
-
-        <h2>7. Fault Tolerance</h2>
-
-        <p>
-            Fault tolerance is the ability of a system to continue
-            operating even when some components fail.
-        </p>
-
-        <h2>8. Applications of Distributed Systems</h2>
-
+        <h2>📘 Unit 3: Synchronization</h2>
         <ul>
-            <li>Cloud Computing</li>
-            <li>Online Banking</li>
-            <li>E-Commerce</li>
+            <li>Clock Synchronization</li>
+            <li>Logical Clocks</li>
+            <li>Lamport Clock</li>
+            <li>Mutual Exclusion</li>
+            <li>Distributed Deadlock</li>
+        </ul>
+
+        <h2>📘 Unit 4: Distributed Transactions</h2>
+        <ul>
+            <li>Distributed Transactions</li>
+            <li>Concurrency Control</li>
+            <li>Two Phase Commit</li>
+            <li>Distributed Recovery</li>
+            <li>Replication</li>
+        </ul>
+
+        <h2>📘 Unit 5: Distributed File Systems and Security</h2>
+        <ul>
+            <li>Distributed File Systems</li>
             <li>Distributed Databases</li>
-            <li>Content Delivery Networks</li>
-            <li>Large-scale Web Applications</li>
+            <li>Fault Tolerance</li>
+            <li>Distributed Security</li>
+            <li>Authentication</li>
+            <li>Distributed Applications</li>
         </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
             <li>What is a distributed system?</li>
-            <li>Explain the characteristics of distributed systems.</li>
-            <li>What are the advantages of distributed systems?</li>
-            <li>Explain communication in distributed systems.</li>
-            <li>What is the client-server model?</li>
-            <li>What is a distributed database?</li>
+            <li>Explain distributed system architecture.</li>
+            <li>What is RPC?</li>
+            <li>Explain message passing.</li>
+            <li>What is Lamport logical clock?</li>
+            <li>Explain distributed mutual exclusion.</li>
+            <li>What is distributed deadlock?</li>
+            <li>Explain two-phase commit.</li>
             <li>What is fault tolerance?</li>
-            <li>Explain applications of distributed systems.</li>
+            <li>Explain distributed file systems.</li>
         </ol>
     `;
-}// ===============================
-// Semester 7 - Deep Learning
+}
+
+
+// ============================================================
+// SEMESTER 7
+// ============================================================
+
+// ===============================
+// Deep Learning
 // ===============================
 
 else if (noteName === "Deep Learning") {
@@ -2391,101 +5660,70 @@ else if (noteName === "Deep Learning") {
     content = `
         <h2>🧠 Deep Learning</h2>
 
-        <h2>1. Introduction to Deep Learning</h2>
-
-        <p>
-            Deep Learning is a branch of Machine Learning that uses
-            artificial neural networks with multiple layers to learn
-            complex patterns from large amounts of data.
-        </p>
-
-        <h2>2. Artificial Neural Network</h2>
-
-        <p>
-            An Artificial Neural Network (ANN) is a computational model
-            inspired by the structure of the human brain.
-        </p>
-
+        <h2>📘 Unit 1: Introduction to Deep Learning</h2>
         <ul>
-            <li>Input Layer</li>
-            <li>Hidden Layer</li>
-            <li>Output Layer</li>
+            <li>Deep Learning Concepts</li>
+            <li>Artificial Neural Networks</li>
+            <li>Biological Neurons</li>
+            <li>Perceptron</li>
+            <li>Activation Functions</li>
         </ul>
 
-        <h2>3. Neurons</h2>
-
-        <p>
-            A neuron receives input values, applies weights and bias,
-            and produces an output using an activation function.
-        </p>
-
-        <div class="important">
-            <b>Basic Neuron:</b><br><br>
-            Output = Activation Function (Σ(weight × input) + bias)
-        </div>
-
-        <h2>4. Activation Functions</h2>
-
+        <h2>📘 Unit 2: Neural Networks</h2>
         <ul>
-            <li>Sigmoid</li>
-            <li>ReLU</li>
-            <li>Tanh</li>
-            <li>Softmax</li>
+            <li>Feed Forward Neural Networks</li>
+            <li>Backpropagation</li>
+            <li>Gradient Descent</li>
+            <li>Loss Functions</li>
+            <li>Optimization</li>
         </ul>
 
-        <h2>5. Deep Neural Networks</h2>
-
-        <p>
-            A Deep Neural Network (DNN) contains multiple hidden layers
-            between the input and output layers.
-        </p>
-
-        <h2>6. Convolutional Neural Network</h2>
-
-        <p>
-            Convolutional Neural Networks (CNNs) are mainly used for
-            image processing and computer vision tasks.
-        </p>
-
+        <h2>📘 Unit 3: Convolutional Neural Networks</h2>
         <ul>
-            <li>Convolution Layer</li>
-            <li>Pooling Layer</li>
-            <li>Fully Connected Layer</li>
+            <li>CNN Architecture</li>
+            <li>Convolution Operation</li>
+            <li>Pooling</li>
+            <li>Padding</li>
+            <li>Image Classification</li>
         </ul>
 
-        <h2>7. Recurrent Neural Network</h2>
-
-        <p>
-            Recurrent Neural Networks (RNNs) are designed to process
-            sequential data such as text, speech and time-series data.
-        </p>
-
-        <h2>8. Applications of Deep Learning</h2>
-
+        <h2>📘 Unit 4: Recurrent Neural Networks</h2>
         <ul>
-            <li>Image Recognition</li>
-            <li>Speech Recognition</li>
-            <li>Natural Language Processing</li>
-            <li>Self-Driving Vehicles</li>
-            <li>Medical Image Analysis</li>
-            <li>Recommendation Systems</li>
+            <li>RNN Architecture</li>
+            <li>Sequence Data</li>
+            <li>LSTM</li>
+            <li>GRU</li>
+            <li>Time Series Applications</li>
+        </ul>
+
+        <h2>📘 Unit 5: Advanced Deep Learning</h2>
+        <ul>
+            <li>Autoencoders</li>
+            <li>Generative Models</li>
+            <li>Transfer Learning</li>
+            <li>Deep Reinforcement Learning</li>
+            <li>Deep Learning Applications</li>
         </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
             <li>What is Deep Learning?</li>
-            <li>Explain Artificial Neural Networks.</li>
-            <li>What is a neuron?</li>
-            <li>Explain different activation functions.</li>
-            <li>What is a Deep Neural Network?</li>
-            <li>Explain Convolutional Neural Networks.</li>
-            <li>What is an RNN?</li>
-            <li>Explain applications of Deep Learning.</li>
+            <li>Explain artificial neural networks.</li>
+            <li>What is backpropagation?</li>
+            <li>Explain gradient descent.</li>
+            <li>Explain CNN architecture.</li>
+            <li>What is pooling?</li>
+            <li>Explain RNN.</li>
+            <li>Differentiate LSTM and GRU.</li>
+            <li>What are autoencoders?</li>
+            <li>Explain applications of deep learning.</li>
         </ol>
     `;
-}// ===============================
-// Semester 7 - Cyber Security
+}
+
+
+// ===============================
+// Cyber Security
 // ===============================
 
 else if (noteName === "Cyber Security") {
@@ -2493,121 +5731,77 @@ else if (noteName === "Cyber Security") {
     title = "Cyber Security";
 
     content = `
-        <h2>🔐 Cyber Security</h2>
+        <h2>🛡️ Cyber Security</h2>
 
-        <h2>1. Introduction to Cyber Security</h2>
-
-        <p>
-            Cyber Security is the practice of protecting computers,
-            networks, applications and data from unauthorized access,
-            attacks and damage.
-        </p>
-
-        <h2>2. Goals of Cyber Security</h2>
-
-        <div class="important">
-            <b>CIA Triad:</b><br><br>
-            Confidentiality – Protecting information from unauthorized access.<br>
-            Integrity – Maintaining accuracy and correctness of data.<br>
-            Availability – Ensuring systems and data are available when required.
-        </div>
-
-        <h2>3. Types of Cyber Attacks</h2>
-
+        <h2>📘 Unit 1: Introduction to Cyber Security</h2>
         <ul>
-            <li>Phishing</li>
-            <li>Malware</li>
-            <li>Ransomware</li>
-            <li>Denial of Service (DoS)</li>
-            <li>Man-in-the-Middle Attack</li>
-            <li>Password Attacks</li>
-            <li>SQL Injection</li>
+            <li>Cyber Security Concepts</li>
+            <li>Cyber Threats</li>
+            <li>Cyber Attacks</li>
+            <li>Security Principles</li>
+            <li>Cyber Security Challenges</li>
         </ul>
 
-        <h2>4. Malware</h2>
-
-        <p>
-            Malware is malicious software designed to damage systems,
-            steal information or gain unauthorized access.
-        </p>
-
+        <h2>📘 Unit 2: Cryptography</h2>
         <ul>
-            <li>Virus</li>
-            <li>Worm</li>
-            <li>Trojan Horse</li>
-            <li>Spyware</li>
-            <li>Ransomware</li>
-        </ul>
-
-        <h2>5. Cryptography</h2>
-
-        <p>
-            Cryptography is the technique of securing information by
-            converting readable data into a protected form.
-        </p>
-
-        <ul>
-            <li>Symmetric Key Cryptography</li>
-            <li>Asymmetric Key Cryptography</li>
+            <li>Cryptography</li>
+            <li>Symmetric Encryption</li>
+            <li>Asymmetric Encryption</li>
             <li>Hashing</li>
+            <li>Digital Signatures</li>
+            <li>Certificates</li>
         </ul>
 
-        <h2>6. Authentication</h2>
-
-        <p>
-            Authentication is the process of verifying the identity
-            of a user or system.
-        </p>
-
+        <h2>📘 Unit 3: Network Security</h2>
         <ul>
-            <li>Password Authentication</li>
-            <li>Biometric Authentication</li>
-            <li>Two-Factor Authentication</li>
-            <li>Multi-Factor Authentication</li>
-        </ul>
-
-        <h2>7. Network Security</h2>
-
-        <p>
-            Network security protects computer networks from
-            unauthorized access, misuse and cyber attacks.
-        </p>
-
-        <ul>
-            <li>Firewall</li>
+            <li>Network Attacks</li>
+            <li>Firewalls</li>
+            <li>Intrusion Detection</li>
             <li>VPN</li>
-            <li>Intrusion Detection System</li>
-            <li>Intrusion Prevention System</li>
+            <li>SSL and TLS</li>
+            <li>Secure Networks</li>
         </ul>
 
-        <h2>8. Cyber Security Best Practices</h2>
-
+        <h2>📘 Unit 4: Cyber Attacks and Malware</h2>
         <ul>
-            <li>Use strong passwords</li>
-            <li>Enable two-factor authentication</li>
-            <li>Keep software updated</li>
-            <li>Use trusted networks</li>
-            <li>Take regular backups</li>
-            <li>Avoid suspicious links and attachments</li>
+            <li>Malware</li>
+            <li>Viruses</li>
+            <li>Worms</li>
+            <li>Trojans</li>
+            <li>Ransomware</li>
+            <li>Phishing</li>
+            <li>Denial of Service Attacks</li>
+        </ul>
+
+        <h2>📘 Unit 5: Cyber Security Management</h2>
+        <ul>
+            <li>Security Policies</li>
+            <li>Risk Assessment</li>
+            <li>Incident Response</li>
+            <li>Digital Forensics</li>
+            <li>Security Auditing</li>
+            <li>Cyber Laws</li>
         </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is Cyber Security?</li>
-            <li>Explain the CIA Triad.</li>
-            <li>What are different types of cyber attacks?</li>
+            <li>What is cyber security?</li>
+            <li>Explain different cyber threats.</li>
+            <li>Explain symmetric and asymmetric encryption.</li>
+            <li>What is a digital signature?</li>
+            <li>Explain firewall and IDS.</li>
             <li>What is malware?</li>
-            <li>Explain different types of malware.</li>
-            <li>What is cryptography?</li>
-            <li>Explain symmetric and asymmetric cryptography.</li>
-            <li>What is authentication?</li>
-            <li>What is a firewall?</li>
-            <li>Explain Cyber Security best practices.</li>
+            <li>Explain ransomware and phishing.</li>
+            <li>What is a DoS attack?</li>
+            <li>Explain digital forensics.</li>
+            <li>What are cyber laws?</li>
         </ol>
     `;
-}// ===============================
-// Semester 7 - Data Mining
+}
+
+
+// ===============================
+// Data Mining
 // ===============================
 
 else if (noteName === "Data Mining") {
@@ -2617,109 +5811,80 @@ else if (noteName === "Data Mining") {
     content = `
         <h2>⛏️ Data Mining</h2>
 
-        <h2>1. Introduction to Data Mining</h2>
-
-        <p>
-            Data Mining is the process of discovering useful patterns,
-            relationships and knowledge from large amounts of data.
-        </p>
-
-        <h2>2. Data Mining Process</h2>
-
-        <ol>
-            <li>Data Collection</li>
-            <li>Data Cleaning</li>
-            <li>Data Integration</li>
-            <li>Data Selection</li>
-            <li>Data Transformation</li>
-            <li>Data Mining</li>
-            <li>Pattern Evaluation</li>
-            <li>Knowledge Presentation</li>
-        </ol>
-
-        <h2>3. Data Preprocessing</h2>
-
-        <p>
-            Data preprocessing prepares raw data for analysis by
-            removing errors, handling missing values and transforming
-            data into a suitable format.
-        </p>
-
+        <h2>📘 Unit 1: Introduction to Data Mining</h2>
         <ul>
-            <li>Data Cleaning</li>
-            <li>Data Integration</li>
-            <li>Data Transformation</li>
-            <li>Data Reduction</li>
+            <li>Data Mining Concepts</li>
+            <li>Data Mining Tasks</li>
+            <li>Knowledge Discovery Process</li>
+            <li>Data Mining Applications</li>
+            <li>Data Preprocessing</li>
         </ul>
 
-        <h2>4. Classification</h2>
-
-        <p>
-            Classification is a supervised learning technique used
-            to assign data into predefined classes or categories.
-        </p>
-
+        <h2>📘 Unit 2: Data Warehousing</h2>
         <ul>
-            <li>Decision Tree</li>
+            <li>Data Warehouse</li>
+            <li>Data Warehouse Architecture</li>
+            <li>OLAP</li>
+            <li>OLTP</li>
+            <li>Data Cubes</li>
+            <li>ETL Process</li>
+        </ul>
+
+        <h2>📘 Unit 3: Association Rule Mining</h2>
+        <ul>
+            <li>Association Rules</li>
+            <li>Support</li>
+            <li>Confidence</li>
+            <li>Lift</li>
+            <li>Apriori Algorithm</li>
+            <li>Frequent Itemsets</li>
+        </ul>
+
+        <div class="important">
+            <b>Important:</b><br>
+            Support and confidence are important measures used
+            in association rule mining.
+        </div>
+
+        <h2>📘 Unit 4: Classification and Prediction</h2>
+        <ul>
+            <li>Classification</li>
+            <li>Decision Trees</li>
             <li>Naive Bayes</li>
             <li>K-Nearest Neighbors</li>
+            <li>Prediction</li>
+            <li>Model Evaluation</li>
         </ul>
 
-        <h2>5. Clustering</h2>
-
-        <p>
-            Clustering is an unsupervised learning technique that
-            groups similar data objects together.
-        </p>
-
-        <div class="important">
-            <b>K-Means Clustering:</b><br><br>
-            K-Means divides data into K groups based on similarity
-            and distance from cluster centers.
-        </div>
-
-        <h2>6. Association Rule Mining</h2>
-
-        <p>
-            Association rule mining discovers relationships between
-            items in large datasets.
-        </p>
-
-        <div class="important">
-            <b>Support:</b> Measures how frequently an itemset occurs.<br><br>
-            <b>Confidence:</b> Measures how often a rule is correct.
-        </div>
-
-        <h2>7. Applications of Data Mining</h2>
-
+        <h2>📘 Unit 5: Clustering and Applications</h2>
         <ul>
-            <li>Market Analysis</li>
-            <li>Fraud Detection</li>
-            <li>Customer Analysis</li>
-            <li>Healthcare</li>
-            <li>Banking</li>
-            <li>E-Commerce</li>
-            <li>Recommendation Systems</li>
+            <li>Clustering</li>
+            <li>K-Means</li>
+            <li>Hierarchical Clustering</li>
+            <li>Density Based Clustering</li>
+            <li>Outlier Detection</li>
+            <li>Data Mining Applications</li>
         </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is Data Mining?</li>
-            <li>Explain the Data Mining process.</li>
-            <li>What is Data Preprocessing?</li>
-            <li>Explain Data Cleaning and Data Transformation.</li>
-            <li>What is Classification?</li>
-            <li>Explain Decision Tree classification.</li>
-            <li>What is Clustering?</li>
-            <li>Explain K-Means Clustering.</li>
-            <li>What is Association Rule Mining?</li>
-            <li>Explain Support and Confidence.</li>
-            <li>Explain applications of Data Mining.</li>
+            <li>What is data mining?</li>
+            <li>Explain the KDD process.</li>
+            <li>What is a data warehouse?</li>
+            <li>Differentiate OLAP and OLTP.</li>
+            <li>Explain association rule mining.</li>
+            <li>What are support and confidence?</li>
+            <li>Explain Apriori algorithm.</li>
+            <li>Explain classification techniques.</li>
+            <li>What is K-Means clustering?</li>
+            <li>Explain applications of data mining.</li>
         </ol>
     `;
-}// ===============================
-// Semester 7 - Blockchain Technology
+}
+
+
+// ===============================
+// Blockchain Technology
 // ===============================
 
 else if (noteName === "Blockchain Technology") {
@@ -2729,114 +5894,74 @@ else if (noteName === "Blockchain Technology") {
     content = `
         <h2>⛓️ Blockchain Technology</h2>
 
-        <h2>1. Introduction to Blockchain</h2>
-
-        <p>
-            Blockchain is a distributed digital ledger technology
-            that records transactions in a secure, transparent and
-            tamper-resistant manner.
-        </p>
-
-        <h2>2. Features of Blockchain</h2>
-
+        <h2>📘 Unit 1: Introduction to Blockchain</h2>
         <ul>
-            <li>Decentralization</li>
-            <li>Transparency</li>
-            <li>Security</li>
-            <li>Immutability</li>
+            <li>Blockchain Concepts</li>
+            <li>History of Blockchain</li>
             <li>Distributed Ledger</li>
+            <li>Blocks and Transactions</li>
+            <li>Blockchain Architecture</li>
         </ul>
 
-        <h2>3. Blockchain Structure</h2>
-
-        <p>
-            A blockchain consists of a sequence of blocks.
-            Each block contains transaction data, a timestamp,
-            its own hash and the hash of the previous block.
-        </p>
-
-        <div class="important">
-            <b>Block contains:</b><br><br>
-            Transaction Data<br>
-            Timestamp<br>
-            Previous Block Hash<br>
-            Current Block Hash
-        </div>
-
-        <h2>4. Hashing</h2>
-
-        <p>
-            Hashing converts input data into a fixed-length value.
-            A small change in the input produces a different hash.
-        </p>
-
-        <h2>5. Consensus Mechanisms</h2>
-
-        <p>
-            Consensus mechanisms allow participants in a distributed
-            network to agree on the valid state of the blockchain.
-        </p>
-
+        <h2>📘 Unit 2: Cryptography and Consensus</h2>
         <ul>
-            <li>Proof of Work (PoW)</li>
-            <li>Proof of Stake (PoS)</li>
-            <li>Delegated Proof of Stake (DPoS)</li>
+            <li>Hash Functions</li>
+            <li>Public Key Cryptography</li>
+            <li>Digital Signatures</li>
+            <li>Proof of Work</li>
+            <li>Proof of Stake</li>
+            <li>Consensus Mechanisms</li>
         </ul>
 
-        <h2>6. Smart Contracts</h2>
-
-        <p>
-            Smart contracts are programs stored on a blockchain
-            that automatically execute predefined rules when
-            specified conditions are satisfied.
-        </p>
-
-        <h2>7. Cryptocurrency</h2>
-
-        <p>
-            Blockchain technology can be used to support digital
-            currencies and record transactions without relying
-            on a single central authority.
-        </p>
-
-        <h2>8. Applications of Blockchain</h2>
-
+        <h2>📘 Unit 3: Bitcoin and Cryptocurrency</h2>
         <ul>
-            <li>Digital Payments</li>
-            <li>Banking</li>
+            <li>Bitcoin</li>
+            <li>Bitcoin Architecture</li>
+            <li>Bitcoin Transactions</li>
+            <li>Mining</li>
+            <li>Wallets</li>
+            <li>Cryptocurrency</li>
+        </ul>
+
+        <h2>📘 Unit 4: Ethereum and Smart Contracts</h2>
+        <ul>
+            <li>Ethereum</li>
+            <li>Smart Contracts</li>
+            <li>Ethereum Virtual Machine</li>
+            <li>Solidity</li>
+            <li>Decentralized Applications</li>
+            <li>DApps</li>
+        </ul>
+
+        <h2>📘 Unit 5: Blockchain Applications and Security</h2>
+        <ul>
+            <li>Blockchain Security</li>
+            <li>Blockchain in Banking</li>
             <li>Supply Chain Management</li>
             <li>Healthcare</li>
             <li>Digital Identity</li>
-            <li>Smart Contracts</li>
-            <li>Voting Systems</li>
-        </ul>
-
-        <h2>9. Advantages of Blockchain</h2>
-
-        <ul>
-            <li>Improved transparency</li>
-            <li>Data security</li>
-            <li>Reduced dependence on intermediaries</li>
-            <li>Better traceability</li>
-            <li>Tamper-resistant records</li>
+            <li>Future of Blockchain</li>
         </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is Blockchain Technology?</li>
-            <li>Explain the features of blockchain.</li>
-            <li>Explain the structure of a blockchain block.</li>
-            <li>What is hashing?</li>
-            <li>What is a consensus mechanism?</li>
+            <li>What is blockchain?</li>
+            <li>Explain distributed ledger technology.</li>
+            <li>What is a hash function?</li>
             <li>Explain Proof of Work and Proof of Stake.</li>
+            <li>What is Bitcoin?</li>
+            <li>Explain Bitcoin mining.</li>
             <li>What are smart contracts?</li>
-            <li>Explain the applications of blockchain.</li>
-            <li>What are the advantages of blockchain technology?</li>
+            <li>Explain Ethereum.</li>
+            <li>What are DApps?</li>
+            <li>Explain blockchain applications.</li>
         </ol>
     `;
-}// ===============================
-// Semester 7 - Project Work
+}
+
+
+// ===============================
+// Project Work
 // ===============================
 
 else if (noteName === "Project Work") {
@@ -2844,134 +5969,79 @@ else if (noteName === "Project Work") {
     title = "Project Work";
 
     content = `
-        <h2>🎓 Project Work</h2>
+        <h2>💻 Project Work</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            Project Work is an important part of B.Tech CSE in which
-            students apply their theoretical and practical knowledge
-            to develop a software, hardware or research-based project.
-        </p>
-
-        <h2>2. Project Selection</h2>
-
-        <p>
-            A good project should solve a real-world problem and
-            should be achievable within the available time and resources.
-        </p>
-
+        <h2>📘 Unit 1: Project Planning</h2>
         <ul>
-            <li>Identify a real-world problem</li>
-            <li>Study existing solutions</li>
-            <li>Define project objectives</li>
-            <li>Select suitable technologies</li>
-            <li>Prepare a project plan</li>
+            <li>Project Selection</li>
+            <li>Problem Identification</li>
+            <li>Project Objectives</li>
+            <li>Feasibility Study</li>
+            <li>Project Scope</li>
         </ul>
 
-        <h2>3. Project Development Life Cycle</h2>
-
-        <ol>
-            <li>Problem Identification</li>
-            <li>Requirement Analysis</li>
-            <li>System Design</li>
-            <li>Implementation</li>
-            <li>Testing</li>
-            <li>Deployment</li>
-            <li>Maintenance</li>
-        </ol>
-
-        <h2>4. Requirement Analysis</h2>
-
-        <p>
-            Requirement analysis identifies what the system should do
-            and what resources are required to develop it.
-        </p>
-
+        <h2>📘 Unit 2: Requirements and Analysis</h2>
         <ul>
+            <li>Requirement Gathering</li>
             <li>Functional Requirements</li>
             <li>Non-Functional Requirements</li>
-            <li>Hardware Requirements</li>
-            <li>Software Requirements</li>
+            <li>System Analysis</li>
+            <li>Use Case Diagrams</li>
+            <li>System Specification</li>
         </ul>
 
-        <h2>5. System Design</h2>
-
-        <p>
-            System design describes the architecture, modules,
-            database, user interface and overall working of the project.
-        </p>
-
-        <h2>6. Implementation</h2>
-
-        <p>
-            Implementation is the stage where the planned system
-            is converted into a working application using suitable
-            programming languages and technologies.
-        </p>
-
-        <h2>7. Testing</h2>
-
-        <p>
-            Testing is performed to identify errors and verify that
-            the project works according to its requirements.
-        </p>
-
+        <h2>📘 Unit 3: System Design</h2>
         <ul>
+            <li>System Architecture</li>
+            <li>Database Design</li>
+            <li>UI/UX Design</li>
+            <li>Data Flow Diagrams</li>
+            <li>UML Diagrams</li>
+            <li>Technology Selection</li>
+        </ul>
+
+        <h2>📘 Unit 4: Implementation and Testing</h2>
+        <ul>
+            <li>Project Implementation</li>
+            <li>Coding Standards</li>
+            <li>Version Control</li>
             <li>Unit Testing</li>
             <li>Integration Testing</li>
             <li>System Testing</li>
-            <li>User Acceptance Testing</li>
         </ul>
 
-        <h2>8. Project Documentation</h2>
-
-        <p>
-            Project documentation explains the complete project,
-            including its objectives, methodology, design,
-            implementation, testing and results.
-        </p>
-
+        <h2>📘 Unit 5: Documentation and Presentation</h2>
         <ul>
-            <li>Introduction</li>
-            <li>Problem Statement</li>
-            <li>Objectives</li>
-            <li>Literature Survey</li>
-            <li>Methodology</li>
-            <li>System Design</li>
-            <li>Implementation</li>
-            <li>Testing</li>
-            <li>Results</li>
-            <li>Conclusion</li>
+            <li>Project Documentation</li>
+            <li>Project Report</li>
+            <li>Results and Discussion</li>
             <li>Future Scope</li>
-            <li>References</li>
+            <li>Project Presentation</li>
+            <li>Viva Preparation</li>
         </ul>
-
-        <h2>9. Project Presentation</h2>
-
-        <p>
-            Students should be able to explain the problem,
-            objectives, technologies, implementation, results
-            and future scope of their project during the presentation.
-        </p>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is Project Work?</li>
-            <li>How do you select a good project topic?</li>
-            <li>Explain the project development life cycle.</li>
-            <li>What is requirement analysis?</li>
-            <li>What are functional and non-functional requirements?</li>
-            <li>Explain system design.</li>
-            <li>What is project implementation?</li>
+            <li>How do you select a project topic?</li>
+            <li>What is feasibility study?</li>
+            <li>Explain functional and non-functional requirements.</li>
+            <li>What is a use case diagram?</li>
+            <li>Explain system architecture.</li>
+            <li>What is database design?</li>
             <li>Explain different types of software testing.</li>
-            <li>What is project documentation?</li>
-            <li>What points should be covered in a project presentation?</li>
+            <li>What should be included in a project report?</li>
+            <li>How should a project presentation be prepared?</li>
+            <li>How can you prepare for project viva?</li>
         </ol>
     `;
-}// ===============================
-// Semester 8 - Major Project
+}
+
+// ============================================================
+// SEMESTER 8
+// ============================================================
+
+// ===============================
+// Major Project
 // ===============================
 
 else if (noteName === "Major Project") {
@@ -2981,114 +6051,73 @@ else if (noteName === "Major Project") {
     content = `
         <h2>🎓 Major Project</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            A Major Project is a comprehensive project in which
-            students apply their programming, database, software
-            engineering and problem-solving skills to develop
-            a practical solution for a real-world problem.
-        </p>
-
-        <h2>2. Project Objectives</h2>
-
+        <h2>📘 Unit 1: Project Planning and Problem Identification</h2>
         <ul>
-            <li>Solve a real-world problem</li>
-            <li>Apply theoretical knowledge</li>
-            <li>Develop practical programming skills</li>
-            <li>Learn software development practices</li>
-            <li>Improve problem-solving skills</li>
+            <li>Project Selection</li>
+            <li>Problem Identification</li>
+            <li>Problem Statement</li>
+            <li>Project Objectives</li>
+            <li>Project Scope</li>
+            <li>Feasibility Study</li>
         </ul>
 
-        <h2>3. Project Selection</h2>
-
-        <p>
-            A good project should have a clear problem statement,
-            defined objectives and a practical implementation plan.
-        </p>
-
-        <h2>4. Requirement Analysis</h2>
-
+        <h2>📘 Unit 2: Requirement Analysis</h2>
         <ul>
+            <li>Requirement Gathering</li>
             <li>Functional Requirements</li>
             <li>Non-Functional Requirements</li>
             <li>Hardware Requirements</li>
             <li>Software Requirements</li>
+            <li>System Analysis</li>
         </ul>
 
-        <h2>5. System Design</h2>
-
-        <p>
-            System design describes the architecture, modules,
-            database structure, user interface and workflow
-            of the proposed system.
-        </p>
-
-        <h2>6. Development</h2>
-
-        <p>
-            During development, the project is implemented using
-            suitable programming languages, frameworks, databases
-            and development tools.
-        </p>
-
-        <h2>7. Testing</h2>
-
+        <h2>📘 Unit 3: System Design and Development</h2>
         <ul>
+            <li>System Architecture</li>
+            <li>Database Design</li>
+            <li>UML Diagrams</li>
+            <li>Data Flow Diagrams</li>
+            <li>User Interface Design</li>
+            <li>System Development</li>
+        </ul>
+
+        <h2>📘 Unit 4: Implementation and Testing</h2>
+        <ul>
+            <li>Project Implementation</li>
+            <li>Coding Standards</li>
+            <li>Version Control</li>
             <li>Unit Testing</li>
             <li>Integration Testing</li>
             <li>System Testing</li>
-            <li>Acceptance Testing</li>
         </ul>
 
-        <h2>8. Project Documentation</h2>
-
-        <ol>
-            <li>Introduction</li>
-            <li>Problem Statement</li>
-            <li>Objectives</li>
-            <li>Literature Survey</li>
-            <li>Requirements</li>
-            <li>System Design</li>
-            <li>Implementation</li>
-            <li>Testing</li>
-            <li>Results</li>
-            <li>Conclusion</li>
+        <h2>📘 Unit 5: Documentation and Presentation</h2>
+        <ul>
+            <li>Project Documentation</li>
+            <li>Project Report</li>
+            <li>Results and Discussion</li>
             <li>Future Scope</li>
-            <li>References</li>
-        </ol>
-
-        <h2>9. Project Presentation</h2>
-
-        <p>
-            The final presentation should explain the problem,
-            objectives, technologies used, system design,
-            implementation, results and future scope.
-        </p>
-
-        <h2>10. Future Scope</h2>
-
-        <p>
-            Future scope describes the improvements and additional
-            features that can be added to the project later.
-        </p>
+            <li>Project Presentation</li>
+            <li>Viva Preparation</li>
+        </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is a Major Project?</li>
-            <li>How do you select a project topic?</li>
+            <li>How do you select a major project?</li>
             <li>What is a problem statement?</li>
-            <li>Explain project objectives.</li>
-            <li>What is requirement analysis?</li>
-            <li>Explain system design.</li>
+            <li>Explain feasibility study.</li>
+            <li>Explain functional and non-functional requirements.</li>
+            <li>What is system architecture?</li>
+            <li>Explain database design.</li>
+            <li>What are UML diagrams?</li>
             <li>Explain different types of software testing.</li>
-            <li>What should be included in project documentation?</li>
-            <li>How should a project presentation be prepared?</li>
-            <li>What is the future scope of a project?</li>
+            <li>What should be included in a project report?</li>
+            <li>How should a project viva be prepared?</li>
         </ol>
     `;
-}// ===============================
+}
+
+// ===============================
 // Semester 8 - Project Seminar
 // ===============================
 
@@ -3099,112 +6128,68 @@ else if (noteName === "Project Seminar") {
     content = `
         <h2>🎤 Project Seminar</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            A Project Seminar is a formal presentation in which
-            students explain their project idea, objectives,
-            methodology, implementation, results and future scope
-            to teachers, evaluators or other students.
-        </p>
-
-        <h2>2. Objectives of a Project Seminar</h2>
-
+        <h2>📘 Unit 1: Seminar Fundamentals</h2>
         <ul>
-            <li>Present the project clearly</li>
-            <li>Explain the problem being solved</li>
-            <li>Describe the proposed solution</li>
-            <li>Explain technologies used</li>
-            <li>Present project results</li>
-            <li>Answer questions from evaluators</li>
-        </ul>
-
-        <h2>3. Seminar Preparation</h2>
-
-        <ol>
-            <li>Understand the project completely</li>
-            <li>Prepare the presentation</li>
-            <li>Organize important points</li>
-            <li>Practice the presentation</li>
-            <li>Prepare for questions</li>
-        </ol>
-
-        <h2>4. Presentation Structure</h2>
-
-        <ol>
-            <li>Title</li>
-            <li>Introduction</li>
-            <li>Problem Statement</li>
-            <li>Objectives</li>
+            <li>Introduction to Seminar</li>
+            <li>Selection of Seminar Topic</li>
+            <li>Problem Identification</li>
+            <li>Objectives of Seminar</li>
             <li>Literature Survey</li>
-            <li>Proposed Methodology</li>
-            <li>System Design</li>
-            <li>Technologies Used</li>
-            <li>Implementation</li>
-            <li>Results</li>
-            <li>Conclusion</li>
-            <li>Future Scope</li>
-            <li>References</li>
-        </ol>
-
-        <h2>5. Presentation Skills</h2>
-
-        <ul>
-            <li>Speak clearly and confidently</li>
-            <li>Maintain eye contact</li>
-            <li>Use simple language</li>
-            <li>Explain diagrams properly</li>
-            <li>Manage presentation time</li>
-            <li>Answer questions politely</li>
         </ul>
 
-        <h2>6. Visual Aids</h2>
-
-        <p>
-            Visual aids such as diagrams, flowcharts, tables,
-            screenshots and graphs can make a technical seminar
-            easier to understand.
-        </p>
-
-        <h2>7. Question and Answer Session</h2>
-
-        <p>
-            After the presentation, evaluators may ask questions
-            about the project. Students should understand the
-            project's requirements, design, implementation and results.
-        </p>
-
-        <div class="important">
-            <b>Tip:</b><br>
-            Presentation ko sirf read mat karo. Project ko samajhkar
-            explain karo aur important questions ki practice karo.
-        </div>
-
-        <h2>8. Common Mistakes</h2>
-
+        <h2>📘 Unit 2: Research and Content Preparation</h2>
         <ul>
-            <li>Reading every slide word-for-word</li>
-            <li>Using too much text</li>
-            <li>Not explaining diagrams</li>
-            <li>Poor time management</li>
-            <li>Not preparing for questions</li>
+            <li>Literature Review</li>
+            <li>Research Papers</li>
+            <li>Data Collection</li>
+            <li>Technical Analysis</li>
+            <li>Reference Collection</li>
+        </ul>
+
+        <h2>📘 Unit 3: Seminar Report</h2>
+        <ul>
+            <li>Report Structure</li>
+            <li>Abstract</li>
+            <li>Introduction</li>
+            <li>Methodology</li>
+            <li>Results and Discussion</li>
+            <li>Conclusion</li>
+        </ul>
+
+        <h2>📘 Unit 4: Presentation Preparation</h2>
+        <ul>
+            <li>Presentation Structure</li>
+            <li>PowerPoint Presentation</li>
+            <li>Slide Design</li>
+            <li>Charts and Diagrams</li>
+            <li>Technical Demonstration</li>
+        </ul>
+
+        <h2>📘 Unit 5: Seminar Delivery and Viva</h2>
+        <ul>
+            <li>Presentation Skills</li>
+            <li>Communication Skills</li>
+            <li>Question Answer Session</li>
+            <li>Technical Viva</li>
+            <li>Common Presentation Mistakes</li>
+            <li>Seminar Evaluation</li>
         </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is a Project Seminar?</li>
-            <li>What are the objectives of a Project Seminar?</li>
-            <li>How should a project seminar be prepared?</li>
-            <li>Explain the structure of a project presentation.</li>
-            <li>What presentation skills are important?</li>
-            <li>What are visual aids?</li>
-            <li>How should a student handle the question-answer session?</li>
-            <li>What are common mistakes during a seminar?</li>
-            <li>How can a technical presentation be made effective?</li>
+            <li>How should a seminar topic be selected?</li>
+            <li>What is a literature survey?</li>
+            <li>How is a seminar report prepared?</li>
+            <li>What should be included in the abstract?</li>
+            <li>How should a technical presentation be designed?</li>
+            <li>What are the important presentation skills?</li>
+            <li>How should technical questions be answered?</li>
+            <li>What are common seminar mistakes?</li>
         </ol>
     `;
-}// ===============================
+}
+
+// ===============================
 // Semester 8 - Technical Training
 // ===============================
 
@@ -3215,127 +6200,67 @@ else if (noteName === "Technical Training") {
     content = `
         <h2>💻 Technical Training</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            Technical Training helps students develop practical
-            technical skills required for software development,
-            IT industries and professional work environments.
-        </p>
-
-        <h2>2. Objectives of Technical Training</h2>
-
+        <h2>📘 Unit 1: Training Fundamentals</h2>
         <ul>
-            <li>Develop practical technical skills</li>
-            <li>Understand industry requirements</li>
-            <li>Improve programming skills</li>
-            <li>Learn development tools</li>
-            <li>Gain practical project experience</li>
-            <li>Improve problem-solving ability</li>
+            <li>Introduction to Technical Training</li>
+            <li>Training Objectives</li>
+            <li>Training Planning</li>
+            <li>Industry Orientation</li>
+            <li>Professional Skills</li>
         </ul>
 
-        <h2>3. Programming Skills</h2>
-
+        <h2>📘 Unit 2: Technical Skill Development</h2>
         <ul>
-            <li>C Programming</li>
-            <li>C++</li>
-            <li>Java</li>
-            <li>Python</li>
-            <li>JavaScript</li>
-        </ul>
-
-        <h2>4. Web Development</h2>
-
-        <p>
-            Web development involves creating websites and web
-            applications using frontend, backend and database technologies.
-        </p>
-
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Backend Development</li>
-            <li>Database Management</li>
-        </ul>
-
-        <h2>5. Database Skills</h2>
-
-        <ul>
-            <li>SQL</li>
-            <li>Database Design</li>
-            <li>Tables and Relationships</li>
-            <li>Queries</li>
-            <li>Database Security</li>
-        </ul>
-
-        <h2>6. Software Development Tools</h2>
-
-        <ul>
-            <li>Visual Studio Code</li>
-            <li>Git</li>
-            <li>GitHub</li>
-            <li>Command Line</li>
-            <li>Debugging Tools</li>
-        </ul>
-
-        <h2>7. Version Control</h2>
-
-        <p>
-            Version control systems help developers track changes
-            in source code and collaborate with other developers.
-        </p>
-
-        <div class="important">
-            <b>Git:</b> A distributed version control system used
-            to manage source code and track project changes.
-        </div>
-
-        <h2>8. Industry Skills</h2>
-
-        <ul>
+            <li>Programming Skills</li>
+            <li>Database Skills</li>
+            <li>Web Technologies</li>
+            <li>Software Development</li>
             <li>Problem Solving</li>
-            <li>Communication</li>
-            <li>Teamwork</li>
-            <li>Time Management</li>
-            <li>Technical Documentation</li>
-            <li>Presentation Skills</li>
         </ul>
 
-        <h2>9. Training Report</h2>
-
-        <p>
-            A technical training report should describe the training
-            organization, objectives, technologies learned, practical
-            work performed, projects completed and overall learning.
-        </p>
-
-        <h2>10. Benefits of Technical Training</h2>
-
+        <h2>📘 Unit 3: Practical Training</h2>
         <ul>
-            <li>Improves employability</li>
-            <li>Provides practical experience</li>
-            <li>Builds confidence</li>
-            <li>Develops industry-ready skills</li>
-            <li>Helps in career preparation</li>
+            <li>Practical Assignments</li>
+            <li>Project Development</li>
+            <li>Tools and Technologies</li>
+            <li>Debugging</li>
+            <li>Testing</li>
+        </ul>
+
+        <h2>📘 Unit 4: Industry Practices</h2>
+        <ul>
+            <li>Software Development Life Cycle</li>
+            <li>Version Control</li>
+            <li>Team Collaboration</li>
+            <li>Documentation</li>
+            <li>Professional Ethics</li>
+        </ul>
+
+        <h2>📘 Unit 5: Training Report and Evaluation</h2>
+        <ul>
+            <li>Training Report</li>
+            <li>Daily Work Report</li>
+            <li>Learning Outcomes</li>
+            <li>Project Documentation</li>
+            <li>Presentation</li>
+            <li>Viva</li>
         </ul>
 
         <h2>📌 Important Questions</h2>
-
         <ol>
-            <li>What is Technical Training?</li>
+            <li>What is technical training?</li>
             <li>What are the objectives of technical training?</li>
-            <li>Why are programming skills important?</li>
-            <li>Explain the basics of web development.</li>
-            <li>What database skills should a CSE student learn?</li>
-            <li>What is Git?</li>
-            <li>What is version control?</li>
-            <li>Explain important industry skills.</li>
-            <li>How should a technical training report be prepared?</li>
-            <li>What are the benefits of technical training?</li>
+            <li>Explain practical skill development.</li>
+            <li>What is SDLC?</li>
+            <li>Why is version control important?</li>
+            <li>Explain team collaboration.</li>
+            <li>How is a training report prepared?</li>
+            <li>What are the learning outcomes of technical training?</li>
         </ol>
     `;
-}// ===============================
+}
+
+// ===============================
 // Semester 8 - Professional Elective
 // ===============================
 
@@ -3425,8 +6350,9 @@ else if (noteName === "Professional Elective") {
             <li>How do electives help in placement preparation?</li>
         </ol>
     `;
-}// ===============================
-// Semester 8 - Open Elective
+}
+// ===============================
+// Open Elective
 // ===============================
 
 else if (noteName === "Open Elective") {
@@ -3436,28 +6362,29 @@ else if (noteName === "Open Elective") {
     content = `
         <h2>📚 Open Elective</h2>
 
-        <h2>1. Introduction</h2>
-
-        <p>
-            An Open Elective is a subject that allows students to study
-            a topic outside their core specialization. It provides an
-            opportunity to gain knowledge in different technical,
-            management or interdisciplinary areas.
-        </p>
-
-        <h2>2. Purpose of Open Electives</h2>
-
+        <h2>📘 Unit 1: Introduction to Open Electives</h2>
         <ul>
-            <li>Provide interdisciplinary knowledge</li>
-            <li>Explore subjects outside the core branch</li>
-            <li>Develop additional skills</li>
-            <li>Improve career opportunities</li>
-            <li>Understand different areas of technology and management</li>
+            <li>Meaning of Open Elective</li>
+            <li>Importance of Open Electives</li>
+            <li>Interdisciplinary Learning</li>
+            <li>Subjects Outside Core Specialization</li>
+            <li>Role of Open Electives in Education</li>
         </ul>
 
-        <h2>3. Common Open Elective Areas</h2>
+        <div class="important">
+            <b>Important:</b><br>
+            An Open Elective allows students to study a subject
+            outside their core specialization.
+        </div>
 
+
+        <h2>📘 Unit 2: Purpose and Areas of Open Electives</h2>
         <ul>
+            <li>Interdisciplinary Knowledge</li>
+            <li>Exploring Subjects Outside Core Branch</li>
+            <li>Development of Additional Skills</li>
+            <li>Career Opportunities</li>
+            <li>Understanding Technology and Management</li>
             <li>Entrepreneurship</li>
             <li>Business Management</li>
             <li>Digital Marketing</li>
@@ -3468,64 +6395,76 @@ else if (noteName === "Open Elective") {
             <li>Communication Skills</li>
         </ul>
 
-        <h2>4. Selection of Open Elective</h2>
 
-        <p>
-            Students can select an open elective according to their
-            interests, career goals and availability of subjects
-            offered by the institution.
-        </p>
-
-        <h2>5. Learning Process</h2>
-
-        <ol>
-            <li>Understand the basic concepts</li>
-            <li>Study the theoretical topics</li>
-            <li>Practice important questions</li>
-            <li>Complete assignments and practical work</li>
-            <li>Prepare notes for examination</li>
-            <li>Apply the knowledge in real-world situations</li>
-        </ol>
-
-        <h2>6. Benefits of Open Electives</h2>
-
+        <h2>📘 Unit 3: Selection of Open Elective</h2>
         <ul>
-            <li>Broadens knowledge</li>
-            <li>Develops additional skills</li>
-            <li>Improves problem-solving ability</li>
-            <li>Supports career development</li>
-            <li>Helps understand interdisciplinary concepts</li>
+            <li>Selection According to Interest</li>
+            <li>Career Goals</li>
+            <li>Skill Development</li>
+            <li>Future Scope</li>
+            <li>Availability of Subjects</li>
+            <li>Institutional Guidelines</li>
         </ul>
 
-        <h2>7. Career Benefits</h2>
-
-        <p>
-            Open electives can help students develop knowledge beyond
-            their core subject and may provide additional opportunities
-            for internships, placements, entrepreneurship and higher
-            studies.
-        </p>
-
-        <h2>8. Important Points</h2>
-
         <div class="important">
-            <b>Choose an Open Elective according to:</b><br><br>
+            <b>Important Formula:</b><br>
             Interest + Career Goal + Skill Development + Future Scope
         </div>
 
-        <h2>📌 Important Questions</h2>
 
+        <h2>📘 Unit 4: Learning Process and Benefits</h2>
+        <ul>
+            <li>Understanding Basic Concepts</li>
+            <li>Studying Theoretical Topics</li>
+            <li>Practicing Important Questions</li>
+            <li>Completing Assignments</li>
+            <li>Practical Work</li>
+            <li>Preparing Examination Notes</li>
+            <li>Applying Knowledge in Real-World Situations</li>
+            <li>Broadening Knowledge</li>
+            <li>Developing Additional Skills</li>
+            <li>Improving Problem-Solving Ability</li>
+        </ul>
+
+
+        <h2>📘 Unit 5: Career Benefits and Interdisciplinary Learning</h2>
+        <ul>
+            <li>Career Development</li>
+            <li>Internship Opportunities</li>
+            <li>Placement Opportunities</li>
+            <li>Entrepreneurship Opportunities</li>
+            <li>Higher Studies</li>
+            <li>Interdisciplinary Knowledge</li>
+            <li>Additional Technical Skills</li>
+            <li>Future Career Opportunities</li>
+        </ul>
+
+        <div class="important">
+            <b>Career Benefit:</b><br>
+            Open Electives provide knowledge beyond the core subject
+            and can support internships, placements, entrepreneurship
+            and higher studies.
+        </div>
+
+
+        <h2>📌 Important Questions</h2>
         <ol>
             <li>What is an Open Elective?</li>
             <li>What is the purpose of an Open Elective?</li>
             <li>Explain the benefits of Open Electives.</li>
             <li>What are some common areas of Open Electives?</li>
             <li>How should a student select an Open Elective?</li>
+            <li>What factors should be considered while selecting an Open Elective?</li>
+            <li>Explain the learning process of an Open Elective.</li>
+            <li>How do Open Electives help in skill development?</li>
             <li>How do Open Electives help in career development?</li>
             <li>Explain the importance of interdisciplinary learning.</li>
+            <li>How can Open Electives help in internships and placements?</li>
+            <li>Explain the role of Open Electives in higher studies.</li>
         </ol>
     `;
 }
+
     // ===============================
     // Page Design
     // ===============================
@@ -4756,24 +7695,32 @@ function showSemesters(course) {
     `;
 
     // 8 Semesters
-    for (let i = 1; i <= 8; i++) {
+    // Semester count
+let totalSemesters = 8;
 
-        html += `
-            <div class="resource-card">
+// BCA aur BBA 3-year courses hain
+if (course === "bca" || course === "bba") {
+    totalSemesters = 6;
+}
 
-                <h3>Semester ${i}</h3>
+for (let i = 1; i <= totalSemesters; i++) {
 
-                <p>
-                    ${courseNames[course]} • Semester ${i}
-                </p>
+    html += `
+        <div class="resource-card">
 
-                <button onclick="showSubjects('${course}', ${i})">
-                    View Subjects
-                </button>
+            <h3>Semester ${i}</h3>
 
-            </div>
-        `;
-    }
+            <p>
+                ${courseNames[course]} • Semester ${i}
+            </p>
+
+            <button onclick="showSubjects('${course}', ${i})">
+                View Subjects
+            </button>
+
+        </div>
+    `;
+}
 
     html += `
         </div>
