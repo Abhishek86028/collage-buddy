@@ -7632,27 +7632,53 @@ function openNote(subject, course, semester) {
     // Unit-wise content
     const units = [
 
-        "UNIT 1",
-        "Introduction and basic concepts of " + subject,
-        "Important definitions and fundamentals.",
+    "UNIT 1 — MATRICES",
+    "Types of matrices",
+    "Matrix operations",
+    "Transpose of a matrix",
+    "Determinants",
+    "Properties of determinants",
+    "Inverse of a matrix",
+    "Rank of a matrix",
 
-        "UNIT 2",
-        "Important concepts of " + subject,
-        "Detailed explanation of major topics.",
+    "UNIT 2 — DIFFERENTIAL CALCULUS",
+    "Limits and continuity",
+    "Differentiation",
+    "Rules of differentiation",
+    "Higher order derivatives",
+    "Partial differentiation",
+    "Total derivatives",
+    "Applications of derivatives",
 
-        "UNIT 3",
-        "Advanced concepts of " + subject,
-        "Important methods, techniques and examples.",
+    "UNIT 3 — INTEGRAL CALCULUS",
+    "Indefinite integration",
+    "Methods of integration",
+    "Integration by substitution",
+    "Integration by parts",
+    "Definite integration",
+    "Properties of definite integrals",
+    "Applications of integration",
 
-        "UNIT 4",
-        "Applications of " + subject,
-        "Practical applications and real-world examples.",
+    "UNIT 4 — DIFFERENTIAL EQUATIONS",
+    "Introduction to differential equations",
+    "Order and degree",
+    "First order differential equations",
+    "Variable separable equations",
+    "Linear differential equations",
+    "Higher order differential equations",
+    "Applications of differential equations",
 
-        "UNIT 5",
-        "Important exam questions",
-        "Advantages, limitations and important questions."
+    "UNIT 5 — MULTIVARIABLE CALCULUS",
+    "Functions of several variables",
+    "Partial derivatives",
+    "Multiple integration",
+    "Double integrals",
+    "Triple integrals",
+    "Change of order of integration",
+    "Applications of multiple integration"
 
-    ];
+];
+
 
     let y = 100;
 
