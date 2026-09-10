@@ -7283,19 +7283,90 @@ for (let i = 1; i <= totalSemesters; i++) {
 // Show Subjects
 // ===============================
 
+function downloadSubjectPDF(subject, course, semester) {
+
+    const { jsPDF } = window.jspdf;
+
+    const pdf = new jsPDF();
+
+    const courseName = course.toUpperCase();
+
+    pdf.setFontSize(20);
+    pdf.setTextColor(65, 105, 225);
+
+    pdf.text("CollegeBuddy", 20, 20);
+
+    pdf.setFontSize(16);
+    pdf.setTextColor(0, 0, 0);
+
+    pdf.text("Study Notes", 20, 35);
+
+    pdf.setFontSize(13);
+
+    pdf.text("Course: " + courseName, 20, 50);
+    pdf.text("Semester: " + semester, 20, 60);
+
+    pdf.setFontSize(17);
+    pdf.setTextColor(65, 105, 225);
+
+    pdf.text(subject, 20, 80);
+
+    pdf.setFontSize(12);
+    pdf.setTextColor(0, 0, 0);
+
+    const notes = [
+        "Important Topics",
+        "",
+        "1. Introduction and basic concepts",
+        "2. Important definitions",
+        "3. Fundamental concepts",
+        "4. Applications",
+        "5. Advantages and limitations",
+        "6. Important exam questions",
+        "",
+        "Important Questions",
+        "",
+        "Q1. What is " + subject + "?",
+        "",
+        "Q2. Explain the important concepts of " + subject + ".",
+        "",
+        "Q3. Explain the applications of " + subject + ".",
+        "",
+        "Q4. Discuss the advantages and limitations of " + subject + ".",
+        "",
+        "Q5. Explain " + subject + " with suitable examples."
+    ];
+
+    let y = 100;
+
+    notes.forEach(function(line) {
+
+        if (y > 270) {
+            pdf.addPage();
+            y = 20;
+        }
+
+        pdf.text(line, 20, y);
+        y += 8;
+
+    });
+
+    const fileName =
+        subject
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
+
+    pdf.save(fileName + ".pdf");
+}
+
+
 function showSubjects(course, semester) {
 
-    const subjectArea = document.getElementById("subjectArea");
-
-    // ===============================
-    // SUBJECT LIST
-    // ===============================
+    const subjectArea =
+        document.getElementById("subjectArea");
 
     const subjects = {
-
-        // ===========================
-        // B.TECH CSE
-        // ===========================
 
         "btech-cse": {
 
@@ -7362,13 +7433,7 @@ function showSubjects(course, semester) {
                 "Professional Elective",
                 "Open Elective"
             ]
-
         },
-
-
-        // ===========================
-        // BCA
-        // ===========================
 
         "bca": {
 
@@ -7419,13 +7484,7 @@ function showSubjects(course, semester) {
                 "Project Work",
                 "Professional Elective"
             ]
-
         },
-
-
-        // ===========================
-        // BBA
-        // ===========================
 
         "bba": {
 
@@ -7476,18 +7535,8 @@ function showSubjects(course, semester) {
                 "Entrepreneurship Development",
                 "Final Project"
             ]
-
-        },
-
-
-        
-
+        }
     };
-
-
-    // ===============================
-    // CHECK COURSE + SEMESTER
-    // ===============================
 
     const courseSubjects = subjects[course];
 
@@ -7495,27 +7544,13 @@ function showSubjects(course, semester) {
 
         subjectArea.innerHTML = `
             <div class="resource-card">
-
                 <h3>📚 Subjects Coming Soon</h3>
-
-                <p>
-                    Is semester ke subjects abhi add nahi kiye gaye hain.
-                </p>
-
+                <p>Is semester ke subjects abhi add nahi kiye gaye hain.</p>
             </div>
         `;
 
-        subjectArea.scrollIntoView({
-            behavior: "smooth"
-        });
-
         return;
     }
-
-
-    // ===============================
-    // SUBJECT HTML
-    // ===============================
 
     let html = `
         <h2>📚 Semester ${semester} — Subjects</h2>
@@ -7523,53 +7558,41 @@ function showSubjects(course, semester) {
         <div class="resource-grid">
     `;
 
+    courseSubjects[semester].forEach(function(subject) {
 
-   courseSubjects[semester].forEach(function(subject) {
+        html += `
+            <div class="resource-card">
 
-    const pdfName = subject
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-|-$/g, "");
+                <h3>📖 ${subject}</h3>
 
-    const pdfPath = `notes/${course}/semester-${semester}/${pdfName}.pdf`;
+                <p>
+                    ${course.toUpperCase()} • Semester ${semester}
+                </p>
+
+                <button
+                    onclick="downloadSubjectPDF(
+                        '${subject.replace(/'/g, "\\'")}',
+                        '${course}',
+                        ${semester}
+                    )"
+                    class="pdf-download-btn">
+
+                    📥 Download PDF
+
+                </button>
+
+            </div>
+        `;
+
+    });
 
     html += `
-        <div class="resource-card">
-
-            <h3>📖 ${subject}</h3>
-
-            <p>
-                ${course.toUpperCase()} • Semester ${semester}
-            </p>
-
-            <button onclick="openNote('${subject.replace(/'/g, "\\'")}')">
-                Open Notes
-            </button>
-
-            <a href="${pdfPath}" download class="pdf-download-btn">
-                📥 Download PDF
-            </a>
-
         </div>
     `;
-
-});
-
-
-
-    html += `
-        </div>
-    
- `;
-
-    // ===============================
-    // SHOW SUBJECTS
-    // ===============================
 
     subjectArea.innerHTML = html;
 
     subjectArea.scrollIntoView({
         behavior: "smooth"
     });
-
 }
