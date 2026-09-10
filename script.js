@@ -7558,41 +7558,128 @@ function showSubjects(course, semester) {
         <div class="resource-grid">
     `;
 
-    courseSubjects[semester].forEach(function(subject) {
-
-        html += `
-            <div class="resource-card">
-
-                <h3>📖 ${subject}</h3>
-
-                <p>
-                    ${course.toUpperCase()} • Semester ${semester}
-                </p>
-
-                <button
-                    onclick="downloadSubjectPDF(
-                        '${subject.replace(/'/g, "\\'")}',
-                        '${course}',
-                        ${semester}
-                    )"
-                    class="pdf-download-btn">
-
-                    📥 Download PDF
-
-                </button>
-
-            </div>
-        `;
-
-    });
+courseSubjects[semester].forEach(function(subject) {
 
     html += `
+        <div class="resource-card">
+
+            <h3>📖 ${subject}</h3>
+
+            <p>
+                ${course.toUpperCase()} • Semester ${semester}
+            </p>
+
+            <button
+                onclick="openNote(
+                    '${subject.replace(/'/g, "\\'")}',
+                    '${course}',
+                    ${semester}
+                )">
+
+                📖 View Notes
+
+            </button>
+
+            <button
+                onclick="downloadSubjectPDF(
+                    '${subject.replace(/'/g, "\\'")}',
+                    '${course}',
+                    ${semester}
+                )"
+                class="pdf-download-btn">
+
+                📥 Download PDF
+
+            </button>
+
         </div>
-    `;
+        `;
 
-    subjectArea.innerHTML = html;
+});
 
-    subjectArea.scrollIntoView({
-        behavior: "smooth"
+subjectArea.innerHTML = html;
+
+subjectArea.scrollIntoView({
+    behavior: "smooth"
+});
+}
+
+function openNote(subject, course, semester) {
+
+    const { jsPDF } = window.jspdf;
+
+    const pdf = new jsPDF();
+
+    const courseName = course.toUpperCase();
+
+    // PDF heading
+    pdf.setFontSize(20);
+    pdf.setTextColor(65, 105, 225);
+    pdf.text("CollegeBuddy", 20, 20);
+
+    pdf.setFontSize(16);
+    pdf.setTextColor(0, 0, 0);
+    pdf.text("Study Notes", 20, 35);
+
+    pdf.setFontSize(13);
+    pdf.text("Course: " + courseName, 20, 50);
+    pdf.text("Semester: " + semester, 20, 60);
+
+    pdf.setFontSize(17);
+    pdf.setTextColor(65, 105, 225);
+    pdf.text(subject, 20, 80);
+
+    // Unit-wise content
+    const units = [
+
+        "UNIT 1",
+        "Introduction and basic concepts of " + subject,
+        "Important definitions and fundamentals.",
+
+        "UNIT 2",
+        "Important concepts of " + subject,
+        "Detailed explanation of major topics.",
+
+        "UNIT 3",
+        "Advanced concepts of " + subject,
+        "Important methods, techniques and examples.",
+
+        "UNIT 4",
+        "Applications of " + subject,
+        "Practical applications and real-world examples.",
+
+        "UNIT 5",
+        "Important exam questions",
+        "Advantages, limitations and important questions."
+
+    ];
+
+    let y = 100;
+
+    units.forEach(function(line) {
+
+        if (y > 270) {
+            pdf.addPage();
+            y = 20;
+        }
+
+        if (line.startsWith("UNIT")) {
+            pdf.setFontSize(16);
+            pdf.setTextColor(65, 105, 225);
+        } else {
+            pdf.setFontSize(12);
+            pdf.setTextColor(0, 0, 0);
+        }
+
+        pdf.text(line, 20, y);
+
+        y += 10;
     });
+
+    // PDF ko browser me open karo
+    const pdfBlob = pdf.output("blob");
+
+    const pdfUrl = URL.createObjectURL(pdfBlob);
+
+    window.open(pdfUrl, "_blank");
 }
