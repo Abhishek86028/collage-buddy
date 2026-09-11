@@ -1,4 +1,5 @@
 export default async function handler(req, res) {
+
     // CORS
     res.setHeader(
         "Access-Control-Allow-Origin",
@@ -20,6 +21,7 @@ export default async function handler(req, res) {
     }
 
     try {
+
         const location = req.query.location || "";
         const course = req.query.course || "all";
 
@@ -38,103 +40,252 @@ export default async function handler(req, res) {
             });
         }
 
-       // Course-based search keywords
-let what = "part time student";
 
-if (course === "B.Tech CSE") {
-    what = "part time IT software computer web developer";
-}
+        // ==========================================
+        // COURSE BASED SEARCHES
+        // ==========================================
 
-if (course === "BCA") {
-    what = "part time computer software IT web developer";
-}
+        let searches = [
+            "part time student"
+        ];
 
-if (course === "BBA") {
-    what = "part time sales marketing office customer service";
-}
 
-       
+        // B.Tech CSE
+        if (course === "B.Tech CSE") {
 
-        const params = new URLSearchParams({
-            app_id: appId,
-            app_key: appKey,
-            results_per_page: "20",
-            what: what,
-            where: location,
-            "content-type": "application/json"
-        });
+            searches = [
+                "software developer",
+                "web developer",
+                "IT support",
+                "computer operator",
+                "programmer"
+            ];
 
-        const apiUrl =
-            `https://api.adzuna.com/v1/api/jobs/in/search/1?${params.toString()}`;
-
-        const response = await fetch(apiUrl);
-
-        if (!response.ok) {
-            const errorText = await response.text();
-
-            return res.status(response.status).json({
-                error: "Adzuna API request failed",
-                details: errorText
-            });
         }
 
-        const data = await response.json();
 
-        const jobs = (data.results || []).map(job => ({
-            id: job.id || "",
-            title: job.title || "Job title not available",
+        // BCA
+        if (course === "BCA") {
 
-            company:
-                job.company?.display_name ||
-                "Company not provided",
+            searches = [
+                "software developer",
+                "web developer",
+                "IT support",
+                "computer operator",
+                "data entry"
+            ];
 
-            location:
-                job.location?.display_name ||
-                location,
+        }
 
-            description:
-                job.description ||
-                "Job description not available",
 
-            salaryMin:
-                job.salary_min || null,
+        // BBA
+        if (course === "BBA") {
 
-            salaryMax:
-                job.salary_max || null,
+            searches = [
+                "sales",
+                "marketing",
+                "customer service",
+                "business development",
+                "office assistant"
+            ];
 
-            contractTime:
-                job.contract_time || "",
+        }
 
-            contractType:
-                job.contract_type || "",
 
-            latitude:
-                job.latitude || null,
+        // ==========================================
+        // SEARCH ADZUNA
+        // ==========================================
 
-            longitude:
-                job.longitude || null,
+        const allJobs = [];
 
-            applyUrl:
-                job.redirect_url || "",
+        for (const searchTerm of searches) {
 
-            source: "Adzuna"
-        }));
+            const params = new URLSearchParams({
+
+                app_id: appId,
+
+                app_key: appKey,
+
+                results_per_page: "10",
+
+                what: searchTerm,
+
+                where: location,
+
+                "content-type": "application/json"
+
+            });
+
+
+            const apiUrl =
+                `https://api.adzuna.com/v1/api/jobs/in/search/1?${params.toString()}`;
+
+
+            const response = await fetch(apiUrl);
+
+
+            if (!response.ok) {
+
+                console.error(
+                    "Adzuna search failed:",
+                    searchTerm,
+                    response.status
+                );
+
+                continue;
+
+            }
+
+
+            const data = await response.json();
+
+
+            if (data.results && Array.isArray(data.results)) {
+
+                allJobs.push(...data.results);
+
+            }
+
+        }
+
+
+        // ==========================================
+        // REMOVE DUPLICATE JOBS
+        // ==========================================
+
+        const uniqueJobs = [];
+
+        const seenIds = new Set();
+
+
+        for (const job of allJobs) {
+
+            if (!job.id) {
+                continue;
+            }
+
+            if (seenIds.has(job.id)) {
+                continue;
+            }
+
+            seenIds.add(job.id);
+
+            uniqueJobs.push(job);
+
+        }
+
+
+        // ==========================================
+        // FORMAT JOB DATA
+        // ==========================================
+
+        const jobs = uniqueJobs
+            .slice(0, 30)
+            .map(job => ({
+
+                id:
+                    job.id || "",
+
+
+                title:
+                    job.title ||
+                    "Job title not available",
+
+
+                company:
+                    job.company?.display_name ||
+                    "Company not provided",
+
+
+                location:
+                    job.location?.display_name ||
+                    location,
+
+
+                description:
+                    job.description ||
+                    "Job description not available",
+
+
+                salaryMin:
+                    job.salary_min ||
+                    null,
+
+
+                salaryMax:
+                    job.salary_max ||
+                    null,
+
+
+                contractTime:
+                    job.contract_time ||
+                    "",
+
+
+                contractType:
+                    job.contract_type ||
+                    "",
+
+
+                latitude:
+                    job.latitude ||
+                    null,
+
+
+                longitude:
+                    job.longitude ||
+                    null,
+
+
+                applyUrl:
+                    job.redirect_url ||
+                    "",
+
+
+                source:
+                    "Adzuna"
+
+            }));
+
+
+        // ==========================================
+        // RESPONSE
+        // ==========================================
 
         return res.status(200).json({
+
             success: true,
-            searchedLocation: location,
-            course: course,
-            count: jobs.length,
-            jobs: jobs
+
+            searchedLocation:
+                location,
+
+            course:
+                course,
+
+            count:
+                jobs.length,
+
+            jobs:
+                jobs
+
         });
+
 
     } catch (error) {
 
         console.error(error);
 
+
         return res.status(500).json({
-            error: "Server error",
-            message: error.message
+
+            error:
+                "Server error",
+
+            message:
+                error.message
+
         });
+
     }
+
 }
