@@ -41,15 +41,16 @@ export default async function handler(req, res) {
         // Course-based search keywords
         let what = "part time student";
 
-        if (course === "B.Tech CSE") {
-    what = "computer science software IT developer";
-}
-if (course === "BCA") {
-    what = "BCA computer applications software IT developer";
+      if (course === "B.Tech CSE") {
+    what = "part time IT software computer web developer";
 }
 
-        if (course === "BBA") {
-    what = "business administration sales marketing management";
+if (course === "BCA") {
+    what = "part time computer software IT web developer";
+}
+
+if (course === "BBA") {
+    what = "part time sales marketing office customer service";
 }
 
        
