@@ -1616,6 +1616,90 @@ css
         letter-spacing: 1px;
         margin-top: 5px;
     }
+}/* =========================================
+   DETAILED NOTES DESIGN
+   ========================================= */
+
+.diagram {
+    margin: 20px auto;
+    padding: 25px;
+    max-width: 650px;
+
+    background: #f7f9ff;
+    border: 1px solid #dce4f5;
+    border-radius: 14px;
+
+    text-align: center;
+    white-space: pre-wrap;
+
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #253858;
+
+    box-shadow: 0 6px 20px rgba(31,45,75,0.06);
+}
+
+.note-header {
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 25px;
+
+    background: linear-gradient(135deg, #eef3ff, #f7f5ff);
+    border-radius: 18px;
+}
+
+.note-header h1 {
+    margin-bottom: 10px;
+    color: #172033;
+}
+
+.note-header p {
+    margin: 5px 0;
+    color: #667085;
+}
+
+.note-header p:last-child {
+    font-size: 13px;
+    font-weight: 700;
+    color: #315bea;
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    background: white;
+}
+
+table th {
+    background: #eef3ff;
+    color: #172033;
+}
+
+table td,
+table th {
+    padding: 12px;
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+
+    .diagram {
+        padding: 18px 10px;
+        font-size: 12px;
+        overflow-x: auto;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    table td,
+    table th {
+        padding: 8px;
+    }
 }
 
 

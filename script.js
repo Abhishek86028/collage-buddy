@@ -174,144 +174,599 @@ if (noteName === "Engineering Mathematics-I") {
     title = "Engineering Mathematics-I";
 
     content = `
-        <h2>🧮 Engineering Mathematics-I</h2>
 
-        <h2>📘 Unit 1: Differential Calculus</h2>
+<div class="note-header">
+    <h1>🧮 Engineering Mathematics-I</h1>
+    <p>B.Tech CSE • Semester 1</p>
+    <p>Complete Unit-wise College Notes</p>
+</div>
 
-        <p>
-            Differential Calculus deals with the rate of change of
-            a function. It is one of the basic concepts of engineering mathematics.
-        </p>
+<hr>
 
-        <h3>Important Topics</h3>
-        <ul>
-            <li>Functions and Limits</li>
-            <li>Continuity of Functions</li>
-            <li>Differentiation</li>
-            <li>Higher Order Derivatives</li>
-            <li>Partial Differentiation</li>
-        </ul>
+<h2>📘 UNIT 1 — Differential Calculus</h2>
 
-        <div class="important">
-            <b>Important Formulas:</b><br><br>
-            d/dx (xⁿ) = n xⁿ⁻¹<br>
-            d/dx (sin x) = cos x<br>
-            d/dx (cos x) = -sin x<br>
-            d/dx (eˣ) = eˣ<br>
-            d/dx (log x) = 1/x
-        </div>
+<h3>1. Introduction</h3>
 
-        <h2>📘 Unit 2: Integral Calculus</h2>
+<p>
+Differential Calculus is the branch of mathematics concerned with
+the study of rates of change. It helps us understand how one
+quantity changes with respect to another quantity.
+</p>
 
-        <p>
-            Integration is the reverse process of differentiation.
-            It is used to find areas, volumes and solutions of many
-            engineering problems.
-        </p>
+<p>
+In engineering, differentiation is used in physics, computer
+science, optimization, machine learning, signal processing and
+many other applications.
+</p>
 
-        <h3>Important Topics</h3>
-        <ul>
-            <li>Indefinite Integration</li>
-            <li>Definite Integration</li>
-            <li>Integration by Parts</li>
-            <li>Integration by Substitution</li>
-            <li>Applications of Integration</li>
-        </ul>
+<h3>2. Function</h3>
 
-        <div class="important">
-            <b>Important Formulas:</b><br><br>
-            ∫ xⁿ dx = xⁿ⁺¹/(n+1) + C<br>
-            ∫ 1/x dx = log|x| + C<br>
-            ∫ eˣ dx = eˣ + C<br>
-            ∫ sin x dx = -cos x + C<br>
-            ∫ cos x dx = sin x + C
-        </div>
+<p>
+A function is a relation in which every input value has exactly
+one corresponding output value.
+</p>
 
-        <h2>📘 Unit 3: Differential Equations</h2>
+<div class="important">
+<b>Example:</b><br><br>
+f(x) = x² + 3x + 2
+<br><br>
+For x = 2:
+<br>
+f(2) = 2² + 3(2) + 2 = 12
+</div>
 
-        <p>
-            A differential equation is an equation involving an
-            unknown function and its derivatives.
-        </p>
+<h3>3. Limit</h3>
 
-        <h3>Important Topics</h3>
-        <ul>
-            <li>Order and Degree</li>
-            <li>First Order Differential Equations</li>
-            <li>Variable Separable Method</li>
-            <li>Linear Differential Equations</li>
-            <li>Applications of Differential Equations</li>
-        </ul>
+<p>
+The limit of a function describes the value that the function
+approaches when the independent variable approaches a particular
+value.
+</p>
 
-        <div class="important">
-            <b>Basic Form:</b><br><br>
-            dy/dx = f(x,y)
-        </div>
+<div class="important">
+<b>Notation:</b><br><br>
+lim x → a f(x) = L
+<br><br>
+This means that as x approaches a, f(x) approaches L.
+</div>
 
-        <h2>📘 Unit 4: Matrices and Linear Algebra</h2>
+<h3>4. Continuity</h3>
 
-        <p>
-            Matrices are rectangular arrangements of numbers.
-            They are widely used in engineering, computer science
-            and numerical calculations.
-        </p>
+<p>
+A function is continuous at x = a if there is no break, jump or
+hole in the graph at that point.
+</p>
 
-        <h3>Important Topics</h3>
-        <ul>
-            <li>Types of Matrices</li>
-            <li>Matrix Operations</li>
-            <li>Determinants</li>
-            <li>Rank of Matrix</li>
-            <li>Eigenvalues and Eigenvectors</li>
-        </ul>
+<div class="diagram">
+        Continuous Function
 
-        <div class="important">
-            <b>Important Concepts:</b><br><br>
-            Matrix Addition<br>
-            Matrix Multiplication<br>
-            Determinant<br>
-            Inverse of Matrix<br>
-            Eigenvalues
-        </div>
+             |
+          ___|____
+        /         \
+      /             \
+_____/_______________\____
+            x = a
+</div>
 
-        <h2>📘 Unit 5: Vector Calculus</h2>
+<p>
+For continuity at x = a:
+</p>
 
-        <p>
-            Vector Calculus deals with differentiation and integration
-            of vector quantities and is useful in engineering applications.
-        </p>
+<ul>
+    <li>f(a) must exist.</li>
+    <li>lim x → a f(x) must exist.</li>
+    <li>lim x → a f(x) = f(a).</li>
+</ul>
 
-        <h3>Important Topics</h3>
-        <ul>
-            <li>Scalar and Vector Fields</li>
-            <li>Gradient</li>
-            <li>Divergence</li>
-            <li>Curl</li>
-            <li>Directional Derivative</li>
-        </ul>
+<h3>5. Differentiation</h3>
 
-        <div class="important">
-            <b>Important Concepts:</b><br><br>
-            Gradient → ∇φ<br>
-            Divergence → ∇ · A<br>
-            Curl → ∇ × A
-        </div>
+<p>
+Differentiation gives the rate of change of a function with
+respect to its variable.
+</p>
 
-        <h2>📌 Important Questions</h2>
+<div class="important">
+<b>Definition:</b><br><br>
+dy/dx = lim h→0 [f(x+h) - f(x)] / h
+</div>
 
-        <ol>
-            <li>Define differentiation and explain its basic rules.</li>
-            <li>Explain important integration formulas.</li>
-            <li>What is a differential equation?</li>
-            <li>Explain order and degree of a differential equation.</li>
-            <li>What are matrices and determinants?</li>
-            <li>Explain eigenvalues and eigenvectors.</li>
-            <li>What is gradient?</li>
-            <li>Explain divergence and curl.</li>
-            <li>Solve basic differential equation problems.</li>
-            <li>Solve problems based on matrices and eigenvalues.</li>
-        </ol>
-    `;
+<h3>6. Basic Differentiation Formulas</h3>
+
+<table border="1" cellpadding="10" cellspacing="0">
+<tr>
+    <th>Function</th>
+    <th>Derivative</th>
+</tr>
+
+<tr>
+    <td>xⁿ</td>
+    <td>n xⁿ⁻¹</td>
+</tr>
+
+<tr>
+    <td>sin x</td>
+    <td>cos x</td>
+</tr>
+
+<tr>
+    <td>cos x</td>
+    <td>-sin x</td>
+</tr>
+
+<tr>
+    <td>tan x</td>
+    <td>sec² x</td>
+</tr>
+
+<tr>
+    <td>eˣ</td>
+    <td>eˣ</td>
+</tr>
+
+<tr>
+    <td>log x</td>
+    <td>1/x</td>
+</tr>
+</table>
+
+<h3>7. Product Rule</h3>
+
+<p>
+If y = uv, then:
+</p>
+
+<div class="important">
+dy/dx = u(dv/dx) + v(du/dx)
+</div>
+
+<h3>8. Quotient Rule</h3>
+
+<p>
+If y = u/v, then:
+</p>
+
+<div class="important">
+dy/dx =
+[v(du/dx) - u(dv/dx)] / v²
+</div>
+
+<h3>9. Chain Rule</h3>
+
+<p>
+If y = f(g(x)), then:
+</p>
+
+<div class="important">
+dy/dx = f'(g(x)) × g'(x)
+</div>
+
+<h3>10. Higher Order Derivatives</h3>
+
+<p>
+When differentiation is performed more than once, higher order
+derivatives are obtained.
+</p>
+
+<div class="important">
+First derivative = dy/dx
+<br><br>
+Second derivative = d²y/dx²
+<br><br>
+Third derivative = d³y/dx³
+</div>
+
+<h3>11. Partial Differentiation</h3>
+
+<p>
+When a function contains two or more independent variables,
+partial differentiation is used.
+</p>
+
+<div class="important">
+For z = x² + xy + y²:
+<br><br>
+∂z/∂x = 2x + y
+<br>
+∂z/∂y = x + 2y
+</div>
+
+
+<h2>📘 UNIT 2 — Integral Calculus</h2>
+
+<h3>1. Introduction</h3>
+
+<p>
+Integration is the reverse process of differentiation. It is used
+to find areas, volumes, displacement and many engineering quantities.
+</p>
+
+<h3>2. Indefinite Integration</h3>
+
+<p>
+An indefinite integral represents a family of functions and
+contains an arbitrary constant C.
+</p>
+
+<div class="important">
+∫ xⁿ dx = xⁿ⁺¹/(n+1) + C
+<br><br>
+where n ≠ -1
+</div>
+
+<h3>3. Important Integration Formulas</h3>
+
+<table border="1" cellpadding="10" cellspacing="0">
+<tr>
+    <th>Function</th>
+    <th>Integral</th>
+</tr>
+
+<tr>
+    <td>xⁿ</td>
+    <td>xⁿ⁺¹/(n+1) + C</td>
+</tr>
+
+<tr>
+    <td>1/x</td>
+    <td>log|x| + C</td>
+</tr>
+
+<tr>
+    <td>eˣ</td>
+    <td>eˣ + C</td>
+</tr>
+
+<tr>
+    <td>sin x</td>
+    <td>-cos x + C</td>
+</tr>
+
+<tr>
+    <td>cos x</td>
+    <td>sin x + C</td>
+</tr>
+</table>
+
+<h3>4. Integration by Parts</h3>
+
+<div class="important">
+∫ u dv = uv - ∫ v du
+</div>
+
+<p>
+This method is useful when the integrand is a product of two
+different functions.
+</p>
+
+<h3>5. Definite Integration</h3>
+
+<p>
+A definite integral has upper and lower limits.
+</p>
+
+<div class="important">
+∫ₐᵇ f(x) dx
+</div>
+
+<p>
+It is commonly used for calculating area under a curve.
+</p>
+
+<div class="diagram">
+             y
+             |
+          *  |       *
+        *    |     *
+      *      |   *
+_____*_______|_*____________ x
+      a      |      b
+
+       Area = ∫ₐᵇ f(x) dx
+</div>
+
+
+<h2>📘 UNIT 3 — Differential Equations</h2>
+
+<h3>1. Definition</h3>
+
+<p>
+A differential equation is an equation containing an unknown
+function and one or more of its derivatives.
+</p>
+
+<div class="important">
+Example:
+<br><br>
+dy/dx + y = x
+</div>
+
+<h3>2. Order</h3>
+
+<p>
+The order of a differential equation is the order of the highest
+derivative present in the equation.
+</p>
+
+<div class="important">
+d²y/dx² + 3dy/dx + 2y = 0
+<br><br>
+Order = 2
+</div>
+
+<h3>3. Degree</h3>
+
+<p>
+The degree is the power of the highest order derivative after the
+equation has been made free from radicals and fractions involving
+derivatives.
+</p>
+
+<h3>4. Variable Separable Equation</h3>
+
+<p>
+If an equation can be written in the form:
+</p>
+
+<div class="important">
+dy/dx = f(x)g(y)
+</div>
+
+<p>
+then variables can be separated and integrated.
+</p>
+
+<h3>5. Linear Differential Equation</h3>
+
+<div class="important">
+dy/dx + Py = Q
+</div>
+
+<p>
+where P and Q are functions of x.
+</p>
+
+<div class="important">
+Integrating Factor (I.F.)
+<br><br>
+= e^(∫P dx)
+</div>
+
+
+<h2>📘 UNIT 4 — Matrices and Linear Algebra</h2>
+
+<h3>1. Matrix</h3>
+
+<p>
+A matrix is a rectangular arrangement of numbers or mathematical
+elements in rows and columns.
+</p>
+
+<div class="diagram">
+        ┌             ┐
+        │  1   2   3  │
+A  =    │  4   5   6  │
+        │  7   8   9  │
+        └             ┘
+
+Rows = 3
+Columns = 3
+Order = 3 × 3
+</div>
+
+<h3>2. Types of Matrices</h3>
+
+<ul>
+    <li>Row Matrix</li>
+    <li>Column Matrix</li>
+    <li>Square Matrix</li>
+    <li>Zero Matrix</li>
+    <li>Diagonal Matrix</li>
+    <li>Identity Matrix</li>
+    <li>Symmetric Matrix</li>
+    <li>Skew-Symmetric Matrix</li>
+</ul>
+
+<h3>3. Matrix Addition</h3>
+
+<p>
+Two matrices can be added only when they have the same order.
+Corresponding elements are added.
+</p>
+
+<div class="important">
+[ a b ] + [ c d ]
+<br><br>
+= [ a+c   b+d ]
+</div>
+
+<h3>4. Determinant</h3>
+
+<p>
+The determinant is a scalar value associated with a square matrix.
+</p>
+
+<div class="important">
+For:
+
+| a  b |
+| c  d |
+
+Determinant = ad - bc
+</div>
+
+<h3>5. Eigenvalues</h3>
+
+<p>
+Eigenvalues are obtained from the characteristic equation:
+</p>
+
+<div class="important">
+|A - λI| = 0
+</div>
+
+<h3>6. Eigenvectors</h3>
+
+<p>
+For an eigenvalue λ, the corresponding eigenvector X satisfies:
+</p>
+
+<div class="important">
+AX = λX
+</div>
+
+
+<h2>📘 UNIT 5 — Vector Calculus</h2>
+
+<h3>1. Scalar and Vector</h3>
+
+<p>
+A scalar quantity has only magnitude, while a vector quantity has
+both magnitude and direction.
+</p>
+
+<div class="diagram">
+Scalar
+  ↓
+Magnitude only
+
+Vector
+  ↓
+Magnitude + Direction
+  ↓
+     ↗
+    /
+   /
+  ●────────→
+</div>
+
+<h3>2. Gradient</h3>
+
+<p>
+The gradient of a scalar function represents the direction of the
+maximum rate of increase of that function.
+</p>
+
+<div class="important">
+Gradient = ∇φ
+</div>
+
+<h3>3. Divergence</h3>
+
+<p>
+Divergence measures the tendency of a vector field to spread out
+from a point.
+</p>
+
+<div class="important">
+Divergence = ∇ · A
+</div>
+
+<div class="diagram">
+       ↑
+     ↗   ↖
+   ←   ●   →
+     ↘   ↙
+       ↓
+
+      Divergence
+</div>
+
+<h3>4. Curl</h3>
+
+<p>
+Curl measures the rotational tendency of a vector field.
+</p>
+
+<div class="important">
+Curl = ∇ × A
+</div>
+
+<h3>5. Directional Derivative</h3>
+
+<p>
+The directional derivative gives the rate of change of a scalar
+function in a specified direction.
+</p>
+
+<div class="important">
+Directional Derivative
+= ∇φ · a
+</div>
+
+
+<h2>📝 Important Exam Questions</h2>
+
+<ol>
+
+<li>Define function and explain its types.</li>
+
+<li>Explain limit and continuity with suitable examples.</li>
+
+<li>Derive the definition of differentiation.</li>
+
+<li>Explain product rule, quotient rule and chain rule.</li>
+
+<li>Find higher order derivatives of a given function.</li>
+
+<li>Explain partial differentiation with examples.</li>
+
+<li>State important integration formulas.</li>
+
+<li>Explain integration by parts with an example.</li>
+
+<li>Define differential equation, order and degree.</li>
+
+<li>Solve a first-order differential equation using variable separation.</li>
+
+<li>Explain different types of matrices.</li>
+
+<li>Find determinant and inverse of a matrix.</li>
+
+<li>Explain eigenvalues and eigenvectors.</li>
+
+<li>Differentiate between scalar and vector quantities.</li>
+
+<li>Explain gradient, divergence and curl.</li>
+
+<li>Explain directional derivative.</li>
+
+</ol>
+
+<h2>🎯 Quick Revision</h2>
+
+<div class="important">
+
+<b>Differentiation</b> → Rate of change
+<br><br>
+
+<b>Integration</b> → Reverse of differentiation
+<br><br>
+
+<b>Differential Equation</b> → Equation involving derivatives
+<br><br>
+
+<b>Matrix</b> → Arrangement of elements in rows and columns
+<br><br>
+
+<b>Gradient</b> → Maximum rate of increase
+<br><br>
+
+<b>Divergence</b> → Spreading of vector field
+<br><br>
+
+<b>Curl</b> → Rotation of vector field
+
+</div>
+
+<h2>🎓 Semester 1 — Engineering Mathematics-I Complete Notes</h2>
+
+<p>
+These notes cover the major concepts, formulas, diagrams and
+important examination topics required for first-semester engineering
+mathematics.
+</p>
+
+`;
 }
     
 
@@ -6572,389 +7027,513 @@ else if (noteName === "Open Elective") {
 }
 
  // ===============================
-// Important Questions
+// Study Material - E-Books + Important Questions
 // ===============================
+window.openBookFromCard = function(subject, course, semester) {
 
-function openStudyMaterial(type) {
+    const bookWindow = window.open("", "_blank");
 
-    if (type !== "questions") {
-        alert("Ye section abhi ready ho raha hai.");
+    if (!bookWindow) {
+        alert("Please allow pop-ups for this website.");
         return;
     }
 
-    const questionsWindow = window.open("", "_blank");
+    const safeSubject = subject || "Subject";
+    const safeCourse = course || "B.Tech CSE";
+    const safeSemester = semester || "1";
 
-    if (!questionsWindow) {
-        alert("Please allow popup for this website.");
-        return;
-    }
-
-    questionsWindow.document.write(`
+    bookWindow.document.write(`
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CollegeBuddy - Important Questions</title>
+<title>${safeSubject} - CollegeBuddy E-Book</title>
 
 <style>
 
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    background: #f5f7fb;
-    color: #172033;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
 }
 
-header {
-    background: #4169e1;
+.header {
+    background: #172554;
     color: white;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 20px;
+.header h1 {
+    margin: 0 0 8px;
 }
 
-.filters {
+.header p {
+    margin: 5px 0;
+}
+
+.buttons {
+    text-align: center;
+    padding: 20px;
     background: white;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 25px;
-    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-select {
+.btn {
+    display: inline-block;
     padding: 12px 18px;
     margin: 5px;
-    border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 15px;
-}
-
-.course {
-    background: white;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-}
-
-.subject {
-    background: #eef3ff;
-    padding: 18px;
-    margin: 15px 0;
-    border-radius: 10px;
-}
-
-.level {
-    background: white;
-    padding: 15px;
-    margin: 12px 0;
-    border-radius: 8px;
-}
-
-.qa-item {
-    background: #fafafa;
-    padding: 14px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
-}
-
-.answer {
-    background: #f5f7fb;
-    padding: 10px;
-    margin-top: 8px;
-    border-radius: 6px;
-    line-height: 1.6;
-}
-
-.pdf-button {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    background: #4169e1;
-    color: white;
-    font-size: 15px;
+    text-decoration: none;
+    font-weight: bold;
     cursor: pointer;
-    margin-bottom: 20px;
+    border: none;
+}
+
+.read-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.download-btn {
+    background: #16a34a;
+    color: white;
+}
+
+.book {
+    max-width: 900px;
+    margin: 25px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    line-height: 1.7;
+}
+
+.book h2 {
+    color: #172554;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+}
+
+.book h3 {
+    color: #1d4ed8;
+}
+
+.book li {
+    margin: 8px 0;
+}
+
+.note {
+    background: #eff6ff;
+    padding: 15px;
+    border-left: 4px solid #2563eb;
+    border-radius: 5px;
+}
+
+@media print {
+
+    .buttons {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+
+    .book {
+        box-shadow: none;
+        margin: 0;
+        max-width: none;
+    }
+
 }
 
 </style>
-
 </head>
 
 <body>
 
-<header>
+<div class="header">
 
-<h1>📝 CollegeBuddy</h1>
-<p>Important Questions</p>
-<p>Course • Semester • Subject</p>
+    <h1>📖 ${safeSubject}</h1>
 
-</header>
+    <p>${safeCourse} • Semester ${safeSemester}</p>
 
-<div class="container">
-
-<button onclick="window.print()" class="pdf-button">
-📥 Download / Print Questions
-</button>
-
-<div class="filters">
-
-<select id="courseSelect" onchange="filterQuestions()">
-
-<option value="all">All Courses</option>
-<option value="btech-cse">B.Tech CSE</option>
-<option value="bca">BCA</option>
-<option value="bba">BBA</option>
-
-</select>
-
-<select id="semesterSelect" onchange="filterQuestions()">
-
-<option value="all">All Semesters</option>
-<option value="1">Semester 1</option>
-<option value="2">Semester 2</option>
-<option value="3">Semester 3</option>
-<option value="4">Semester 4</option>
-<option value="5">Semester 5</option>
-<option value="6">Semester 6</option>
-<option value="7">Semester 7</option>
-<option value="8">Semester 8</option>
-
-</select>
-
-<select id="levelSelect" onchange="filterQuestions()">
-
-<option value="all">All Levels</option>
-<option value="basic">🟢 Basic</option>
-<option value="intermediate">🟡 Intermediate</option>
-<option value="advanced">🔴 Advanced</option>
-
-</select>
+    <p>📚 CollegeBuddy E-Book</p>
 
 </div>
 
-<div id="questionsContainer"></div>
+<div class="buttons">
+
+    <button class="btn read-btn" onclick="window.scrollTo(0,0)">
+        📖 Read Book
+    </button>
+
+    <button class="btn download-btn" onclick="window.print()">
+        📥 Download / Save as PDF
+    </button>
 
 </div>
 
-<script>
+<div class="book">
 
-const subjects = {
+    <h2>📖 ${safeSubject}</h2>
 
-    "btech-cse": {
+    <p>
+        This is the study book for
+        <strong>${safeSubject}</strong>
+        under <strong>${safeCourse}</strong>,
+        Semester <strong>${safeSemester}</strong>.
+    </p>
 
-        1: [
-            "Engineering Mathematics-I",
-            "Programming for Problem Solving",
-            "Engineering Physics",
-            "Engineering Chemistry",
-            "Basic Electrical Engineering"
-        ],
+    <h2>📚 Table of Contents</h2>
 
-        2: [
-            "Engineering Mathematics-II",
-            "Data Structures",
-            "Digital Logic Design",
-            "Object Oriented Programming",
-            "Computer Organization"
-        ],
+    <ol>
+        <li>Introduction</li>
+        <li>Basic Concepts</li>
+        <li>Important Definitions</li>
+        <li>Core Concepts</li>
+        <li>Examples</li>
+        <li>Important Questions</li>
+        <li>Quick Revision</li>
+    </ol>
 
-        3: [
-            "Discrete Mathematics",
-            "Database Management System",
-            "Operating System",
-            "Computer Networks",
-            "Software Engineering"
-        ],
+    <h2>Unit 1 — Introduction</h2>
 
-        4: [
-            "Design and Analysis of Algorithms",
-            "Web Technology",
-            "Theory of Computation",
-            "Microprocessor",
-            "Artificial Intelligence"
-        ],
+    <h3>1.1 Introduction</h3>
 
-        5: [
-            "Compiler Design",
-            "Machine Learning",
-            "Computer Graphics",
-            "Cloud Computing",
-            "Information Security"
-        ],
+    <p>
+        This chapter introduces the basic concepts of
+        ${safeSubject}. Students should first understand
+        the fundamental ideas before moving toward advanced topics.
+    </p>
 
-        6: [
-            "Artificial Intelligence",
-            "Internet of Things",
-            "Big Data",
-            "Mobile Application Development",
-            "Distributed Systems"
-        ],
+    <div class="note">
+        <strong>💡 Study Tip:</strong>
+        Read the basic concepts first and then practice
+        examples and questions.
+    </div>
 
-        7: [
-            "Deep Learning",
-            "Cyber Security",
-            "Data Mining",
-            "Blockchain Technology",
-            "Project Work"
-        ],
+    <h2>Unit 2 — Basic Concepts</h2>
 
-        8: [
-            "Major Project",
-            "Project Seminar",
-            "Technical Training",
-            "Professional Elective",
-            "Open Elective"
-        ]
+    <h3>Important Concepts</h3>
 
-    },
+    <ul>
+        <li>Basic terminology</li>
+        <li>Fundamental concepts</li>
+        <li>Important principles</li>
+        <li>Common examples</li>
+        <li>Applications</li>
+    </ul>
 
-    "bca": {
+    <h2>Unit 3 — Core Topics</h2>
 
-        1: [
-            "Computer Fundamentals",
-            "Programming in C",
-            "Mathematics",
-            "Digital Electronics",
-            "Communication Skills"
-        ],
+    <p>
+        This section contains the important concepts that
+        students need to understand for examinations and
+        practical learning.
+    </p>
 
-        2: [
-            "Data Structures",
-            "Database Management System",
-            "Object Oriented Programming",
-            "Computer Organization",
-            "Mathematics-II"
-        ],
+    <h3>Key Points</h3>
 
-        3: [
-            "Operating System",
-            "Computer Networks",
-            "Web Development",
-            "Python Programming",
-            "Software Engineering"
-        ],
+    <ul>
+        <li>Understand the concept clearly.</li>
+        <li>Learn important definitions.</li>
+        <li>Practice examples.</li>
+        <li>Revise important formulas where applicable.</li>
+        <li>Practice previous questions.</li>
+    </ul>
 
-        4: [
-            "Java Programming",
-            "Advanced Database Management",
-            "Computer Graphics",
-            "Data Communication",
-            "System Analysis and Design"
-        ],
+    <h2>Unit 4 — Examples</h2>
 
-        5: [
-            "Artificial Intelligence",
-            "Machine Learning",
-            "Cloud Computing",
-            "Cyber Security",
-            "Data Analytics"
-        ],
+    <p>
+        Students should solve examples after completing
+        each concept. Regular practice improves understanding
+        and examination performance.
+    </p>
 
-        6: [
-            "Big Data",
-            "Mobile Application Development",
-            "Internet of Things",
-            "Project Work",
-            "Professional Elective"
-        ]
+    <h2>Unit 5 — Important Questions</h2>
 
-    },
+    <h3>Basic Level</h3>
 
-    "bba": {
+    <ul>
+        <li>Define the basic concepts of ${safeSubject}.</li>
+        <li>Explain important terminology.</li>
+        <li>Write short notes on important topics.</li>
+    </ul>
 
-        1: [
-            "Principles of Management",
-            "Business Economics",
-            "Financial Accounting",
-            "Business Communication",
-            "Business Mathematics"
-        ],
+    <h3>Intermediate Level</h3>
 
-        2: [
-            "Marketing Management",
-            "Human Resource Management",
-            "Business Statistics",
-            "Organizational Behaviour",
-            "Business Environment"
-        ],
+    <ul>
+        <li>Explain the major concepts with examples.</li>
+        <li>Differentiate between important concepts.</li>
+        <li>Solve suitable problems based on the topic.</li>
+    </ul>
 
-        3: [
-            "Financial Management",
-            "Production Management",
-            "Business Law",
-            "Research Methodology",
-            "Management Information System"
-        ],
+    <h3>Advanced Level</h3>
 
-        4: [
-            "Consumer Behaviour",
-            "Operations Management",
-            "Entrepreneurship",
-            "Cost Accounting",
-            "Business Research"
-        ],
+    <ul>
+        <li>Explain advanced applications.</li>
+        <li>Solve application-based problems.</li>
+        <li>Analyse important concepts in detail.</li>
+    </ul>
 
-        5: [
-            "Strategic Management",
-            "International Business",
-            "Project Management",
-            "Investment Management",
-            "Business Analytics"
-        ],
+    <h2>🔄 Quick Revision</h2>
 
-        6: [
-            "Business Ethics",
-            "Digital Marketing",
-            "Corporate Governance",
-            "Entrepreneurship Development",
-            "Final Project"
-        ]
+    <ul>
+        <li>Revise definitions.</li>
+        <li>Revise important concepts.</li>
+        <li>Practice questions.</li>
+        <li>Review examples.</li>
+        <li>Prepare previous-year questions.</li>
+    </ul>
 
+    <h2>🎓 CollegeBuddy</h2>
+
+    <p>
+        Free educational resources for college students.
+    </p>
+
+</div>
+
+</body>
+</html>
+    `);
+
+    bookWindow.document.close();
+};
+function openStudyMaterial(type) {
+
+    const studyWindow = window.open("", "_blank");
+
+    if (!studyWindow) {
+
+        alert("Please allow popup for this website.");
+
+        return;
     }
 
-};
+
+    // ==========================================
+    // SUBJECT DATABASE
+    // ==========================================
+
+    const subjects = {
+
+        "btech-cse": {
+
+            1: [
+                "Engineering Mathematics-I",
+                "Programming for Problem Solving",
+                "Engineering Physics",
+                "Engineering Chemistry",
+                "Basic Electrical Engineering"
+            ],
+
+            2: [
+                "Engineering Mathematics-II",
+                "Data Structures",
+                "Digital Logic Design",
+                "Object Oriented Programming",
+                "Computer Organization"
+            ],
+
+            3: [
+                "Discrete Mathematics",
+                "Database Management System",
+                "Operating System",
+                "Computer Networks",
+                "Software Engineering"
+            ],
+
+            4: [
+                "Design and Analysis of Algorithms",
+                "Web Technology",
+                "Theory of Computation",
+                "Microprocessor",
+                "Artificial Intelligence"
+            ],
+
+            5: [
+                "Compiler Design",
+                "Machine Learning",
+                "Computer Graphics",
+                "Cloud Computing",
+                "Information Security"
+            ],
+
+            6: [
+                "Artificial Intelligence",
+                "Internet of Things",
+                "Big Data",
+                "Mobile Application Development",
+                "Distributed Systems"
+            ],
+
+            7: [
+                "Deep Learning",
+                "Cyber Security",
+                "Data Mining",
+                "Blockchain Technology",
+                "Project Work"
+            ],
+
+            8: [
+                "Major Project",
+                "Project Seminar",
+                "Technical Training",
+                "Professional Elective",
+                "Open Elective"
+            ]
+
+        },
 
 
-function getQuestions(subject) {
+        "bca": {
 
-    return {
+            1: [
+                "Computer Fundamentals",
+                "Programming in C",
+                "Mathematics",
+                "Digital Electronics",
+                "Communication Skills"
+            ],
 
-        basic: [
-            "What is " + subject + "?",
-            "Define " + subject + ".",
-            "What are the basic concepts of " + subject + "?"
-        ],
+            2: [
+                "Data Structures",
+                "Database Management System",
+                "Object Oriented Programming",
+                "Computer Organization",
+                "Mathematics-II"
+            ],
 
-        intermediate: [
-            "Explain the important concepts of " + subject + ".",
-            "Explain the applications of " + subject + ".",
-            "What are the advantages and limitations of " + subject + "?"
-        ],
+            3: [
+                "Operating System",
+                "Computer Networks",
+                "Web Development",
+                "Python Programming",
+                "Software Engineering"
+            ],
 
-        advanced: [
-            "Explain " + subject + " in detail with suitable examples.",
-            "Discuss the important problems and solutions related to " + subject + ".",
-            "Explain the practical applications of " + subject + "."
-        ]
+            4: [
+                "Java Programming",
+                "Advanced Database Management",
+                "Computer Graphics",
+                "Data Communication",
+                "System Analysis and Design"
+            ],
+
+            5: [
+                "Artificial Intelligence",
+                "Machine Learning",
+                "Cloud Computing",
+                "Cyber Security",
+                "Data Analytics"
+            ],
+
+            6: [
+                "Big Data",
+                "Mobile Application Development",
+                "Internet of Things",
+                "Project Work",
+                "Professional Elective"
+            ]
+
+        },
+
+
+        "bba": {
+
+            1: [
+                "Principles of Management",
+                "Business Economics",
+                "Financial Accounting",
+                "Business Communication",
+                "Business Mathematics"
+            ],
+
+            2: [
+                "Marketing Management",
+                "Human Resource Management",
+                "Business Statistics",
+                "Organizational Behaviour",
+                "Business Environment"
+            ],
+
+            3: [
+                "Financial Management",
+                "Production Management",
+                "Business Law",
+                "Research Methodology",
+                "Management Information System"
+            ],
+
+            4: [
+                "Consumer Behaviour",
+                "Operations Management",
+                "Entrepreneurship",
+                "Cost Accounting",
+                "Business Research"
+            ],
+
+            5: [
+                "Strategic Management",
+                "International Business",
+                "Project Management",
+                "Investment Management",
+                "Business Analytics"
+            ],
+
+            6: [
+                "Business Ethics",
+                "Digital Marketing",
+                "Corporate Governance",
+                "Entrepreneurship Development",
+                "Final Project"
+            ]
+
+        }
 
     };
 
-}
+
+    // ==========================================
+    // COURSE NAME
+    // ==========================================
+
+    function courseName(course) {
+
+        if (course === "btech-cse") {
+            return "B.Tech CSE";
+        }
+
+        if (course === "bca") {
+            return "BCA";
+        }
+
+        if (course === "bba") {
+            return "BBA";
+        }
+
+        return course;
+
+    }
 
 
-function showQuestions() {
+    // ==========================================
+    // CREATE SUBJECT CARDS
+    // ==========================================
 
-    const container =
-        document.getElementById("questionsContainer");
+   function createBookCards() {
 
-    container.innerHTML = "";
+    let cards = "";
 
     Object.keys(subjects).forEach(function(course) {
 
@@ -6962,239 +7541,1397 @@ function showQuestions() {
 
             subjects[course][semester].forEach(function(subject) {
 
-                const questions = getQuestions(subject);
+                const safeSubject =
+                    subject
+                        .replace(/\\/g, "\\\\")
+                        .replace(/'/g, "\\'");
 
-                const html = document.createElement("div");
+                cards += `
+                    <div
+                        class="book-card"
+                        data-course="${course}"
+                        data-semester="${semester}"
+                    >
 
-                html.className = "course";
+                        <div class="badge">
+                            ${courseName(course)}
+                            • Semester ${semester}
+                        </div>
 
-                html.dataset.course = course;
+                        <h2>
+                            📖 ${subject}
+                        </h2>
 
-                html.dataset.semester = semester;
+                        <p>
+                            Complete study material for
+                            <b>${subject}</b>.
+                            Students can study concepts,
+                            important topics, examples,
+                            revision points and exam
+                            preparation material.
+                        </p>
 
-                html.innerHTML =
-                    "<h2>" +
-                        course.toUpperCase() +
-                        " — Semester " +
-                        semester +
-                    "</h2>" +
+                      <button
+    onclick="openBookFromCard(
+        '${safeSubject}',
+        '${course}',
+        '${semester}'
+    )"
+>
+    📖 Read Book
+</button>
 
-                    '<div class="subject">' +
+                       <button
+    class="free-button"
+    onclick="findFreeBook(
+        '${safeSubject}'
+    )"
+>
+    🌐 Free Legal Book
+</button>s
 
-                        "<h2>📚 " + subject + "</h2>" +
-
-                        '<div class="level" data-level="basic">' +
-
-                            "<h3>🟢 Basic</h3>" +
-
-                            '<div class="qa-item">' +
-                                "<strong>Q1. " +
-                                questions.basic[0] +
-                                "</strong>" +
-
-                                '<div class="answer">' +
-                                    "<strong>Answer:</strong><br>" +
-                                    "Write the basic definition, meaning and " +
-                                    "fundamental concepts related to this topic." +
-                                "</div>" +
-                            "</div>" +
-
-                            '<div class="qa-item">' +
-                                "<strong>Q2. " +
-                                questions.basic[1] +
-                                "</strong>" +
-
-                                '<div class="answer">' +
-                                    "<strong>Answer:</strong><br>" +
-                                    "Explain the topic using simple definitions " +
-                                    "and suitable examples." +
-                                "</div>" +
-                            "</div>" +
-
-                            '<div class="qa-item">' +
-                                "<strong>Q3. " +
-                                questions.basic[2] +
-                                "</strong>" +
-
-                                '<div class="answer">' +
-                                    "<strong>Answer:</strong><br>" +
-                                    "Describe the important basic concepts and terminology." +
-                                "</div>" +
-                            "</div>" +
-
-                        "</div>" +
-
-                        '<div class="level" data-level="intermediate">' +
-
-                            "<h3>🟡 Intermediate</h3>" +
-
-                            '<div class="qa-item">' +
-                                "<strong>Q1. " +
-                                questions.intermediate[0] +
-                                "</strong>" +
-
-                                '<div class="answer">' +
-                                    "<strong>Answer:</strong><br>" +
-                                    "Explain the major concepts with suitable examples and details." +
-                                "</div>" +
-                            "</div>" +
-
-                            '<div class="qa-item">' +
-                                "<strong>Q2. " +
-                                questions.intermediate[1] +
-                                "</strong>" +
-
-                                '<div class="answer">' +
-                                    "<strong>Answer:</strong><br>" +
-                                    "Discuss practical uses and important applications of the subject." +
-                                "</div>" +
-                            "</div>" +
-
-                            '<div class="qa-item">' +
-                                "<strong>Q3. " +
-                                questions.intermediate[2] +
-                                "</strong>" +
-
-                                '<div class="answer">' +
-                                    "<strong>Answer:</strong><br>" +
-                                    "Explain the advantages, limitations and important points." +
-                                "</div>" +
-                            "</div>" +
-
-                        "</div>" +
-
-                        '<div class="level" data-level="advanced">' +
-
-                            "<h3>🔴 Advanced</h3>" +
-
-                            '<div class="qa-item">' +
-                                "<strong>Q1. " +
-                                questions.advanced[0] +
-                                "</strong>" +
-
-                                '<div class="answer">' +
-                                    "<strong>Answer:</strong><br>" +
-                                    "Give a detailed explanation with examples, diagrams " +
-                                    "or applications wherever appropriate." +
-                                "</div>" +
-                            "</div>" +
-
-                            '<div class="qa-item">' +
-                                "<strong>Q2. " +
-                                questions.advanced[1] +
-                                "</strong>" +
-
-                                '<div class="answer">' +
-                                    "<strong>Answer:</strong><br>" +
-                                    "Discuss the topic critically and explain suitable solutions." +
-                                "</div>" +
-                            "</div>" +
-
-                            '<div class="qa-item">' +
-                                "<strong>Q3. " +
-                                questions.advanced[2] +
-                                "</strong>" +
-
-                                '<div class="answer">' +
-                                    "<strong>Answer:</strong><br>" +
-                                    "Explain real-world and practical applications in detail." +
-                                "</div>" +
-                            "</div>" +
-
-                        "</div>" +
-
-                    "</div>";
-
-                container.appendChild(html);
-
+                    </div>
+                `;
             });
 
         });
 
     });
 
+    return cards;
 }
 
 
-function filterQuestions() {
 
-    const course =
-        document.getElementById("courseSelect").value;
+    // ==========================================
+    // CREATE IMPORTANT QUESTIONS
+    // ==========================================
 
-    const semester =
-        document.getElementById("semesterSelect").value;
+    function createQuestionCards() {
 
-    const level =
-        document.getElementById("levelSelect").value;
+        let html = "";
 
-    const cards =
-        document.querySelectorAll(".course");
 
-    cards.forEach(function(card) {
+        Object.keys(subjects).forEach(function(course) {
 
-        const courseMatch =
-            course === "all" ||
-            card.dataset.course === course;
+            Object.keys(subjects[course]).forEach(function(semester) {
 
-        const semesterMatch =
-            semester === "all" ||
-            card.dataset.semester === semester;
+                subjects[course][semester]
+                .forEach(function(subject) {
 
-        const levels =
-            card.querySelectorAll(".level");
 
-        let visibleLevel = false;
+                    html += `
 
-        levels.forEach(function(levelItem) {
+                    <div
+                        class="question-card"
+                        data-course="${course}"
+                        data-semester="${semester}"
+                    >
 
-            const levelMatch =
-                level === "all" ||
-                levelItem.dataset.level === level;
+                        <div class="badge">
 
-            if (levelMatch) {
+                            ${courseName(course)}
+                            • Semester ${semester}
 
-                levelItem.style.display = "block";
+                        </div>
 
-                visibleLevel = true;
 
-            } else {
+                        <h2>
+                            📚 ${subject}
+                        </h2>
 
-                levelItem.style.display = "none";
 
-            }
+                        <h3>🟢 Basic</h3>
+
+                        <ol>
+
+                            <li>
+                                What is ${subject}?
+                            </li>
+
+                            <li>
+                                Define ${subject}.
+                            </li>
+
+                            <li>
+                                Explain the basic concepts
+                                of ${subject}.
+                            </li>
+
+                        </ol>
+
+
+                        <h3>🟡 Intermediate</h3>
+
+                        <ol>
+
+                            <li>
+                                Explain the important concepts
+                                of ${subject}.
+                            </li>
+
+                            <li>
+                                Explain the applications of
+                                ${subject}.
+                            </li>
+
+                            <li>
+                                Discuss advantages and
+                                limitations of ${subject}.
+                            </li>
+
+                        </ol>
+
+
+                        <h3>🔴 Advanced</h3>
+
+                        <ol>
+
+                            <li>
+                                Explain ${subject} in detail
+                                with suitable examples.
+                            </li>
+
+                            <li>
+                                Discuss practical applications
+                                of ${subject}.
+                            </li>
+
+                            <li>
+                                Explain important problems
+                                related to ${subject}.
+                            </li>
+
+                        </ol>
+
+                    </div>
+
+                    `;
+
+                });
+
+            });
 
         });
 
-        if (
-            courseMatch &&
-            semesterMatch &&
-            visibleLevel
-        ) {
 
-            card.style.display = "block";
+        return html;
 
-        } else {
-
-            card.style.display = "none";
-
-        }
-
-    });
-
-}
+    }
 
 
-showQuestions();
+    // ==========================================
+    // OPEN BOOK
+    // ==========================================
 
-</script>
+   window.readBook = function(subject, course, semester) {
 
-</body>
-</html>
+    const bookWindow = window.open("", "_blank");
+
+    if (!bookWindow) {
+        alert("Please allow pop-ups for Collage Buddy.");
+        return;
+    }
+
+    let content = "";
+
+    // ==========================================
+    // MATHEMATICS-II
+    // ==========================================
+
+    if (
+        subject === "Mathematics-II" ||
+        subject === "Engineering Mathematics-II"
+    ) {
+
+        content = `
+
+            <h1>📐 Engineering Mathematics-II</h1>
+
+            <p>
+                <b>Course:</b> ${courseName(course)}
+                &nbsp; | &nbsp;
+                <b>Semester:</b> ${semester}
+            </p>
+
+            <hr>
+
+            <h2>📘 Unit 1: Differential Equations</h2>
+
+            <h3>1. What is a Differential Equation?</h3>
+
+            <p>
+                A differential equation is an equation which
+                contains derivatives of an unknown function.
+            </p>
+
+            <p>
+                Example:
+                <b>dy/dx = 2x</b>
+            </p>
+
+            <h3>2. First Order Differential Equation</h3>
+
+            <p>
+                A first order differential equation contains
+                the first derivative of the dependent variable.
+            </p>
+
+            <h3>3. Variable Separable Method</h3>
+
+            <p>
+                In this method, variables are separated on
+                different sides and integration is performed.
+            </p>
+
+            <hr>
+
+            <h2>📘 Unit 2: Higher Order Differential Equations</h2>
+
+            <h3>1. Higher Order Equation</h3>
+
+            <p>
+                A differential equation containing second or
+                higher derivatives is called a higher order
+                differential equation.
+            </p>
+
+            <p>
+                Example:
+                <b>d²y/dx² + 3dy/dx + 2y = 0</b>
+            </p>
+
+            <h3>2. Linear Differential Equation</h3>
+
+            <p>
+                Linear differential equations contain the
+                dependent variable and its derivatives only
+                to the first power.
+            </p>
+
+            <hr>
+
+            <h2>📘 Unit 3: Laplace Transform</h2>
+
+            <h3>1. Definition</h3>
+
+            <p>
+                Laplace transform converts a function of time
+                into a function of a complex variable.
+            </p>
+
+            <p>
+                It is widely used for solving differential equations.
+            </p>
+
+            <h3>2. Basic Formula</h3>
+
+            <p>
+                L{f(t)} =
+                ∫₀∞ e<sup>-st</sup> f(t) dt
+            </p>
+
+            <h3>3. Important Transforms</h3>
+
+            <ul>
+                <li>L{1} = 1/s</li>
+                <li>L{t} = 1/s²</li>
+                <li>L{e<sup>at</sup>} = 1/(s-a)</li>
+            </ul>
+
+            <hr>
+
+            <h2>📘 Unit 4: Fourier Series</h2>
+
+            <h3>1. Introduction</h3>
+
+            <p>
+                Fourier series represents a periodic function
+                as a sum of sine and cosine functions.
+            </p>
+
+            <h3>2. General Form</h3>
+
+            <p>
+                f(x) =
+                a₀/2 + Σ[aₙ cos(nx) + bₙ sin(nx)]
+            </p>
+
+            <h3>3. Applications</h3>
+
+            <ul>
+                <li>Signal processing</li>
+                <li>Electrical engineering</li>
+                <li>Heat equations</li>
+                <li>Wave analysis</li>
+            </ul>
+
+            <hr>
+
+            <h2>📘 Unit 5: Partial Differential Equations</h2>
+
+            <h3>1. Definition</h3>
+
+            <p>
+                A partial differential equation contains partial
+                derivatives of an unknown function.
+            </p>
+
+            <h3>2. Example</h3>
+
+            <p>
+                ∂u/∂x + ∂u/∂y = 0
+            </p>
+
+            <h3>3. Applications</h3>
+
+            <ul>
+                <li>Heat transfer</li>
+                <li>Fluid mechanics</li>
+                <li>Wave motion</li>
+                <li>Engineering systems</li>
+            </ul>
+
+            <hr>
+
+            <h2>📝 Important Questions</h2>
+
+            <ol>
+                <li>Define differential equation.</li>
+                <li>Explain variable separable method.</li>
+                <li>What is Laplace Transform?</li>
+                <li>Write important Laplace transform formulas.</li>
+                <li>Explain Fourier Series.</li>
+                <li>What is a partial differential equation?</li>
+            </ol>
+
+            <hr>
+
+            <h2>🎯 Quick Revision</h2>
+
+            <ul>
+                <li>Differential Equations → derivatives</li>
+                <li>Laplace Transform → equation solving</li>
+                <li>Fourier Series → periodic functions</li>
+                <li>PDE → partial derivatives</li>
+            </ul>
+
+        `;
+
+    }
+
+    // ==========================================
+    // OTHER SUBJECTS
+    // ==========================================
+
+    else {
+
+        content = `
+
+            <h1>📖 ${subject}</h1>
+
+            <p>
+                <b>Course:</b> ${courseName(course)}
+                &nbsp; | &nbsp;
+                <b>Semester:</b> ${semester}
+            </p>
+
+            <hr>
+
+            <h2>📘 Unit 1: Fundamentals</h2>
+
+            <p>
+                Introduction and basic concepts of
+                ${subject}.
+            </p>
+
+            <h2>📘 Unit 2: Core Concepts</h2>
+
+            <p>
+                Important concepts, principles and
+                terminology of ${subject}.
+            </p>
+
+            <h2>📘 Unit 3: Problem Solving</h2>
+
+            <p>
+                Examples, practical problems and
+                applications related to ${subject}.
+            </p>
+
+            <h2>📘 Unit 4: Advanced Concepts</h2>
+
+            <p>
+                Advanced concepts and important topics
+                of ${subject}.
+            </p>
+
+            <h2>📘 Unit 5: Revision</h2>
+
+            <p>
+                Important definitions, formulas,
+                concepts and exam revision.
+            </p>
+
+            <hr>
+
+            <h2>📝 Important Questions</h2>
+
+            <ol>
+                <li>What is ${subject}?</li>
+                <li>Explain the basic concepts of ${subject}.</li>
+                <li>Explain important principles.</li>
+                <li>Write short notes on major topics.</li>
+                <li>Explain applications of ${subject}.</li>
+            </ol>
+
+        `;
+
+    }
+
+    // ==========================================
+    // BOOK PAGE
+    // ==========================================
+
+    bookWindow.document.write(`
+
+        <!DOCTYPE html>
+
+        <html>
+
+        <head>
+
+            <meta charset="UTF-8">
+
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1"
+            >
+
+            <title>
+                ${subject} - Collage Buddy
+            </title>
+
+            <style>
+
+                body {
+                    font-family: Arial, sans-serif;
+                    max-width: 900px;
+                    margin: auto;
+                    padding: 25px;
+                    line-height: 1.7;
+                    background: #f5f7fb;
+                    color: #222;
+                }
+
+                h1 {
+                    text-align: center;
+                }
+
+                h2 {
+                    margin-top: 30px;
+                }
+
+                h3 {
+                    margin-top: 20px;
+                }
+
+                p, li {
+                    font-size: 16px;
+                }
+
+                hr {
+                    margin: 25px 0;
+                }
+
+                .top {
+                    text-align: center;
+                    margin-bottom: 30px;
+                    padding: 20px;
+                    background: white;
+                    border-radius: 12px;
+                }
+
+                .pdf-button {
+                    background: #4169e1;
+                    color: white;
+                    border: none;
+                    padding: 12px 20px;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    cursor: pointer;
+                }
+
+                .pdf-button:hover {
+                    opacity: 0.85;
+                }
+
+                @media print {
+
+                    .top {
+                        display: none;
+                    }
+
+                    body {
+                        background: white;
+                        max-width: none;
+                    }
+
+                }
+
+            </style>
+
+        </head>
+
+        <body>
+
+            <div class="top">
+
+                <h2>🎓 Collage Buddy</h2>
+
+                <p>
+                    Student E-Book / Study Notes
+                </p>
+
+                <button
+                    class="pdf-button"
+                    onclick="window.print()"
+                >
+                    📥 Download / Save as PDF
+                </button>
+
+            </div>
+
+            ${content}
+
+        </body>
+
+        </html>
+
     `);
 
-    questionsWindow.document.close();
+    bookWindow.document.close();
+
 }
 
+
+    // ==========================================
+    // FREE LEGAL BOOK SEARCH
+    // ==========================================
+
+   window.findFreeBook = function(subject) {
+
+        const search =
+            encodeURIComponent(
+                subject +
+                " open textbook free legal"
+            );
+
+
+        window.open(
+            "https://www.google.com/search?q=" +
+            search,
+            "_blank"
+        );
+
+    }
+    
+
+
+
+    // ==========================================
+    // IMPORTANT QUESTIONS PAGE
+    // ==========================================
+
+    if (type === "questions") {
+
+        studyWindow.document.write(`
+
+        <!DOCTYPE html>
+
+        <html>
+
+        <head>
+
+            <meta charset="UTF-8">
+
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+            >
+
+            <title>
+                Collage Buddy - Important Questions
+            </title>
+
+
+            <style>
+
+                body {
+
+                    margin: 0;
+
+                    font-family: Arial, sans-serif;
+
+                    background: #f5f7fb;
+
+                    color: #172033;
+
+                }
+
+
+                header {
+
+                    background:
+                    linear-gradient(
+                        135deg,
+                        #4169e1,
+                        #6a5acd
+                    );
+
+                    color: white;
+
+                    padding: 35px 20px;
+
+                    text-align: center;
+
+                }
+
+
+                .container {
+
+                    width: 92%;
+
+                    max-width: 1100px;
+
+                    margin: 30px auto;
+
+                }
+
+
+                .filters {
+
+                    background: white;
+
+                    padding: 22px;
+
+                    border-radius: 16px;
+
+                    margin-bottom: 25px;
+
+                    box-shadow:
+                    0 5px 20px
+                    rgba(0,0,0,0.07);
+
+                }
+
+
+                select {
+
+                    padding: 12px;
+
+                    margin: 6px;
+
+                    border:
+                    1px solid #ddd;
+
+                    border-radius: 8px;
+
+                    font-size: 15px;
+
+                }
+
+
+                .question-card {
+
+                    background: white;
+
+                    padding: 25px;
+
+                    margin-bottom: 20px;
+
+                    border-radius: 16px;
+
+                    box-shadow:
+                    0 5px 18px
+                    rgba(0,0,0,0.06);
+
+                }
+
+
+                .badge {
+
+                    display: inline-block;
+
+                    background: #eef3ff;
+
+                    color: #4169e1;
+
+                    padding: 7px 12px;
+
+                    border-radius: 20px;
+
+                    font-size: 13px;
+
+                    font-weight: bold;
+
+                }
+
+
+                .question-card h2 {
+
+                    color: #4169e1;
+
+                }
+
+
+                .question-card h3 {
+
+                    margin-top: 25px;
+
+                }
+
+
+                .question-card li {
+
+                    margin: 9px 0;
+
+                    line-height: 1.6;
+
+                }
+
+
+                .print-button {
+
+                    background: #4169e1;
+
+                    color: white;
+
+                    border: none;
+
+                    padding: 12px 18px;
+
+                    border-radius: 8px;
+
+                    cursor: pointer;
+
+                    margin-bottom: 20px;
+
+                }
+
+
+                @media(max-width:700px) {
+
+                    select {
+
+                        width: 100%;
+
+                        margin: 6px 0;
+
+                    }
+
+                }
+
+            </style>
+
+        </head>
+
+
+        <body>
+
+
+            <header>
+
+                <h1>
+                    📝 Important Questions
+                </h1>
+
+                <p>
+                    B.Tech CSE • BCA • BBA
+                </p>
+
+            </header>
+
+
+            <div class="container">
+
+
+                <div class="filters">
+
+                    <select id="qCourse">
+
+                        <option value="all">
+                            All Courses
+                        </option>
+
+                        <option value="btech-cse">
+                            B.Tech CSE
+                        </option>
+
+                        <option value="bca">
+                            BCA
+                        </option>
+
+                        <option value="bba">
+                            BBA
+                        </option>
+
+                    </select>
+
+
+                    <select id="qSemester">
+
+                        <option value="all">
+                            All Semesters
+                        </option>
+
+                        <option value="1">
+                            Semester 1
+                        </option>
+
+                        <option value="2">
+                            Semester 2
+                        </option>
+
+                        <option value="3">
+                            Semester 3
+                        </option>
+
+                        <option value="4">
+                            Semester 4
+                        </option>
+
+                        <option value="5">
+                            Semester 5
+                        </option>
+
+                        <option value="6">
+                            Semester 6
+                        </option>
+
+                        <option value="7">
+                            Semester 7
+                        </option>
+
+                        <option value="8">
+                            Semester 8
+                        </option>
+
+                    </select>
+
+
+                    <button
+                        class="print-button"
+                        onclick="window.print()"
+                    >
+
+                        📥 Print / Save PDF
+
+                    </button>
+
+                </div>
+
+
+                <div id="questionList">
+
+                    ${createQuestionCards()}
+
+                </div>
+
+
+            </div>
+
+
+            <script>
+
+                const courseFilter =
+                    document.getElementById("qCourse");
+
+
+                const semesterFilter =
+                    document.getElementById("qSemester");
+
+
+                function filterQuestionCards() {
+
+                    const course =
+                        courseFilter.value;
+
+                    const semester =
+                        semesterFilter.value;
+
+
+                    const cards =
+                        document.querySelectorAll(
+                            ".question-card"
+                        );
+
+
+                    cards.forEach(function(card) {
+
+                        const courseMatch =
+                            course === "all" ||
+                            card.dataset.course === course;
+
+
+                        const semesterMatch =
+                            semester === "all" ||
+                            card.dataset.semester === semester;
+
+
+                        if (
+                            courseMatch &&
+                            semesterMatch
+                        ) {
+
+                            card.style.display =
+                                "block";
+
+                        } else {
+
+                            card.style.display =
+                                "none";
+
+                        }
+
+                    });
+
+                }
+
+
+                courseFilter.onchange =
+                    filterQuestionCards;
+
+
+                semesterFilter.onchange =
+                    filterQuestionCards;
+
+            </script>
+
+
+        </body>
+
+        </html>
+
+        `);
+
+
+        studyWindow.document.close();
+
+        return;
+
+    }
+
+
+    // ==========================================
+    // E-BOOK PAGE
+    // ==========================================
+
+    if (type === "ebooks") {
+
+        studyWindow.document.write(`
+
+        <!DOCTYPE html>
+
+        <html>
+
+        <head>
+
+            <meta charset="UTF-8">
+
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+            >
+
+            <title>
+                Collage Buddy - E-Books
+            </title>
+
+
+            <style>
+
+                body {
+
+                    margin: 0;
+
+                    font-family: Arial, sans-serif;
+
+                    background: #f5f7fb;
+
+                    color: #172033;
+
+                }
+
+
+                header {
+
+                    background:
+                    linear-gradient(
+                        135deg,
+                        #4169e1,
+                        #6a5acd
+                    );
+
+                    color: white;
+
+                    padding: 35px 20px;
+
+                    text-align: center;
+
+                }
+
+
+                .container {
+
+                    width: 92%;
+
+                    max-width: 1100px;
+
+                    margin: 30px auto;
+
+                }
+
+
+                .filters {
+
+                    background: white;
+
+                    padding: 22px;
+
+                    border-radius: 16px;
+
+                    margin-bottom: 25px;
+
+                    box-shadow:
+                    0 5px 20px
+                    rgba(0,0,0,0.07);
+
+                }
+
+
+                select {
+
+                    width: 100%;
+
+                    padding: 13px;
+
+                    margin-top: 8px;
+
+                    margin-bottom: 15px;
+
+                    border:
+                    1px solid #ddd;
+
+                    border-radius: 9px;
+
+                    font-size: 15px;
+
+                }
+
+
+                .book-grid {
+
+                    display: grid;
+
+                    grid-template-columns:
+                    repeat(2, 1fr);
+
+                    gap: 20px;
+
+                }
+
+
+                .book-card {
+
+                    background: white;
+
+                    padding: 25px;
+
+                    border-radius: 16px;
+
+                    box-shadow:
+                    0 5px 18px
+                    rgba(0,0,0,0.06);
+
+                }
+
+
+                .book-card h2 {
+
+                    color: #4169e1;
+
+                    font-size: 20px;
+
+                }
+
+
+                .book-card p {
+
+                    line-height: 1.7;
+
+                    color: #555;
+
+                }
+
+
+                .badge {
+
+                    display: inline-block;
+
+                    background: #eef3ff;
+
+                    color: #4169e1;
+
+                    padding: 7px 12px;
+
+                    border-radius: 20px;
+
+                    font-size: 12px;
+
+                    font-weight: bold;
+
+                }
+
+
+                button {
+
+                    border: none;
+
+                    padding: 11px 16px;
+
+                    border-radius: 8px;
+
+                    background: #4169e1;
+
+                    color: white;
+
+                    cursor: pointer;
+
+                    margin: 4px;
+
+                }
+
+
+                .free-button {
+
+                    background: #198754;
+
+                }
+
+
+                @media(max-width:700px) {
+
+                    .book-grid {
+
+                        grid-template-columns: 1fr;
+
+                    }
+
+                }
+
+            </style>
+
+        </head>
+
+
+        <body>
+
+
+            <header>
+
+                <h1>
+                    📚 Collage Buddy E-Books
+                </h1>
+
+                <p>
+                    Free study books and resources
+                </p>
+
+            </header>
+
+
+            <div class="container">
+
+
+                <div class="filters">
+
+                    <label>
+                        <b>Course</b>
+                    </label>
+
+
+                    <select id="bookCourse">
+
+                        <option value="all">
+                            All Courses
+                        </option>
+
+                        <option value="btech-cse">
+                            B.Tech CSE
+                        </option>
+
+                        <option value="bca">
+                            BCA
+                        </option>
+
+                        <option value="bba">
+                            BBA
+                        </option>
+
+                    </select>
+
+
+                    <label>
+                        <b>Semester</b>
+                    </label>
+
+
+                    <select id="bookSemester">
+
+                        <option value="all">
+                            All Semesters
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div
+                    id="bookList"
+                    class="book-grid"
+                >
+
+                    ${createBookCards()}
+
+                </div>
+
+
+            </div>
+
+
+            <script>
+
+                const bookCards =
+                    document.querySelectorAll(
+                        ".book-card"
+                    );
+
+
+                const bookCourse =
+                    document.getElementById(
+                        "bookCourse"
+                    );
+
+
+                const bookSemester =
+                    document.getElementById(
+                        "bookSemester"
+                    );
+
+
+                function updateSemesters() {
+
+    const course = bookCourse.value;
+
+    bookSemester.innerHTML =
+        '<option value="all">All Semesters</option>';
+
+    let maxSemester = 8;
+
+    if (course === "bca" || course === "bba") {
+        maxSemester = 6;
+    }
+
+    for (let i = 1; i <= maxSemester; i++) {
+
+        bookSemester.innerHTML +=
+            '<option value="' + i + '">Semester ' + i + '</option>';
+
+    }
+
+    filterBooks();
+
+}
+
+                function filterBooks() {
+
+                    const course =
+                        bookCourse.value;
+
+
+                    const semester =
+                        bookSemester.value;
+
+
+                    bookCards.forEach(
+                        function(card) {
+
+                            const courseMatch =
+                                course === "all" ||
+                                card.dataset.course === course;
+
+
+                            const semesterMatch =
+                                semester === "all" ||
+                                card.dataset.semester === semester;
+
+
+                            if (
+                                courseMatch &&
+                                semesterMatch
+                            ) {
+
+                                card.style.display =
+                                    "block";
+
+                            } else {
+
+                                card.style.display =
+                                    "none";
+
+                            }
+
+                        }
+                    );
+
+                }
+
+
+                bookCourse.onchange =
+                    updateSemesters;
+
+
+                bookSemester.onchange =
+                    filterBooks;
+
+
+                updateSemesters();
+
+            </script>
+
+
+        </body>
+
+        </html>
+
+       ` );
+
+
+        studyWindow.document.close();
+
+        return;
+
+    }
+
+
+    studyWindow.close();
+
+}
+
+
+   
 
  
 
@@ -7604,108 +9341,3 @@ subjectArea.scrollIntoView({
 });
 }
 
-function openNote(subject, course, semester) {
-
-    const { jsPDF } = window.jspdf;
-
-    const pdf = new jsPDF();
-
-    const courseName = course.toUpperCase();
-
-    // PDF heading
-    pdf.setFontSize(20);
-    pdf.setTextColor(65, 105, 225);
-    pdf.text("CollegeBuddy", 20, 20);
-
-    pdf.setFontSize(16);
-    pdf.setTextColor(0, 0, 0);
-    pdf.text("Study Notes", 20, 35);
-
-    pdf.setFontSize(13);
-    pdf.text("Course: " + courseName, 20, 50);
-    pdf.text("Semester: " + semester, 20, 60);
-
-    pdf.setFontSize(17);
-    pdf.setTextColor(65, 105, 225);
-    pdf.text(subject, 20, 80);
-
-    // Unit-wise content
-    const units = [
-
-    "UNIT 1 — MATRICES",
-    "Types of matrices",
-    "Matrix operations",
-    "Transpose of a matrix",
-    "Determinants",
-    "Properties of determinants",
-    "Inverse of a matrix",
-    "Rank of a matrix",
-
-    "UNIT 2 — DIFFERENTIAL CALCULUS",
-    "Limits and continuity",
-    "Differentiation",
-    "Rules of differentiation",
-    "Higher order derivatives",
-    "Partial differentiation",
-    "Total derivatives",
-    "Applications of derivatives",
-
-    "UNIT 3 — INTEGRAL CALCULUS",
-    "Indefinite integration",
-    "Methods of integration",
-    "Integration by substitution",
-    "Integration by parts",
-    "Definite integration",
-    "Properties of definite integrals",
-    "Applications of integration",
-
-    "UNIT 4 — DIFFERENTIAL EQUATIONS",
-    "Introduction to differential equations",
-    "Order and degree",
-    "First order differential equations",
-    "Variable separable equations",
-    "Linear differential equations",
-    "Higher order differential equations",
-    "Applications of differential equations",
-
-    "UNIT 5 — MULTIVARIABLE CALCULUS",
-    "Functions of several variables",
-    "Partial derivatives",
-    "Multiple integration",
-    "Double integrals",
-    "Triple integrals",
-    "Change of order of integration",
-    "Applications of multiple integration"
-
-];
-
-
-    let y = 100;
-
-    units.forEach(function(line) {
-
-        if (y > 270) {
-            pdf.addPage();
-            y = 20;
-        }
-
-        if (line.startsWith("UNIT")) {
-            pdf.setFontSize(16);
-            pdf.setTextColor(65, 105, 225);
-        } else {
-            pdf.setFontSize(12);
-            pdf.setTextColor(0, 0, 0);
-        }
-
-        pdf.text(line, 20, y);
-
-        y += 10;
-    });
-
-    // PDF ko browser me open karo
-    const pdfBlob = pdf.output("blob");
-
-    const pdfUrl = URL.createObjectURL(pdfBlob);
-
-    window.open(pdfUrl, "_blank");
-}
