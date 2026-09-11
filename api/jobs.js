@@ -38,10 +38,10 @@ export default async function handler(req, res) {
             });
         }
 
-        // Course-based search keywords
-        let what = "part time student";
+       // Course-based search keywords
+let what = "part time student";
 
-      if (course === "B.Tech CSE") {
+if (course === "B.Tech CSE") {
     what = "part time IT software computer web developer";
 }
 
