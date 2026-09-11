@@ -42,16 +42,17 @@ export default async function handler(req, res) {
         let what = "part time student";
 
         if (course === "B.Tech CSE") {
-            what = "part time computer science software IT";
-        }
-
-        if (course === "BCA") {
-            what = "part time computer application software IT";
-        }
+    what = "computer science software IT developer";
+}
+if (course === "BCA") {
+    what = "BCA computer applications software IT developer";
+}
 
         if (course === "BBA") {
-            what = "part time business administration sales marketing";
-        }
+    what = "business administration sales marketing management";
+}
+
+       
 
         const params = new URLSearchParams({
             app_id: appId,
