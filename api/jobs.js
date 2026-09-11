@@ -1,3 +1,4 @@
+js
 export default async function handler(req, res) {
 
     // CORS
@@ -45,14 +46,11 @@ export default async function handler(req, res) {
         // COURSE BASED SEARCHES
         // ==========================================
 
-        let searches = [
-            "part time student"
-        ];
+        let searches = ["part time student"];
 
 
         // B.Tech CSE
         if (course === "B.Tech CSE") {
-
             searches = [
                 "software developer",
                 "web developer",
@@ -60,13 +58,11 @@ export default async function handler(req, res) {
                 "computer operator",
                 "programmer"
             ];
-
         }
 
 
         // BCA
         if (course === "BCA") {
-
             searches = [
                 "software developer",
                 "web developer",
@@ -74,13 +70,11 @@ export default async function handler(req, res) {
                 "computer operator",
                 "data entry"
             ];
-
         }
 
 
         // BBA
         if (course === "BBA") {
-
             searches = [
                 "sales",
                 "marketing",
@@ -88,7 +82,6 @@ export default async function handler(req, res) {
                 "business development",
                 "office assistant"
             ];
-
         }
 
 
@@ -101,28 +94,18 @@ export default async function handler(req, res) {
         for (const searchTerm of searches) {
 
             const params = new URLSearchParams({
-
                 app_id: appId,
-
                 app_key: appKey,
-
                 results_per_page: "10",
-
                 what: searchTerm,
-
                 where: location,
-
                 "content-type": "application/json"
-
             });
-
 
             const apiUrl =
                 `https://api.adzuna.com/v1/api/jobs/in/search/1?${params.toString()}`;
 
-
             const response = await fetch(apiUrl);
-
 
             if (!response.ok) {
 
@@ -133,19 +116,13 @@ export default async function handler(req, res) {
                 );
 
                 continue;
-
             }
-
 
             const data = await response.json();
 
-
             if (data.results && Array.isArray(data.results)) {
-
                 allJobs.push(...data.results);
-
             }
-
         }
 
 
@@ -154,9 +131,7 @@ export default async function handler(req, res) {
         // ==========================================
 
         const uniqueJobs = [];
-
         const seenIds = new Set();
-
 
         for (const job of allJobs) {
 
@@ -169,9 +144,7 @@ export default async function handler(req, res) {
             }
 
             seenIds.add(job.id);
-
             uniqueJobs.push(job);
-
         }
 
 
@@ -186,65 +159,52 @@ export default async function handler(req, res) {
                 id:
                     job.id || "",
 
-
                 title:
                     job.title ||
                     "Job title not available",
-
 
                 company:
                     job.company?.display_name ||
                     "Company not provided",
 
-
                 location:
                     job.location?.display_name ||
                     location,
-
 
                 description:
                     job.description ||
                     "Job description not available",
 
-
                 salaryMin:
                     job.salary_min ||
                     null,
-
 
                 salaryMax:
                     job.salary_max ||
                     null,
 
-
                 contractTime:
                     job.contract_time ||
                     "",
-
 
                 contractType:
                     job.contract_type ||
                     "",
 
-
                 latitude:
                     job.latitude ||
                     null,
-
 
                 longitude:
                     job.longitude ||
                     null,
 
-
                 applyUrl:
                     job.redirect_url ||
                     "",
 
-
                 source:
                     "Adzuna"
-
             }));
 
 
@@ -267,14 +227,12 @@ export default async function handler(req, res) {
 
             jobs:
                 jobs
-
         });
 
 
     } catch (error) {
 
         console.error(error);
-
 
         return res.status(500).json({
 
@@ -283,9 +241,7 @@ export default async function handler(req, res) {
 
             message:
                 error.message
-
         });
-
     }
-
 }
+
