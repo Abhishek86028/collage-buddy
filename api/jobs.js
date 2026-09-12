@@ -565,27 +565,16 @@ export default async function handler(req, res) {
 
 
                 // ==================================
-                // REMOVE CLEARLY FULL-TIME JOBS
-                // ==================================
+// STRICTLY REMOVE FULL-TIME JOBS
+// ==================================
 
-                if (
-                    contractTime === "full_time" &&
-                    !hasPartTimeSignal
-                ) {
+if (contractTime === "full_time") {
+    return false;
+}
 
-                    return false;
-
-                }
-
-
-                if (
-                    hasFullTimeSignal &&
-                    !hasPartTimeSignal
-                ) {
-
-                    return false;
-
-                }
+if (hasFullTimeSignal && !hasPartTimeSignal) {
+    return false;
+}
 
 
                 // ==================================
