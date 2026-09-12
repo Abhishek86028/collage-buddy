@@ -53,38 +53,42 @@
     "customer service"
 ];
         // B.Tech CSE
-        if (course === "B.Tech CSE") {
-            searches = [
-                "software developer",
-                "web developer",
-                "IT support",
-                "computer operator",
-                "programmer"
-            ];
+       if (course === "B.Tech CSE") {
+    searches = [
+        "part time software developer",
+        "part time web developer",
+        "part time IT support",
+        "student computer operator",
+        "work from home programmer"
+    ];
+
         }
 
 
         // BCA
-        if (course === "BCA") {
-            searches = [
-                "software developer",
-                "web developer",
-                "IT support",
-                "computer operator",
-                "data entry"
-            ];
+        
+          if (course === "BCA") {
+    searches = [
+        "part time software developer",
+        "part time web developer",
+        "part time IT support",
+        "part time data entry",
+        "work from home computer operator"
+    ];
+
         }
 
 
         // BBA
-        if (course === "BBA") {
-            searches = [
-                "sales",
-                "marketing",
-                "customer service",
-                "business development",
-                "office assistant"
-            ];
+       if (course === "BBA") {
+    searches = [
+        "part time sales",
+        "part time marketing",
+        "part time customer service",
+        "part time business development",
+        "part time office assistant"
+    ];
+
         }
 
 
