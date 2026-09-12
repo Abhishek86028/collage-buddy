@@ -91,7 +91,72 @@
         // ==========================================
         // SEARCH ADZUNA
         // ==========================================
+// ==========================================
+// CONVERT LOCATION TO LATITUDE / LONGITUDE
+// ==========================================
 
+const geoResponse = await fetch(
+    "https://nominatim.openstreetmap.org/search?" +
+    new URLSearchParams({
+        q: location + ", India",
+        format: "json",
+        limit: "1"
+    }),
+    {
+        headers: {
+            "User-Agent": "CollegeBuddy Jobs"
+        }
+    }
+);
+
+const geoData = await geoResponse.json();
+
+if (!geoData || geoData.length === 0) {
+    return res.status(200).json({
+        success: true,
+        searchedLocation: location,
+        course: course,
+        count: 0,
+        jobs: [],
+        message: "Location could not be found."
+    });
+}
+
+const userLatitude =
+    parseFloat(geoData[0].lat);
+
+const userLongitude =
+    parseFloat(geoData[0].lon);
+    // ==========================================
+// DISTANCE CALCULATION
+// ==========================================
+
+function calculateDistance(lat1, lon1, lat2, lon2) {
+
+    const earthRadius = 6371;
+
+    const dLat =
+        (lat2 - lat1) * Math.PI / 180;
+
+    const dLon =
+        (lon2 - lon1) * Math.PI / 180;
+
+    const a =
+        Math.sin(dLat / 2) *
+        Math.sin(dLat / 2) +
+        Math.cos(lat1 * Math.PI / 180) *
+        Math.cos(lat2 * Math.PI / 180) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+
+    const c =
+        2 * Math.atan2(
+            Math.sqrt(a),
+            Math.sqrt(1 - a)
+        );
+
+    return earthRadius * c;
+}
         const allJobs = [];
 
         for (const searchTerm of searches) {
@@ -101,7 +166,7 @@
                 app_key: appKey,
                 results_per_page: "10",
                 what: searchTerm,
-                where: location,
+                where: location || "India",
                 "content-type": "application/json"
             });
 
@@ -151,65 +216,107 @@
         }
 
 
+       
         // ==========================================
-        // FORMAT JOB DATA
-        // ==========================================
+// FILTER JOBS WITHIN 10 KM
+// ==========================================
 
-        const jobs = uniqueJobs
-            .slice(0, 30)
-            .map(job => ({
+const nearbyJobs = uniqueJobs.filter(job => {
 
-                id:
-                    job.id || "",
+    if (!job.latitude || !job.longitude) {
+        return false;
+    }
 
-                title:
-                    job.title ||
-                    "Job title not available",
+    const jobLatitude =
+        parseFloat(job.latitude);
 
-                company:
-                    job.company?.display_name ||
-                    "Company not provided",
+    const jobLongitude =
+        parseFloat(job.longitude);
 
-                location:
-                    job.location?.display_name ||
-                    location,
+    const distance =
+        calculateDistance(
+            userLatitude,
+            userLongitude,
+            jobLatitude,
+            jobLongitude
+        );
 
-                description:
-                    job.description ||
-                    "Job description not available",
+    return distance <= 10;
+});
 
-                salaryMin:
-                    job.salary_min ||
-                    null,
 
-                salaryMax:
-                    job.salary_max ||
-                    null,
+// ==========================================
+// FORMAT JOB DATA
+// ==========================================
 
-                contractTime:
-                    job.contract_time ||
-                    "",
+const jobs = nearbyJobs
+    .slice(0, 30)
+    .map(job => {
 
-                contractType:
-                    job.contract_type ||
-                    "",
+        const distance =
+            calculateDistance(
+                userLatitude,
+                userLongitude,
+                parseFloat(job.latitude),
+                parseFloat(job.longitude)
+            );
 
-                latitude:
-                    job.latitude ||
-                    null,
+        return {
 
-                longitude:
-                    job.longitude ||
-                    null,
+            id:
+                job.id || "",
 
-                applyUrl:
-                    job.redirect_url ||
-                    "",
+            title:
+                job.title ||
+                "Job title not available",
 
-                source:
-                    "Adzuna"
-            }));
+            company:
+                job.company?.display_name ||
+                "Company not provided",
 
+            location:
+                job.location?.display_name ||
+                location,
+
+            description:
+                job.description ||
+                "Job description not available",
+
+            salaryMin:
+                job.salary_min ||
+                null,
+
+            salaryMax:
+                job.salary_max ||
+                null,
+
+            contractTime:
+                job.contract_time ||
+                "",
+
+            contractType:
+                job.contract_type ||
+                "",
+
+            latitude:
+                job.latitude ||
+                null,
+
+            longitude:
+                job.longitude ||
+                null,
+
+            distance:
+                Number(distance.toFixed(2)),
+
+            applyUrl:
+                job.redirect_url ||
+                "",
+
+            source:
+                "Adzuna"
+        };
+    });
 
         // ==========================================
         // RESPONSE
