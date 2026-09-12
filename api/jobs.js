@@ -45,9 +45,13 @@
         // COURSE BASED SEARCHES
         // ==========================================
 
-        let searches = ["part time student"];
-
-
+        let searches = [
+    "part time",
+    "work from home",
+    "student jobs",
+    "data entry",
+    "customer service"
+];
         // B.Tech CSE
         if (course === "B.Tech CSE") {
             searches = [
