@@ -3,7 +3,7 @@
     // CORS
     res.setHeader(
         "Access-Control-Allow-Origin",
-        "https://abhishek86028.github.io"
+       "*"
     );
 
     res.setHeader(
