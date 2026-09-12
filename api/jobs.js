@@ -514,65 +514,101 @@ export default async function handler(req, res) {
                     description;
 
 
-                // ==================================
-                // STRONG PART-TIME SIGNALS
-                // ==================================
+               // ==================================
+// STRICT PART-TIME / INTERNSHIP FILTER
+// ==================================
 
-                const hasPartTimeSignal =
+const title =
+    (job.title || "").toLowerCase();
 
-                    text.includes("part time") ||
+const description =
+    (job.description || "").toLowerCase();
 
-                    text.includes("part-time") ||
+const contractTime =
+    (job.contract_time || "").toLowerCase();
 
-                    text.includes("freelance") ||
-
-                    text.includes("internship") ||
-
-                    text.includes("intern ") ||
-
-                    text.includes("temporary") ||
-
-                    text.includes("flexible hours") ||
-
-                    text.includes("flexible work") ||
-
-                    text.includes(
-                        "student job"
-                    ) ||
-
-                    text.includes(
-                        "student jobs"
-                    ) ||
-
-                    text.includes(
-                        "work from home part time"
-                    ) ||
-
-                    text.includes(
-                        "part time work from home"
-                    );
+const contractType =
+    (job.contract_type || "").toLowerCase();
 
 
-                // ==================================
-                // STRONG FULL-TIME SIGNAL
-                // ==================================
-
-                const hasFullTimeSignal =
-
-                    text.includes("full time") ||
-
-                    text.includes("full-time");
-
-
-                // ==================================
-// STRICTLY REMOVE FULL-TIME JOBS
+// ==================================
+// 1. NEVER SHOW FULL-TIME JOBS
 // ==================================
 
 if (contractTime === "full_time") {
     return false;
 }
 
-if (hasFullTimeSignal && !hasPartTimeSignal) {
+
+// ==================================
+// 2. CHECK TITLE FOR REAL INTERNSHIP
+// ==================================
+
+const isInternshipJob =
+    title.includes("intern") ||
+    title.includes("internship");
+
+
+// ==================================
+// 3. CHECK TITLE FOR PART-TIME
+// ==================================
+
+const isPartTimeTitle =
+    title.includes("part time") ||
+    title.includes("part-time");
+
+
+// ==================================
+// 4. CHECK DESCRIPTION FOR EXPLICIT PART-TIME
+// ==================================
+
+const isPartTimeDescription =
+    description.includes("part time job") ||
+    description.includes("part-time job") ||
+    description.includes("part time position") ||
+    description.includes("part-time position") ||
+    description.includes("part time role") ||
+    description.includes("part-time role") ||
+    description.includes("part time work") ||
+    description.includes("part-time work") ||
+    description.includes("part time opportunity") ||
+    description.includes("part-time opportunity") ||
+    description.includes("work from home part time") ||
+    description.includes("part time work from home");
+
+
+// ==================================
+// 5. FREELANCE JOB
+// ==================================
+
+const isFreelance =
+    title.includes("freelance") ||
+    description.includes("freelance position") ||
+    description.includes("freelance job") ||
+    description.includes("freelance work");
+
+
+// ==================================
+// 6. TEMPORARY JOB
+// ==================================
+
+const isTemporary =
+    title.includes("temporary") ||
+    description.includes("temporary position") ||
+    description.includes("temporary job");
+
+
+// ==================================
+// 7. ALLOW ONLY GENUINE RELEVANT JOBS
+// ==================================
+
+if (
+    !isInternshipJob &&
+    !isPartTimeTitle &&
+    !isPartTimeDescription &&
+    !isFreelance &&
+    !isTemporary
+) {
     return false;
 }
 
