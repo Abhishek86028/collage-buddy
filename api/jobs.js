@@ -71,12 +71,12 @@ export default async function handler(req, res) {
         // SEARCH KEYWORDS
         // ==========================================
 
-        let searches = [
-            "part time jobs",
-            "part-time jobs",
-            "freelance jobs",
-            "internship jobs",
-            "work from home part time"
+               let searches = [
+            "part time job",
+            "part-time job",
+            "freelance job",
+            "internship",
+            "work from home"
         ];
 
 
@@ -89,9 +89,11 @@ export default async function handler(req, res) {
             searches = [
                 "part time software developer",
                 "part time web developer",
-                "part time IT support",
+                "part time IT job",
                 "software developer internship",
-                "freelance programmer"
+                "web developer internship",
+                "freelance programmer",
+                "part time data entry"
             ];
 
         }
@@ -106,9 +108,11 @@ export default async function handler(req, res) {
             searches = [
                 "part time software developer",
                 "part time web developer",
-                "part time IT support",
+                "part time IT job",
+                "software developer internship",
+                "web developer internship",
                 "part time data entry",
-                "computer internship"
+                "computer operator internship"
             ];
 
         }
@@ -125,7 +129,9 @@ export default async function handler(req, res) {
                 "part time marketing",
                 "part time customer service",
                 "part time business development",
-                "business internship"
+                "sales internship",
+                "marketing internship",
+                "office assistant internship"
             ];
 
         }
