@@ -311,16 +311,9 @@ if (
        // ================================
 // ADZUNA SEARCH TERMS
 // ================================
-let searchTerms = [
-    "part time",
-    "part-time",
-    "freelance",
-    "temporary",
-    "student job",
-    "part time student"
-];
 
-// Course ke according extra searches
+let searchTerms = [];
+
 if (
     courseLower.includes("bca") ||
     courseLower.includes("b.tech") ||
@@ -328,96 +321,106 @@ if (
     courseLower.includes("cse")
 ) {
     searchTerms = [
-        ...searchTerms,
-
-        "part time software",
         "part time developer",
-        "part time web developer",
         "part time computer",
         "part time data entry",
-        "part time data",
         "part time technical",
-        "part time IT",
         "freelance developer",
-        "freelance web developer",
         "freelance computer",
-        "freelance data entry",
-        "freelance technical"
+        "freelance data"
     ];
-}
-
-if (courseLower.includes("bba")) {
+} else if (courseLower.includes("bba")) {
     searchTerms = [
-        ...searchTerms,
-
         "part time sales",
         "part time marketing",
         "part time business",
         "part time customer",
-        "part time HR",
         "part time office",
-        "part time accounts",
         "freelance sales",
-        "freelance marketing",
-        "freelance business"
+        "freelance marketing"
+    ];
+} else {
+    searchTerms = [
+        "part time",
+        "freelance"
     ];
 }
 
-// Remove duplicate search terms
+// Remove duplicate searches
 searchTerms = [...new Set(searchTerms)];
 
 const jobsMap = new Map();
-        // ================================
-        // SEARCH ADZUNA
-        // ================================
-        for (const searchTerm of searchTerms) {
-            for (const searchLocation of locationSearches) {
-                try {
-                    const apiUrl =
-                        `https://api.adzuna.com/v1/api/jobs/in/search/1` +
-                        `?app_id=${encodeURIComponent(appId)}` +
-                        `&app_key=${encodeURIComponent(appKey)}` +
-                        `&results_per_page=50` +
-                        `&what=${encodeURIComponent(searchTerm)}` +
-                        `&where=${encodeURIComponent(searchLocation)}` +
-                        `&content-type=application/json`;
 
-                    const response = await fetch(apiUrl);
+// ================================
+// SEARCH ADZUNA
+// ================================
 
-                    if (!response.ok) {
-                        console.log(
-                            "Adzuna response:",
-                            response.status
-                        );
-                        continue;
-                    }
+// Sirf 2 best location variants use karenge.
+// Isse API par unnecessary requests nahi jayengi.
+const limitedLocationSearches =
+    indiaWide
+        ? ["India"]
+        : locationSearches.slice(0, 2);
 
-                    const data = await response.json();
+for (const searchTerm of searchTerms) {
+    for (const searchLocation of limitedLocationSearches) {
 
-                    if (!data || !Array.isArray(data.results)) {
-                        continue;
-                    }
+        try {
+            const apiUrl =
+                `https://api.adzuna.com/v1/api/jobs/in/search/1` +
+                `?app_id=${encodeURIComponent(appId)}` +
+                `&app_key=${encodeURIComponent(appKey)}` +
+                `&results_per_page=50` +
+                `&what=${encodeURIComponent(searchTerm)}` +
+                `&where=${encodeURIComponent(searchLocation)}` +
+                `&content-type=application/json`;
 
-                    for (const job of data.results) {
-                        if (!job || !job.id) {
-                            continue;
-                        }
+            const response = await fetch(apiUrl);
 
-                        if (!jobsMap.has(String(job.id))) {
-                            jobsMap.set(String(job.id), job);
-                        }
-                    }
-                } catch (error) {
-                    console.log(
-                        "Adzuna search error:",
-                        error.message
+            if (!response.ok) {
+                console.log(
+                    "Adzuna response:",
+                    response.status
+                );
+                continue;
+            }
+
+            const data = await response.json();
+
+            if (
+                !data ||
+                !Array.isArray(data.results)
+            ) {
+                continue;
+            }
+
+            for (const job of data.results) {
+
+                if (!job || !job.id) {
+                    continue;
+                }
+
+                if (!jobsMap.has(String(job.id))) {
+                    jobsMap.set(
+                        String(job.id),
+                        job
                     );
                 }
             }
+
+        } catch (error) {
+
+            console.log(
+                "Adzuna search error:",
+                error.message
+            );
         }
+    }
+}
 
-        let jobs = Array.from(jobsMap.values());
-
+let jobs = Array.from(
+    jobsMap.values()
+);
         // ================================
 // STRICT COURSE RELEVANCE
 // ================================
