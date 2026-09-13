@@ -71,6 +71,10 @@ export default async function handler(req, res) {
         ];
 
 
+        // ==========================================
+        // B.TECH CSE
+        // ==========================================
+
         if (course === "B.Tech CSE") {
 
             searches = [
@@ -78,27 +82,48 @@ export default async function handler(req, res) {
                 "part time developer",
                 "part time web developer",
                 "part time IT",
+                "part time computer",
+                "part time technical",
+                "part time data entry",
+                "part time customer support",
                 "freelance developer",
                 "freelance programmer",
-                "part time data entry",
+                "freelance web developer",
                 "temporary computer"
             ];
 
         }
+
+
+        // ==========================================
+        // BCA
+        // ==========================================
 
         else if (course === "BCA") {
 
             searches = [
+                "part time computer",
+                "part time IT",
                 "part time software",
                 "part time developer",
                 "part time web developer",
-                "part time IT",
-                "freelance developer",
+                "part time technical support",
                 "part time data entry",
-                "temporary computer"
+                "part time customer support",
+                "part time computer operator",
+                "freelance developer",
+                "freelance web developer",
+                "freelance computer",
+                "temporary computer",
+                "temporary IT"
             ];
 
         }
+
+
+        // ==========================================
+        // BBA
+        // ==========================================
 
         else if (course === "BBA") {
 
@@ -108,8 +133,15 @@ export default async function handler(req, res) {
                 "part time customer service",
                 "part time business development",
                 "part time office",
+                "part time operations",
+                "part time HR",
+                "part time telecaller",
+                "part time customer support",
                 "freelance sales",
-                "temporary office"
+                "freelance marketing",
+                "freelance business",
+                "temporary office",
+                "temporary sales"
             ];
 
         }
@@ -121,7 +153,9 @@ export default async function handler(req, res) {
 
         let userLatitude = null;
         let userLongitude = null;
+
         let searchArea = location;
+
 
         if (!indiaWide) {
 
@@ -171,19 +205,26 @@ export default async function handler(req, res) {
 
                     success: true,
 
-                    searchedLocation: location,
+                    searchedLocation:
+                        location,
 
-                    searchedArea: location,
+                    searchedArea:
+                        location,
 
-                    radiusKm: 10,
+                    radiusKm:
+                        10,
 
-                    searchMode: "Nearby",
+                    searchMode:
+                        "Nearby",
 
-                    course: course,
+                    course:
+                        course,
 
-                    count: 0,
+                    count:
+                        0,
 
-                    jobs: [],
+                    jobs:
+                        [],
 
                     message:
                         "Location could not be found. Please enter a valid Indian city, area, address or PIN code."
@@ -262,6 +303,7 @@ export default async function handler(req, res) {
 
 
             return earthRadius * c;
+
         }
 
 
@@ -275,6 +317,14 @@ export default async function handler(req, res) {
         for (const searchTerm of searches) {
 
             for (let page = 1; page <= 2; page++) {
+
+                /*
+                 * Local search:
+                 * First search using the actual city/area
+                 *
+                 * India wide:
+                 * Search all India
+                 */
 
                 const params =
                     new URLSearchParams({
@@ -325,6 +375,7 @@ export default async function handler(req, res) {
                         );
 
                         continue;
+
                     }
 
 
@@ -411,34 +462,49 @@ export default async function handler(req, res) {
                     .toLowerCase();
 
 
-                // ----------------------------------
-                // NO INTERNSHIPS
-                // ----------------------------------
+                // ==================================
+                // REMOVE INTERNSHIPS
+                // ==================================
 
                 if (
                     title.includes("internship") ||
                     title.includes("intern ")
                 ) {
+
                     return false;
+
                 }
 
 
-                // ----------------------------------
-                // NO FULL TIME
-                // ----------------------------------
+                // ==================================
+                // REMOVE FULL TIME
+                // ==================================
 
                 if (
                     contractTime === "full_time"
                 ) {
+
                     return false;
+
                 }
 
 
-                // ----------------------------------
-                // PART TIME CHECK
-                // ----------------------------------
+                // ==================================
+                // PART TIME / FREELANCE
+                // ==================================
+
+                /*
+                 * IMPORTANT:
+                 *
+                 * If Adzuna itself says contract_time
+                 * is part_time, accept the job even if
+                 * the words "part time" are missing
+                 * from title/description.
+                 */
 
                 const isPartTime =
+                    contractTime === "part_time" ||
+
                     title.includes("part time") ||
                     title.includes("part-time") ||
                     title.includes("freelance") ||
@@ -451,27 +517,28 @@ export default async function handler(req, res) {
 
 
                 if (!isPartTime) {
+
                     return false;
+
                 }
 
 
-                // ----------------------------------
-                // COURSE CHECK
-                // ----------------------------------
+                // ==================================
+                // ALL COURSES
+                // ==================================
 
                 if (course === "all") {
+
                     return true;
+
                 }
 
 
-                // ----------------------------------
-                // BTECH CSE / BCA
-                // ----------------------------------
+                // ==================================
+                // B.TECH CSE
+                // ==================================
 
-                if (
-                    course === "B.Tech CSE" ||
-                    course === "BCA"
-                ) {
+                if (course === "B.Tech CSE") {
 
                     return (
 
@@ -487,20 +554,60 @@ export default async function handler(req, res) {
                         title.startsWith("it") ||
 
                         description.includes("software") ||
+                        description.includes("developer") ||
                         description.includes("programming") ||
                         description.includes("web development") ||
                         description.includes("computer") ||
                         description.includes("information technology") ||
-                        description.includes("technical")
+                        description.includes("technical") ||
+                        description.includes("data entry") ||
+                        description.includes("coding")
 
                     );
 
                 }
 
 
-                // ----------------------------------
+                // ==================================
+                // BCA
+                // ==================================
+
+                if (course === "BCA") {
+
+                    return (
+
+                        title.includes("software") ||
+                        title.includes("developer") ||
+                        title.includes("web") ||
+                        title.includes("programmer") ||
+                        title.includes("coding") ||
+                        title.includes("computer") ||
+                        title.includes("technical") ||
+                        title.includes("data") ||
+                        title.includes("it ") ||
+                        title.startsWith("it") ||
+                        title.includes("customer support") ||
+
+                        description.includes("software") ||
+                        description.includes("developer") ||
+                        description.includes("programming") ||
+                        description.includes("web development") ||
+                        description.includes("computer") ||
+                        description.includes("information technology") ||
+                        description.includes("technical") ||
+                        description.includes("data entry") ||
+                        description.includes("coding") ||
+                        description.includes("computer operator") ||
+                        description.includes("customer support")
+
+                    );
+
+                }
+
+
+                // ==================================
                 // BBA
-                // ----------------------------------
+                // ==================================
 
                 if (course === "BBA") {
 
@@ -514,13 +621,18 @@ export default async function handler(req, res) {
                         title.includes("hr") ||
                         title.includes("human resource") ||
                         title.includes("management") ||
+                        title.includes("operations") ||
+                        title.includes("telecaller") ||
 
                         description.includes("sales") ||
                         description.includes("marketing") ||
                         description.includes("business development") ||
                         description.includes("customer service") ||
+                        description.includes("customer support") ||
                         description.includes("management") ||
-                        description.includes("human resources")
+                        description.includes("human resources") ||
+                        description.includes("operations") ||
+                        description.includes("office")
 
                     );
 
@@ -533,7 +645,7 @@ export default async function handler(req, res) {
 
 
         // ==========================================
-        // STRICT LOCATION + 10 KM FILTER
+        // STRICT LOCATION FILTER
         // ==========================================
 
         const nearbyJobs =
@@ -543,14 +655,19 @@ export default async function handler(req, res) {
 
                 : filteredJobs.filter(job => {
 
-                    // Job MUST have coordinates
+                    /*
+                     * Job MUST have valid coordinates.
+                     */
+
                     if (
                         job.latitude === undefined ||
                         job.longitude === undefined ||
                         job.latitude === null ||
                         job.longitude === null
                     ) {
+
                         return false;
+
                     }
 
 
@@ -565,9 +682,16 @@ export default async function handler(req, res) {
                         Number.isNaN(jobLatitude) ||
                         Number.isNaN(jobLongitude)
                     ) {
+
                         return false;
+
                     }
 
+
+                    /*
+                     * Calculate REAL distance between
+                     * user's searched location and job.
+                     */
 
                     const distance =
                         calculateDistance(
@@ -578,101 +702,14 @@ export default async function handler(req, res) {
                         );
 
 
-                    // MUST be within 10 km
-                    if (distance > 10) {
-                        return false;
-                    }
-
-
-                    // ----------------------------------
-                    // EXTRA LOCATION VERIFICATION
-                    // ----------------------------------
-
-                    const jobLocation =
-                        String(
-                            job.location?.display_name || ""
-                        ).toLowerCase();
-
-                    const searchedAreaLower =
-                        String(
-                            searchArea || ""
-                        ).toLowerCase();
-
-                    const enteredLocationLower =
-                        location.toLowerCase();
-
-
                     /*
-                     * If Adzuna gives a location name,
-                     * make sure it is not obviously
-                     * from another major city.
+                     * ONLY jobs within 10 KM.
                      */
 
-                    const knownCities = [
-                        "delhi",
-                        "new delhi",
-                        "mumbai",
-                        "bombay",
-                        "bangalore",
-                        "bengaluru",
-                        "hyderabad",
-                        "pune",
-                        "jaipur",
-                        "dehradun",
-                        "chandigarh",
-                        "lucknow",
-                        "noida",
-                        "gurgaon",
-                        "gurugram",
-                        "kolkata",
-                        "chennai",
-                        "ahmedabad",
-                        "surat",
-                        "indore",
-                        "bhopal",
-                        "kanpur",
-                        "nagpur",
-                        "patna",
-                        "agra",
-                        "varanasi"
-                    ];
+                    if (distance > 10) {
 
-
-                    const otherMajorCity =
-                        knownCities.some(city => {
-
-                            if (
-                                !jobLocation.includes(city)
-                            ) {
-                                return false;
-                            }
-
-
-                            /*
-                             * Allow the searched city.
-                             */
-
-                            if (
-                                searchedAreaLower.includes(city) ||
-                                enteredLocationLower.includes(city)
-                            ) {
-                                return false;
-                            }
-
-
-                            /*
-                             * Otherwise this listing
-                             * explicitly belongs to
-                             * another major city.
-                             */
-
-                            return true;
-
-                        });
-
-
-                    if (otherMajorCity) {
                         return false;
+
                     }
 
 
@@ -682,7 +719,7 @@ export default async function handler(req, res) {
 
 
         // ==========================================
-        // SORT BY DISTANCE
+        // SORT BY NEAREST JOB
         // ==========================================
 
         if (!indiaWide) {
