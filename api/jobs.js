@@ -1,1011 +1,621 @@
 export default async function handler(req, res) {
+    // ================================
+    // CORS
+    // ================================
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-
-// ==========================================
-// CORS
-// ==========================================
-
-res.setHeader("Access-Control-Allow-Origin", "*");
-res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
-res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-
-if (req.method === "OPTIONS") {
-    return res.status(200).end();
-}
-
-try {
-
-    // ==========================================
-    // USER INPUT
-    // ==========================================
-
-    const location =
-        String(req.query.location || "").trim();
-
-    const course =
-        String(req.query.course || "all").trim();
-
-    if (!location) {
-        return res.status(400).json({
-            success: false,
-            error: "Location is required"
-        });
+    if (req.method === "OPTIONS") {
+        return res.status(200).end();
     }
 
+    try {
+        // ================================
+        // GET PARAMETERS
+        // ================================
+        const location = String(req.query.location || "").trim();
+        const course = String(req.query.course || "").trim();
 
-    // ==========================================
-    // ADZUNA KEYS
-    // ==========================================
-
-    const appId =
-        process.env.ADZUNA_APP_ID;
-
-    const appKey =
-        process.env.ADZUNA_APP_KEY;
-
-    if (!appId || !appKey) {
-        return res.status(500).json({
-            success: false,
-            error:
-                "Adzuna API credentials are not configured on Vercel."
-        });
-    }
-
-
-    // ==========================================
-    // INDIA WIDE
-    // ==========================================
-
-    const indiaWide =
-        location.toLowerCase() === "india";
-
-
-    // ==========================================
-    // COURSE KEYWORDS
-    // ==========================================
-
-    let searches = [
-        "part time",
-        "freelance",
-        "temporary"
-    ];
-
-
-    if (course === "B.Tech CSE") {
-
-        searches = [
-            "part time developer",
-            "part time IT",
-            "part time computer",
-            "part time data",
-            "part time technical",
-            "freelance developer",
-            "freelance programmer",
-            "freelance web developer"
-        ];
-
-    }
-
-
-    else if (course === "BCA") {
-
-        searches = [
-            "part time computer",
-            "part time IT",
-            "part time developer",
-            "part time data",
-            "part time technical",
-            "part time customer support",
-            "freelance developer",
-            "freelance computer"
-        ];
-
-    }
-
-
-    else if (course === "BBA") {
-
-        searches = [
-            "part time sales",
-            "part time marketing",
-            "part time business",
-            "part time customer",
-            "part time office",
-            "part time operations",
-            "part time HR",
-            "freelance sales"
-        ];
-
-    }
-
-
-    // ==========================================
-    // GEOCODE USER LOCATION
-    // ==========================================
-
-    let userLatitude = null;
-    let userLongitude = null;
-
-    let searchArea = location;
-
-    let district = "";
-    let state = "";
-
-    let locationSearches = [];
-
-
-    if (!indiaWide) {
-
-        const geoQueries = [
-            `${location}, India`,
-            location
-        ];
-
-        let geoData = [];
-
-
-        // --------------------------------------
-        // Try multiple geocoding queries
-        // --------------------------------------
-
-        for (const geoQuery of geoQueries) {
-
-            try {
-
-                const geoUrl =
-                    "https://nominatim.openstreetmap.org/search?" +
-                    new URLSearchParams({
-                        q: geoQuery,
-                        format: "json",
-                        addressdetails: "1",
-                        countrycodes: "in",
-                        limit: "5"
-                    });
-
-
-                const geoResponse =
-                    await fetch(
-                        geoUrl,
-                        {
-                            headers: {
-                                "User-Agent":
-                                    "CollegeBuddy Jobs/1.0"
-                            }
-                        }
-                    );
-
-
-                if (geoResponse.ok) {
-
-                    const result =
-                        await geoResponse.json();
-
-                    if (
-                        Array.isArray(result) &&
-                        result.length > 0
-                    ) {
-
-                        geoData = result;
-                        break;
-
-                    }
-
-                }
-
-            }
-
-            catch (error) {
-
-                console.error(
-                    "Geocoding error:",
-                    error
-                );
-
-            }
-
+        if (!location) {
+            return res.status(400).json({
+                success: false,
+                message: "Please enter a location."
+            });
         }
 
+        if (!course) {
+            return res.status(400).json({
+                success: false,
+                message: "Please select a course."
+            });
+        }
+
+        // ================================
+        // ADZUNA KEYS
+        // ================================
+        const appId = process.env.ADZUNA_APP_ID;
+        const appKey = process.env.ADZUNA_APP_KEY;
+
+        if (!appId || !appKey) {
+            return res.status(500).json({
+                success: false,
+                message: "Adzuna API keys are missing."
+            });
+        }
+
+        // ================================
+        // COURSE KEYWORDS
+        // ================================
+        let courseKeywords = [];
+
+        const courseLower = course.toLowerCase();
 
         if (
-            !geoData ||
-            geoData.length === 0
+            courseLower.includes("b.tech") ||
+            courseLower.includes("btech") ||
+            courseLower.includes("cse")
         ) {
-
-            return res.status(200).json({
-
-                success: true,
-
-                searchedLocation:
-                    location,
-
-                searchedArea:
-                    location,
-
-                radiusKm:
-                    10,
-
-                searchMode:
-                    "Nearby",
-
-                course:
-                    course,
-
-                count:
-                    0,
-
-                jobs:
-                    [],
-
-                message:
-                    "Location could not be found. Please enter a valid Indian city, area, district or PIN code."
-
-            });
-
+            courseKeywords = [
+                "software",
+                "developer",
+                "web developer",
+                "programmer",
+                "programming",
+                "coding",
+                "computer",
+                "technical",
+                "technology",
+                "IT",
+                "data",
+                "QA",
+                "testing",
+                "app",
+                "customer support",
+                "data entry"
+            ];
+        } else if (courseLower.includes("bca")) {
+            courseKeywords = [
+                "software",
+                "developer",
+                "web developer",
+                "programmer",
+                "programming",
+                "coding",
+                "computer",
+                "technical",
+                "technology",
+                "IT",
+                "data",
+                "QA",
+                "testing",
+                "app",
+                "customer support",
+                "data entry",
+                "computer operator"
+            ];
+        } else if (courseLower.includes("bba")) {
+            courseKeywords = [
+                "sales",
+                "marketing",
+                "business",
+                "business development",
+                "customer",
+                "customer support",
+                "HR",
+                "human resources",
+                "management",
+                "operations",
+                "telecaller",
+                "administration",
+                "admin",
+                "relationship",
+                "finance",
+                "account",
+                "data entry",
+                "office"
+            ];
+        } else {
+            courseKeywords = [
+                "student",
+                "part time",
+                "computer",
+                "office",
+                "data",
+                "customer support"
+            ];
         }
 
-
-        // --------------------------------------
-        // Select best Indian result
-        // --------------------------------------
-
-        const geo =
-            geoData.find(item =>
-                item.address?.country_code === "in"
-            ) || geoData[0];
-
-
-        userLatitude =
-            parseFloat(geo.lat);
-
-        userLongitude =
-            parseFloat(geo.lon);
-
-
-        const address =
-            geo.address || {};
-
-
-        searchArea =
-            address.city ||
-            address.town ||
-            address.village ||
-            address.municipality ||
-            address.county ||
-            address.district ||
-            location;
-
-
-        district =
-            address.city_district ||
-            address.district ||
-            address.county ||
-            "";
-
-
-        state =
-            address.state ||
-            "";
-
-
-        // --------------------------------------
-        // Multiple Adzuna location searches
-        // --------------------------------------
-
-        locationSearches = [
-            location,
-            searchArea,
-            district,
-            state
-        ]
-            .map(value =>
-                String(value || "").trim()
-            )
-            .filter(Boolean)
-            .filter(
-                (value, index, array) =>
-                    array.indexOf(value) === index
-            );
-
-
-        // Maximum 3 location variations
-        locationSearches =
-            locationSearches.slice(0, 3);
-
-    }
-
-    else {
-
-        locationSearches = ["India"];
-
-    }
-
-
-    // ==========================================
-    // DISTANCE CALCULATOR
-    // ==========================================
-
-    function calculateDistance(
-        lat1,
-        lon1,
-        lat2,
-        lon2
-    ) {
-
-        const earthRadius = 6371;
-
-        const dLat =
-            (lat2 - lat1) *
-            Math.PI / 180;
-
-        const dLon =
-            (lon2 - lon1) *
-            Math.PI / 180;
-
-
-        const a =
-            Math.sin(dLat / 2) *
-            Math.sin(dLat / 2) +
-
-            Math.cos(
-                lat1 * Math.PI / 180
-            ) *
-
-            Math.cos(
-                lat2 * Math.PI / 180
-            ) *
-
-            Math.sin(dLon / 2) *
-            Math.sin(dLon / 2);
-
-
-        const c =
-            2 *
-            Math.atan2(
-                Math.sqrt(a),
-                Math.sqrt(1 - a)
-            );
-
-
-        return earthRadius * c;
-
-    }
-
-
-    // ==========================================
-    // ADZUNA SEARCH
-    // ==========================================
-
-    const allJobs = [];
-
-
-    /*
-     * We use multiple location variations.
-     *
-     * Example:
-     *
-     * Bhopal
-     * Madhya Pradesh
-     *
-     * But the final 10 km coordinate filter
-     * remains compulsory.
-     */
-
-    for (const searchTerm of searches) {
-
-        for (const whereLocation of locationSearches) {
-
-            const params =
-                new URLSearchParams({
-
-                    app_id:
-                        appId,
-
-                    app_key:
-                        appKey,
-
-                    results_per_page:
-                        "20",
-
-                    what:
-                        searchTerm,
-
-                    where:
-                        whereLocation,
-
-                    sort_by:
-                        "relevance",
-
-                    "content-type":
-                        "application/json"
-
-                });
-
-
-            const apiUrl =
-                `https://api.adzuna.com/v1/api/jobs/in/search/1?${params.toString()}`;
-
-
-            try {
-
-                const response =
-                    await fetch(apiUrl);
-
-
-                if (!response.ok) {
-
-                    console.error(
-                        "Adzuna failed:",
-                        searchTerm,
-                        whereLocation,
-                        response.status
-                    );
-
-                    continue;
-
+        // ================================
+        // INDIA-WIDE SEARCH
+        // ================================
+        const indiaWide =
+            location.toLowerCase() === "india" ||
+            location.toLowerCase() === "all india";
+
+        // ================================
+        // GEOCODING
+        // ================================
+        let userLat = null;
+        let userLon = null;
+
+        let locationCandidates = [];
+
+        if (!indiaWide) {
+            const geoQueries = [
+                `${location}, India`,
+                location
+            ];
+
+            for (const geoQuery of geoQueries) {
+                try {
+                    const geoUrl =
+                        `https://nominatim.openstreetmap.org/search` +
+                        `?format=json` +
+                        `&q=${encodeURIComponent(geoQuery)}` +
+                        `&countrycodes=in` +
+                        `&limit=5` +
+                        `&addressdetails=1`;
+
+                    const geoResponse = await fetch(geoUrl, {
+                        headers: {
+                            "User-Agent": "CollegeBuddy/1.0"
+                        }
+                    });
+
+                    if (!geoResponse.ok) {
+                        continue;
+                    }
+
+                    const geoData = await geoResponse.json();
+
+                    if (Array.isArray(geoData)) {
+                        locationCandidates.push(...geoData);
+                    }
+                } catch (error) {
+                    console.log("Geocoding error:", error.message);
                 }
-
-
-                const data =
-                    await response.json();
-
-
-                if (
-                    data.results &&
-                    Array.isArray(data.results)
-                ) {
-
-                    allJobs.push(
-                        ...data.results
-                    );
-
-                }
-
             }
 
-            catch (error) {
+            // Remove duplicate coordinates
+            const seenCoordinates = new Set();
 
-                console.error(
-                    "Adzuna request error:",
-                    error
+            locationCandidates = locationCandidates.filter((item) => {
+                const key = `${item.lat},${item.lon}`;
+
+                if (seenCoordinates.has(key)) {
+                    return false;
+                }
+
+                seenCoordinates.add(key);
+                return true;
+            });
+
+            if (locationCandidates.length === 0) {
+                return res.status(200).json({
+                    success: true,
+                    searchedLocation: location,
+                    course,
+                    radiusKm: 10,
+                    count: 0,
+                    jobs: [],
+                    message: `Location "${location}" could not be found in India.`
+                });
+            }
+
+            // Best matching location
+            const bestLocation = locationCandidates[0];
+
+            userLat = Number(bestLocation.lat);
+            userLon = Number(bestLocation.lon);
+        }
+
+        // ================================
+        // LOCATION SEARCH TERMS
+        // ================================
+        let locationSearches = [];
+
+        if (indiaWide) {
+            locationSearches = [
+                "India"
+            ];
+        } else {
+            const best = locationCandidates[0];
+            const address = best.address || {};
+
+            const values = [
+                location,
+                address.city,
+                address.town,
+                address.village,
+                address.municipality,
+                address.suburb,
+                address.county,
+                address.district,
+                address.state_district,
+                address.state
+            ];
+
+            for (const value of values) {
+                if (value && typeof value === "string") {
+                    const cleanValue = value.trim();
+
+                    if (
+                        cleanValue &&
+                        !locationSearches.some(
+                            x => x.toLowerCase() === cleanValue.toLowerCase()
+                        )
+                    ) {
+                        locationSearches.push(cleanValue);
+                    }
+                }
+            }
+
+            // Maximum 4 location variants
+            locationSearches = locationSearches.slice(0, 4);
+        }
+
+        // ================================
+        // HAVERSINE DISTANCE
+        // ================================
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const earthRadiusKm = 6371;
+
+            const dLat =
+                (lat2 - lat1) * Math.PI / 180;
+
+            const dLon =
+                (lon2 - lon1) * Math.PI / 180;
+
+            const a =
+                Math.sin(dLat / 2) *
+                Math.sin(dLat / 2) +
+                Math.cos(lat1 * Math.PI / 180) *
+                Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLon / 2) *
+                Math.sin(dLon / 2);
+
+            const c =
+                2 *
+                Math.atan2(
+                    Math.sqrt(a),
+                    Math.sqrt(1 - a)
                 );
 
+            return earthRadiusKm * c;
+        }
+
+        // ================================
+        // ADZUNA SEARCH TERMS
+        // ================================
+        const searchTerms = [
+            "part time",
+            "part-time",
+            "freelance",
+            "temporary",
+            "student job",
+            "part time student"
+        ];
+
+        const jobsMap = new Map();
+
+        // ================================
+        // SEARCH ADZUNA
+        // ================================
+        for (const searchTerm of searchTerms) {
+            for (const searchLocation of locationSearches) {
+                try {
+                    const apiUrl =
+                        `https://api.adzuna.com/v1/api/jobs/in/search/1` +
+                        `?app_id=${encodeURIComponent(appId)}` +
+                        `&app_key=${encodeURIComponent(appKey)}` +
+                        `&results_per_page=50` +
+                        `&what=${encodeURIComponent(searchTerm)}` +
+                        `&where=${encodeURIComponent(searchLocation)}` +
+                        `&content-type=application/json`;
+
+                    const response = await fetch(apiUrl);
+
+                    if (!response.ok) {
+                        console.log(
+                            "Adzuna response:",
+                            response.status
+                        );
+                        continue;
+                    }
+
+                    const data = await response.json();
+
+                    if (!data || !Array.isArray(data.results)) {
+                        continue;
+                    }
+
+                    for (const job of data.results) {
+                        if (!job || !job.id) {
+                            continue;
+                        }
+
+                        if (!jobsMap.has(String(job.id))) {
+                            jobsMap.set(String(job.id), job);
+                        }
+                    }
+                } catch (error) {
+                    console.log(
+                        "Adzuna search error:",
+                        error.message
+                    );
+                }
             }
-
         }
 
-    }
+        let jobs = Array.from(jobsMap.values());
 
-
-    // ==========================================
-    // REMOVE DUPLICATES
-    // ==========================================
-
-    const uniqueJobs = [];
-
-    const seenIds = new Set();
-
-
-    for (const job of allJobs) {
-
-        if (!job.id) {
-            continue;
-        }
-
-
-        const id =
-            String(job.id);
-
-
-        if (seenIds.has(id)) {
-            continue;
-        }
-
-
-        seenIds.add(id);
-
-        uniqueJobs.push(job);
-
-    }
-
-
-    // ==========================================
-    // COURSE MATCHING
-    // ==========================================
-
-    function matchesCourse(
-        title,
-        description
-    ) {
-
-        const text =
-            `${title} ${description}`
-            .toLowerCase();
-
-
-        // --------------------------------------
-        // All courses
-        // --------------------------------------
-
-        if (course === "all") {
-            return true;
-        }
-
-
-        // --------------------------------------
-        // B.Tech CSE
-        // --------------------------------------
-
-        if (course === "B.Tech CSE") {
-
-            return (
-
-                text.includes("software") ||
-                text.includes("developer") ||
-                text.includes("web") ||
-                text.includes("programmer") ||
-                text.includes("programming") ||
-                text.includes("coding") ||
-                text.includes("computer") ||
-                text.includes("technical") ||
-                text.includes("technology") ||
-                text.includes("information technology") ||
-                text.includes("data") ||
-                text.includes("it ") ||
-                text.startsWith("it") ||
-                text.includes("qa") ||
-                text.includes("testing") ||
-                text.includes("app developer") ||
-                text.includes("application developer")
-
-            );
-
-        }
-
-
-        // --------------------------------------
-        // BCA
-        // --------------------------------------
-
-        if (course === "BCA") {
-
-            return (
-
-                text.includes("software") ||
-                text.includes("developer") ||
-                text.includes("web") ||
-                text.includes("programmer") ||
-                text.includes("programming") ||
-                text.includes("coding") ||
-                text.includes("computer") ||
-                text.includes("technical") ||
-                text.includes("technology") ||
-                text.includes("information technology") ||
-                text.includes("data") ||
-                text.includes("it ") ||
-                text.startsWith("it") ||
-                text.includes("customer support") ||
-                text.includes("computer operator") ||
-                text.includes("data entry") ||
-                text.includes("qa") ||
-                text.includes("testing") ||
-                text.includes("app")
-
-            );
-
-        }
-
-
-        // --------------------------------------
-        // BBA
-        // --------------------------------------
-
-        if (course === "BBA") {
-
-            return (
-
-                text.includes("sales") ||
-                text.includes("marketing") ||
-                text.includes("business") ||
-                text.includes("customer") ||
-                text.includes("office") ||
-                text.includes("hr") ||
-                text.includes("human resource") ||
-                text.includes("management") ||
-                text.includes("operations") ||
-                text.includes("telecaller") ||
-                text.includes("administration") ||
-                text.includes("admin") ||
-                text.includes("relationship") ||
-                text.includes("finance") ||
-                text.includes("account")
-
-            );
-
-        }
-
-
-        return false;
-
-    }
-
-
-    // ==========================================
-    // FILTER JOBS
-    // ==========================================
-
-    const filteredJobs =
-        uniqueJobs.filter(job => {
-
-            const title =
-                String(job.title || "")
+        // ================================
+        // COURSE RELEVANCE
+        // ================================
+        function matchesCourse(job) {
+            const text = [
+                job.title || "",
+                job.description || "",
+                job.category?.label || ""
+            ]
+                .join(" ")
                 .toLowerCase();
 
-            const description =
-                String(job.description || "")
-                .toLowerCase();
-
-            const contractTime =
-                String(job.contract_time || "")
-                .toLowerCase();
-
-
-            // ----------------------------------
-            // REMOVE INTERNSHIPS
-            // ----------------------------------
-
-            if (
-                title.includes("internship") ||
-                title.includes("intern ")
-            ) {
-
-                return false;
-
-            }
-
-
-            // ----------------------------------
-            // REMOVE FULL TIME
-            // ----------------------------------
-
-            if (
-                contractTime === "full_time"
-            ) {
-
-                return false;
-
-            }
-
-
-            // ----------------------------------
-            // PART TIME / FREELANCE
-            // ----------------------------------
-
-            const isPartTime =
-                contractTime === "part_time" ||
-
-                title.includes("part time") ||
-                title.includes("part-time") ||
-
-                title.includes("freelance") ||
-                title.includes("temporary") ||
-
-                description.includes("part time") ||
-                description.includes("part-time") ||
-
-                description.includes("freelance") ||
-                description.includes("temporary");
-
-
-            if (!isPartTime) {
-
-                return false;
-
-            }
-
-
-            // ----------------------------------
-            // COURSE FILTER
-            // ----------------------------------
-
-            return matchesCourse(
-                title,
-                description
+            return courseKeywords.some(keyword =>
+                text.includes(keyword.toLowerCase())
             );
+        }
 
+        // ================================
+        // PART-TIME RELEVANCE
+        // ================================
+        function isPartTime(job) {
+            const text = [
+                job.title || "",
+                job.description || "",
+                job.contract_type || "",
+                job.contract_time || ""
+            ]
+                .join(" ")
+                .toLowerCase();
+
+            const positiveTerms = [
+                "part time",
+                "part-time",
+                "parttime",
+                "freelance",
+                "temporary",
+                "student job",
+                "flexible hours",
+                "flexible working"
+            ];
+
+            return positiveTerms.some(term =>
+                text.includes(term)
+            );
+        }
+
+        // ================================
+        // REMOVE INTERNSHIPS
+        // ================================
+        jobs = jobs.filter(job => {
+            const text = [
+                job.title || "",
+                job.description || "",
+                job.category?.label || ""
+            ]
+                .join(" ")
+                .toLowerCase();
+
+            return !text.includes("internship");
         });
 
+        // ================================
+        // REMOVE CLEAR FULL-TIME JOBS
+        // ================================
+        jobs = jobs.filter(job => {
+            const contractTime =
+                String(job.contract_time || "").toLowerCase();
 
-    // ==========================================
-    // STRICT 10 KM LOCATION FILTER
-    // ==========================================
-
-    const nearbyJobs =
-        indiaWide
-
-            ? filteredJobs
-
-            : filteredJobs.filter(job => {
-
-                if (
-                    job.latitude === undefined ||
-                    job.longitude === undefined ||
-                    job.latitude === null ||
-                    job.longitude === null
-                ) {
-
-                    return false;
-
-                }
-
-
-                const jobLatitude =
-                    parseFloat(job.latitude);
-
-                const jobLongitude =
-                    parseFloat(job.longitude);
-
-
-                if (
-                    Number.isNaN(jobLatitude) ||
-                    Number.isNaN(jobLongitude)
-                ) {
-
-                    return false;
-
-                }
-
-
-                const distance =
-                    calculateDistance(
-                        userLatitude,
-                        userLongitude,
-                        jobLatitude,
-                        jobLongitude
-                    );
-
-
-                return distance <= 10;
-
-            });
-
-
-    // ==========================================
-    // SORT NEAREST FIRST
-    // ==========================================
-
-    if (!indiaWide) {
-
-        nearbyJobs.sort(
-            (a, b) => {
-
-                const distanceA =
-                    calculateDistance(
-                        userLatitude,
-                        userLongitude,
-                        parseFloat(a.latitude),
-                        parseFloat(a.longitude)
-                    );
-
-
-                const distanceB =
-                    calculateDistance(
-                        userLatitude,
-                        userLongitude,
-                        parseFloat(b.latitude),
-                        parseFloat(b.longitude)
-                    );
-
-
-                return distanceA - distanceB;
-
+            if (contractTime === "full_time") {
+                return false;
             }
-        );
 
-    }
+            return true;
+        });
 
+        // ================================
+        // PART-TIME + COURSE FILTER
+        // ================================
+        jobs = jobs.filter(job => {
+            return isPartTime(job) && matchesCourse(job);
+        });
 
-    // ==========================================
-    // PHONE
-    // ==========================================
+        // ================================
+        // DISTANCE FILTER
+        // ================================
+        const filteredJobs = [];
 
-    function extractPhone(text) {
-
-        const match =
-            String(text || "").match(
-                /(?:\+91[\s-]?)?[6-9]\d{9}/
+        for (const job of jobs) {
+            const jobLat = Number(
+                job.latitude
             );
 
-
-        return match
-            ? match[0]
-            : "";
-
-    }
-
-
-    // ==========================================
-    // EMAIL
-    // ==========================================
-
-    function extractEmail(text) {
-
-        const match =
-            String(text || "").match(
-                /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i
+            const jobLon = Number(
+                job.longitude
             );
 
+            // India-wide = no 10 km filter
+            if (indiaWide) {
+                filteredJobs.push({
+                    job,
+                    distance: null
+                });
 
-        return match
-            ? match[0]
-            : "";
+                continue;
+            }
 
-    }
+            // Job must have coordinates
+            if (
+                !Number.isFinite(jobLat) ||
+                !Number.isFinite(jobLon) ||
+                !Number.isFinite(userLat) ||
+                !Number.isFinite(userLon)
+            ) {
+                continue;
+            }
 
+            const distance = calculateDistance(
+                userLat,
+                userLon,
+                jobLat,
+                jobLon
+            );
 
-    // ==========================================
-    // FINAL JOB DATA
-    // ==========================================
+            // STRICT 10 KM
+            if (distance <= 10) {
+                filteredJobs.push({
+                    job,
+                    distance
+                });
+            }
+        }
 
-    const jobs =
-        nearbyJobs
-            .slice(0, 30)
-            .map(job => {
+        // ================================
+        // SORT NEAREST FIRST
+        // ================================
+        filteredJobs.sort((a, b) => {
+            if (
+                a.distance === null ||
+                b.distance === null
+            ) {
+                return 0;
+            }
 
-                let distance = null;
+            return a.distance - b.distance;
+        });
 
+        // ================================
+        // EXTRACT CONTACT DETAILS
+        // ================================
+        function extractPhone(text) {
+            if (!text) {
+                return null;
+            }
 
-                if (
-                    !indiaWide &&
-                    job.latitude !== undefined &&
-                    job.longitude !== undefined
-                ) {
+            const matches = text.match(
+                /(?:\+91[\s-]?)?[6-9]\d{9}/g
+            );
 
-                    distance =
-                        calculateDistance(
-                            userLatitude,
-                            userLongitude,
-                            parseFloat(job.latitude),
-                            parseFloat(job.longitude)
-                        );
+            return matches && matches.length
+                ? matches[0]
+                : null;
+        }
 
-                }
+        function extractEmail(text) {
+            if (!text) {
+                return null;
+            }
 
+            const matches = text.match(
+                /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi
+            );
 
-                const description =
-                    job.description ||
-                    "Job description not available";
+            return matches && matches.length
+                ? matches[0]
+                : null;
+        }
 
+        // ================================
+        // FINAL RESPONSE
+        // ================================
+        const finalJobs = filteredJobs.map(item => {
+            const job = item.job;
 
-                return {
+            const description =
+                job.description || "";
 
-                    id:
-                        String(job.id || ""),
+            const phone =
+                extractPhone(description);
 
-                    title:
-                        job.title ||
-                        "Job title not available",
+            const email =
+                extractEmail(description);
 
-                    company:
-                        job.company?.display_name ||
-                        "Company not provided",
+            return {
+                id: String(job.id),
 
-                    location:
-                        job.location?.display_name ||
-                        searchArea,
+                title:
+                    job.title ||
+                    "Job title not provided",
 
-                    description:
-                        description,
+                company:
+                    job.company?.display_name ||
+                    "Company not provided",
 
-                    salaryMin:
-                        job.salary_min ||
-                        null,
+                location:
+                    job.location?.display_name ||
+                    "Location not provided",
 
-                    salaryMax:
-                        job.salary_max ||
-                        null,
+                description,
 
-                    contractTime:
-                        job.contract_time ||
-                        "",
+                salary:
+                    job.salary_min || job.salary_max
+                        ? `${job.salary_min || ""} - ${job.salary_max || ""}`
+                        : "Salary not provided",
 
-                    contractType:
-                        job.contract_type ||
-                        "",
+                contractTime:
+                    job.contract_time ||
+                    "Not specified",
 
-                    latitude:
-                        job.latitude ||
-                        null,
+                distanceKm:
+                    item.distance === null
+                        ? null
+                        : Number(
+                            item.distance.toFixed(2)
+                        ),
 
-                    longitude:
-                        job.longitude ||
-                        null,
+                phone,
 
-                    distance:
-                        distance !== null
-                            ? Number(
-                                distance.toFixed(2)
-                            )
-                            : null,
+                email,
 
-                    phone:
-                        extractPhone(description),
+                applyUrl:
+                    job.redirect_url ||
+                    null
+            };
+        });
 
-                    email:
-                        extractEmail(description),
+        // ================================
+        // RESPONSE
+        // ================================
+        return res.status(200).json({
+            success: true,
 
-                    applyUrl:
-                        job.redirect_url ||
-                        "",
+            searchedLocation: location,
 
-                    source:
-                        "Adzuna"
-
-                };
-
-            });
-
-
-    // ==========================================
-    // FINAL RESPONSE
-    // ==========================================
-
-    return res.status(200).json({
-
-        success:
-            true,
-
-        searchedLocation:
-            location,
-
-        searchedArea:
-            searchArea,
-
-        radiusKm:
-            indiaWide
-                ? null
-                : 10,
-
-        searchMode:
-            indiaWide
-                ? "India"
-                : "Nearby",
-
-        course:
             course,
 
-        count:
-            jobs.length,
+            radiusKm:
+                indiaWide ? null : 10,
 
-        jobs:
-            jobs
+            count:
+                finalJobs.length,
 
-    });
+            jobs:
+                finalJobs
+        });
 
+    } catch (error) {
+        console.error(
+            "Jobs API Error:",
+            error
+        );
 
-}
-
-catch (error) {
-
-    console.error(
-        "Jobs API Error:",
-        error
-    );
-
-
-    return res.status(500).json({
-
-        success:
-            false,
-
-        error:
-            "Server error",
-
-        message:
-            error.message
-
-    });
-
-}
-
-
+        return res.status(500).json({
+            success: false,
+            message: "Something went wrong while searching jobs.",
+            error:
+                error.message || "Unknown error"
+        });
+    }
 }
