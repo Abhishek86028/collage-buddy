@@ -60,27 +60,23 @@ export default async function handler(req, res) {
         if (!appId || !appKey) {
 
             return res.status(500).json({
-
                 error:
                     "Adzuna API credentials are not configured on Vercel."
-
             });
 
         }
 
 
         // ==========================================
-        // COURSE SEARCH KEYWORDS
+        // SEARCH KEYWORDS
         // ==========================================
 
         let searches = [
-
             "part time jobs",
-            "student jobs",
+            "part-time jobs",
             "freelance jobs",
-            "internship",
+            "internship jobs",
             "work from home part time"
-
         ];
 
 
@@ -91,13 +87,11 @@ export default async function handler(req, res) {
         if (course === "B.Tech CSE") {
 
             searches = [
-
                 "part time software developer",
                 "part time web developer",
                 "part time IT support",
-                "software internship",
+                "software developer internship",
                 "freelance programmer"
-
             ];
 
         }
@@ -110,13 +104,11 @@ export default async function handler(req, res) {
         if (course === "BCA") {
 
             searches = [
-
                 "part time software developer",
                 "part time web developer",
                 "part time IT support",
                 "part time data entry",
                 "computer internship"
-
             ];
 
         }
@@ -129,26 +121,22 @@ export default async function handler(req, res) {
         if (course === "BBA") {
 
             searches = [
-
                 "part time sales",
                 "part time marketing",
                 "part time customer service",
                 "part time business development",
                 "business internship"
-
             ];
 
         }
 
 
         // ==========================================
-        // GEOCODE USER ADDRESS
+        // GEOCODE LOCATION
         // ==========================================
 
-        const geoResponse = await fetch(
-
+        const geoUrl =
             "https://nominatim.openstreetmap.org/search?" +
-
             new URLSearchParams({
 
                 q:
@@ -163,29 +151,26 @@ export default async function handler(req, res) {
                 limit:
                     "1"
 
-            }),
+            });
 
-            {
 
-                headers: {
-
-                    "User-Agent":
-                        "CollegeBuddy Jobs/1.0"
-
+        const geoResponse =
+            await fetch(
+                geoUrl,
+                {
+                    headers: {
+                        "User-Agent":
+                            "CollegeBuddy Jobs/1.0"
+                    }
                 }
-
-            }
-
-        );
+            );
 
 
         if (!geoResponse.ok) {
 
             return res.status(500).json({
-
                 error:
                     "Unable to find the entered location."
-
             });
 
         }
@@ -211,6 +196,9 @@ export default async function handler(req, res) {
                 course:
                     course,
 
+                radiusKm:
+                    10,
+
                 count:
                     0,
 
@@ -226,7 +214,7 @@ export default async function handler(req, res) {
 
 
         // ==========================================
-        // USER LATITUDE / LONGITUDE
+        // USER COORDINATES
         // ==========================================
 
         const userLatitude =
@@ -237,7 +225,7 @@ export default async function handler(req, res) {
 
 
         // ==========================================
-        // BETTER LOCATION FOR ADZUNA SEARCH
+        // SEARCH AREA
         // ==========================================
 
         const address =
@@ -254,7 +242,7 @@ export default async function handler(req, res) {
 
 
         // ==========================================
-        // DISTANCE CALCULATION
+        // DISTANCE FUNCTION
         // ==========================================
 
         function calculateDistance(
@@ -267,9 +255,11 @@ export default async function handler(req, res) {
             const earthRadius =
                 6371;
 
+
             const dLat =
                 (lat2 - lat1) *
                 Math.PI / 180;
+
 
             const dLon =
                 (lon2 - lon1) *
@@ -314,9 +304,6 @@ export default async function handler(req, res) {
 
         for (const searchTerm of searches) {
 
-            // Search first 2 pages
-            // to get more genuine listings
-
             for (
                 let page = 1;
                 page <= 2;
@@ -348,41 +335,49 @@ export default async function handler(req, res) {
 
 
                 const apiUrl =
-
                     `https://api.adzuna.com/v1/api/jobs/in/search/${page}?${params.toString()}`;
 
 
-                const response =
-                    await fetch(apiUrl);
+                try {
+
+                    const response =
+                        await fetch(apiUrl);
 
 
-                if (!response.ok) {
+                    if (!response.ok) {
+
+                        console.error(
+                            "Adzuna failed:",
+                            searchTerm,
+                            page,
+                            response.status
+                        );
+
+                        continue;
+
+                    }
+
+
+                    const data =
+                        await response.json();
+
+
+                    if (
+                        data.results &&
+                        Array.isArray(data.results)
+                    ) {
+
+                        allJobs.push(
+                            ...data.results
+                        );
+
+                    }
+
+                } catch (error) {
 
                     console.error(
-                        "Adzuna search failed:",
-                        searchTerm,
-                        "page:",
-                        page,
-                        "status:",
-                        response.status
-                    );
-
-                    continue;
-
-                }
-
-
-                const data =
-                    await response.json();
-
-
-                if (
-                    data.results &&
-                    Array.isArray(data.results)
-                ) {
-
-                    allJobs.push(
-                        ...data.results
+                        "Adzuna request error:",
+                        error
                     );
 
                 }
@@ -393,7 +388,7 @@ export default async function handler(req, res) {
 
 
         // ==========================================
-        // REMOVE DUPLICATE JOBS
+        // REMOVE DUPLICATES
         // ==========================================
 
         const uniqueJobs = [];
@@ -409,12 +404,19 @@ export default async function handler(req, res) {
             }
 
 
-            if (seenIds.has(job.id)) {
+            if (
+                seenIds.has(
+                    String(job.id)
+                )
+            ) {
                 continue;
             }
 
 
-            seenIds.add(job.id);
+            seenIds.add(
+                String(job.id)
+            );
+
 
             uniqueJobs.push(job);
 
@@ -422,14 +424,15 @@ export default async function handler(req, res) {
 
 
         // ==========================================
-        // FILTER 10 KM + REAL PART-TIME RELEVANCE
+        // FILTER JOBS
         // ==========================================
 
         const nearbyJobs =
             uniqueJobs.filter(job => {
 
-
-                // Job must have coordinates
+                // ----------------------------------
+                // Coordinates required
+                // ----------------------------------
 
                 if (
                     job.latitude === undefined ||
@@ -446,6 +449,7 @@ export default async function handler(req, res) {
                 const jobLatitude =
                     parseFloat(job.latitude);
 
+
                 const jobLongitude =
                     parseFloat(job.longitude);
 
@@ -460,7 +464,9 @@ export default async function handler(req, res) {
                 }
 
 
-                // Calculate distance
+                // ----------------------------------
+                // Distance
+                // ----------------------------------
 
                 const distance =
                     calculateDistance(
@@ -474,7 +480,9 @@ export default async function handler(req, res) {
                     );
 
 
-                // MUST be within 10 KM
+                // ----------------------------------
+                // ONLY 10 KM
+                // ----------------------------------
 
                 if (distance > 10) {
 
@@ -483,9 +491,9 @@ export default async function handler(req, res) {
                 }
 
 
-                // ==================================
-                // JOB TEXT
-                // ==================================
+                // ----------------------------------
+                // Job text
+                // ----------------------------------
 
                 const title =
                     (
@@ -508,116 +516,153 @@ export default async function handler(req, res) {
                     ).toLowerCase();
 
 
-                const text =
-                    title +
-                    " " +
-                    description;
+                const contractType =
+                    (
+                        job.contract_type ||
+                        ""
+                    ).toLowerCase();
 
 
-               // ==================================
-// STRICT PART-TIME / INTERNSHIP FILTER
-// ==================================
+                // ----------------------------------
+                // NEVER SHOW FULL-TIME
+                // ----------------------------------
 
-const title =
-    (job.title || "").toLowerCase();
+                if (
+                    contractTime === "full_time"
+                ) {
 
-const description =
-    (job.description || "").toLowerCase();
+                    return false;
 
-const contractTime =
-    (job.contract_time || "").toLowerCase();
-
-const contractType =
-    (job.contract_type || "").toLowerCase();
+                }
 
 
-// ==================================
-// 1. NEVER SHOW FULL-TIME JOBS
-// ==================================
+                // ----------------------------------
+                // REAL INTERNSHIP
+                // Title only
+                // ----------------------------------
 
-if (contractTime === "full_time") {
-    return false;
-}
-
-
-// ==================================
-// 2. CHECK TITLE FOR REAL INTERNSHIP
-// ==================================
-
-const isInternshipJob =
-    title.includes("intern") ||
-    title.includes("internship");
+                const isInternshipJob =
+                    title.includes("intern") ||
+                    title.includes("internship");
 
 
-// ==================================
-// 3. CHECK TITLE FOR PART-TIME
-// ==================================
+                // ----------------------------------
+                // PART-TIME IN TITLE
+                // ----------------------------------
 
-const isPartTimeTitle =
-    title.includes("part time") ||
-    title.includes("part-time");
-
-
-// ==================================
-// 4. CHECK DESCRIPTION FOR EXPLICIT PART-TIME
-// ==================================
-
-const isPartTimeDescription =
-    description.includes("part time job") ||
-    description.includes("part-time job") ||
-    description.includes("part time position") ||
-    description.includes("part-time position") ||
-    description.includes("part time role") ||
-    description.includes("part-time role") ||
-    description.includes("part time work") ||
-    description.includes("part-time work") ||
-    description.includes("part time opportunity") ||
-    description.includes("part-time opportunity") ||
-    description.includes("work from home part time") ||
-    description.includes("part time work from home");
+                const isPartTimeTitle =
+                    title.includes("part time") ||
+                    title.includes("part-time");
 
 
-// ==================================
-// 5. FREELANCE JOB
-// ==================================
+                // ----------------------------------
+                // EXPLICIT PART-TIME DESCRIPTION
+                // ----------------------------------
 
-const isFreelance =
-    title.includes("freelance") ||
-    description.includes("freelance position") ||
-    description.includes("freelance job") ||
-    description.includes("freelance work");
+                const isPartTimeDescription =
+
+                    description.includes(
+                        "part time job"
+                    ) ||
+
+                    description.includes(
+                        "part-time job"
+                    ) ||
+
+                    description.includes(
+                        "part time position"
+                    ) ||
+
+                    description.includes(
+                        "part-time position"
+                    ) ||
+
+                    description.includes(
+                        "part time role"
+                    ) ||
+
+                    description.includes(
+                        "part-time role"
+                    ) ||
+
+                    description.includes(
+                        "part time work"
+                    ) ||
+
+                    description.includes(
+                        "part-time work"
+                    ) ||
+
+                    description.includes(
+                        "part time opportunity"
+                    ) ||
+
+                    description.includes(
+                        "part-time opportunity"
+                    ) ||
+
+                    description.includes(
+                        "work from home part time"
+                    ) ||
+
+                    description.includes(
+                        "part time work from home"
+                    );
 
 
-// ==================================
-// 6. TEMPORARY JOB
-// ==================================
+                // ----------------------------------
+                // FREELANCE
+                // ----------------------------------
 
-const isTemporary =
-    title.includes("temporary") ||
-    description.includes("temporary position") ||
-    description.includes("temporary job");
+                const isFreelance =
 
+                    title.includes(
+                        "freelance"
+                    ) ||
 
-// ==================================
-// 7. ALLOW ONLY GENUINE RELEVANT JOBS
-// ==================================
+                    description.includes(
+                        "freelance position"
+                    ) ||
 
-if (
-    !isInternshipJob &&
-    !isPartTimeTitle &&
-    !isPartTimeDescription &&
-    !isFreelance &&
-    !isTemporary
-) {
-    return false;
-}
+                    description.includes(
+                        "freelance job"
+                    ) ||
+
+                    description.includes(
+                        "freelance work"
+                    );
 
 
-                // ==================================
-                // MUST HAVE PART-TIME RELEVANCE
-                // ==================================
+                // ----------------------------------
+                // TEMPORARY
+                // ----------------------------------
 
-                if (!hasPartTimeSignal) {
+                const isTemporary =
+
+                    title.includes(
+                        "temporary"
+                    ) ||
+
+                    description.includes(
+                        "temporary position"
+                    ) ||
+
+                    description.includes(
+                        "temporary job"
+                    );
+
+
+                // ----------------------------------
+                // MUST MATCH ONE
+                // ----------------------------------
+
+                if (
+                    !isInternshipJob &&
+                    !isPartTimeTitle &&
+                    !isPartTimeDescription &&
+                    !isFreelance &&
+                    !isTemporary
+                ) {
 
                     return false;
 
@@ -630,7 +675,7 @@ if (
 
 
         // ==========================================
-        // SORT BY NEAREST FIRST
+        // SORT NEAREST FIRST
         // ==========================================
 
         nearbyJobs.sort(
@@ -667,16 +712,18 @@ if (
 
 
         // ==========================================
-        // FORMAT PHONE / EMAIL
-        // ONLY IF LISTING PROVIDES IT
+        // PHONE EXTRACTION
         // ==========================================
 
         function extractPhone(text) {
 
             const match =
-                text.match(
+                (
+                    text || ""
+                ).match(
                     /(?:\+91[\s-]?)?[6-9]\d{9}/
                 );
+
 
             return match
                 ? match[0]
@@ -685,12 +732,19 @@ if (
         }
 
 
+        // ==========================================
+        // EMAIL EXTRACTION
+        // ==========================================
+
         function extractEmail(text) {
 
             const match =
-                text.match(
+                (
+                    text || ""
+                ).match(
                     /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i
                 );
+
 
             return match
                 ? match[0]
@@ -707,7 +761,6 @@ if (
             nearbyJobs
                 .slice(0, 30)
                 .map(job => {
-
 
                     const distance =
                         calculateDistance(
@@ -729,80 +782,67 @@ if (
                     return {
 
                         id:
-                            job.id || "",
-
+                            String(
+                                job.id || ""
+                            ),
 
                         title:
                             job.title ||
                             "Job title not available",
 
-
                         company:
                             job.company?.display_name ||
                             "Company not provided",
-
 
                         location:
                             job.location?.display_name ||
                             searchArea,
 
-
                         description:
                             description,
-
 
                         salaryMin:
                             job.salary_min ||
                             null,
 
-
                         salaryMax:
                             job.salary_max ||
                             null,
-
 
                         contractTime:
                             job.contract_time ||
                             "",
 
-
                         contractType:
                             job.contract_type ||
                             "",
-
 
                         latitude:
                             job.latitude ||
                             null,
 
-
                         longitude:
                             job.longitude ||
                             null,
-
 
                         distance:
                             Number(
                                 distance.toFixed(2)
                             ),
 
-
                         phone:
                             extractPhone(
                                 description
                             ),
-
 
                         email:
                             extractEmail(
                                 description
                             ),
 
-
                         applyUrl:
                             job.redirect_url ||
                             "",
-
 
                         source:
                             "Adzuna"
@@ -813,7 +853,7 @@ if (
 
 
         // ==========================================
-        // RESPONSE
+        // FINAL RESPONSE
         // ==========================================
 
         return res.status(200).json({
