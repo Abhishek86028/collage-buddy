@@ -424,254 +424,185 @@ export default async function handler(req, res) {
 
 
         // ==========================================
-        // FILTER JOBS
+// FINAL JOB FILTER
+// 10 KM + PART-TIME + COURSE RELEVANCE
+// ==========================================
+
+const nearbyJobs =
+    uniqueJobs.filter(job => {
+
+        // Coordinates
+        if (
+            job.latitude === undefined ||
+            job.longitude === undefined ||
+            job.latitude === null ||
+            job.longitude === null
+        ) {
+            return false;
+        }
+
+        const jobLatitude =
+            parseFloat(job.latitude);
+
+        const jobLongitude =
+            parseFloat(job.longitude);
+
+        if (
+            Number.isNaN(jobLatitude) ||
+            Number.isNaN(jobLongitude)
+        ) {
+            return false;
+        }
+
+        // Distance
+        const distance =
+            calculateDistance(
+                userLatitude,
+                userLongitude,
+                jobLatitude,
+                jobLongitude
+            );
+
+        // Maximum 10 KM
+        if (distance > 10) {
+            return false;
+        }
+
+        // Job information
+        const title =
+            (job.title || "").toLowerCase();
+
+        const description =
+            (job.description || "").toLowerCase();
+
+        const contractTime =
+            (job.contract_time || "").toLowerCase();
+
+        // Never show full-time
+        if (contractTime === "full_time") {
+            return false;
+        }
+
+        // ==========================================
+        // PART-TIME / INTERNSHIP CHECK
         // ==========================================
 
-        const nearbyJobs =
-            uniqueJobs.filter(job => {
+        const partTime =
+            title.includes("part time") ||
+            title.includes("part-time") ||
+            title.includes("freelance") ||
+            title.includes("intern") ||
+            title.includes("internship") ||
+            title.includes("temporary") ||
+            description.includes("part time job") ||
+            description.includes("part-time job") ||
+            description.includes("part time position") ||
+            description.includes("part-time position") ||
+            description.includes("part time role") ||
+            description.includes("part-time role") ||
+            description.includes("part time work") ||
+            description.includes("part-time work") ||
+            description.includes("work from home part time") ||
+            description.includes("part time work from home");
+
+        if (!partTime) {
+            return false;
+        }
+
+        // ==========================================
+        // COURSE RELEVANCE
+        // ==========================================
+
+        let relevantJob = false;
+
+        // ------------------------------------------
+        // B.TECH CSE
+        // ------------------------------------------
+
+        if (course === "B.Tech CSE") {
+
+            relevantJob =
+                title.includes("software") ||
+                title.includes("developer") ||
+                title.includes("web") ||
+                title.includes("programmer") ||
+                title.includes("coding") ||
+                title.includes("computer") ||
+                title.includes("it ") ||
+                title.includes("it support") ||
+                title.includes("data") ||
+                title.includes("technical") ||
+                description.includes("software") ||
+                description.includes("programming") ||
+                description.includes("web development") ||
+                description.includes("computer science") ||
+                description.includes("information technology");
+        }
+
+        // ------------------------------------------
+        // BCA
+        // ------------------------------------------
+
+        else if (course === "BCA") {
+
+            relevantJob =
+                title.includes("software") ||
+                title.includes("developer") ||
+                title.includes("web") ||
+                title.includes("programmer") ||
+                title.includes("coding") ||
+                title.includes("computer") ||
+                title.includes("it ") ||
+                title.includes("it support") ||
+                title.includes("data") ||
+                title.includes("technical") ||
+                description.includes("software") ||
+                description.includes("programming") ||
+                description.includes("web development") ||
+                description.includes("computer") ||
+                description.includes("information technology");
+        }
+
+        // ------------------------------------------
+        // BBA
+        // ------------------------------------------
+
+        else if (course === "BBA") {
+
+            relevantJob =
+                title.includes("sales") ||
+                title.includes("marketing") ||
+                title.includes("business") ||
+                title.includes("customer") ||
+                title.includes("office") ||
+                title.includes("hr") ||
+                title.includes("human resource") ||
+                title.includes("management") ||
+                title.includes("business development") ||
+                description.includes("sales") ||
+                description.includes("marketing") ||
+                description.includes("business development") ||
+                description.includes("customer service") ||
+                description.includes("management") ||
+                description.includes("human resources");
+        }
+
+        // ------------------------------------------
+        // ALL COURSES
+        // ------------------------------------------
 
-                // ----------------------------------
-                // Coordinates required
-                // ----------------------------------
+        else {
 
-                if (
-                    job.latitude === undefined ||
-                    job.longitude === undefined ||
-                    job.latitude === null ||
-                    job.longitude === null
-                ) {
+            relevantJob = true;
+        }
 
-                    return false;
+        // Only relevant jobs
+        if (!relevantJob) {
+            return false;
+        }
 
-                }
-
-
-                const jobLatitude =
-                    parseFloat(job.latitude);
-
-
-                const jobLongitude =
-                    parseFloat(job.longitude);
-
-
-                if (
-                    Number.isNaN(jobLatitude) ||
-                    Number.isNaN(jobLongitude)
-                ) {
-
-                    return false;
-
-                }
-
-
-                // ----------------------------------
-                // Distance
-                // ----------------------------------
-
-                const distance =
-                    calculateDistance(
-
-                        userLatitude,
-                        userLongitude,
-
-                        jobLatitude,
-                        jobLongitude
-
-                    );
-
-
-                // ----------------------------------
-                // ONLY 10 KM
-                // ----------------------------------
-
-                if (distance > 10) {
-
-                    return false;
-
-                }
-
-
-                // ----------------------------------
-                // Job text
-                // ----------------------------------
-
-                const title =
-                    (
-                        job.title ||
-                        ""
-                    ).toLowerCase();
-
-
-                const description =
-                    (
-                        job.description ||
-                        ""
-                    ).toLowerCase();
-
-
-                const contractTime =
-                    (
-                        job.contract_time ||
-                        ""
-                    ).toLowerCase();
-
-
-                const contractType =
-                    (
-                        job.contract_type ||
-                        ""
-                    ).toLowerCase();
-
-
-                // ----------------------------------
-                // NEVER SHOW FULL-TIME
-                // ----------------------------------
-
-                if (
-                    contractTime === "full_time"
-                ) {
-
-                    return false;
-
-                }
-
-
-                // ----------------------------------
-                // REAL INTERNSHIP
-                // Title only
-                // ----------------------------------
-
-                const isInternshipJob =
-                    title.includes("intern") ||
-                    title.includes("internship");
-
-
-                // ----------------------------------
-                // PART-TIME IN TITLE
-                // ----------------------------------
-
-                const isPartTimeTitle =
-                    title.includes("part time") ||
-                    title.includes("part-time");
-
-
-                // ----------------------------------
-                // EXPLICIT PART-TIME DESCRIPTION
-                // ----------------------------------
-
-                const isPartTimeDescription =
-
-                    description.includes(
-                        "part time job"
-                    ) ||
-
-                    description.includes(
-                        "part-time job"
-                    ) ||
-
-                    description.includes(
-                        "part time position"
-                    ) ||
-
-                    description.includes(
-                        "part-time position"
-                    ) ||
-
-                    description.includes(
-                        "part time role"
-                    ) ||
-
-                    description.includes(
-                        "part-time role"
-                    ) ||
-
-                    description.includes(
-                        "part time work"
-                    ) ||
-
-                    description.includes(
-                        "part-time work"
-                    ) ||
-
-                    description.includes(
-                        "part time opportunity"
-                    ) ||
-
-                    description.includes(
-                        "part-time opportunity"
-                    ) ||
-
-                    description.includes(
-                        "work from home part time"
-                    ) ||
-
-                    description.includes(
-                        "part time work from home"
-                    );
-
-
-                // ----------------------------------
-                // FREELANCE
-                // ----------------------------------
-
-                const isFreelance =
-
-                    title.includes(
-                        "freelance"
-                    ) ||
-
-                    description.includes(
-                        "freelance position"
-                    ) ||
-
-                    description.includes(
-                        "freelance job"
-                    ) ||
-
-                    description.includes(
-                        "freelance work"
-                    );
-
-
-                // ----------------------------------
-                // TEMPORARY
-                // ----------------------------------
-
-                const isTemporary =
-
-                    title.includes(
-                        "temporary"
-                    ) ||
-
-                    description.includes(
-                        "temporary position"
-                    ) ||
-
-                    description.includes(
-                        "temporary job"
-                    );
-
-
-                // ----------------------------------
-                // MUST MATCH ONE
-                // ----------------------------------
-
-                if (
-                    !isInternshipJob &&
-                    !isPartTimeTitle &&
-                    !isPartTimeDescription &&
-                    !isFreelance &&
-                    !isTemporary
-                ) {
-
-                    return false;
-
-                }
-
-
-                return true;
-
-            });
+        return true;
+    });
 
 
         // ==========================================
