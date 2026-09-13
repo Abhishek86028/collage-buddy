@@ -308,20 +308,65 @@ if (
             return earthRadiusKm * c;
         }
 
-        // ================================
-        // ADZUNA SEARCH TERMS
-        // ================================
-        const searchTerms = [
-            "part time",
-            "part-time",
-            "freelance",
-            "temporary",
-            "student job",
-            "part time student"
-        ];
+       // ================================
+// ADZUNA SEARCH TERMS
+// ================================
+let searchTerms = [
+    "part time",
+    "part-time",
+    "freelance",
+    "temporary",
+    "student job",
+    "part time student"
+];
 
-        const jobsMap = new Map();
+// Course ke according extra searches
+if (
+    courseLower.includes("bca") ||
+    courseLower.includes("b.tech") ||
+    courseLower.includes("btech") ||
+    courseLower.includes("cse")
+) {
+    searchTerms = [
+        ...searchTerms,
 
+        "part time software",
+        "part time developer",
+        "part time web developer",
+        "part time computer",
+        "part time data entry",
+        "part time data",
+        "part time technical",
+        "part time IT",
+        "freelance developer",
+        "freelance web developer",
+        "freelance computer",
+        "freelance data entry",
+        "freelance technical"
+    ];
+}
+
+if (courseLower.includes("bba")) {
+    searchTerms = [
+        ...searchTerms,
+
+        "part time sales",
+        "part time marketing",
+        "part time business",
+        "part time customer",
+        "part time HR",
+        "part time office",
+        "part time accounts",
+        "freelance sales",
+        "freelance marketing",
+        "freelance business"
+    ];
+}
+
+// Remove duplicate search terms
+searchTerms = [...new Set(searchTerms)];
+
+const jobsMap = new Map();
         // ================================
         // SEARCH ADZUNA
         // ================================
