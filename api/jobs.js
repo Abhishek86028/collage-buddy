@@ -44,87 +44,110 @@ export default async function handler(req, res) {
             });
         }
 
-        // ================================
-        // COURSE KEYWORDS
-        // ================================
-        let courseKeywords = [];
+       // ================================
+// COURSE KEYWORDS
+// ================================
+let courseKeywords = [];
+let courseLower = course.toLowerCase();
 
-        const courseLower = course.toLowerCase();
-
-        if (
-            courseLower.includes("b.tech") ||
-            courseLower.includes("btech") ||
-            courseLower.includes("cse")
-        ) {
-            courseKeywords = [
-                "software",
-                "developer",
-                "web developer",
-                "programmer",
-                "programming",
-                "coding",
-                "computer",
-                "technical",
-                "technology",
-                "IT",
-                "data",
-                "QA",
-                "testing",
-                "app",
-                "customer support",
-                "data entry"
-            ];
-        } else if (courseLower.includes("bca")) {
-            courseKeywords = [
-                "software",
-                "developer",
-                "web developer",
-                "programmer",
-                "programming",
-                "coding",
-                "computer",
-                "technical",
-                "technology",
-                "IT",
-                "data",
-                "QA",
-                "testing",
-                "app",
-                "customer support",
-                "data entry",
-                "computer operator"
-            ];
-        } else if (courseLower.includes("bba")) {
-            courseKeywords = [
-                "sales",
-                "marketing",
-                "business",
-                "business development",
-                "customer",
-                "customer support",
-                "HR",
-                "human resources",
-                "management",
-                "operations",
-                "telecaller",
-                "administration",
-                "admin",
-                "relationship",
-                "finance",
-                "account",
-                "data entry",
-                "office"
-            ];
-        } else {
-            courseKeywords = [
-                "student",
-                "part time",
-                "computer",
-                "office",
-                "data",
-                "customer support"
-            ];
-        }
+if (
+    courseLower.includes("b.tech") ||
+    courseLower.includes("btech") ||
+    courseLower.includes("cse")
+) {
+    courseKeywords = [
+        "software",
+        "developer",
+        "web developer",
+        "frontend",
+        "backend",
+        "full stack",
+        "programmer",
+        "programming",
+        "coding",
+        "computer",
+        "technical",
+        "technology",
+        "information technology",
+        "IT",
+        "data",
+        "database",
+        "SQL",
+        "QA",
+        "testing",
+        "tester",
+        "app developer",
+        "mobile developer",
+        "cyber security",
+        "network",
+        "system administrator",
+        "data entry"
+    ];
+} else if (courseLower.includes("bca")) {
+    courseKeywords = [
+        "software",
+        "developer",
+        "web developer",
+        "frontend",
+        "backend",
+        "full stack",
+        "programmer",
+        "programming",
+        "coding",
+        "computer",
+        "technical",
+        "technology",
+        "information technology",
+        "IT",
+        "data",
+        "database",
+        "SQL",
+        "QA",
+        "testing",
+        "tester",
+        "app developer",
+        "mobile developer",
+        "computer operator",
+        "data entry",
+        "technical support",
+        "IT support",
+        "customer support"
+    ];
+} else if (courseLower.includes("bba")) {
+    courseKeywords = [
+        "sales",
+        "marketing",
+        "business",
+        "business development",
+        "customer",
+        "customer support",
+        "HR",
+        "human resources",
+        "management",
+        "operations",
+        "telecaller",
+        "administration",
+        "admin",
+        "relationship",
+        "finance",
+        "account",
+        "accounting",
+        "office",
+        "receptionist",
+        "recruitment",
+        "digital marketing",
+        "social media",
+        "retail"
+    ];
+} else {
+    courseKeywords = [
+        "student",
+        "computer",
+        "office",
+        "data",
+        "customer support"
+    ];
+}
 
         // ================================
         // INDIA-WIDE SEARCH
@@ -351,21 +374,100 @@ export default async function handler(req, res) {
         let jobs = Array.from(jobsMap.values());
 
         // ================================
-        // COURSE RELEVANCE
-        // ================================
-        function matchesCourse(job) {
-            const text = [
-                job.title || "",
-                job.description || "",
-                job.category?.label || ""
-            ]
-                .join(" ")
-                .toLowerCase();
+// STRICT COURSE RELEVANCE
+// ================================
+function matchesCourse(job) {
+    const title = String(job.title || "").toLowerCase();
+    const description = String(job.description || "").toLowerCase();
+    const category = String(job.category?.label || "").toLowerCase();
 
-            return courseKeywords.some(keyword =>
-                text.includes(keyword.toLowerCase())
-            );
-        }
+    const text = `${title} ${description} ${category}`;
+
+    // ================================
+    // B.TECH CSE / BCA
+    // ================================
+    if (
+        courseLower.includes("b.tech") ||
+        courseLower.includes("btech") ||
+        courseLower.includes("cse") ||
+        courseLower.includes("bca")
+    ) {
+        const technicalTerms = [
+            "software",
+            "developer",
+            "web developer",
+            "frontend",
+            "backend",
+            "full stack",
+            "programmer",
+            "programming",
+            "coding",
+            "computer",
+            "technical",
+            "technology",
+            "information technology",
+            "it support",
+            "technical support",
+            "data entry",
+            "data analyst",
+            "data",
+            "database",
+            "sql",
+            "qa",
+            "quality assurance",
+            "testing",
+            "tester",
+            "app developer",
+            "mobile developer",
+            "computer operator",
+            "system administrator",
+            "network",
+            "cyber security",
+            "customer support"
+        ];
+
+        return technicalTerms.some(term =>
+            text.includes(term)
+        );
+    }
+
+    // ================================
+    // BBA
+    // ================================
+    if (courseLower.includes("bba")) {
+        const businessTerms = [
+            "sales",
+            "marketing",
+            "business",
+            "business development",
+            "customer",
+            "customer support",
+            "hr",
+            "human resources",
+            "management",
+            "operations",
+            "telecaller",
+            "administration",
+            "admin",
+            "relationship",
+            "finance",
+            "account",
+            "accounting",
+            "office",
+            "receptionist",
+            "recruitment",
+            "digital marketing",
+            "social media",
+            "retail"
+        ];
+
+        return businessTerms.some(term =>
+            text.includes(term)
+        );
+    }
+
+    return false;
+}
 
         // ================================
         // PART-TIME RELEVANCE
