@@ -1,29 +1,16 @@
-
 export default async function handler(req, res) {
 
     // ==========================================
     // CORS
     // ==========================================
 
-    res.setHeader(
-        "Access-Control-Allow-Origin",
-        "*"
-    );
-
-    res.setHeader(
-        "Access-Control-Allow-Methods",
-        "GET, OPTIONS"
-    );
-
-    res.setHeader(
-        "Access-Control-Allow-Headers",
-        "Content-Type"
-    );
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
     if (req.method === "OPTIONS") {
         return res.status(200).end();
     }
-
 
     try {
 
@@ -32,24 +19,21 @@ export default async function handler(req, res) {
         // ==========================================
 
         const location =
-            (req.query.location || "").trim();
+            String(req.query.location || "").trim();
 
         const course =
-            req.query.course || "all";
-
+            String(req.query.course || "all").trim();
 
         if (!location) {
-
             return res.status(400).json({
                 success: false,
                 error: "Location is required"
             });
-
         }
 
 
         // ==========================================
-        // ADZUNA API KEYS
+        // ADZUNA KEYS
         // ==========================================
 
         const appId =
@@ -58,20 +42,17 @@ export default async function handler(req, res) {
         const appKey =
             process.env.ADZUNA_APP_KEY;
 
-
         if (!appId || !appKey) {
-
             return res.status(500).json({
                 success: false,
                 error:
                     "Adzuna API credentials are not configured on Vercel."
             });
-
         }
 
 
         // ==========================================
-        // INDIA-WIDE MODE
+        // INDIA WIDE
         // ==========================================
 
         const indiaWide =
@@ -90,10 +71,6 @@ export default async function handler(req, res) {
         ];
 
 
-        // ==========================================
-        // B.TECH CSE
-        // ==========================================
-
         if (course === "B.Tech CSE") {
 
             searches = [
@@ -109,11 +86,6 @@ export default async function handler(req, res) {
 
         }
 
-
-        // ==========================================
-        // BCA
-        // ==========================================
-
         else if (course === "BCA") {
 
             searches = [
@@ -127,11 +99,6 @@ export default async function handler(req, res) {
             ];
 
         }
-
-
-        // ==========================================
-        // BBA
-        // ==========================================
 
         else if (course === "BBA") {
 
@@ -149,37 +116,22 @@ export default async function handler(req, res) {
 
 
         // ==========================================
-        // GEOCODE LOCATION
+        // GEOCODE USER LOCATION
         // ==========================================
 
         let userLatitude = null;
         let userLongitude = null;
         let searchArea = location;
 
-
-        /*
-         * India-wide mode does NOT need a single
-         * 10 km centre point.
-         */
-
         if (!indiaWide) {
 
             const geoUrl =
                 "https://nominatim.openstreetmap.org/search?" +
                 new URLSearchParams({
-
-                    q:
-                        location + ", India",
-
-                    format:
-                        "json",
-
-                    addressdetails:
-                        "1",
-
-                    limit:
-                        "1"
-
+                    q: location + ", India",
+                    format: "json",
+                    addressdetails: "1",
+                    limit: "1"
                 });
 
 
@@ -217,29 +169,24 @@ export default async function handler(req, res) {
 
                 return res.status(200).json({
 
-                    success:
-                        true,
+                    success: true,
 
-                    searchedLocation:
-                        location,
+                    searchedLocation: location,
 
-                    searchedArea:
-                        location,
+                    searchedArea: location,
 
-                    radiusKm:
-                        10,
+                    radiusKm: 10,
 
-                    course:
-                        course,
+                    searchMode: "Nearby",
 
-                    count:
-                        0,
+                    course: course,
 
-                    jobs:
-                        [],
+                    count: 0,
+
+                    jobs: [],
 
                     message:
-                        "Location could not be found. Please enter a valid Indian address, area, city or PIN code."
+                        "Location could not be found. Please enter a valid Indian city, area, address or PIN code."
 
                 });
 
@@ -247,14 +194,10 @@ export default async function handler(req, res) {
 
 
             userLatitude =
-                parseFloat(
-                    geoData[0].lat
-                );
+                parseFloat(geoData[0].lat);
 
             userLongitude =
-                parseFloat(
-                    geoData[0].lon
-                );
+                parseFloat(geoData[0].lon);
 
 
             const address =
@@ -273,7 +216,7 @@ export default async function handler(req, res) {
 
 
         // ==========================================
-        // DISTANCE FUNCTION
+        // DISTANCE CALCULATOR
         // ==========================================
 
         function calculateDistance(
@@ -283,14 +226,11 @@ export default async function handler(req, res) {
             lon2
         ) {
 
-            const earthRadius =
-                6371;
-
+            const earthRadius = 6371;
 
             const dLat =
                 (lat2 - lat1) *
                 Math.PI / 180;
-
 
             const dLon =
                 (lon2 - lon1) *
@@ -322,12 +262,11 @@ export default async function handler(req, res) {
 
 
             return earthRadius * c;
-
         }
 
 
         // ==========================================
-        // SEARCH ADZUNA
+        // ADZUNA SEARCH
         // ==========================================
 
         const allJobs = [];
@@ -335,11 +274,7 @@ export default async function handler(req, res) {
 
         for (const searchTerm of searches) {
 
-            for (
-                let page = 1;
-                page <= 2;
-                page++
-            ) {
+            for (let page = 1; page <= 2; page++) {
 
                 const params =
                     new URLSearchParams({
@@ -360,6 +295,9 @@ export default async function handler(req, res) {
                             indiaWide
                                 ? "India"
                                 : searchArea,
+
+                        sort_by:
+                            "relevance",
 
                         "content-type":
                             "application/json"
@@ -387,7 +325,6 @@ export default async function handler(req, res) {
                         );
 
                         continue;
-
                     }
 
 
@@ -406,7 +343,9 @@ export default async function handler(req, res) {
 
                     }
 
-                } catch (error) {
+                }
+
+                catch (error) {
 
                     console.error(
                         "Adzuna request error:",
@@ -426,8 +365,7 @@ export default async function handler(req, res) {
 
         const uniqueJobs = [];
 
-        const seenIds =
-            new Set();
+        const seenIds = new Set();
 
 
         for (const job of allJobs) {
@@ -437,18 +375,16 @@ export default async function handler(req, res) {
             }
 
 
-            const jobId =
+            const id =
                 String(job.id);
 
 
-            if (
-                seenIds.has(jobId)
-            ) {
+            if (seenIds.has(id)) {
                 continue;
             }
 
 
-            seenIds.add(jobId);
+            seenIds.add(id);
 
             uniqueJobs.push(job);
 
@@ -463,47 +399,43 @@ export default async function handler(req, res) {
             uniqueJobs.filter(job => {
 
                 const title =
-                    (job.title || "")
+                    String(job.title || "")
                     .toLowerCase();
 
                 const description =
-                    (job.description || "")
+                    String(job.description || "")
                     .toLowerCase();
 
                 const contractTime =
-                    (job.contract_time || "")
+                    String(job.contract_time || "")
                     .toLowerCase();
 
 
                 // ----------------------------------
-                // Never show internships
+                // NO INTERNSHIPS
                 // ----------------------------------
 
                 if (
                     title.includes("internship") ||
                     title.includes("intern ")
                 ) {
-
                     return false;
-
                 }
 
 
                 // ----------------------------------
-                // Never show full-time
+                // NO FULL TIME
                 // ----------------------------------
 
                 if (
                     contractTime === "full_time"
                 ) {
-
                     return false;
-
                 }
 
 
                 // ----------------------------------
-                // PART-TIME RELEVANCE
+                // PART TIME CHECK
                 // ----------------------------------
 
                 const isPartTime =
@@ -519,25 +451,21 @@ export default async function handler(req, res) {
 
 
                 if (!isPartTime) {
-
                     return false;
-
                 }
 
 
                 // ----------------------------------
-                // COURSE RELEVANCE
+                // COURSE CHECK
                 // ----------------------------------
 
                 if (course === "all") {
-
                     return true;
-
                 }
 
 
                 // ----------------------------------
-                // B.TECH CSE / BCA
+                // BTECH CSE / BCA
                 // ----------------------------------
 
                 if (
@@ -599,14 +527,13 @@ export default async function handler(req, res) {
                 }
 
 
-                return true;
+                return false;
 
             });
 
 
         // ==========================================
-        // DISTANCE FILTER
-        // ONLY FOR LOCAL SEARCH
+        // STRICT LOCATION + 10 KM FILTER
         // ==========================================
 
         const nearbyJobs =
@@ -616,58 +543,146 @@ export default async function handler(req, res) {
 
                 : filteredJobs.filter(job => {
 
+                    // Job MUST have coordinates
                     if (
                         job.latitude === undefined ||
                         job.longitude === undefined ||
                         job.latitude === null ||
                         job.longitude === null
                     ) {
-
                         return false;
-
                     }
 
 
                     const jobLatitude =
-                        parseFloat(
-                            job.latitude
-                        );
+                        parseFloat(job.latitude);
 
                     const jobLongitude =
-                        parseFloat(
-                            job.longitude
-                        );
+                        parseFloat(job.longitude);
 
 
                     if (
                         Number.isNaN(jobLatitude) ||
                         Number.isNaN(jobLongitude)
                     ) {
-
                         return false;
-
                     }
 
 
                     const distance =
                         calculateDistance(
-
                             userLatitude,
                             userLongitude,
-
                             jobLatitude,
                             jobLongitude
-
                         );
 
 
-                    return distance <= 10;
+                    // MUST be within 10 km
+                    if (distance > 10) {
+                        return false;
+                    }
+
+
+                    // ----------------------------------
+                    // EXTRA LOCATION VERIFICATION
+                    // ----------------------------------
+
+                    const jobLocation =
+                        String(
+                            job.location?.display_name || ""
+                        ).toLowerCase();
+
+                    const searchedAreaLower =
+                        String(
+                            searchArea || ""
+                        ).toLowerCase();
+
+                    const enteredLocationLower =
+                        location.toLowerCase();
+
+
+                    /*
+                     * If Adzuna gives a location name,
+                     * make sure it is not obviously
+                     * from another major city.
+                     */
+
+                    const knownCities = [
+                        "delhi",
+                        "new delhi",
+                        "mumbai",
+                        "bombay",
+                        "bangalore",
+                        "bengaluru",
+                        "hyderabad",
+                        "pune",
+                        "jaipur",
+                        "dehradun",
+                        "chandigarh",
+                        "lucknow",
+                        "noida",
+                        "gurgaon",
+                        "gurugram",
+                        "kolkata",
+                        "chennai",
+                        "ahmedabad",
+                        "surat",
+                        "indore",
+                        "bhopal",
+                        "kanpur",
+                        "nagpur",
+                        "patna",
+                        "agra",
+                        "varanasi"
+                    ];
+
+
+                    const otherMajorCity =
+                        knownCities.some(city => {
+
+                            if (
+                                !jobLocation.includes(city)
+                            ) {
+                                return false;
+                            }
+
+
+                            /*
+                             * Allow the searched city.
+                             */
+
+                            if (
+                                searchedAreaLower.includes(city) ||
+                                enteredLocationLower.includes(city)
+                            ) {
+                                return false;
+                            }
+
+
+                            /*
+                             * Otherwise this listing
+                             * explicitly belongs to
+                             * another major city.
+                             */
+
+                            return true;
+
+                        });
+
+
+                    if (otherMajorCity) {
+                        return false;
+                    }
+
+
+                    return true;
 
                 });
 
 
         // ==========================================
-        // SORT
+        // SORT BY DISTANCE
         // ==========================================
 
         if (!indiaWide) {
@@ -677,25 +692,19 @@ export default async function handler(req, res) {
 
                     const distanceA =
                         calculateDistance(
-
                             userLatitude,
                             userLongitude,
-
                             parseFloat(a.latitude),
                             parseFloat(a.longitude)
-
                         );
 
 
                     const distanceB =
                         calculateDistance(
-
                             userLatitude,
                             userLongitude,
-
                             parseFloat(b.latitude),
                             parseFloat(b.longitude)
-
                         );
 
 
@@ -708,15 +717,13 @@ export default async function handler(req, res) {
 
 
         // ==========================================
-        // PHONE EXTRACTION
+        // PHONE
         // ==========================================
 
         function extractPhone(text) {
 
             const match =
-                (
-                    text || ""
-                ).match(
+                String(text || "").match(
                     /(?:\+91[\s-]?)?[6-9]\d{9}/
                 );
 
@@ -729,15 +736,13 @@ export default async function handler(req, res) {
 
 
         // ==========================================
-        // EMAIL EXTRACTION
+        // EMAIL
         // ==========================================
 
         function extractEmail(text) {
 
             const match =
-                (
-                    text || ""
-                ).match(
+                String(text || "").match(
                     /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i
                 );
 
@@ -769,13 +774,10 @@ export default async function handler(req, res) {
 
                         distance =
                             calculateDistance(
-
                                 userLatitude,
                                 userLongitude,
-
                                 parseFloat(job.latitude),
                                 parseFloat(job.longitude)
-
                             );
 
                     }
@@ -789,9 +791,7 @@ export default async function handler(req, res) {
                     return {
 
                         id:
-                            String(
-                                job.id || ""
-                            ),
+                            String(job.id || ""),
 
                         title:
                             job.title ||
@@ -836,18 +836,14 @@ export default async function handler(req, res) {
                             distance !== null
                                 ? Number(
                                     distance.toFixed(2)
-                                  )
+                                )
                                 : null,
 
                         phone:
-                            extractPhone(
-                                description
-                            ),
+                            extractPhone(description),
 
                         email:
-                            extractEmail(
-                                description
-                            ),
+                            extractEmail(description),
 
                         applyUrl:
                             job.redirect_url ||
@@ -898,7 +894,9 @@ export default async function handler(req, res) {
         });
 
 
-    } catch (error) {
+    }
+
+    catch (error) {
 
         console.error(
             "Jobs API Error:",
@@ -922,4 +920,3 @@ export default async function handler(req, res) {
     }
 
 }
-

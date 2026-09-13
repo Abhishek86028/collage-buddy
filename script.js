@@ -8,7 +8,829 @@ function showMessage(sectionName) {
         sectionName +
         " section is ready. Yahan real resources add kiye ja sakte hain."
     );
+}// ===============================
+// PART-TIME JOBS
+// ===============================
+
+
+function openPartTimeJobs() {
+
+    const jobWindow = window.open("", "_blank");
+
+    if (!jobWindow) {
+        alert("Please allow pop-ups for CollegeBuddy.");
+        return;
+    }
+
+    jobWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>CollegeBuddy - Part-Time Jobs</title>
+
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background: #f4f7fb;
+                    margin: 0;
+                    padding: 20px;
+                    color: #1f2937;
+                }
+
+                .container {
+                    max-width: 900px;
+                    margin: auto;
+                }
+
+                h1 {
+                    text-align: center;
+                    color: #1e3a8a;
+                    margin-bottom: 25px;
+                }
+
+                .search-box {
+                    background: white;
+                    padding: 20px;
+                    border-radius: 14px;
+                    margin-bottom: 20px;
+                    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+                }
+
+                input[type="text"],
+                select,
+                button {
+                    width: 100%;
+                    padding: 12px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    border-radius: 8px;
+                    border: 1px solid #ccc;
+                    box-sizing: border-box;
+                    font-size: 15px;
+                }
+
+                button {
+                    background: #2563eb;
+                    color: white;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+                button:hover {
+                    background: #1d4ed8;
+                }
+
+                .mode-box {
+                    margin: 12px 0;
+                    padding: 12px;
+                    background: #eff6ff;
+                    border-radius: 8px;
+                }
+
+                .mode-box label {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    cursor: pointer;
+                    font-weight: bold;
+                }
+
+                .mode-box input[type="checkbox"] {
+                    width: auto;
+                    margin: 0;
+                }
+
+                .job-card {
+                    background: white;
+                    padding: 22px;
+                    border-radius: 14px;
+                    margin-bottom: 18px;
+                    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+                    border: 1px solid #e5e7eb;
+                }
+
+                .job-card h2 {
+                    color: #1e3a8a;
+                    margin-top: 0;
+                    line-height: 1.4;
+                }
+
+                .info {
+                    margin: 8px 0;
+                    line-height: 1.6;
+                }
+
+                .distance {
+                    display: inline-block;
+                    background: #dcfce7;
+                    color: #166534;
+                    padding: 6px 10px;
+                    border-radius: 6px;
+                    font-weight: bold;
+                    margin: 5px 0;
+                }
+
+                .salary {
+                    display: inline-block;
+                    background: #fef3c7;
+                    color: #92400e;
+                    padding: 8px 12px;
+                    border-radius: 7px;
+                    font-weight: bold;
+                    margin: 6px 0;
+                }
+
+                .job-type {
+                    display: inline-block;
+                    background: #dbeafe;
+                    color: #1e40af;
+                    padding: 7px 11px;
+                    border-radius: 7px;
+                    font-weight: bold;
+                    margin: 5px 5px 5px 0;
+                }
+
+                .contact {
+                    background: #f8fafc;
+                    padding: 12px;
+                    border-radius: 8px;
+                    margin-top: 12px;
+                    border: 1px solid #e5e7eb;
+                }
+
+                .source {
+                    color: #15803d;
+                    font-weight: bold;
+                }
+
+                .notice {
+                    background: #fff7ed;
+                    padding: 15px;
+                    border-radius: 10px;
+                    margin-top: 15px;
+                    line-height: 1.6;
+                }
+
+                .apply-btn {
+                    display: inline-block;
+                    padding: 12px 18px;
+                    background: #2563eb;
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 8px;
+                    margin-top: 10px;
+                    font-weight: bold;
+                }
+
+                .apply-btn:hover {
+                    background: #1d4ed8;
+                }
+
+                .no-salary {
+                    color: #6b7280;
+                    font-style: italic;
+                }
+
+                .description {
+                    line-height: 1.7;
+                    color: #374151;
+                }
+
+                @media (max-width: 600px) {
+
+                    body {
+                        padding: 12px;
+                    }
+
+                    .job-card,
+                    .search-box {
+                        padding: 16px;
+                    }
+
+                    h1 {
+                        font-size: 24px;
+                    }
+                }
+            </style>
+        </head>
+
+        <body>
+
+            <div class="container">
+
+                <h1>💼 CollegeBuddy Part-Time Jobs</h1>
+
+                <div class="search-box">
+
+                    <h3>🔎 Find Part-Time Jobs</h3>
+
+                    <label>Enter your location</label>
+
+                    <input
+                        type="text"
+                        id="jobLocation"
+                        placeholder="Example: Dehradun, Uttarakhand"
+                    >
+
+                    <div class="mode-box">
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                id="allIndiaJobs"
+                            >
+
+                            🇮🇳 Search Jobs Across India
+                        </label>
+
+                        <div id="searchModeText">
+                            📍 Nearby search: jobs around your entered
+                            location within approximately 10 km.
+                        </div>
+
+                    </div>
+
+                    <label>Course</label>
+
+                    <select id="jobCourse">
+                        <option value="all">All Courses</option>
+                        <option value="B.Tech CSE">B.Tech CSE</option>
+                        <option value="BCA">BCA</option>
+                        <option value="BBA">BBA</option>
+                    </select>
+
+                    <button onclick="searchPartTimeJobs()">
+                        🔎 Search Jobs
+                    </button>
+
+                    <div class="notice">
+
+                        📍 <b>Nearby mode:</b>
+                        Real jobs are searched around your entered
+                        location with a target radius of approximately 10 km.
+
+                        <br><br>
+
+                        🇮🇳 <b>India mode:</b>
+                        Search Jobs Across India searches available
+                        part-time opportunities across India.
+
+                        <br><br>
+
+                        💰 <b>Salary:</b>
+                        Salary is shown when the employer/job source
+                        provides it. Otherwise it will be marked as
+                        not specified.
+
+                        <br><br>
+
+                        ⚠️ Never pay money to get a job.
+                        Always verify the employer and application source
+                        before applying.
+
+                    </div>
+
+                </div>
+
+                <div id="jobResults">
+
+                    <div class="job-card">
+
+                        <h2>💼 Ready to Search</h2>
+
+                        <p>
+                            Enter your city, area or address above and click
+                            <b>Search Jobs</b>.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <script>
+
+                const allIndiaCheckbox =
+                    document.getElementById("allIndiaJobs");
+
+                const searchModeText =
+                    document.getElementById("searchModeText");
+
+
+                allIndiaCheckbox.addEventListener(
+                    "change",
+                    function() {
+
+                        if (this.checked) {
+
+                            searchModeText.innerHTML =
+                                "🇮🇳 India-wide search enabled. " +
+                                "The 10 km local-radius filter is not used.";
+
+                        } else {
+
+                            searchModeText.innerHTML =
+                                "📍 Nearby search: jobs around your entered " +
+                                "location within approximately 10 km.";
+                        }
+
+                    }
+                );
+
+
+                function escapeHtml(value) {
+
+                    if (
+                        value === null ||
+                        value === undefined
+                    ) {
+                        return "";
+                    }
+
+                    return String(value)
+                        .replace(/&/g, "&amp;")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/"/g, "&quot;")
+                        .replace(/'/g, "&#039;");
+                }
+
+
+                function formatSalary(job) {
+
+                    const min = Number(job.salaryMin);
+                    const max = Number(job.salaryMax);
+
+                    const hasMin =
+                        Number.isFinite(min) &&
+                        min > 0;
+
+                    const hasMax =
+                        Number.isFinite(max) &&
+                        max > 0;
+
+
+                    if (hasMin && hasMax) {
+
+                        return "₹" +
+                            min.toLocaleString("en-IN") +
+                            " - ₹" +
+                            max.toLocaleString("en-IN");
+
+                    }
+
+
+                    if (hasMin) {
+
+                        return "From ₹" +
+                            min.toLocaleString("en-IN");
+
+                    }
+
+
+                    if (hasMax) {
+
+                        return "Up to ₹" +
+                            max.toLocaleString("en-IN");
+
+                    }
+
+
+                    return null;
+                }
+
+
+                function searchPartTimeJobs() {
+
+                    const location =
+                        document.getElementById("jobLocation")
+                        .value
+                        .trim();
+
+                    const allIndia =
+                        document.getElementById("allIndiaJobs")
+                        .checked;
+
+                    const course =
+                        document.getElementById("jobCourse")
+                        .value;
+
+                    const results =
+                        document.getElementById("jobResults");
+
+
+                    if (!location) {
+
+                        alert(
+                            "Please enter your location."
+                        );
+
+                        return;
+                    }
+
+
+                    results.innerHTML =
+                        "<div class='job-card'>" +
+
+                        "<h2>🔎 Searching...</h2>" +
+
+                        "<p>Searching real jobs near <b>" +
+                        escapeHtml(location) +
+                        "</b></p>" +
+
+                        "<p>Course: <b>" +
+                        escapeHtml(course) +
+                        "</b></p>" +
+
+                        (
+                            allIndia
+                                ? "<p>🇮🇳 Search mode: " +
+                                  "<b>Across India</b></p>"
+                                : "<p>📍 Search mode: " +
+                                  "<b>Within approximately 10 km</b></p>"
+                        ) +
+
+                        "</div>";
+
+
+                    const searchLocation =
+                        allIndia
+                            ? "India"
+                            : location;
+
+
+                    const apiUrl =
+                        "https://collage-buddy-omega.vercel.app/api/jobs" +
+                        "?location=" +
+                        encodeURIComponent(searchLocation) +
+                        "&course=" +
+                        encodeURIComponent(course);
+
+
+                    fetch(apiUrl)
+
+                        .then(function(response) {
+
+                            if (!response.ok) {
+
+                                throw new Error(
+                                    "Job API request failed"
+                                );
+                            }
+
+                            return response.json();
+                        })
+
+
+                        .then(function(data) {
+
+                            if (!data.success) {
+
+                                throw new Error(
+                                    data.error ||
+                                    "Unable to load jobs"
+                                );
+                            }
+
+
+                            if (
+                                !data.jobs ||
+                                data.jobs.length === 0
+                            ) {
+
+                                results.innerHTML =
+                                    "<div class='job-card'>" +
+
+                                    "<h2>😔 No jobs found</h2>" +
+
+                                    "<p>No matching real jobs were found " +
+
+                                    (
+                                        allIndia
+                                            ? "across India"
+                                            : "near <b>" +
+                                              escapeHtml(location) +
+                                              "</b>"
+                                    ) +
+
+                                    ".</p>" +
+
+                                    "<p>" +
+                                    "Try another location or course." +
+                                    "</p>" +
+
+                                    "</div>";
+
+                                return;
+                            }
+
+
+                            let html =
+                                "<h2>💼 Real Job Opportunities</h2>";
+
+
+                            if (allIndia) {
+
+                                html +=
+                                    "<p>🇮🇳 Showing real jobs " +
+                                    "searched across India.</p>";
+
+                            } else {
+
+                                html +=
+                                    "<p>📍 Showing real jobs searched " +
+                                    "near <b>" +
+                                    escapeHtml(location) +
+                                    "</b> " +
+                                    "within approximately 10 km.</p>";
+                            }
+
+
+                            if (
+                                !allIndia &&
+                                data.radiusKm
+                            ) {
+
+                                html +=
+                                    "<p>📏 Search radius: " +
+                                    "<b>" +
+                                    escapeHtml(data.radiusKm) +
+                                    " km</b></p>";
+                            }
+
+
+                            data.jobs.forEach(function(job) {
+
+                                const distance =
+                                    job.distanceKm ??
+                                    job.distance ??
+                                    job.distance_km;
+
+
+                                const salary =
+                                    formatSalary(job);
+
+
+                                const contractTime =
+                                    job.contractTime ||
+                                    job.contract_time;
+
+
+                                const contractType =
+                                    job.contractType ||
+                                    job.contract_type;
+
+
+                                const contact =
+                                    job.contact ||
+                                    job.phone ||
+                                    job.phoneNumber ||
+                                    job.mobile;
+
+
+                                const email =
+                                    job.email ||
+                                    job.contactEmail;
+
+
+                                html +=
+                                    "<div class='job-card'>";
+
+
+                                html +=
+                                    "<h2>💼 " +
+                                    escapeHtml(
+                                        job.title ||
+                                        "Part-Time Job"
+                                    ) +
+                                    "</h2>";
+
+
+                                html +=
+                                    "<p>🏢 <b>Company:</b> " +
+                                    escapeHtml(
+                                        job.company ||
+                                        "Company not provided"
+                                    ) +
+                                    "</p>";
+
+
+                                html +=
+                                    "<p>📍 <b>Location:</b> " +
+                                    escapeHtml(
+                                        job.location ||
+                                        "Location not provided"
+                                    ) +
+                                    "</p>";
+
+
+                                if (
+                                    distance !== undefined &&
+                                    distance !== null &&
+                                    distance !== ""
+                                ) {
+
+                                    html +=
+                                        "<p>" +
+
+                                        "<span class='distance'>" +
+
+                                        "📏 " +
+                                        escapeHtml(distance) +
+                                        " km away" +
+
+                                        "</span>" +
+
+                                        "</p>";
+                                }
+
+
+                                if (salary) {
+
+                                    html +=
+                                        "<p>" +
+
+                                        "<span class='salary'>" +
+
+                                        "💰 Salary: " +
+                                        escapeHtml(salary) +
+
+                                        "</span>" +
+
+                                        "</p>";
+
+                                } else {
+
+                                    html +=
+                                        "<p>" +
+
+                                        "<span class='salary " +
+                                        "no-salary'>" +
+
+                                        "💰 Salary: " +
+                                        "Not specified by employer" +
+
+                                        "</span>" +
+
+                                        "</p>";
+                                }
+
+
+                                if (contractTime) {
+
+                                    html +=
+                                        "<span class='job-type'>" +
+
+                                        "⏰ " +
+                                        escapeHtml(
+                                            contractTime
+                                        ) +
+
+                                        "</span>";
+                                }
+
+
+                                if (contractType) {
+
+                                    html +=
+                                        "<span class='job-type'>" +
+
+                                        "📄 " +
+                                        escapeHtml(
+                                            contractType
+                                        ) +
+
+                                        "</span>";
+                                }
+
+
+                                html +=
+                                    "<p>📝 <b>Details:</b></p>" +
+
+                                    "<p class='description'>" +
+
+                                    escapeHtml(
+                                        job.description ||
+                                        "No description available."
+                                    ) +
+
+                                    "</p>";
+
+
+                                if (contact || email) {
+
+                                    html +=
+                                        "<div class='contact'>" +
+
+                                        "<b>📞 Contact Details</b>";
+
+
+                                    if (contact) {
+
+                                        html +=
+                                            "<p>📞 <b>Phone:</b> " +
+                                            escapeHtml(contact) +
+                                            "</p>";
+                                    }
+
+
+                                    if (email) {
+
+                                        html +=
+                                            "<p>📧 <b>Email:</b> " +
+                                            escapeHtml(email) +
+                                            "</p>";
+                                    }
+
+
+                                    html +=
+                                        "</div>";
+                                }
+
+
+                                if (job.applyUrl) {
+
+                                    html +=
+                                        "<p>" +
+
+                                        "<a " +
+                                        "href='" +
+                                        escapeHtml(
+                                            job.applyUrl
+                                        ) +
+                                        "' " +
+                                        "target='_blank' " +
+                                        "rel='noopener noreferrer' " +
+                                        "class='apply-btn'>" +
+
+                                        "📥 Apply for this Job" +
+
+                                        "</a>" +
+
+                                        "</p>";
+                                }
+
+
+                                html +=
+                                    "<p>" +
+
+                                    "<small class='source'>" +
+
+                                    "Jobs by Adzuna" +
+
+                                    "</small>" +
+
+                                    "</p>";
+
+
+                                html +=
+                                    "</div>";
+
+                            });
+
+
+                            results.innerHTML = html;
+
+                        })
+
+
+                        .catch(function(error) {
+
+                            console.error(
+                                "Job search error:",
+                                error
+                            );
+
+
+                            results.innerHTML =
+                                "<div class='job-card'>" +
+
+                                "<h2>⚠️ Unable to load jobs</h2>" +
+
+                                "<p>" +
+                                "Something went wrong while " +
+                                "loading real job vacancies." +
+                                "</p>" +
+
+                                "<p>Please try again.</p>" +
+
+                                "</div>";
+                        });
+                }
+
+            </script>
+
+        </body>
+        </html>
+    `);
+
+    jobWindow.document.close();
 }
+
+
 
 
 // ===============================
