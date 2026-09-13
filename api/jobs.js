@@ -489,31 +489,31 @@ const nearbyJobs =
             return false;
         }
 
-        // ==========================================
-        // PART-TIME / INTERNSHIP CHECK
-        // ==========================================
+     // ==========================================
+// STRICT PART-TIME / FREELANCE CHECK
+// ==========================================
 
-        const partTime =
-            title.includes("part time") ||
-            title.includes("part-time") ||
-            title.includes("freelance") ||
-            title.includes("intern") ||
-            title.includes("internship") ||
-            title.includes("temporary") ||
-            description.includes("part time job") ||
-            description.includes("part-time job") ||
-            description.includes("part time position") ||
-            description.includes("part-time position") ||
-            description.includes("part time role") ||
-            description.includes("part-time role") ||
-            description.includes("part time work") ||
-            description.includes("part-time work") ||
-            description.includes("work from home part time") ||
-            description.includes("part time work from home");
+const isInternship =
+    title.includes("intern") ||
+    title.includes("internship");
 
-        if (!partTime) {
-            return false;
-        }
+if (isInternship) {
+    return false;
+}
+
+const isPartTime =
+    title.includes("part time") ||
+    title.includes("part-time") ||
+    title.includes("freelance") ||
+    title.includes("temporary") ||
+    description.includes("part time") ||
+    description.includes("part-time") ||
+    description.includes("freelance") ||
+    description.includes("temporary");
+
+if (!isPartTime) {
+    return false;
+}
 
         // ==========================================
         // COURSE RELEVANCE
