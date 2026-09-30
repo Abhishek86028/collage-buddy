@@ -1,362 +1,828 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <title>Collage Buddy - Student Portal</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<title>CollegeBuddy - Student Portal</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 
 </head>
 
-<body></body>
-   
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
 <header class="navbar">
 
-    <div class="logo">
 
-    <div class="pro-logo-icon">
-        <div class="cap">
-            <span></span>
-        </div>
+<a href="#home" class="logo">
 
-        <div class="book">
-            <span></span>
-            <span></span>
-        </div>
+    <div class="logo-mark">
+        <div class="logo-cap">◆</div>
+        <div class="logo-book"></div>
     </div>
 
-    <div class="pro-logo-text">
+    <div class="logo-text">
         <div>
-            <span>Collage</span><strong>Buddy</strong>
+            <span>College</span><strong>Buddy</strong>
+        </div>
+        <small>BETTER NOTES • BRIGHTER FUTURE</small>
+    </div>
+
+</a>
+
+<nav class="nav-links">
+    <a href="#home" class="active">Home</a>
+    <a href="#notes">Notes</a>
+    <a href="#study">Study Material</a>
+    <a href="#jobs">Jobs</a>
+    <a href="#internships">Internships</a>
+</nav>
+
+<a href="#notes" class="nav-cta">
+    Start Learning →
+</a>
+```
+
+</header>
+
+<main>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section id="home" class="hero">
+
+```
+<div class="hero-background"></div>
+
+<div class="hero-content">
+
+    <div class="hero-badge">
+        <span class="badge-dot"></span>
+        YOUR COLLEGE COMPANION
+    </div>
+
+    <h1>
+        Everything College
+        <span>Students Need.</span>
+    </h1>
+
+    <p>
+        Notes, study material, important questions, jobs
+        and internships — organized in one simple place
+        to help you learn, prepare and grow.
+    </p>
+
+    <div class="hero-actions">
+
+        <a href="#notes" class="primary-btn">
+            Explore Notes
+            <span>→</span>
+        </a>
+
+        <a href="#study" class="secondary-btn">
+            Study Material
+        </a>
+
+    </div>
+
+    <div class="hero-search">
+
+        <div class="search-icon">⌕</div>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search notes, subjects, jobs, internships..."
+        >
+
+        <button onclick="searchContent()">
+            Search
+        </button>
+
+    </div>
+
+    <div class="hero-stats">
+
+        <div>
+            <strong>03</strong>
+            <span>Courses</span>
         </div>
 
-        <small>BETTER NOTES • BRIGHTER FUTURE</small>
+        <div class="stat-line"></div>
+
+        <div>
+            <strong>08</strong>
+            <span>B.Tech Semesters</span>
+        </div>
+
+        <div class="stat-line"></div>
+
+        <div>
+            <strong>∞</strong>
+            <span>Learning Resources</span>
+        </div>
+
     </div>
 
 </div>
 
-    <nav>
-        <a href="#home" class="active">Home</a>
-        <a href="#notes">Notes</a>
-        <a href="#study">Study Material</a>
-        <a href="#jobs">Jobs</a>
-        <a href="#internships">Internships</a>
-    </nav>
 
-</header>
+<!-- HERO VISUAL -->
 
+<div class="hero-visual">
 
+    <div class="visual-glow"></div>
 
-    <main>
+    <div class="floating-card card-one">
+        <span>01</span>
+        <strong>NOTES</strong>
+        <small>Study smarter</small>
+    </div>
 
-        <!-- HOME -->
+    <div class="floating-card card-two">
+        <span>02</span>
+        <strong>JOBS</strong>
+        <small>Build your career</small>
+    </div>
 
-       
-<section id="home" class="hero">
+    <div class="floating-card card-three">
+        <span>03</span>
+        <strong>BOOKS</strong>
+        <small>Learn more</small>
+    </div>
 
-    <div class="hero-content">
+    <div class="hero-circle">
 
-        <div class="hero-badge">
-            🎓 YOUR COLLEGE COMPANION
+        <div class="circle-inner">
+            <div class="graduation-symbol">🎓</div>
+            <strong>CB</strong>
+            <small>COLLEGE<br>COMPANION</small>
         </div>
 
-        <h1>
-            Everything a College Student
-            <span>Needs in One Place.</span>
-        </h1>
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
 
-        <p class="description">
-            Explore notes, study material, important questions,
-            jobs and internships — all designed to help you
-            learn, prepare and grow.
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     QUICK CATEGORIES
+===================================================== -->
+
+<section class="categories">
+
+```
+<div class="container">
+
+    <div class="section-intro compact">
+
+        <span class="section-label">EXPLORE</span>
+
+        <h2>
+            What are you
+            <span>looking for?</span>
+        </h2>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <a href="#notes" class="category-card">
+
+            <div class="category-icon blue">
+                📚
+            </div>
+
+            <div>
+                <span class="category-number">01</span>
+                <h3>College Notes</h3>
+                <p>Subject-wise notes for your semester.</p>
+            </div>
+
+            <span class="arrow">→</span>
+
+        </a>
+
+
+        <a href="#study" class="category-card">
+
+            <div class="category-icon purple">
+                📖
+            </div>
+
+            <div>
+                <span class="category-number">02</span>
+                <h3>Study Material</h3>
+                <p>Books, syllabus and exam resources.</p>
+            </div>
+
+            <span class="arrow">→</span>
+
+        </a>
+
+
+        <a href="#jobs" class="category-card">
+
+            <div class="category-icon green">
+                💼
+            </div>
+
+            <div>
+                <span class="category-number">03</span>
+                <h3>Student Jobs</h3>
+                <p>Part-time and remote opportunities.</p>
+            </div>
+
+            <span class="arrow">→</span>
+
+        </a>
+
+
+        <a href="#internships" class="category-card">
+
+            <div class="category-icon orange">
+                🚀
+            </div>
+
+            <div>
+                <span class="category-number">04</span>
+                <h3>Internships</h3>
+                <p>Gain experience and build your career.</p>
+            </div>
+
+            <span class="arrow">→</span>
+
+        </a>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     NOTES
+===================================================== -->
+
+<section id="notes" class="section">
+
+```
+<div class="container">
+
+    <div class="section-intro">
+
+        <span class="section-label">01 — ACADEMICS</span>
+
+        <h2>
+            College <span>Notes</span>
+        </h2>
+
+        <p>
+            Select your course and semester to explore
+            organized subject-wise study notes.
         </p>
 
-        <div class="search-box">
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search notes, subjects, jobs, internships..."
+    </div>
+
+
+    <div class="course-grid">
+
+        <div class="course-card featured">
+
+            <div class="course-top">
+
+                <span class="course-index">01</span>
+
+                <div class="course-icon">
+                    💻
+                </div>
+
+            </div>
+
+            <span class="course-type">ENGINEERING</span>
+
+            <h3>B.Tech CSE</h3>
+
+            <p>
+                Computer Science Engineering notes,
+                subjects and semester resources.
+            </p>
+
+            <button
+                class="card-button"
+                onclick="showSemesters('btech-cse')"
             >
-
-            <button onclick="searchContent()">
-                🔍 Search
+                View Semesters
+                <span>→</span>
             </button>
+
         </div>
 
-        <div class="hero-features">
 
-            <div class="hero-feature">
-                <strong>📚</strong>
-                <span>Study Notes</span>
+        <div class="course-card">
+
+            <div class="course-top">
+
+                <span class="course-index">02</span>
+
+                <div class="course-icon purple-bg">
+                    🖥️
+                </div>
+
             </div>
 
-            <div class="hero-feature">
-                <strong>📝</strong>
-                <span>Important Questions</span>
+            <span class="course-type">COMPUTER APPLICATIONS</span>
+
+            <h3>BCA</h3>
+
+            <p>
+                Bachelor of Computer Applications
+                study material and notes.
+            </p>
+
+            <button
+                class="card-button"
+                onclick="showSemesters('bca')"
+            >
+                View Semesters
+                <span>→</span>
+            </button>
+
+        </div>
+
+
+        <div class="course-card">
+
+            <div class="course-top">
+
+                <span class="course-index">03</span>
+
+                <div class="course-icon green-bg">
+                    📊
+                </div>
+
             </div>
 
-            <div class="hero-feature">
-                <strong>💼</strong>
-                <span>Jobs & Internships</span>
-            </div>
+            <span class="course-type">MANAGEMENT</span>
+
+            <h3>BBA</h3>
+
+            <p>
+                Business Administration notes,
+                subjects and learning resources.
+            </p>
+
+            <button
+                class="card-button"
+                onclick="showSemesters('bba')"
+            >
+                View Semesters
+                <span>→</span>
+            </button>
 
         </div>
 
     </div>
 
+
+    <div id="semesterArea" class="dynamic-area"></div>
+
+    <div id="subjectArea" class="dynamic-area"></div>
+
+</div>
+```
+
 </section>
 
+<!-- =====================================================
+     STUDY MATERIAL
+===================================================== -->
 
+<section id="study" class="section study-section">
 
+```
+<div class="container">
 
-        <!-- CATEGORIES -->
+    <div class="section-intro">
 
-        <section class="categories">
+        <span class="section-label">02 — RESOURCES</span>
 
-            <h2>What are you looking for?</h2>
+        <h2>
+            Study <span>Material</span>
+        </h2>
 
-            <div class="category-container">
+        <p>
+            Everything you need for better preparation,
+            from syllabus to books and important questions.
+        </p>
 
-                <a href="#notes" class="category-card">
-                    <div>📚</div>
-                    <h3>College Notes</h3>
-                    <p>Find useful notes for your subjects.</p>
-                </a>
+    </div>
 
-                <a href="#study" class="category-card">
-                    <div>📖</div>
-                    <h3>Study Material</h3>
-                    <p>Books, syllabus and study resources.</p>
-                </a>
-
-                <a href="#jobs" class="category-card">
-                    <div>💼</div>
-                    <h3>Student Jobs</h3>
-                    <p>Find jobs suitable for students.</p>
-                </a>
-
-                <a href="#internships" class="category-card">
-                    <div>💻</div>
-                    <h3>Internships</h3>
-                    <p>Discover internship opportunities.</p>
-                </a>
-
-            </div>
-
-        </section>
-<!-- NOTES -->
-
-<section id="notes" class="content-section">
-
-    <h2>📚 College Notes</h2>
-
-    <p>Apna course select karein.</p>
 
     <div class="resource-grid">
 
-        <!-- B.TECH CSE -->
-
-        <div class="resource-card">
-            <h3>💻 B.Tech CSE</h3>
-            <p>Computer Science Engineering</p>
-
-            <button onclick="showSemesters('btech-cse')">
-                View Semesters
-            </button>
-        </div>
-
-
-        <!-- BCA -->
-
-        <div class="resource-card">
-            <h3>🖥️ BCA</h3>
-            <p>Bachelor of Computer Applications</p>
-
-            <button onclick="showSemesters('bca')">
-                View Semesters
-            </button>
-        </div>
-
-
-        <!-- BBA -->
-
-        <div class="resource-card">
-            <h3>📊 BBA</h3>
-            <p>Bachelor of Business Administration</p>
-
-            <button onclick="showSemesters('bba')">
-                View Semesters
-            </button>
-        </div>
-
-    </div>
-
-
-    <!-- SEMESTERS -->
-
-    <div id="semesterArea" style="margin-top:30px;"></div>
-
-
-    <!-- SUBJECTS -->
-
-    <div id="subjectArea" style="margin-top:30px;"></div>
-
-</section>
-
-
-
-        
-
-        <!-- STUDY MATERIAL -->
-
-<section id="study" class="content-section">
-
-    <h2>📖 Study Material</h2>
-
-    <div class="resource-grid">
-
-        <!-- SYLLABUS -->
-
         <div class="resource-card">
 
-            <h3>📑 Syllabus</h3>
+            <div class="resource-icon">
+                📑
+            </div>
+
+            <div class="resource-number">01</div>
+
+            <h3>Syllabus</h3>
 
             <p>
-                Find your college and university syllabus.
+                Find your course and university syllabus
+                in an organized format.
             </p>
 
-            <button onclick="openStudyMaterial('syllabus')">
+            <button
+                class="outline-button"
+                onclick="openStudyMaterial('syllabus')"
+            >
                 Explore
+                <span>→</span>
             </button>
 
         </div>
 
 
-        <!-- IMPORTANT QUESTIONS -->
+        <div class="resource-card highlighted">
 
-        <div class="resource-card">
+            <div class="resource-icon">
+                📝
+            </div>
 
-            <h3>📝 Important Questions</h3>
+            <div class="resource-number">02</div>
+
+            <h3>Important Questions</h3>
 
             <p>
-                Prepare for exams with important questions.
+                Focus your exam preparation with
+                important questions and practice.
             </p>
 
-            <button onclick="openStudyMaterial('questions')">
+            <button
+                class="outline-button"
+                onclick="openStudyMaterial('questions')"
+            >
                 Explore
+                <span>→</span>
             </button>
 
         </div>
 
 
-        <!-- E-BOOKS -->
-
         <div class="resource-card">
 
-            <h3>📚 E-Books</h3>
+            <div class="resource-icon">
+                📚
+            </div>
+
+            <div class="resource-number">03</div>
+
+            <h3>E-Books</h3>
 
             <p>
-                Useful books and learning resources.
+                Access useful books and learning
+                resources for your course.
             </p>
 
-            <button onclick="openStudyMaterial('ebooks')">
+            <button
+                class="outline-button"
+                onclick="openStudyMaterial('ebooks')"
+            >
                 Explore
+                <span>→</span>
             </button>
 
         </div>
 
     </div>
 
+</div>
+```
+
 </section>
 
-        <!-- JOBS -->
+<!-- =====================================================
+     JOBS
+===================================================== -->
 
-        <section id="jobs" class="content-section">
+<section id="jobs" class="career-section">
 
-            <h2>💼 Student Jobs</h2>
+```
+<div class="container">
+
+    <div class="career-heading">
+
+        <div>
+
+            <span class="section-label light">
+                03 — CAREER
+            </span>
+
+            <h2>
+                Start building your
+                <span>career today.</span>
+            </h2>
 
             <p>
-                Find part-time and entry-level opportunities.
+                Find opportunities that fit around
+                your college schedule and skills.
             </p>
 
-            <div class="resource-grid">
+        </div>
 
-                <div class="resource-card">
-                    <h3>Part-Time Jobs</h3>
-                    <p>Opportunities suitable for college students.</p>
-                    <button onclick="openPartTimeJobs()">
-    🔎 Find Nearby Jobs
-</button>
+        <div class="career-mark">
+            💼
+        </div>
+
+    </div>
+
+
+    <div class="career-grid">
+
+        <div class="career-card">
+
+            <div class="career-card-top">
+
+                <div class="career-icon">
+                    ⏱
                 </div>
 
-                <div class="resource-card">
-                    <h3>Work From Home</h3>
-                    <p>Explore remote opportunities.</p>
-                    <button onclick="showMessage('Work From Home Jobs')">
-                        View Jobs
-                    </button>
-                </div>
+                <span>PART-TIME</span>
 
             </div>
 
-        </section>
-
-
-        <!-- INTERNSHIPS -->
-
-        <section id="internships" class="content-section">
-
-            <h2>💻 Internships</h2>
+            <h3>Part-Time Jobs</h3>
 
             <p>
-                Find internships and build your professional experience.
+                Discover nearby opportunities suitable
+                for college students.
             </p>
 
-            <div class="resource-grid">
+            <button
+                onclick="openPartTimeJobs()"
+                class="white-button"
+            >
+                Find Nearby Jobs
+                <span>→</span>
+            </button>
 
-                <div class="resource-card">
-                    <h3>💻 IT Internships</h3>
-                    <p>Programming, web development and technology.</p>
-                    <button onclick="showMessage('IT Internships')">
-                        Find Internships
-                    </button>
+        </div>
+
+
+        <div class="career-card">
+
+            <div class="career-card-top">
+
+                <div class="career-icon">
+                    🏠
                 </div>
 
-                <div class="resource-card">
-                    <h3>📊 Business Internships</h3>
-                    <p>Marketing, management and business opportunities.</p>
-                    <button onclick="showMessage('Business Internships')">
-                        Find Internships
-                    </button>
-                </div>
+                <span>REMOTE</span>
 
             </div>
 
-        </section>
+            <h3>Work From Home</h3>
 
-    </main>
+            <p>
+                Explore flexible remote opportunities
+                that you can work from home.
+            </p>
 
+            <button
+                onclick="showMessage('Work From Home Jobs')"
+                class="dark-outline-button"
+            >
+                View Jobs
+                <span>→</span>
+            </button>
 
-    <footer>
+        </div>
 
-        <h3>🎓 CollegeBuddy</h3>
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     INTERNSHIPS
+===================================================== -->
+
+<section id="internships" class="section">
+
+```
+<div class="container">
+
+    <div class="section-intro">
+
+        <span class="section-label">04 — EXPERIENCE</span>
+
+        <h2>
+            Build experience with
+            <span>Internships.</span>
+        </h2>
 
         <p>
-            Helping college students learn, work and grow.
+            Explore opportunities to learn practical
+            skills and strengthen your professional profile.
         </p>
+
+    </div>
+
+
+    <div class="internship-grid">
+
+        <div class="internship-card">
+
+            <div class="internship-icon">
+                💻
+            </div>
+
+            <span class="internship-tag">
+                TECHNOLOGY
+            </span>
+
+            <h3>IT Internships</h3>
+
+            <p>
+                Programming, web development,
+                software and technology opportunities.
+            </p>
+
+            <button
+                onclick="showMessage('IT Internships')"
+                class="card-button"
+            >
+                Find Internships
+                <span>→</span>
+            </button>
+
+        </div>
+
+
+        <div class="internship-card">
+
+            <div class="internship-icon orange-bg">
+                📊
+            </div>
+
+            <span class="internship-tag">
+                BUSINESS
+            </span>
+
+            <h3>Business Internships</h3>
+
+            <p>
+                Marketing, management and business
+                opportunities for students.
+            </p>
+
+            <button
+                onclick="showMessage('Business Internships')"
+                class="card-button"
+            >
+                Find Internships
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="final-cta">
+
+```
+<div class="container">
+
+    <span>COLLEGEBUDDY</span>
+
+    <h2>
+        Learn better.
+        <br>
+        Prepare smarter.
+    </h2>
+
+    <p>
+        Your college journey, organized in one place.
+    </p>
+
+    <a href="#home" class="primary-btn">
+        Back to Home →
+    </a>
+
+</div>
+```
+
+</section>
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+```
+<div class="container footer-main">
+
+    <div class="footer-brand">
+
+        <a href="#home" class="logo footer-logo">
+
+            <div class="logo-mark">
+                <div class="logo-cap">◆</div>
+                <div class="logo-book"></div>
+            </div>
+
+            <div class="logo-text">
+                <div>
+                    <span>College</span><strong>Buddy</strong>
+                </div>
+                <small>BETTER NOTES • BRIGHTER FUTURE</small>
+            </div>
+
+        </a>
 
         <p>
-            © 2026 CollegeBuddy
+            Helping college students learn, prepare,
+            work and grow — all in one place.
         </p>
 
-    </footer>
+    </div>
 
 
-    <script src="script.js"></script>
+    <div class="footer-column">
+
+        <h4>Explore</h4>
+
+        <a href="#home">Home</a>
+        <a href="#notes">College Notes</a>
+        <a href="#study">Study Material</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>Career</h4>
+
+        <a href="#jobs">Student Jobs</a>
+        <a href="#internships">Internships</a>
+
+    </div>
+
+</div>
+
+
+<div class="container footer-bottom">
+
+    <span>
+        © 2026 CollegeBuddy. All rights reserved.
+    </span>
+
+    <span>
+        Made for students.
+    </span>
+
+</div>
+
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
